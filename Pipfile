@@ -1,0 +1,10 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[packages]
+sphinx = "*"
+pydata-sphinx-theme = "0.13.3"
+sphinx-tabs = "*"
+make = "*"
