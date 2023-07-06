@@ -1,0 +1,25 @@
+.. _ft600:
+
+ft600
+#######################################
+FT600 is a closed source USB3.0 core and kernel driver made by FTDI. It is
+currently being used as the USB backend for the `Open Ephys Acquisition
+Board <https://open-ephys.org/acq-board>`__.
+
+Building the library
+---------------------------------------
+
+Linux
+=======================================
+
+.. code::
+
+    make                # Build without debug symbols
+    sudo make install   # Install in /usr/local and run ldconfig to update library cache
+    make help           # list all make options
+
+
+Windows
+=======================================
+Run the project in Visual Studio. It can be included as a dependency in other
+projects.

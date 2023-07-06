@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classoni_1_1_o_n_i_exception" kind="class" language="C#" prot="public">
+    <compoundname>oni::ONIException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Exception</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classoni_1_1_o_n_i_exception_1a523bc80f20d869ba007bb97b4c00e1af" prot="public" static="no" mutable="no">
+        <type>readonly int</type>
+        <definition>readonly int oni.ONIException.Number</definition>
+        <argsstring></argsstring>
+        <name>Number</name>
+        <briefdescription>
+<para>The underlying ONI API error code. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/ONIException.cs" line="16" column="29" bodyfile="clroni/ONIException.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classoni_1_1_o_n_i_exception_1afa6f9914136124144ad43882bb0b6799" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>override string</type>
+        <definition>override string oni.ONIException.Message</definition>
+        <argsstring></argsstring>
+        <name>Message</name>
+        <briefdescription>
+<para>Get a human-readable version of the error code produced by the native ONI API. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/ONIException.cs" line="32" column="32" bodyfile="clroni/ONIException.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classoni_1_1_o_n_i_exception_1ab95d7474f1ea03f774a4a733fd5b05f3" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>oni.ONIException.ONIException</definition>
+        <argsstring>()</argsstring>
+        <name>ONIException</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/ONIException.cs" line="18" column="19" bodyfile="clroni/ONIException.cs" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classoni_1_1_o_n_i_exception_1aa4c0aebf836b4a19839c6ca839541d95" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>oni.ONIException.ONIException</definition>
+        <argsstring>(SerializationInfo info, StreamingContext context)</argsstring>
+        <name>ONIException</name>
+        <param>
+          <type>SerializationInfo</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>StreamingContext</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/ONIException.cs" line="35" column="19" bodyfile="clroni/ONIException.cs" bodystart="35" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-func">
+      <memberdef kind="function" id="classoni_1_1_o_n_i_exception_1a151e137d48440a1e02a22ae779f9d211" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>oni.ONIException.ONIException</definition>
+        <argsstring>(int errnum)</argsstring>
+        <name>ONIException</name>
+        <param>
+          <type>int</type>
+          <declname>errnum</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a new <ref refid="classoni_1_1_o_n_i_exception" kindref="compound">oni.ONIException</ref> </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>errnum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error code returned by the native ONI API.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/ONIException.cs" line="24" column="18" bodyfile="clroni/ONIException.cs" bodystart="24" bodyend="27"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exception wrapper for error codes returned by the native ONI API. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Exception</label>
+      </node>
+      <node id="1">
+        <label>oni.ONIException</label>
+        <link refid="classoni_1_1_o_n_i_exception"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Exception</label>
+      </node>
+      <node id="1">
+        <label>oni.ONIException</label>
+        <link refid="classoni_1_1_o_n_i_exception"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="clroni/ONIException.cs" line="11" column="11" bodyfile="clroni/ONIException.cs" bodystart="12" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classoni_1_1_o_n_i_exception_1afa6f9914136124144ad43882bb0b6799" prot="public" virt="non-virtual"><scope>oni::ONIException</scope><name>Message</name></member>
+      <member refid="classoni_1_1_o_n_i_exception_1a523bc80f20d869ba007bb97b4c00e1af" prot="public" virt="non-virtual"><scope>oni::ONIException</scope><name>Number</name></member>
+      <member refid="classoni_1_1_o_n_i_exception_1ab95d7474f1ea03f774a4a733fd5b05f3" prot="protected" virt="non-virtual"><scope>oni::ONIException</scope><name>ONIException</name></member>
+      <member refid="classoni_1_1_o_n_i_exception_1a151e137d48440a1e02a22ae779f9d211" prot="package" virt="non-virtual"><scope>oni::ONIException</scope><name>ONIException</name></member>
+      <member refid="classoni_1_1_o_n_i_exception_1aa4c0aebf836b4a19839c6ca839541d95" prot="protected" virt="non-virtual"><scope>oni::ONIException</scope><name>ONIException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

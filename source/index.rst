@@ -1,56 +1,41 @@
 .. title:: Home
 
-.. image:: _static/images/main-image.png
-  :alt: A placeholder image
-
-|
-
-The **<device>** is <add description here>.
-
-
-
-.. raw:: html
-
-    <br>
-
-    <div class="card-columns">
-        <a class="reference internal" href="About/example1.html"><span class="std std-ref custom-card">
-        <div class="card text-center intro-card">
-            <img src="_static/images/noun_screwdriver.svg" class="card-img-top hover-zoom" alt="hardware user guide" height="100">
-            <div class="card-body flex-fill">
-                <h5 class="card-title">Topic 1</h5>
-                <p class="card-text">Description of topic.</p>
-            </div>
-        </div>
-        <a class="reference internal" href="About/example2.html"><span class="std std-ref custom-card">
-        <div class="card text-center intro-card">
-            <img src="_static/images/noun_books.svg" class="card-img-top hover-zoom" alt="hardware user guide" height="100">
-            <div class="card-body flex-fill">
-                <h5 class="card-title">Topic 2</h5>
-                <p class="card-text">Description of topic.</p>
-            </div>
-        </div>
-        <a class="reference internal" href="About/index.html"><span class="std std-ref custom-card">
-        <div class="card text-center intro-card ">
-            <img src="_static/images/paper.svg" class="card-img-top" alt="onix api references" height="100">
-            <div class="card-body flex-fill">
-                <h5 class="card-title">Topic 3</h5>
-                <p class="card-text">Description of topic.</p>
-            </div>
-        </div>
-        <a class="reference external" href="https://github.com/open-ephys" target="_blank" rel="noopener noreferrer"><span class="std std-ref custom-card">
-        <div class="card text-center intro-card">
-            <img src="_static/images/noun_macbook.svg" class="card-img-top" alt="onix software guide" height="100">
-            <div class="card-body flex-fill">
-                <h5 class="card-title">Topic 4</h5>
-                <p class="card-text">This is an external link.</p>
-            </div>
-        </div>
-    </div>
-
 .. toctree::
-    :hidden:
-    :maxdepth: 2
-    :titlesonly:
+   :hidden:
+   :maxdepth: 2
+   :titlesonly:
 
-    About/index
+   hw-spec/index
+   api/index
+
+========================================
+Open Neuro Interface
+========================================
+ONI is a hardware development specification taylored to the needs of
+experimental neuroscience along with a corresponding programming interface to
+support **arbitrary mixtures of sensors, probes, and actuators**. The hope is
+that this specification will streamline the development of new hardware for
+neural data acquisition and guarantee interoperability between hardware and
+software that conforms to the specification. We also hope that the use of a
+common protocols will allow easy integration of disparate hardware to develop
+rich feedback control loops for neuroscience projects. If you are interested in
+developing against this specification (e.g. for a miniscope, headstage,
+position tracker, 2P microscope, etc) or improving it, we would love to `hear
+from you <https://open-ephys.org/contact>`__ and talk about the best way to
+proceed.
+
+Contents
+--------
+ONI is comprised of a hardware specification and a corresponding, open-source
+API:
+
+#. :ref:`Open Neuro Interface Hardware Specification <oni-hw>`: Create hardware
+   that is compatible for the ONI API.
+#. :ref:`Open Neuro Interface API Specification <oni-api>`: ONI API reference
+   implementation for ONI-compliant hardware.
+
+Contributing
+------------
+The main branch contains the stable version of the specification. The unstable
+work in progress version can be found in the branch indicating the version.
+

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_45a1d62ef75b2059a99e2543d07c18db" kind="dir">
+    <compoundname>clroni</compoundname>
+    <innerfile refid="_context_8cs">Context.cs</innerfile>
+    <innerfile refid="_context_handle_8cs">ContextHandle.cs</innerfile>
+    <innerfile refid="_device_8cs">Device.cs</innerfile>
+    <innerfile refid="_frame_8cs">Frame.cs</innerfile>
+    <innerfile refid="_hub_8cs">Hub.cs</innerfile>
+    <innerfile refid="oni_8cs">oni.cs</innerfile>
+    <innerfile refid="_o_n_i_exception_8cs">ONIException.cs</innerfile>
+    <innerfile refid="onix_8cs">onix.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="clroni/"/>
+  </compounddef>
+</doxygen>

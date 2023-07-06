@@ -1,0 +1,1090 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classoni_1_1_context" kind="class" language="C#" prot="public">
+    <compoundname>oni::Context</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">IDisposable</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IDisposable</basecompoundref>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0" prot="private" static="no" strong="yes">
+        <type>int</type>
+        <name>Option</name>
+        <enumvalue id="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0a56fd214b062334e43f0dd5d162734627" prot="private">
+          <name>DEVICETABLE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0a6e254cdf45860e5c4421657849517f97" prot="private">
+          <name>NUMDEVICES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0a43491564ebcfd38568918efbd6e840fd" prot="private">
+          <name>RUNNING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0ab5859d8721cfdc0312b2838b9c985bc1" prot="private">
+          <name>RESET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0a6f849741c8238d554d1ca4c590a7e2bb" prot="private">
+          <name>SYSCLKHZ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0a588d6682bfeac8f5ee6bb558a9cf3877" prot="private">
+          <name>ACQCLKHZ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0a592153f30a213e0bb045cd12f053c8fc" prot="private">
+          <name>RESETACQCOUNTER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0a17ba682775ff3543678e788b8fcf3dc2" prot="private">
+          <name>HWADDRESS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0ae28e0678df2b3d4a416faad798cd09d1" prot="private">
+          <name>MAXREADFRAMESIZE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0a568e974a39894cb22f275749d4b364c0" prot="private">
+          <name>MAXWRITEFRAMESIZE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0af2eb56ef302653b3f5aae2dbec188def" prot="private">
+          <name>BLOCKREADSIZE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0a615f56c76d2a4ceeacf83c6e59bd259d" prot="private">
+          <name>BLOCKWRITESIZE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0addfe4ae0e8fba62742a15c9c9b634996" prot="private">
+          <name>CUSTOMBEGIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="16" column="16" bodyfile="clroni/Context.cs" bodystart="17" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="enum" id="classoni_1_1_context_1ae57201ed963808c30851a33ef8557262" prot="private" static="no" strong="yes">
+        <type>uint</type>
+        <name>HubRegister</name>
+        <enumvalue id="classoni_1_1_context_1ae57201ed963808c30851a33ef8557262a91d5a20de180a33ca8d66eda86a8d2bf" prot="private">
+          <name>HARDWAREID</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classoni_1_1_context_1ae57201ed963808c30851a33ef8557262a5cbf2969efe90fc52f6628c9c3424ae9" prot="private">
+          <name>FIRMWAREVER</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classoni_1_1_context_1ae57201ed963808c30851a33ef8557262a3d30d2fc94fdea62973b497617d91c13" prot="private">
+          <name>CLKRATEHZ</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classoni_1_1_context_1ae57201ed963808c30851a33ef8557262ad0c061e213ff64db473220cd43e030f8" prot="private">
+          <name>DELAYNS</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/onix.cs" line="70" column="16" bodyfile="clroni/onix.cs" bodystart="71" bodyend="76"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classoni_1_1_context_1a5dbc6f911f1f3c2b60de9f5bc21f22c5" prot="private" static="no" mutable="no">
+        <type>readonly ContextHandle</type>
+        <definition>readonly ContextHandle oni.Context.ctx</definition>
+        <argsstring></argsstring>
+        <name>ctx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="34" column="40" bodyfile="clroni/Context.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classoni_1_1_context_1a119cccc458153acf6800084b6718a8a6" prot="public" static="no" mutable="no">
+        <type>readonly uint</type>
+        <definition>readonly uint oni.Context.SystemClockHz</definition>
+        <argsstring></argsstring>
+        <name>SystemClockHz</name>
+        <briefdescription>
+<para>Host system clock frequency in Hz. This describes the frequency of the clock governing the host hardware. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="41" column="30" bodyfile="clroni/Context.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classoni_1_1_context_1a163ec1e876f6981496f53b63e6192854" prot="public" static="no" mutable="no">
+        <type>readonly uint</type>
+        <definition>readonly uint oni.Context.AcquisitionClockHz</definition>
+        <argsstring></argsstring>
+        <name>AcquisitionClockHz</name>
+        <briefdescription>
+<para>Host system acquisition clock frequency in Hz, derived from <ref refid="classoni_1_1_context_1a119cccc458153acf6800084b6718a8a6" kindref="member">SystemClockHz</ref>. This describes the frequency of the clock used to drive the acquisition counter which is used timestamp data frames. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="48" column="30" bodyfile="clroni/Context.cs" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classoni_1_1_context_1a30319fa039a6ef86aa120d9dc623f2c2" prot="public" static="no" mutable="no">
+        <type>readonly uint</type>
+        <definition>readonly uint oni.Context.MaxReadFrameSize</definition>
+        <argsstring></argsstring>
+        <name>MaxReadFrameSize</name>
+        <briefdescription>
+<para>The maximal size of a frame produced by a call to <ref refid="classoni_1_1_context_1a2774341ba95650f63722dfbcbc2ddd77" kindref="member">ReadFrame</ref> in bytes. This number is the maximum sized frame that can be produced across every device within the device table that generates read data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="55" column="30" bodyfile="clroni/Context.cs" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classoni_1_1_context_1a972bab2364c5cf1cc8493ed452375887" prot="public" static="no" mutable="no">
+        <type>readonly uint</type>
+        <definition>readonly uint oni.Context.MaxWriteFrameSize</definition>
+        <argsstring></argsstring>
+        <name>MaxWriteFrameSize</name>
+        <briefdescription>
+<para>The maximal size of consumed by a call to <ref refid="classoni_1_1_context_1ad67376eff7e78f3f7768df805cb76818" kindref="member">Write</ref> in bytes. This number is the maximum sized frame that can be consumed across every device within the device table that accepts write data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="62" column="30" bodyfile="clroni/Context.cs" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785" prot="public" static="no" mutable="no">
+        <type>readonly Dictionary&lt; uint, <ref refid="structoni_1_1_device" kindref="compound">Device</ref> &gt;</type>
+        <definition>readonly Dictionary&lt;uint, Device&gt; oni.Context.DeviceTable</definition>
+        <argsstring></argsstring>
+        <name>DeviceTable</name>
+        <briefdescription>
+<para>ONI specified device table containing the full device hierarchy governed by this acquisition context. This IDictionary maps a fully-qualified <ref refid="structoni_1_1_device_1a66ecf6d5fbbcd857605dde6a16e8c120" kindref="member">Device.Address</ref> to a <ref refid="structoni_1_1_device" kindref="compound">Device</ref> instance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="70" column="36" bodyfile="clroni/Context.cs" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classoni_1_1_context_1a4d969ef951413141e2e47e4920845169" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool oni.Context.Running</definition>
+        <argsstring></argsstring>
+        <name>Running</name>
+        <briefdescription>
+<para>Indicates whether or not data acquisition is running. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="292" column="21" bodyfile="clroni/Context.cs" bodystart="293" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="property" id="classoni_1_1_context_1a428dbe9704ed59092e638ed1a7ffbfc2" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int oni.Context.HardwareAddress</definition>
+        <argsstring></argsstring>
+        <name>HardwareAddress</name>
+        <briefdescription>
+<para>The address of the host hardware within the acquisition computer. Determines the synchronization role of the hardware in multi-host systems. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="305" column="20" bodyfile="clroni/Context.cs" bodystart="306" bodyend="315"/>
+      </memberdef>
+      <memberdef kind="property" id="classoni_1_1_context_1aa2e1fe9220a2865f144731a4a3fcaa0c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int oni.Context.BlockReadSize</definition>
+        <argsstring></argsstring>
+        <name>BlockReadSize</name>
+        <briefdescription>
+<para>Number of bytes read during each driver access to the high-bandwidth read channel using <ref refid="classoni_1_1_context_1a2774341ba95650f63722dfbcbc2ddd77" kindref="member">Context.ReadFrame</ref>. This option allows control over a fundamental trade-off between closed-loop response time and overall bandwidth. The minimum (default) value will provide the lowest response latency. Larger values will reduce syscall frequency and may improve processing performance for high-bandwidth data sources. This minimum size of this option is determined by <ref refid="classoni_1_1_context_1a30319fa039a6ef86aa120d9dc623f2c2" kindref="member">Context.MaxReadFrameSize</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="327" column="20" bodyfile="clroni/Context.cs" bodystart="328" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="property" id="classoni_1_1_context_1ad225a8ed2c9ec9c9e696cfa54515b5b5" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int oni.Context.BlockWriteSize</definition>
+        <argsstring></argsstring>
+        <name>BlockWriteSize</name>
+        <briefdescription>
+<para>Number of bytes pre-allocated for calls to <ref refid="classoni_1_1_context_1ac056a266ec61c27a6497c943486d399c" kindref="member">Write&lt;T&gt;(uint, T)</ref>, <ref refid="classoni_1_1_context_1ab094107504bf176e6682e59303d9f5bb" kindref="member">Write&lt;T&gt;(uint, T[])</ref>, and <ref refid="classoni_1_1_context_1ad67376eff7e78f3f7768df805cb76818" kindref="member">Write(uint, IntPtr, int)</ref>. A larger size will reduce the average amount of dynamic memory allocation system calls but increase the cost of each of those calls. The minimum size of this option is determined by <ref refid="classoni_1_1_context_1a972bab2364c5cf1cc8493ed452375887" kindref="member">Context.MaxWriteFrameSize</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="347" column="20" bodyfile="clroni/Context.cs" bodystart="348" bodyend="357"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classoni_1_1_context_1adcb3ae0dabb67f8dceb36251761ac926" prot="private" static="yes" mutable="no">
+        <type>const uint</type>
+        <definition>const uint oni.Context.HUB_MGR_ADDRESS</definition>
+        <argsstring></argsstring>
+        <name>HUB_MGR_ADDRESS</name>
+        <initializer>= 254</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/onix.cs" line="68" column="28" bodyfile="clroni/onix.cs" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classoni_1_1_context_1a058a82f190e4d4b6f1f14916362a645e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>oni.Context.Context</definition>
+        <argsstring>(string driver, int index)</argsstring>
+        <name>Context</name>
+        <param>
+          <type>string</type>
+          <declname>driver</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a new instance of <ref refid="classoni_1_1_context" kindref="compound">Context</ref> with the specified hardware translation driver and host hardware index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>driver</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string specifying the device driver used by the context to control hardware. This string corresponds a compiled implementation of onidriver.h that has the name onidriver_&lt;drv_name&gt;.so/dll.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An index specifying the physical location within the host that the host hardware resides. A value of -1 will use the default location.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>System.InvalidProgramException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when the specified driver cannot be found or is invalid.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="classoni_1_1_o_n_i_exception" kindref="compound">ONIException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when there is an error during hardware initialization (e.g. an invalid device table).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="86" column="16" bodyfile="clroni/Context.cs" bodystart="86" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classoni_1_1_context_1ad1c43916c7883426b7bcb6c6e148d7b7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void oni.Context.SetCustomOption</definition>
+        <argsstring>(int option, int value)</argsstring>
+        <name>SetCustomOption</name>
+        <param>
+          <type>int</type>
+          <declname>option</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Set an the value of implementation-specific context option (those beyond ONI-specified options). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>option</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Implementation-specific option to set.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Option value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="236" column="21" bodyfile="clroni/Context.cs" bodystart="236" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="classoni_1_1_context_1a7549c1eee95d06f887b6dbc3f987b370" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int oni.Context.GetCustomOption</definition>
+        <argsstring>(int option)</argsstring>
+        <name>GetCustomOption</name>
+        <param>
+          <type>int</type>
+          <declname>option</declname>
+        </param>
+        <briefdescription>
+<para>Retrieve the value of an implementation-specific context option. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>option</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classoni_1_1_context" kindref="compound">Context</ref> option to retrieve.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Value of the context option.</para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classoni_1_1_o_n_i_exception" kindref="compound">ONIException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when option is invalid. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="247" column="20" bodyfile="clroni/Context.cs" bodystart="247" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="classoni_1_1_context_1a2385c7779042ea4ccf5a507c9d41132d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void oni.Context.Start</definition>
+        <argsstring>(bool reset_frame_clock=true)</argsstring>
+        <name>Start</name>
+        <param>
+          <type>bool</type>
+          <declname>reset_frame_clock</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Start data acquisition. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reset_frame_clock</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, the acquisition clock counter is reset synchronously to the start of data acquisition in hardware (see <ref refid="classoni_1_1_context_1a163ec1e876f6981496f53b63e6192854" kindref="member">AcquisitionClockHz</ref>). This is equivalent to calling this function and <ref refid="classoni_1_1_context_1ad5a5c9afef192fb9c9ded5d2adf951c0" kindref="member">ResetFrameClock</ref> at precisely the same moment, which is impossible in software.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="260" column="21" bodyfile="clroni/Context.cs" bodystart="260" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="classoni_1_1_context_1a6cc69f1d6399bc8a3b499bc69e2b7044" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void oni.Context.Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+<para>Stop data acquisition. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="275" column="21" bodyfile="clroni/Context.cs" bodystart="275" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="classoni_1_1_context_1ad5a5c9afef192fb9c9ded5d2adf951c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void oni.Context.ResetFrameClock</definition>
+        <argsstring>()</argsstring>
+        <name>ResetFrameClock</name>
+        <briefdescription>
+<para>Reset the acquisition clock counter to 0 (<ref refid="classoni_1_1_context_1a163ec1e876f6981496f53b63e6192854" kindref="member">AcquisitionClockHz</ref>). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="284" column="21" bodyfile="clroni/Context.cs" bodystart="284" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="classoni_1_1_context_1a2e76f912ee86a01557366ab6f44979dc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint</type>
+        <definition>uint oni.Context.ReadRegister</definition>
+        <argsstring>(uint dev_index, uint register_address)</argsstring>
+        <name>ReadRegister</name>
+        <param>
+          <type>uint</type>
+          <declname>dev_index</declname>
+        </param>
+        <param>
+          <type>uint</type>
+          <declname>register_address</declname>
+        </param>
+        <briefdescription>
+<para>Read the value of a configuration register from a specific device within the current <ref refid="classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785" kindref="member">oni.Context.DeviceTable</ref>. This can be used to verify the success of calls to <ref refid="classoni_1_1_context_1a2e76f912ee86a01557366ab6f44979dc" kindref="member">Context.ReadRegister(uint, uint)</ref> or to obtain state information about devices managed by the current acquisition context. Register specifications (addresses, read- and write-access, and descriptions are provided on the ONI-device datasheet). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fully-qualified device index within the <ref refid="classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785" kindref="member">Context.DeviceTable</ref></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>register_address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Address of register to be read.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Value of the register.</para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classoni_1_1_o_n_i_exception" kindref="compound">ONIException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown if the device and/or register address in invalid or if register is write only.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="373" column="21" bodyfile="clroni/Context.cs" bodystart="373" bodyend="379"/>
+      </memberdef>
+      <memberdef kind="function" id="classoni_1_1_context_1a77644e7ac3ebec4fc31b62c7d0a8053c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void oni.Context.WriteRegister</definition>
+        <argsstring>(uint dev_index, uint register_address, uint value)</argsstring>
+        <name>WriteRegister</name>
+        <param>
+          <type>uint</type>
+          <declname>dev_index</declname>
+        </param>
+        <param>
+          <type>uint</type>
+          <declname>register_address</declname>
+        </param>
+        <param>
+          <type>uint</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Change the value of a configuration register from specific devices within the current <ref refid="classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785" kindref="member">Context.DeviceTable</ref>. Register specifications (addresses, read- and write-access, acceptable values, and descriptions are provided on the ONI device datasheet). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fully-qualified device index within the <ref refid="classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785" kindref="member">Context.DeviceTable</ref></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>register_address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Address of register to write to.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to write to the register.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classoni_1_1_o_n_i_exception" kindref="compound">ONIException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown if the device and/or register address in invalid or if register is read only.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="394" column="21" bodyfile="clroni/Context.cs" bodystart="394" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="function" id="classoni_1_1_context_1a2774341ba95650f63722dfbcbc2ddd77" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classoni_1_1_frame" kindref="compound">Frame</ref></type>
+        <definition>Frame oni.Context.ReadFrame</definition>
+        <argsstring>()</argsstring>
+        <name>ReadFrame</name>
+        <briefdescription>
+<para>Read a device data frame from the high-bandwidth data input channel. This call will block until either enough data available on the stream to construct an underlying block buffer (see <ref refid="classoni_1_1_context_1aa2e1fe9220a2865f144731a4a3fcaa0c" kindref="member">Context.BlockReadSize</ref>). This function is zero-copy. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A device data frame.</para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classoni_1_1_o_n_i_exception" kindref="compound">ONIException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown if there is an error reading a frame.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="409" column="22" bodyfile="clroni/Context.cs" bodystart="409" bodyend="414"/>
+      </memberdef>
+      <memberdef kind="function" id="classoni_1_1_context_1ac056a266ec61c27a6497c943486d399c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void oni.Context.Write&lt; T &gt;</definition>
+        <argsstring>(uint dev_index, T value)</argsstring>
+        <name>Write&lt; T &gt;</name>
+        <param>
+          <type>uint</type>
+          <declname>dev_index</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Write a single value to a particular device within the <ref refid="classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785" kindref="member">Context.DeviceTable</ref> using the high-bandwidth output channel. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the value to be written. Must be an unmanaged type.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fully-qualified device index within the <ref refid="classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785" kindref="member">oni.Context.DeviceTable</ref></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to write to the device.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classoni_1_1_o_n_i_exception" kindref="compound">ONIException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Throw if data is an invalid size or the selected device does not accept write data.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="428" column="16" bodyfile="clroni/Context.cs" bodystart="428" bodyend="431"/>
+      </memberdef>
+      <memberdef kind="function" id="classoni_1_1_context_1ab094107504bf176e6682e59303d9f5bb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void oni.Context.Write&lt; T &gt;</definition>
+        <argsstring>(uint dev_index, T[] data)</argsstring>
+        <name>Write&lt; T &gt;</name>
+        <param>
+          <type>uint</type>
+          <declname>dev_index</declname>
+        </param>
+        <param>
+          <type>T[]</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Write an array to a particular device within the <ref refid="classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785" kindref="member">Context.DeviceTable</ref> using the high-bandwidth output channel. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the value to be written. Must be an unmanaged type.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fully-qualified device index within the <ref refid="classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785" kindref="member">Context.DeviceTable</ref></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data array to write to the device.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classoni_1_1_o_n_i_exception" kindref="compound">ONIException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Throw if data array is an invalid size or the selected device does not accept write data.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="446" column="16" bodyfile="clroni/Context.cs" bodystart="446" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="function" id="classoni_1_1_context_1ad67376eff7e78f3f7768df805cb76818" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void oni.Context.Write</definition>
+        <argsstring>(uint dev_index, IntPtr data, int data_size)</argsstring>
+        <name>Write</name>
+        <param>
+          <type>uint</type>
+          <declname>dev_index</declname>
+        </param>
+        <param>
+          <type>IntPtr</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>data_size</declname>
+        </param>
+        <briefdescription>
+<para>Write data at an IntPtr to a particular device within the <ref refid="classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785" kindref="member">Context.DeviceTable</ref> using the high-bandwidth output channel. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fully-qualified device index within the <ref refid="classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785" kindref="member">Context.DeviceTable</ref></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to data to write to the device.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of data pointed to by <emphasis>data</emphasis>  in bytes.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classoni_1_1_o_n_i_exception" kindref="compound">ONIException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Throw if <emphasis>data_size</emphasis>  is an invalid size or the selected device does not accept write data.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="508" column="21" bodyfile="clroni/Context.cs" bodystart="508" bodyend="515"/>
+      </memberdef>
+      <memberdef kind="function" id="classoni_1_1_context_1a45ad882d26de9399b8e738e5feeabcba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void oni.Context.Dispose</definition>
+        <argsstring>()</argsstring>
+        <name>Dispose</name>
+        <briefdescription>
+<para>Dispose this <ref refid="classoni_1_1_context" kindref="compound">Context</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="520" column="21" bodyfile="clroni/Context.cs" bodystart="520" bodyend="524"/>
+      </memberdef>
+      <memberdef kind="function" id="classoni_1_1_context_1a2643f7175d845603a43db8a2c9c4dc56" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classoni_1_1_hub" kindref="compound">Hub</ref></type>
+        <definition>Hub oni.Context.GetHub</definition>
+        <argsstring>(uint device_address)</argsstring>
+        <name>GetHub</name>
+        <param>
+          <type>uint</type>
+          <declname>device_address</declname>
+        </param>
+        <briefdescription>
+<para>Retrieve the hub that a given <ref refid="structoni_1_1_device" kindref="compound">Device</ref> resides in. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>device_address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fully specified <ref refid="structoni_1_1_device_1a66ecf6d5fbbcd857605dde6a16e8c120" kindref="member">Device.Address</ref> to retrieve the hub for.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="classoni_1_1_hub" kindref="compound">Hub</ref>containing hub metadata.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/onix.cs" line="84" column="20" bodyfile="clroni/onix.cs" bodystart="84" bodyend="95"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classoni_1_1_context_1aad08f55432294a00f273ee3d83c82559" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IntPtr</type>
+        <definition>IntPtr oni.Context.GetOption</definition>
+        <argsstring>(int option, int size, bool drv_opt=false)</argsstring>
+        <name>GetOption</name>
+        <param>
+          <type>int</type>
+          <declname>option</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>drv_opt</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="123" column="24" bodyfile="clroni/Context.cs" bodystart="123" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classoni_1_1_context_1a021013c58fb81c1072cf82eb065243f7" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int oni.Context.GetIntOption</definition>
+        <argsstring>(int option, bool drv_opt=false)</argsstring>
+        <name>GetIntOption</name>
+        <param>
+          <type>int</type>
+          <declname>option</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>drv_opt</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="154" column="21" bodyfile="clroni/Context.cs" bodystart="154" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="classoni_1_1_context_1a9302ecc2aa799b6add5017e3f1e3248d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string oni.Context.GetStringOption</definition>
+        <argsstring>(int option, bool drv_opt=false)</argsstring>
+        <name>GetStringOption</name>
+        <param>
+          <type>int</type>
+          <declname>option</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>drv_opt</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="161" column="24" bodyfile="clroni/Context.cs" bodystart="161" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="classoni_1_1_context_1a1c23ebe84a9b5477635334bff0d4216b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void oni.Context.SetIntOption</definition>
+        <argsstring>(int opt, int value, bool drv_opt=false)</argsstring>
+        <name>SetIntOption</name>
+        <param>
+          <type>int</type>
+          <declname>opt</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>drv_opt</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="190" column="22" bodyfile="clroni/Context.cs" bodystart="190" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="classoni_1_1_context_1afe00c45c44a639260b5c9c9646227d77" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void oni.Context.SetStringOption</definition>
+        <argsstring>(int opt, string value, bool drv_opt)</argsstring>
+        <name>SetStringOption</name>
+        <param>
+          <type>int</type>
+          <declname>opt</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>drv_opt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="216" column="22" bodyfile="clroni/Context.cs" bodystart="216" bodyend="229"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classoni_1_1_context_1ae7e03cde0dd6470f4efa7dc9a4355b1a" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void oni.Context.Dispose</definition>
+        <argsstring>(bool disposing)</argsstring>
+        <name>Dispose</name>
+        <param>
+          <type>bool</type>
+          <declname>disposing</declname>
+        </param>
+        <briefdescription>
+<para>Dispose this <ref refid="classoni_1_1_context" kindref="compound">Context</ref>. This override is required by IDisposable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>disposing</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Context.cs" line="532" column="32" bodyfile="clroni/Context.cs" bodystart="532" bodyend="539"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Open Neuro Interface (ONI) compliant acquisition context. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>oni.Context</label>
+        <link refid="classoni_1_1_context"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IDisposable</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>oni.Context</label>
+        <link refid="classoni_1_1_context"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IDisposable</label>
+      </node>
+    </collaborationgraph>
+    <location file="clroni/Context.cs" line="13" column="26" bodyfile="clroni/Context.cs" bodystart="14" bodyend="540"/>
+    <listofallmembers>
+      <member refid="classoni_1_1_context_1a163ec1e876f6981496f53b63e6192854" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>AcquisitionClockHz</name></member>
+      <member refid="classoni_1_1_context_1aa2e1fe9220a2865f144731a4a3fcaa0c" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>BlockReadSize</name></member>
+      <member refid="classoni_1_1_context_1ad225a8ed2c9ec9c9e696cfa54515b5b5" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>BlockWriteSize</name></member>
+      <member refid="classoni_1_1_context_1a058a82f190e4d4b6f1f14916362a645e" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>Context</name></member>
+      <member refid="classoni_1_1_context_1a5dbc6f911f1f3c2b60de9f5bc21f22c5" prot="private" virt="non-virtual"><scope>oni::Context</scope><name>ctx</name></member>
+      <member refid="classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>DeviceTable</name></member>
+      <member refid="classoni_1_1_context_1a45ad882d26de9399b8e738e5feeabcba" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>Dispose</name></member>
+      <member refid="classoni_1_1_context_1ae7e03cde0dd6470f4efa7dc9a4355b1a" prot="protected" virt="virtual"><scope>oni::Context</scope><name>Dispose</name></member>
+      <member refid="classoni_1_1_context_1a7549c1eee95d06f887b6dbc3f987b370" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>GetCustomOption</name></member>
+      <member refid="classoni_1_1_context_1a2643f7175d845603a43db8a2c9c4dc56" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>GetHub</name></member>
+      <member refid="classoni_1_1_context_1a021013c58fb81c1072cf82eb065243f7" prot="private" virt="non-virtual"><scope>oni::Context</scope><name>GetIntOption</name></member>
+      <member refid="classoni_1_1_context_1aad08f55432294a00f273ee3d83c82559" prot="private" virt="non-virtual"><scope>oni::Context</scope><name>GetOption</name></member>
+      <member refid="classoni_1_1_context_1a9302ecc2aa799b6add5017e3f1e3248d" prot="private" virt="non-virtual"><scope>oni::Context</scope><name>GetStringOption</name></member>
+      <member refid="classoni_1_1_context_1a428dbe9704ed59092e638ed1a7ffbfc2" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>HardwareAddress</name></member>
+      <member refid="classoni_1_1_context_1adcb3ae0dabb67f8dceb36251761ac926" prot="private" virt="non-virtual"><scope>oni::Context</scope><name>HUB_MGR_ADDRESS</name></member>
+      <member refid="classoni_1_1_context_1ae57201ed963808c30851a33ef8557262" prot="private" virt="non-virtual"><scope>oni::Context</scope><name>HubRegister</name></member>
+      <member refid="classoni_1_1_context_1a30319fa039a6ef86aa120d9dc623f2c2" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>MaxReadFrameSize</name></member>
+      <member refid="classoni_1_1_context_1a972bab2364c5cf1cc8493ed452375887" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>MaxWriteFrameSize</name></member>
+      <member refid="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0" prot="private" virt="non-virtual"><scope>oni::Context</scope><name>Option</name></member>
+      <member refid="classoni_1_1_context_1a2774341ba95650f63722dfbcbc2ddd77" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>ReadFrame</name></member>
+      <member refid="classoni_1_1_context_1a2e76f912ee86a01557366ab6f44979dc" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>ReadRegister</name></member>
+      <member refid="classoni_1_1_context_1ad5a5c9afef192fb9c9ded5d2adf951c0" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>ResetFrameClock</name></member>
+      <member refid="classoni_1_1_context_1a4d969ef951413141e2e47e4920845169" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>Running</name></member>
+      <member refid="classoni_1_1_context_1ad1c43916c7883426b7bcb6c6e148d7b7" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>SetCustomOption</name></member>
+      <member refid="classoni_1_1_context_1a1c23ebe84a9b5477635334bff0d4216b" prot="private" virt="non-virtual"><scope>oni::Context</scope><name>SetIntOption</name></member>
+      <member refid="classoni_1_1_context_1afe00c45c44a639260b5c9c9646227d77" prot="private" virt="non-virtual"><scope>oni::Context</scope><name>SetStringOption</name></member>
+      <member refid="classoni_1_1_context_1a2385c7779042ea4ccf5a507c9d41132d" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>Start</name></member>
+      <member refid="classoni_1_1_context_1a6cc69f1d6399bc8a3b499bc69e2b7044" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>Stop</name></member>
+      <member refid="classoni_1_1_context_1a119cccc458153acf6800084b6718a8a6" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>SystemClockHz</name></member>
+      <member refid="classoni_1_1_context_1ad67376eff7e78f3f7768df805cb76818" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>Write</name></member>
+      <member refid="classoni_1_1_context_1ac056a266ec61c27a6497c943486d399c" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>Write&lt; T &gt;</name></member>
+      <member refid="classoni_1_1_context_1ab094107504bf176e6682e59303d9f5bb" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>Write&lt; T &gt;</name></member>
+      <member refid="classoni_1_1_context_1a77644e7ac3ebec4fc31b62c7d0a8053c" prot="public" virt="non-virtual"><scope>oni::Context</scope><name>WriteRegister</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

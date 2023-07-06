@@ -8,3 +8,8 @@ sphinx = "*"
 pydata-sphinx-theme = "0.13.3"
 sphinx-tabs = "*"
 make = "*"
+breathe = "*"
+
+[packages.sphinx-csharp]
+git = "https://github.com/rogerbarton/sphinx-csharp.git"
+ref = "master"

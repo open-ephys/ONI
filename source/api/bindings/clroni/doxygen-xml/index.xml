@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.1" xml:lang="en-US">
+  <compound refid="classoni_1_1_context" kind="class"><name>oni::Context</name>
+    <member refid="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0" kind="enum"><name>Option</name></member>
+    <member refid="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0a56fd214b062334e43f0dd5d162734627" kind="enumvalue"><name>DEVICETABLE</name></member>
+    <member refid="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0a6e254cdf45860e5c4421657849517f97" kind="enumvalue"><name>NUMDEVICES</name></member>
+    <member refid="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0a43491564ebcfd38568918efbd6e840fd" kind="enumvalue"><name>RUNNING</name></member>
+    <member refid="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0ab5859d8721cfdc0312b2838b9c985bc1" kind="enumvalue"><name>RESET</name></member>
+    <member refid="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0a6f849741c8238d554d1ca4c590a7e2bb" kind="enumvalue"><name>SYSCLKHZ</name></member>
+    <member refid="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0a588d6682bfeac8f5ee6bb558a9cf3877" kind="enumvalue"><name>ACQCLKHZ</name></member>
+    <member refid="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0a592153f30a213e0bb045cd12f053c8fc" kind="enumvalue"><name>RESETACQCOUNTER</name></member>
+    <member refid="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0a17ba682775ff3543678e788b8fcf3dc2" kind="enumvalue"><name>HWADDRESS</name></member>
+    <member refid="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0ae28e0678df2b3d4a416faad798cd09d1" kind="enumvalue"><name>MAXREADFRAMESIZE</name></member>
+    <member refid="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0a568e974a39894cb22f275749d4b364c0" kind="enumvalue"><name>MAXWRITEFRAMESIZE</name></member>
+    <member refid="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0af2eb56ef302653b3f5aae2dbec188def" kind="enumvalue"><name>BLOCKREADSIZE</name></member>
+    <member refid="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0a615f56c76d2a4ceeacf83c6e59bd259d" kind="enumvalue"><name>BLOCKWRITESIZE</name></member>
+    <member refid="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0addfe4ae0e8fba62742a15c9c9b634996" kind="enumvalue"><name>CUSTOMBEGIN</name></member>
+    <member refid="classoni_1_1_context_1ae57201ed963808c30851a33ef8557262" kind="enum"><name>HubRegister</name></member>
+    <member refid="classoni_1_1_context_1ae57201ed963808c30851a33ef8557262a91d5a20de180a33ca8d66eda86a8d2bf" kind="enumvalue"><name>HARDWAREID</name></member>
+    <member refid="classoni_1_1_context_1ae57201ed963808c30851a33ef8557262a5cbf2969efe90fc52f6628c9c3424ae9" kind="enumvalue"><name>FIRMWAREVER</name></member>
+    <member refid="classoni_1_1_context_1ae57201ed963808c30851a33ef8557262a3d30d2fc94fdea62973b497617d91c13" kind="enumvalue"><name>CLKRATEHZ</name></member>
+    <member refid="classoni_1_1_context_1ae57201ed963808c30851a33ef8557262ad0c061e213ff64db473220cd43e030f8" kind="enumvalue"><name>DELAYNS</name></member>
+    <member refid="classoni_1_1_context_1a5dbc6f911f1f3c2b60de9f5bc21f22c5" kind="variable"><name>ctx</name></member>
+    <member refid="classoni_1_1_context_1a119cccc458153acf6800084b6718a8a6" kind="variable"><name>SystemClockHz</name></member>
+    <member refid="classoni_1_1_context_1a163ec1e876f6981496f53b63e6192854" kind="variable"><name>AcquisitionClockHz</name></member>
+    <member refid="classoni_1_1_context_1a30319fa039a6ef86aa120d9dc623f2c2" kind="variable"><name>MaxReadFrameSize</name></member>
+    <member refid="classoni_1_1_context_1a972bab2364c5cf1cc8493ed452375887" kind="variable"><name>MaxWriteFrameSize</name></member>
+    <member refid="classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785" kind="variable"><name>DeviceTable</name></member>
+    <member refid="classoni_1_1_context_1a4d969ef951413141e2e47e4920845169" kind="property"><name>Running</name></member>
+    <member refid="classoni_1_1_context_1a428dbe9704ed59092e638ed1a7ffbfc2" kind="property"><name>HardwareAddress</name></member>
+    <member refid="classoni_1_1_context_1aa2e1fe9220a2865f144731a4a3fcaa0c" kind="property"><name>BlockReadSize</name></member>
+    <member refid="classoni_1_1_context_1ad225a8ed2c9ec9c9e696cfa54515b5b5" kind="property"><name>BlockWriteSize</name></member>
+    <member refid="classoni_1_1_context_1adcb3ae0dabb67f8dceb36251761ac926" kind="variable"><name>HUB_MGR_ADDRESS</name></member>
+    <member refid="classoni_1_1_context_1a058a82f190e4d4b6f1f14916362a645e" kind="function"><name>Context</name></member>
+    <member refid="classoni_1_1_context_1ad1c43916c7883426b7bcb6c6e148d7b7" kind="function"><name>SetCustomOption</name></member>
+    <member refid="classoni_1_1_context_1a7549c1eee95d06f887b6dbc3f987b370" kind="function"><name>GetCustomOption</name></member>
+    <member refid="classoni_1_1_context_1a2385c7779042ea4ccf5a507c9d41132d" kind="function"><name>Start</name></member>
+    <member refid="classoni_1_1_context_1a6cc69f1d6399bc8a3b499bc69e2b7044" kind="function"><name>Stop</name></member>
+    <member refid="classoni_1_1_context_1ad5a5c9afef192fb9c9ded5d2adf951c0" kind="function"><name>ResetFrameClock</name></member>
+    <member refid="classoni_1_1_context_1a2e76f912ee86a01557366ab6f44979dc" kind="function"><name>ReadRegister</name></member>
+    <member refid="classoni_1_1_context_1a77644e7ac3ebec4fc31b62c7d0a8053c" kind="function"><name>WriteRegister</name></member>
+    <member refid="classoni_1_1_context_1a2774341ba95650f63722dfbcbc2ddd77" kind="function"><name>ReadFrame</name></member>
+    <member refid="classoni_1_1_context_1ac056a266ec61c27a6497c943486d399c" kind="function"><name>Write&lt; T &gt;</name></member>
+    <member refid="classoni_1_1_context_1ab094107504bf176e6682e59303d9f5bb" kind="function"><name>Write&lt; T &gt;</name></member>
+    <member refid="classoni_1_1_context_1ad67376eff7e78f3f7768df805cb76818" kind="function"><name>Write</name></member>
+    <member refid="classoni_1_1_context_1a45ad882d26de9399b8e738e5feeabcba" kind="function"><name>Dispose</name></member>
+    <member refid="classoni_1_1_context_1a2643f7175d845603a43db8a2c9c4dc56" kind="function"><name>GetHub</name></member>
+    <member refid="classoni_1_1_context_1aad08f55432294a00f273ee3d83c82559" kind="function"><name>GetOption</name></member>
+    <member refid="classoni_1_1_context_1a021013c58fb81c1072cf82eb065243f7" kind="function"><name>GetIntOption</name></member>
+    <member refid="classoni_1_1_context_1a9302ecc2aa799b6add5017e3f1e3248d" kind="function"><name>GetStringOption</name></member>
+    <member refid="classoni_1_1_context_1a1c23ebe84a9b5477635334bff0d4216b" kind="function"><name>SetIntOption</name></member>
+    <member refid="classoni_1_1_context_1afe00c45c44a639260b5c9c9646227d77" kind="function"><name>SetStringOption</name></member>
+    <member refid="classoni_1_1_context_1ae7e03cde0dd6470f4efa7dc9a4355b1a" kind="function"><name>Dispose</name></member>
+  </compound>
+  <compound refid="classoni_1_1_context_handle" kind="class"><name>oni::ContextHandle</name>
+    <member refid="classoni_1_1_context_handle_1aa536c8b814d6c6e14182a81d1e73811d" kind="function"><name>ContextHandle</name></member>
+    <member refid="classoni_1_1_context_handle_1a643161810f9acc1b5ccfc172d2db0cea" kind="function"><name>ReleaseHandle</name></member>
+  </compound>
+  <compound refid="structoni_1_1_device" kind="struct"><name>oni::Device</name>
+    <member refid="structoni_1_1_device_1a66ecf6d5fbbcd857605dde6a16e8c120" kind="variable"><name>Address</name></member>
+    <member refid="structoni_1_1_device_1a1bb38ab58eeb2110ba7f6c3a3896d690" kind="variable"><name>ID</name></member>
+    <member refid="structoni_1_1_device_1a383a45d17c98b5dc774c5c4e1560227f" kind="variable"><name>Version</name></member>
+    <member refid="structoni_1_1_device_1ad106399633977d21d05a2d9f91706826" kind="variable"><name>ReadSize</name></member>
+    <member refid="structoni_1_1_device_1a94a09f74de8de3da1ee4c4c0e512fc81" kind="variable"><name>WriteSize</name></member>
+    <member refid="structoni_1_1_device_1a3cdad05e0e2ed0be20578d049ad8458a" kind="property"><name>Description</name></member>
+  </compound>
+  <compound refid="classoni_1_1_frame" kind="class"><name>oni::Frame</name>
+    <member refid="classoni_1_1_frame_1a0aff172fa3f011329b5f732343456552" kind="property"><name>Clock</name></member>
+    <member refid="classoni_1_1_frame_1a1779272d47dd6013cc8ba980c6e9bf86" kind="property"><name>DeviceAddress</name></member>
+    <member refid="classoni_1_1_frame_1a3b1c1db0799b333746876a401c429578" kind="function"><name>Frame</name></member>
+    <member refid="classoni_1_1_frame_1ae6479962a8cefcf83a86c9caf5420ce4" kind="function"><name>ReleaseHandle</name></member>
+    <member refid="classoni_1_1_frame_1a510ff01fdc78605acf16ac9f3bce5ef9" kind="function"><name>Data&lt; T &gt;</name></member>
+  </compound>
+  <compound refid="structoni_1_1_frame_1_1frame__t" kind="struct"><name>oni::Frame::frame_t</name>
+    <member refid="structoni_1_1_frame_1_1frame__t_1a0f5683f8e01f145faf9437b9879ee157" kind="variable"><name>time</name></member>
+    <member refid="structoni_1_1_frame_1_1frame__t_1a212adc91de521468ad51e162c0346f4a" kind="variable"><name>dev_idx</name></member>
+    <member refid="structoni_1_1_frame_1_1frame__t_1a0d7ab58456f345f4871bb13b8e24741c" kind="variable"><name>data_sz</name></member>
+    <member refid="structoni_1_1_frame_1_1frame__t_1a74a4d47fdc452fc55e48b11125212c5f" kind="variable"><name>data</name></member>
+  </compound>
+  <compound refid="classoni_1_1_hub" kind="class"><name>oni::Hub</name>
+    <member refid="classoni_1_1_hub_1ad0f728a2a63ffa40536204ef38b55e77" kind="property"><name>Address</name></member>
+    <member refid="classoni_1_1_hub_1a82b4799171de1d16b3dc5940f68af896" kind="property"><name>HardwareID</name></member>
+    <member refid="classoni_1_1_hub_1aa0599cf931e9f5f87a754f4c2fa87fec" kind="property"><name>FirmwareVersion</name></member>
+    <member refid="classoni_1_1_hub_1abb41827e23e4854c7dba5ebbe2b05a5c" kind="property"><name>ClockHz</name></member>
+    <member refid="classoni_1_1_hub_1a61262f743107c31dcc754bba20cadce3" kind="property"><name>DelayNanoSeconds</name></member>
+    <member refid="classoni_1_1_hub_1a41bb475c85ccf9c5c9b4fb9e32a99d15" kind="property"><name>Description</name></member>
+  </compound>
+  <compound refid="classoni_1_1_native_methods" kind="class"><name>oni::NativeMethods</name>
+    <member refid="classoni_1_1_native_methods_1a2893f65d42846d2efcc098a25bc3a7b3" kind="variable"><name>LibraryVersion</name></member>
+    <member refid="classoni_1_1_native_methods_1a57dcaf12d7d284b9d1b2b9595cc09f39" kind="variable"><name>CCCdecl</name></member>
+    <member refid="classoni_1_1_native_methods_1ae0e5897a33ff0feecd43febad20b0dc8" kind="variable"><name>LibraryName</name></member>
+    <member refid="classoni_1_1_native_methods_1a410a52a5c9a16f66d920413d81a266ed" kind="function"><name>NativeMethods</name></member>
+    <member refid="classoni_1_1_native_methods_1a571fd71a4a9cba7534ef37c8a96ccaeb" kind="function"><name>VersionNotSupported</name></member>
+    <member refid="classoni_1_1_native_methods_1afee9e295e92ca8af8a26a2e03378e4fa" kind="function"><name>oni_version</name></member>
+    <member refid="classoni_1_1_native_methods_1aa2ec5b34d510694f8f835493d6023bea" kind="function"><name>oni_create_ctx</name></member>
+    <member refid="classoni_1_1_native_methods_1a19a94edc7f0a31477316230657973329" kind="function"><name>oni_init_ctx</name></member>
+    <member refid="classoni_1_1_native_methods_1a6926d297321cd58adf1ca7e144009c4f" kind="function"><name>oni_destroy_ctx</name></member>
+    <member refid="classoni_1_1_native_methods_1a54e7202238f0e001394f16b81e871903" kind="function"><name>oni_get_opt</name></member>
+    <member refid="classoni_1_1_native_methods_1a2d8e7f4501a61bddf26d0c067c11be4b" kind="function"><name>oni_get_opt</name></member>
+    <member refid="classoni_1_1_native_methods_1af6f5a4ce842d52f84484ee279dbbda3a" kind="function"><name>oni_set_opt</name></member>
+    <member refid="classoni_1_1_native_methods_1a0d6e8a0478c5f3162d4808ce5c336855" kind="function"><name>oni_set_opt</name></member>
+    <member refid="classoni_1_1_native_methods_1aa055b6eeeede5714a65bfa9029523c51" kind="function"><name>oni_get_driver_opt</name></member>
+    <member refid="classoni_1_1_native_methods_1a09126806eeadfc8e12884a3a0494d015" kind="function"><name>oni_get_driver_opt</name></member>
+    <member refid="classoni_1_1_native_methods_1a5d1166b53e2664f16b85b4b33137f1fd" kind="function"><name>oni_set_driver_opt</name></member>
+    <member refid="classoni_1_1_native_methods_1abefa269bf09057715dfa60356629891a" kind="function"><name>oni_set_driver_opt</name></member>
+    <member refid="classoni_1_1_native_methods_1afab89f51b2b1a89efe39ead786e0ada1" kind="function"><name>oni_read_reg</name></member>
+    <member refid="classoni_1_1_native_methods_1a1ddcf5d338ff0ba6c9e7bff0357351fc" kind="function"><name>oni_write_reg</name></member>
+    <member refid="classoni_1_1_native_methods_1a4ccca2b46a3240e8cb36af7d73db0b52" kind="function"><name>oni_read_frame</name></member>
+    <member refid="classoni_1_1_native_methods_1a1f1735710e51a873f8cdadfe5ea90e5f" kind="function"><name>oni_create_frame</name></member>
+    <member refid="classoni_1_1_native_methods_1abccd2c3acc202979052756cd01845233" kind="function"><name>oni_write_frame</name></member>
+    <member refid="classoni_1_1_native_methods_1a43fd2319562d9414f7ffb411170ce349" kind="function"><name>oni_destroy_frame</name></member>
+    <member refid="classoni_1_1_native_methods_1ace08c38da153a4cd46970ff3fcbeecef" kind="function"><name>oni_error_str</name></member>
+    <member refid="classoni_1_1_native_methods_1a79538021b93f0ee33afd046ddcd9e46e" kind="function"><name>onix_device_str</name></member>
+    <member refid="classoni_1_1_native_methods_1a69e8a57f4181fce33ae80fd715f514f7" kind="function"><name>onix_hub_str</name></member>
+  </compound>
+  <compound refid="classoni_1_1_o_n_i_exception" kind="class"><name>oni::ONIException</name>
+    <member refid="classoni_1_1_o_n_i_exception_1a523bc80f20d869ba007bb97b4c00e1af" kind="variable"><name>Number</name></member>
+    <member refid="classoni_1_1_o_n_i_exception_1afa6f9914136124144ad43882bb0b6799" kind="property"><name>Message</name></member>
+    <member refid="classoni_1_1_o_n_i_exception_1ab95d7474f1ea03f774a4a733fd5b05f3" kind="function"><name>ONIException</name></member>
+    <member refid="classoni_1_1_o_n_i_exception_1aa4c0aebf836b4a19839c6ca839541d95" kind="function"><name>ONIException</name></member>
+    <member refid="classoni_1_1_o_n_i_exception_1a151e137d48440a1e02a22ae779f9d211" kind="function"><name>ONIException</name></member>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_win32_1_1_safe_handles" kind="namespace"><name>Microsoft::Win32::SafeHandles</name>
+  </compound>
+  <compound refid="namespaceoni" kind="namespace"><name>oni</name>
+    <member refid="namespaceoni_1a9955e392704e36c1e7437116ec02f8f1" kind="enum"><name>ONIXOption</name></member>
+    <member refid="namespaceoni_1a9955e392704e36c1e7437116ec02f8f1a28428156a847a36a02a40e9feeef96eb" kind="enumvalue"><name>PORTFUNC</name></member>
+  </compound>
+  <compound refid="namespace_system" kind="namespace"><name>System</name>
+  </compound>
+  <compound refid="namespace_system_1_1_collections" kind="namespace"><name>System::Collections</name>
+  </compound>
+  <compound refid="namespace_system_1_1_collections_1_1_generic" kind="namespace"><name>System::Collections::Generic</name>
+  </compound>
+  <compound refid="namespace_system_1_1_component_model" kind="namespace"><name>System::ComponentModel</name>
+  </compound>
+  <compound refid="namespace_system_1_1_runtime_1_1_constrained_execution" kind="namespace"><name>System::Runtime::ConstrainedExecution</name>
+  </compound>
+  <compound refid="namespace_system_1_1_runtime_1_1_interop_services" kind="namespace"><name>System::Runtime::InteropServices</name>
+  </compound>
+  <compound refid="namespace_system_1_1_runtime_1_1_serialization" kind="namespace"><name>System::Runtime::Serialization</name>
+  </compound>
+  <compound refid="namespace_system_1_1_security" kind="namespace"><name>System::Security</name>
+  </compound>
+  <compound refid="namespace_system_1_1_security_1_1_permissions" kind="namespace"><name>System::Security::Permissions</name>
+  </compound>
+  <compound refid="namespace_system_1_1_text" kind="namespace"><name>System::Text</name>
+  </compound>
+  <compound refid="_context_8cs" kind="file"><name>Context.cs</name>
+  </compound>
+  <compound refid="_context_handle_8cs" kind="file"><name>ContextHandle.cs</name>
+  </compound>
+  <compound refid="_device_8cs" kind="file"><name>Device.cs</name>
+  </compound>
+  <compound refid="_frame_8cs" kind="file"><name>Frame.cs</name>
+  </compound>
+  <compound refid="_hub_8cs" kind="file"><name>Hub.cs</name>
+  </compound>
+  <compound refid="oni_8cs" kind="file"><name>oni.cs</name>
+  </compound>
+  <compound refid="_o_n_i_exception_8cs" kind="file"><name>ONIException.cs</name>
+  </compound>
+  <compound refid="onix_8cs" kind="file"><name>onix.cs</name>
+  </compound>
+  <compound refid="dir_45a1d62ef75b2059a99e2543d07c18db" kind="dir"><name>clroni</name>
+  </compound>
+</doxygenindex>

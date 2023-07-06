@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classoni_1_1_hub" kind="class" language="C#" prot="public">
+    <compoundname>oni::Hub</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classoni_1_1_hub_1ad0f728a2a63ffa40536204ef38b55e77" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>byte</type>
+        <definition>byte oni.Hub.Address</definition>
+        <argsstring></argsstring>
+        <name>Address</name>
+        <briefdescription>
+<para><ref refid="classoni_1_1_hub" kindref="compound">Hub</ref> sub-address of a fully qualified <simplesect kind="see"><para><ref refid="structoni_1_1_device_1a66ecf6d5fbbcd857605dde6a16e8c120" kindref="member">Device.Address</ref></para>
+</simplesect>
+. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Hub.cs" line="14" column="21" bodyfile="clroni/Hub.cs" bodystart="14" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="property" id="classoni_1_1_hub_1a82b4799171de1d16b3dc5940f68af896" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int oni.Hub.HardwareID</definition>
+        <argsstring></argsstring>
+        <name>HardwareID</name>
+        <briefdescription>
+<para>ONIX hub hardware ID (e.g. host or headstage type). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/onix.cs" line="38" column="20" bodyfile="clroni/onix.cs" bodystart="38" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="property" id="classoni_1_1_hub_1aa0599cf931e9f5f87a754f4c2fa87fec" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>uint</type>
+        <definition>uint oni.Hub.FirmwareVersion</definition>
+        <argsstring></argsstring>
+        <name>FirmwareVersion</name>
+        <briefdescription>
+<para>ONIX hub firmware version. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/onix.cs" line="44" column="21" bodyfile="clroni/onix.cs" bodystart="44" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="property" id="classoni_1_1_hub_1abb41827e23e4854c7dba5ebbe2b05a5c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>uint</type>
+        <definition>uint oni.Hub.ClockHz</definition>
+        <argsstring></argsstring>
+        <name>ClockHz</name>
+        <briefdescription>
+<para>ONIX hub local clock rate in Hz. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/onix.cs" line="50" column="21" bodyfile="clroni/onix.cs" bodystart="50" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="property" id="classoni_1_1_hub_1a61262f743107c31dcc754bba20cadce3" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>uint</type>
+        <definition>uint oni.Hub.DelayNanoSeconds</definition>
+        <argsstring></argsstring>
+        <name>DelayNanoSeconds</name>
+        <briefdescription>
+<para>ONIX hub transmission delay with respect to hub 0 with a given <ref refid="classoni_1_1_context" kindref="compound">Context</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/onix.cs" line="57" column="21" bodyfile="clroni/onix.cs" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="property" id="classoni_1_1_hub_1a41bb475c85ccf9c5c9b4fb9e32a99d15" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string oni.Hub.Description</definition>
+        <argsstring></argsstring>
+        <name>Description</name>
+        <briefdescription>
+<para>Retrieve a human readable description of the <ref refid="classoni_1_1_hub_1a82b4799171de1d16b3dc5940f68af896" kindref="member">Hub.HardwareID</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/onix.cs" line="62" column="23" bodyfile="clroni/onix.cs" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>ONI-compliant device hub. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="clroni/Hub.cs" line="8" column="19" bodyfile="clroni/Hub.cs" bodystart="9" bodyend="15"/>
+    <listofallmembers>
+      <member refid="classoni_1_1_hub_1ad0f728a2a63ffa40536204ef38b55e77" prot="public" virt="non-virtual"><scope>oni::Hub</scope><name>Address</name></member>
+      <member refid="classoni_1_1_hub_1abb41827e23e4854c7dba5ebbe2b05a5c" prot="public" virt="non-virtual"><scope>oni::Hub</scope><name>ClockHz</name></member>
+      <member refid="classoni_1_1_hub_1a61262f743107c31dcc754bba20cadce3" prot="public" virt="non-virtual"><scope>oni::Hub</scope><name>DelayNanoSeconds</name></member>
+      <member refid="classoni_1_1_hub_1a41bb475c85ccf9c5c9b4fb9e32a99d15" prot="public" virt="non-virtual"><scope>oni::Hub</scope><name>Description</name></member>
+      <member refid="classoni_1_1_hub_1aa0599cf931e9f5f87a754f4c2fa87fec" prot="public" virt="non-virtual"><scope>oni::Hub</scope><name>FirmwareVersion</name></member>
+      <member refid="classoni_1_1_hub_1a82b4799171de1d16b3dc5940f68af896" prot="public" virt="non-virtual"><scope>oni::Hub</scope><name>HardwareID</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

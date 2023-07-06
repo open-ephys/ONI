@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structoni_1_1_device" kind="struct" language="C#" prot="public">
+    <compoundname>oni::Device</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structoni_1_1_device_1a66ecf6d5fbbcd857605dde6a16e8c120" prot="public" static="no" mutable="no">
+        <type>readonly uint</type>
+        <definition>readonly uint oni.Device.Address</definition>
+        <argsstring></argsstring>
+        <name>Address</name>
+        <briefdescription>
+<para>Fully-qualified <bold>RSV.RSV.HUB.IDX</bold> <ref refid="classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785" kindref="member">Context.DeviceTable</ref> device table address. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para><bold>RSV</bold>: 8-bit unsigned integer (reserved)</para>
+</listitem><listitem><para><bold>HUB</bold>: 8-bit unsigned integer indicating the hub index</para>
+</listitem><listitem><para><bold>IDX</bold>: 8-bit unsigned integer indicating the device index</para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Device.cs" line="18" column="30" bodyfile="clroni/Device.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structoni_1_1_device_1a1bb38ab58eeb2110ba7f6c3a3896d690" prot="public" static="no" mutable="no">
+        <type>readonly int</type>
+        <definition>readonly int oni.Device.ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <briefdescription>
+<para><ref refid="structoni_1_1_device" kindref="compound">Device</ref> ID </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Device.cs" line="23" column="29" bodyfile="clroni/Device.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structoni_1_1_device_1a383a45d17c98b5dc774c5c4e1560227f" prot="public" static="no" mutable="no">
+        <type>readonly uint</type>
+        <definition>readonly uint oni.Device.Version</definition>
+        <argsstring></argsstring>
+        <name>Version</name>
+        <briefdescription>
+<para><ref refid="structoni_1_1_device" kindref="compound">Device</ref> firmware version </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Device.cs" line="28" column="30" bodyfile="clroni/Device.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structoni_1_1_device_1ad106399633977d21d05a2d9f91706826" prot="public" static="no" mutable="no">
+        <type>readonly uint</type>
+        <definition>readonly uint oni.Device.ReadSize</definition>
+        <argsstring></argsstring>
+        <name>ReadSize</name>
+        <briefdescription>
+<para>Input <ref refid="classoni_1_1_frame" kindref="compound">Frame</ref> read size </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Device.cs" line="33" column="30" bodyfile="clroni/Device.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structoni_1_1_device_1a94a09f74de8de3da1ee4c4c0e512fc81" prot="public" static="no" mutable="no">
+        <type>readonly uint</type>
+        <definition>readonly uint oni.Device.WriteSize</definition>
+        <argsstring></argsstring>
+        <name>WriteSize</name>
+        <briefdescription>
+<para>Output <ref refid="classoni_1_1_frame" kindref="compound">Frame</ref> write size. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Device.cs" line="38" column="30" bodyfile="clroni/Device.cs" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="structoni_1_1_device_1a3cdad05e0e2ed0be20578d049ad8458a" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string oni.Device.Description</definition>
+        <argsstring></argsstring>
+        <name>Description</name>
+        <briefdescription>
+<para>Retrieve a human readable description of the <ref refid="structoni_1_1_device_1a1bb38ab58eeb2110ba7f6c3a3896d690" kindref="member">Device.ID</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/onix.cs" line="28" column="23" bodyfile="clroni/onix.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Managed wrapper for the native API&apos;s oni_device_t. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="clroni/Device.cs" line="9" column="19" bodyfile="clroni/Device.cs" bodystart="10" bodyend="39"/>
+    <listofallmembers>
+      <member refid="structoni_1_1_device_1a66ecf6d5fbbcd857605dde6a16e8c120" prot="public" virt="non-virtual"><scope>oni::Device</scope><name>Address</name></member>
+      <member refid="structoni_1_1_device_1a3cdad05e0e2ed0be20578d049ad8458a" prot="public" virt="non-virtual"><scope>oni::Device</scope><name>Description</name></member>
+      <member refid="structoni_1_1_device_1a1bb38ab58eeb2110ba7f6c3a3896d690" prot="public" virt="non-virtual"><scope>oni::Device</scope><name>ID</name></member>
+      <member refid="structoni_1_1_device_1ad106399633977d21d05a2d9f91706826" prot="public" virt="non-virtual"><scope>oni::Device</scope><name>ReadSize</name></member>
+      <member refid="structoni_1_1_device_1a383a45d17c98b5dc774c5c4e1560227f" prot="public" virt="non-virtual"><scope>oni::Device</scope><name>Version</name></member>
+      <member refid="structoni_1_1_device_1a94a09f74de8de3da1ee4c4c0e512fc81" prot="public" virt="non-virtual"><scope>oni::Device</scope><name>WriteSize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

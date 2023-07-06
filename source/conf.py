@@ -21,7 +21,7 @@ from datetime import datetime, timezone
 
 # -- Project information -----------------------------------------------------
 
-project = "Open Ephys Doc Template"
+project = "ONI"
 copyright = "2010-{}, Open Ephys & Contributors".format(datetime.now(timezone.utc).year)
 author = "Open Ephys & Contributors"
 
@@ -43,6 +43,8 @@ release = "0.0.0"
 extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.githubpages',
+    'breathe',
+    'sphinx_csharp',
 ]
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -70,7 +72,13 @@ exclude_patterns = []
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
 
+# -- Extension configuration ---------------------------------------------------
+
 todo_include_todos = True
+
+# Breathe Configuration
+breathe_default_project = 'clroni'
+breathe_projects = { 'clroni': './api/bindings/clroni/doxygen-xml' }
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -78,7 +86,7 @@ todo_include_todos = True
 # a list of builtin themes.
 #
 html_theme = "pydata_sphinx_theme"
-html_logo = "_static/images/oe_logo_name.svg"
+html_logo = "_static/images/oe_logo_name.png"
 html_scaled_image_link = True
 html_title = project
 
@@ -111,6 +119,7 @@ htmlhelp_basename = "oe_docs"
 
 # -- Options for LaTeX output ------------------------------------------------
 
+latex_engine = 'pdflatex'
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
@@ -149,8 +158,8 @@ man_pages = [(main_doc, "oe-docs", "Open Ephys Documentation", [author], 1)]
 texinfo_documents = [
     (
         main_doc,
-        "Open Ephys Documentation",
-        "Open Ephys Documentation",
+        "ONI",
+        "ONI",
         author,
         "Open Ephys Documentation",
         "Description",
