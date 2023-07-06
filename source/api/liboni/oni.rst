@@ -104,18 +104,11 @@ Device
     An ONI-compliant device implementation. An :struct:`oni_device_t` describes
     one of potentially many pieces of hardware managed by an :type:`oni_ctx`.
     Examples of individual devices might include ephys chips, IMUs, optical
-    stimulators, camera sensors, etc. Each valid device type has a unique ONIX
-    ID which is enumerated in the auxiliary :ref:`onix.h` file or, potentially,
-    some other header for those wishing to extend this use this library for
-    their own hardware. ONIX device IDs are provided in ``onix.h`` as a set of
-    enumerations.
+    stimulators, camera sensors, etc.
 
     .. tip:: Look at device index defintions in :ref:`onix.h` to see available
         ONIX-specific device definitions and enum ranges that will not interfere with
         ONIX for custom or closed-source projects.
-
-    .. todo:: Device registers are described in their datasheet (link to
-        datasheets and examples of register programming and access)
 
     A device table is read from hardware and stored in the current context via
     a call to :func:`oni_init_ctx`. This table can be examined via calls to
@@ -219,13 +212,13 @@ needed during the development of user-facing software.
     Specifically, during a successful call to :func:`oni_init_ctx`, the
     following events occur:
 
-        #. All required data streams are opened.
-        #. A hardware reset issued using :macro:`ONI_OPT_RESET`
-        #. A device table is obtained from the hardware.
-        #. The minimal :macro:`ONI_OPT_BLOCKREADSIZE` and
-           :macro:`ONI_OPT_BLOCKWRITESIZE` values are calculated and
-           stored.
-        #. The context run state is moved from ``UNINITIALIZED`` to ``IDLE``.
+    #. All required data streams are opened.
+    #. A hardware reset issued using :macro:`ONI_OPT_RESET`
+    #. A device table is obtained from the hardware.
+    #. The minimal :macro:`ONI_OPT_BLOCKREADSIZE` and
+       :macro:`ONI_OPT_BLOCKWRITESIZE` values are calculated and
+       stored.
+    #. The context run state is moved from ``UNINITIALIZED`` to ``IDLE``.
 
     :param ctx: The acquisition context to be initialized
     :param host_idx: The index of the hardware we are going to
@@ -315,10 +308,8 @@ needed during the development of user-facing software.
     current device table. This can be used to verify the success of calls to
     :func:`oni_write_reg` or to obtain state information about devices managed
     by the current acquisition context. Register specifications (addresses,
-    read- and write-access, and descriptions are provided on the ONI-device
-    datasheet).
-
-    .. todo:: Links to example datasheets
+    read- and write-access, and descriptions are provided on the :ref:`ONI-device
+    datasheet <dev-datasheet>`).
 
     :param ctx: :type:`oni_ctx` context that manages the requested device
     :param dev_idx: fully-qualifies device index within the device table
@@ -335,9 +326,7 @@ needed during the development of user-facing software.
     devices, e.g. set filter bandwidth, select active channels, or change
     stimulation parameters).  Register specifications (addresses, read- and
     write-access, acceptable values, and descriptions are provided on the
-    ONI-device datasheet).
-
-    .. todo:: Links to example datasheets
+    :ref:`ONI-device datasheet <dev-datasheet>`).
 
     :param ctx: :type:`oni_ctx` context that manages the requested device
     :param dev_idx: fully-qualified device index within the device table
@@ -427,8 +416,8 @@ needed during the development of user-facing software.
     :param patch: patch number for backwards-compatible bug fixes.
 
 .. function:: oni_driver_info_t* oni_get_driver_info(const oni_ctx ctx)
-    
-    Reports a :ref:`oni_driver_info_t` structure containing the name of the 
+
+    Reports a :ref:`oni_driver_info_t` structure containing the name of the
     driver translator loaded for a given context as well as its semantic versioning
     version.
 

@@ -9,7 +9,7 @@ There are a many existing `device drivers
 <https://en.wikipedia.org/wiki/Device_driver>`_ that support hardware for data
 acquisition. Some of these drivers can be used as a backend for ONI-compliant
 APIs if they provide some means to support the required ONI communication
-channels. Have a look at the `ONI Spec <https://github.com/open-ephys/ONI>`_
+channels. Have a look at the :ref:`ONI controller spec <controller>`
 for specifications of these channels.
 
 An ONI hardware driver translator implements :ref:`onidriver.h` to convert,

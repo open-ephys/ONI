@@ -2,6 +2,7 @@
 
 cpponi
 ########################
+:Language:      C++
 :Source Code:   `github.com/open-ephys/liboni/api/cpponi <https://github.com/open-ephys/liboni/tree/main/api/cpponi>`_
 :License:       `MIT <https://en.wikipedia.org/wiki/MIT_License>`__
 
@@ -17,10 +18,11 @@ is not available, :cpp:class:`oni::frame_t` uses `std::vectors
 <https://en.cppreference.com/w/cpp/container/vector>`_ for internal storage.
 
 .. toctree::
-    :maxdepth: 1
+   :maxdepth: 1
+   :hidden:
 
-    oni
-    onix
+   oni
+   onix
 
 License
 ********************************************
