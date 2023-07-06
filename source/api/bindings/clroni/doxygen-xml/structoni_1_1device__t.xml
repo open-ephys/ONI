@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structoni_1_1device__t" kind="struct" language="C#" prot="public">
+    <compoundname>oni::device_t</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structoni_1_1device__t_1a7aa9ec8aa2b34fd58f61177cf339a924" prot="public" static="no" mutable="no">
+        <type>readonly uint</type>
+        <definition>readonly uint oni.device_t.idx</definition>
+        <argsstring></argsstring>
+        <name>idx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/oni.cs" line="13" column="30" bodyfile="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/oni.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structoni_1_1device__t_1a4f8121a1c15f9cafd43e7824a664e09a" prot="public" static="no" mutable="no">
+        <type>readonly int</type>
+        <definition>readonly int oni.device_t.id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/oni.cs" line="14" column="29" bodyfile="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/oni.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structoni_1_1device__t_1a126a84783098da4fb43299518acacead" prot="public" static="no" mutable="no">
+        <type>readonly uint</type>
+        <definition>readonly uint oni.device_t.version</definition>
+        <argsstring></argsstring>
+        <name>version</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/oni.cs" line="15" column="30" bodyfile="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/oni.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structoni_1_1device__t_1aaa28a9e731bb30ff18234f6e447e5ee1" prot="public" static="no" mutable="no">
+        <type>readonly uint</type>
+        <definition>readonly uint oni.device_t.read_size</definition>
+        <argsstring></argsstring>
+        <name>read_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/oni.cs" line="16" column="30" bodyfile="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/oni.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structoni_1_1device__t_1a4b8268a82e1201235d05d59617091bcc" prot="public" static="no" mutable="no">
+        <type>readonly uint</type>
+        <definition>readonly uint oni.device_t.write_size</definition>
+        <argsstring></argsstring>
+        <name>write_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/oni.cs" line="17" column="30" bodyfile="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/oni.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structoni_1_1device__t_1a4f5cf94a4b2c9bc204d2c377b8fb70ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>override string</type>
+        <definition>override string oni.device_t.ToString</definition>
+        <argsstring>()</argsstring>
+        <name>ToString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/onix.cs" line="14" column="32"/>
+      </memberdef>
+      <memberdef kind="function" id="structoni_1_1device__t_1a2f88550eaafab3e9926ced456bce370a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string oni.device_t.Description</definition>
+        <argsstring>()</argsstring>
+        <name>Description</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/onix.cs" line="17" column="23" bodyfile="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/onix.cs" bodystart="17" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/oni.cs" line="11" column="19" bodyfile="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/oni.cs" bodystart="12" bodyend="18"/>
+    <listofallmembers>
+      <member refid="structoni_1_1device__t_1a2f88550eaafab3e9926ced456bce370a" prot="public" virt="non-virtual"><scope>oni::device_t</scope><name>Description</name></member>
+      <member refid="structoni_1_1device__t_1a4f8121a1c15f9cafd43e7824a664e09a" prot="public" virt="non-virtual"><scope>oni::device_t</scope><name>id</name></member>
+      <member refid="structoni_1_1device__t_1a7aa9ec8aa2b34fd58f61177cf339a924" prot="public" virt="non-virtual"><scope>oni::device_t</scope><name>idx</name></member>
+      <member refid="structoni_1_1device__t_1aaa28a9e731bb30ff18234f6e447e5ee1" prot="public" virt="non-virtual"><scope>oni::device_t</scope><name>read_size</name></member>
+      <member refid="structoni_1_1device__t_1a4f5cf94a4b2c9bc204d2c377b8fb70ca" prot="public" virt="non-virtual"><scope>oni::device_t</scope><name>ToString</name></member>
+      <member refid="structoni_1_1device__t_1a126a84783098da4fb43299518acacead" prot="public" virt="non-virtual"><scope>oni::device_t</scope><name>version</name></member>
+      <member refid="structoni_1_1device__t_1a4b8268a82e1201235d05d59617091bcc" prot="public" virt="non-virtual"><scope>oni::device_t</scope><name>write_size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classoni_1_1_frame" kind="class" language="C#" prot="public">
+    <compoundname>oni::Frame</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">SafeHandleZeroOrMinusOneIsInvalid</basecompoundref>
+    <innerclass refid="structoni_1_1_frame_1_1frame__t" prot="private">oni::Frame::frame_t</innerclass>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classoni_1_1_frame_1a0aff172fa3f011329b5f732343456552" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>ulong</type>
+        <definition>ulong oni.Frame.Clock</definition>
+        <argsstring></argsstring>
+        <name>Clock</name>
+        <briefdescription>
+<para>Retrieve the host acquisition clock counter value at frame creation. See <ref refid="classoni_1_1_context_1a163ec1e876f6981496f53b63e6192854" kindref="member">Context.AcquisitionClockHz</ref> and <ref refid="classoni_1_1_context_1ad5a5c9afef192fb9c9ded5d2adf951c0" kindref="member">Context.ResetFrameClock</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Frame.cs" line="71" column="22" bodyfile="clroni/Frame.cs" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="classoni_1_1_frame_1a1779272d47dd6013cc8ba980c6e9bf86" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>uint</type>
+        <definition>uint oni.Frame.DeviceAddress</definition>
+        <argsstring></argsstring>
+        <name>DeviceAddress</name>
+        <briefdescription>
+<para>The fully qualified <ref refid="structoni_1_1_device_1a66ecf6d5fbbcd857605dde6a16e8c120" kindref="member">Device.Address</ref> of the device within the current <ref refid="classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785" kindref="member">Context.DeviceTable</ref> that produced this frame. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Frame.cs" line="77" column="21" bodyfile="clroni/Frame.cs" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-func">
+      <memberdef kind="function" id="classoni_1_1_frame_1a3b1c1db0799b333746876a401c429578" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>oni.Frame.Frame</definition>
+        <argsstring>()</argsstring>
+        <name>Frame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Frame.cs" line="26" column="18" bodyfile="clroni/Frame.cs" bodystart="26" bodyend="29"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classoni_1_1_frame_1ae6479962a8cefcf83a86c9caf5420ce4" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override bool</type>
+        <definition>override bool oni.Frame.ReleaseHandle</definition>
+        <argsstring>()</argsstring>
+        <name>ReleaseHandle</name>
+        <briefdescription>
+<para>Executes the code required to free native resources held by the <ref refid="classoni_1_1_frame" kindref="compound">Frame</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the handle is released successfully (always the case in this implementation)</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Frame.cs" line="37" column="33" bodyfile="clroni/Frame.cs" bodystart="37" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classoni_1_1_frame_1a510ff01fdc78605acf16ac9f3bce5ef9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T[]</type>
+        <definition>T [] oni.Frame.Data&lt; T &gt;</definition>
+        <argsstring>()</argsstring>
+        <name>Data&lt; T &gt;</name>
+        <briefdescription>
+<para>Retrieve a managed copy of the <ref refid="classoni_1_1_frame" kindref="compound">Frame</ref> data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Array containing the <ref refid="classoni_1_1_frame" kindref="compound">Frame</ref> data.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Frame.cs" line="47" column="16" bodyfile="clroni/Frame.cs" bodystart="47" bodyend="64"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Managed wrapper for an ONI-compliant data frame implementation. Produced by calls to <ref refid="classoni_1_1_context_1a2774341ba95650f63722dfbcbc2ddd77" kindref="member">Context.ReadFrame</ref> . </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>oni.Frame</label>
+        <link refid="classoni_1_1_frame"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SafeHandleZeroOrMinusOneIsInvalid</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>oni.Frame</label>
+        <link refid="classoni_1_1_frame"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SafeHandleZeroOrMinusOneIsInvalid</label>
+      </node>
+    </collaborationgraph>
+    <location file="clroni/Frame.cs" line="14" column="18" bodyfile="clroni/Frame.cs" bodystart="15" bodyend="78"/>
+    <listofallmembers>
+      <member refid="classoni_1_1_frame_1a0aff172fa3f011329b5f732343456552" prot="public" virt="non-virtual"><scope>oni::Frame</scope><name>Clock</name></member>
+      <member refid="classoni_1_1_frame_1a510ff01fdc78605acf16ac9f3bce5ef9" prot="public" virt="non-virtual"><scope>oni::Frame</scope><name>Data&lt; T &gt;</name></member>
+      <member refid="classoni_1_1_frame_1a1779272d47dd6013cc8ba980c6e9bf86" prot="public" virt="non-virtual"><scope>oni::Frame</scope><name>DeviceAddress</name></member>
+      <member refid="classoni_1_1_frame_1a3b1c1db0799b333746876a401c429578" prot="package" virt="non-virtual"><scope>oni::Frame</scope><name>Frame</name></member>
+      <member refid="classoni_1_1_frame_1ae6479962a8cefcf83a86c9caf5420ce4" prot="protected" virt="non-virtual"><scope>oni::Frame</scope><name>ReleaseHandle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

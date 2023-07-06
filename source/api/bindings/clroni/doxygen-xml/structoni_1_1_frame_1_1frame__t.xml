@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structoni_1_1_frame_1_1frame__t" kind="struct" language="C#" prot="private">
+    <compoundname>oni::Frame::frame_t</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structoni_1_1_frame_1_1frame__t_1a0f5683f8e01f145faf9437b9879ee157" prot="public" static="no" mutable="no">
+        <type>readonly ulong</type>
+        <definition>readonly ulong oni.Frame.frame_t.time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Frame.cs" line="20" column="35" bodyfile="clroni/Frame.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structoni_1_1_frame_1_1frame__t_1a212adc91de521468ad51e162c0346f4a" prot="public" static="no" mutable="no">
+        <type>readonly uint</type>
+        <definition>readonly uint oni.Frame.frame_t.dev_idx</definition>
+        <argsstring></argsstring>
+        <name>dev_idx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Frame.cs" line="21" column="34" bodyfile="clroni/Frame.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structoni_1_1_frame_1_1frame__t_1a0d7ab58456f345f4871bb13b8e24741c" prot="public" static="no" mutable="no">
+        <type>readonly uint</type>
+        <definition>readonly uint oni.Frame.frame_t.data_sz</definition>
+        <argsstring></argsstring>
+        <name>data_sz</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Frame.cs" line="22" column="34" bodyfile="clroni/Frame.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structoni_1_1_frame_1_1frame__t_1a74a4d47fdc452fc55e48b11125212c5f" prot="public" static="no" mutable="no">
+        <type>readonly byte *</type>
+        <definition>readonly byte* oni.Frame.frame_t.data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/Frame.cs" line="23" column="34" bodyfile="clroni/Frame.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="clroni/Frame.cs" line="18" column="15" bodyfile="clroni/Frame.cs" bodystart="19" bodyend="24"/>
+    <listofallmembers>
+      <member refid="structoni_1_1_frame_1_1frame__t_1a74a4d47fdc452fc55e48b11125212c5f" prot="public" virt="non-virtual"><scope>oni::Frame::frame_t</scope><name>data</name></member>
+      <member refid="structoni_1_1_frame_1_1frame__t_1a0d7ab58456f345f4871bb13b8e24741c" prot="public" virt="non-virtual"><scope>oni::Frame::frame_t</scope><name>data_sz</name></member>
+      <member refid="structoni_1_1_frame_1_1frame__t_1a212adc91de521468ad51e162c0346f4a" prot="public" virt="non-virtual"><scope>oni::Frame::frame_t</scope><name>dev_idx</name></member>
+      <member refid="structoni_1_1_frame_1_1frame__t_1a0f5683f8e01f145faf9437b9879ee157" prot="public" virt="non-virtual"><scope>oni::Frame::frame_t</scope><name>time</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,100 +1,41 @@
-:notoc:
-
-*************************************************
-NAME OF DEVICE
-*************************************************
-
-**Date**: |today|
-
-This site provides documentation for [INSERT PROJECT HERE], that [SHORT DESCRIPTION OF STUFF PROJECT DOES].
-
-It is currently under construction
-####################################
-
-It will eventually include the following information:
-
-* Point 1
-* Point 2
-* Point 3
-
-What to customize
-####################################
-Each documentation page is saved as an individual .rst file in the 'source' folder. Docs are written primarily in reStructuredText, and HTML can be used within the .rst file. Images are saved under _static. Besides obviously customizing the content of the pages, you will need to make sure to update:
-
-* license (at the end of primary index page)
-* conf.py:
-   * project = "OE docs"  # change to your project name
-   * "github_repo": "doc-template",  # change to new repo
-   * html_logo = "_static/images/oe_logo_template.svg" # change to svg with your logo
-
-      Change the device name on the logo "oe_logo_name.svg"
-      Miso, Bold, 36 pt, Kerning: Optical
-      Be sure to expand text before saving as .svg as Miso will not load as font.
-* theme_overrides.css
-   * Change overhead navigation bar colour (.navbar { background: yourfavecolour })
-* .github/workflows/sphinx-build.yml
-   * git clone https://github.com/open-ephys/doc-template.git # change to your repo
-
-.. raw:: html
-
-    <h2 style = "text-align: center"> Getting Started </h2>
-
-    <div class="container">
-      <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 row-cols-xs-1">
-        <div class="col mb-4">
-          <div class="card h-100 text-center intro-card shadow">
-            <a href = About/example1.html>
-                <img src="_static/images/noun_screwdriver.svg" class="card-img-top" height="160">
-                <div class="card-body flex-fill">
-                  <p class="card-reference">TOPIC 1</p>
-                </div>
-            </a>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card h-100 text-center intro-card shadow">
-            <a href =  About/example2.html>
-                <img src="_static/images/noun_books.svg" class="card-img-top" height="160">
-                <div class="card-body flex-fill">
-                  <p class="card-reference">TOPIC 2</p>
-                </div>
-            </a>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card h-100 text-center intro-card shadow">
-            <a href = "About/index.html" target="_blank" rel="noopener noreferrer">
-              <img src="_static/images/paper.svg" class="card-img-top" height="160">
-              <div class="card-body flex-fill">
-                <p class="card-reference">TOPIC 3 </p>
-              </div>
-            </a>
-
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card h-100 text-center intro-card shadow">
-            <a href = "https://github.com/open-ephys" target="_blank" rel="noopener noreferrer">
-              <img src="_static/images/noun_macbook.svg" class="card-img-top" height="160" >
-              <div class="card-body flex-fill">
-                <p class="card-reference">TOPIC 4 IS EXTERNAL LINK<i class="fas fa-external-link-alt" style = "font-size:0.5em; vertical-align: super"></i></p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-License
-#################################################
-
-This work is licensed under CC BY-SA 4.0.
-
-To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/
+.. title:: Home
 
 .. toctree::
-    :hidden:
-    :maxdepth: 2
-    :titlesonly:
+   :hidden:
+   :maxdepth: 2
+   :titlesonly:
 
-    About/index
+   hw-spec/index
+   api/index
+
+========================================
+Open Neuro Interface
+========================================
+ONI is a hardware development specification taylored to the needs of
+experimental neuroscience along with a corresponding programming interface to
+support **arbitrary mixtures of sensors, probes, and actuators**. The hope is
+that this specification will streamline the development of new hardware for
+neural data acquisition and guarantee interoperability between hardware and
+software that conforms to the specification. We also hope that the use of a
+common protocols will allow easy integration of disparate hardware to develop
+rich feedback control loops for neuroscience projects. If you are interested in
+developing against this specification (e.g. for a miniscope, headstage,
+position tracker, 2P microscope, etc) or improving it, we would love to `hear
+from you <https://open-ephys.org/contact>`__ and talk about the best way to
+proceed.
+
+Contents
+--------
+ONI is comprised of a hardware specification and a corresponding, open-source
+API:
+
+#. :ref:`Open Neuro Interface Hardware Specification <oni-hw>`: Create hardware
+   that is compatible for the ONI API.
+#. :ref:`Open Neuro Interface API Specification <oni-api>`: ONI API reference
+   implementation for ONI-compliant hardware.
+
+Contributing
+------------
+The main branch contains the stable version of the specification. The unstable
+work in progress version can be found in the branch indicating the version.
+

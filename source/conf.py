@@ -21,7 +21,7 @@ from datetime import datetime, timezone
 
 # -- Project information -----------------------------------------------------
 
-project = "Open Ephys Documentation"
+project = "ONI"
 copyright = "2010-{}, Open Ephys & Contributors".format(datetime.now(timezone.utc).year)
 author = "Open Ephys & Contributors"
 
@@ -43,6 +43,8 @@ release = "0.0.0"
 extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.githubpages',
+    'breathe',
+    'sphinx_csharp',
 ]
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -60,7 +62,7 @@ main_doc = "index"
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -70,7 +72,13 @@ exclude_patterns = []
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
 
+# -- Extension configuration ---------------------------------------------------
+
 todo_include_todos = True
+
+# Breathe Configuration
+breathe_default_project = 'clroni'
+breathe_projects = { 'clroni': './api/bindings/clroni/doxygen-xml' }
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -78,9 +86,9 @@ todo_include_todos = True
 # a list of builtin themes.
 #
 html_theme = "pydata_sphinx_theme"
-html_logo = "_static/images/oe_logo_template.svg"
+html_logo = "_static/images/oe_logo_name.png"
 html_scaled_image_link = True
-
+html_title = project
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -88,6 +96,11 @@ html_scaled_image_link = True
 html_static_path = ["_static"]
 
 html_style = "_static/theme_overrides.css"
+
+html_sidebars = {
+    'index': ['search-field.html'],
+    "**": ["sidebar-nav-bs.html"]
+}
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -106,6 +119,7 @@ htmlhelp_basename = "oe_docs"
 
 # -- Options for LaTeX output ------------------------------------------------
 
+latex_engine = 'pdflatex'
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
@@ -144,8 +158,8 @@ man_pages = [(main_doc, "oe-docs", "Open Ephys Documentation", [author], 1)]
 texinfo_documents = [
     (
         main_doc,
-        "Open Ephys Documentation",
-        "Open Ephys Documentation",
+        "ONI",
+        "ONI",
         author,
         "Open Ephys Documentation",
         "Description",
@@ -176,13 +190,14 @@ epub_exclude_files = ["search.html"]
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    'external_links': [{'name': 'Open Ephys', 'url': 'https://open-ephys.org'},],
-    'navigation_with_keys': True,
     'use_edit_page_button': True,
-    'show_toc_level': 1,
+    "navigation_with_keys": True,
+    "navbar_end": ["navbar-icon-links"],
+    "navbar_align": "content",
+    "footer_start": ["copyright"],
     'icon_links': [
         dict(name='GitHub',
-             url='https://github.com/open-ephys/onix-docs',
+             url='https://github.com/open-ephys/commutator-docs',
              icon='fab fa-github'),
         dict(name='Twitter',
              url='https://twitter.com/openephys',
@@ -191,7 +206,18 @@ html_theme_options = {
              url='https://discord.gg/WXAx2URNQU',
              icon='fab fa-discord')
     ],
-    'footer_items': ['copyright', 'sphinx-version'],
+    #'canonical_url': '',
+    #'analytics_id': '',
+    #'logo_only': False,
+    #
+    #'prev_next_buttons_location': 'bottom',
+    #'style_external_links': False,
+    # Toc options
+    #'collapse_navigation': False,
+    #'sticky_navigation': True,
+    #    'navigation_depth': 4,
+    #'includehidden': True,
+    #'titles_only': False
 }
 html_favicon = "_static/images/favicon.png"
 
@@ -201,6 +227,7 @@ html_context = {
     "github_version": "main",
     "doc_path": "source",
     "css_files": ["_static/theme_overrides.css",],
+    'default_mode': 'light'
 }
 
 # Option for linkcheck

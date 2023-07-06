@@ -55,17 +55,21 @@
 
 /* overhead navigation bar*/
 .navbar {
-  background: #ade0dc !important; /* overhead navigation bar color */
+  background: #459db9 !important; /* MODIFY THIS! */
   font-size: 1rem;
 }
 
 /* navigation bar: text*/
 .navbar a {
-  color: white !important;
-  font-family: "Miso";
-  font-size: 1.2rem;
+  color: #ffffff !important;
+  font-family: "Bitter", sans-serif;
   transition-duration: 0.4s;
   margin-right: 10px;
+}
+
+.search-button {
+  color: white !important;
+  margin-right: 30px;
 }
 
 /* navigation bar: text color of page titles when hovered*/
@@ -82,7 +86,7 @@
   transition-duration: 0.4s; /* how quickly to change*/
 }
 
-/* left side links */
+/* left side links 
 .bd-links > .active a {
   color: #3c81be !important;
   transition-duration: 0.4s;
@@ -92,42 +96,15 @@
   color: #5fb5dc !important;
   transition-duration: 0.4s;
   transform: translate(2px, 0px);
-}
+} */
 
-/* right side links */
+/* right side links
 .toc-entry > .nav-link.active {
   font-weight: 600;
   color: #344b39;
   background-color: transparent;
   border-left: 2px solid #da714a;
-}
-
-/* body text*/
-a {
-  color: #0086b3;
-}
-
-a:hover {
-  color: #004d66;
-  text-decoration: none;
-}
-
-/* body links (external, add link icon) */
-a.reference.external:after {
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  content: ' \f35d';
-  font-size: 0.5rem;
-  vertical-align: super;
-}
-
-a.external-link:after {
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  content: ' \f35d';
-  font-size: 0.5rem;
-  vertical-align: super;
-}
+} */
 
 p.card-reference {
   margin: 2.75rem 0 1.05rem;
@@ -161,68 +138,67 @@ body {
   background-color: white;
   margin-bottom: 1.15rem;
   font-size: 1rem;
-  padding-top: 100px;
   color: #242c16;
   font-family: "Source Sans", sans-serif;
 }
 
 h1 {
-    margin: 2.75rem 0 1.05rem;
-    font-family: "Miso";
-    font-weight: 400;
-    line-height: 1.15;
-    text-align: center;
-    margin-top: 0;
-    color: #242c16;
-    font-size: 2.5rem;
+  margin: 2.75rem 0 1.05rem;
+  font-family: "Bitter", sans-serif;
+  font-weight: 400;
+  line-height: 1.15;
+  margin-top: 0;
+  color: #242c16;
+  font-size: 2.2em;
 }
 
 h2 {
-  margin: 2.75rem 0 1.05rem;
-  font-family: "Miso";
-  font-weight: 500;
-  line-height: 1.15;
-  color: #242c16;
-  font-size: 2rem;
+margin: 2.75rem 0 1.05rem;
+font-family: "Bitter", sans-serif;
+font-weight: 500;
+line-height: 1.15;
+color: #242c16;
+font-size: 1.5em;
 }
 
 h3 {
-  margin: 0rem 0 1.05rem;
-  font-family: "Source Sans", sans-serif;
-  font-weight: 400;
-  line-height: 1.15;
-  color: #242c16;
-  font-size: 1.3rem;
+margin: 2.75rem 0 1.05rem;
+font-family: "Bitter", sans-serif;
+font-weight: 400;
+line-height: 1.15;
+color: #242c16;
+font-size: 1.3em;
 }
 
 h4 {
-  margin: 2.75rem 0 1.05rem;
-  font-family: "Source Sans", sans-serif;
-  font-weight: 400;
-  line-height: 1.15;
-  color: #242c16;
-  font-size: 1.1rem;
+margin: 2.75rem 0 1.05rem;
+font-family: "Bitter", sans-serif;
+font-weight: 400;
+line-height: 1.15;
+color: #242c16;
+font-size: 1.1em;
 }
 
 h5 {
-  margin: 2.75rem 0 1.05rem;
-  font-family: "Source Sans", sans-serif;
-  font-style: italic;
-  font-weight: 550;
-  line-height: 1.15;
-  color: #242c16;
-  font-size: 1.1rem;
+margin: 2.75rem 0 1.05rem;
+font-family: "Source Sans", sans-serif;
+font-style: italic;
+font-weight: 550;
+line-height: 1.15;
+color: #242c16;
+font-size: 1.1em;
 }
 
 h6 {
-  margin: 2.75rem 0 1.05rem;
-  font-family: "Source Sans", sans-serif;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1.15;
-  color: #242c16;
-  font-size: 1rem;
+margin: 2.75rem 0 1.05rem;
+font-family: "Source Sans", sans-serif;
+font-style: italic;
+font-weight: 400;
+line-height: 1.15;
+color: #242c16;
+font-size: 1em;
 }
+
 
 /* define admonition colors */
 .admonition.attention {
@@ -324,7 +300,7 @@ h6 {
 /* logo */
 .navbar-brand {
   position: relative;
-  height: 60px;
+  height: 70px;
   width: auto;
 }
 
@@ -376,16 +352,6 @@ form:focus {
   margin-top: 2rem;
 }
 
-/* list line spacing */
-/* ol.simple {
-  margin-bottom: 1em;
-}
-
-
-
-ul.simple {
-  margin-bottom: 1em;
-}
 */
 ul,
 ol,
@@ -417,7 +383,86 @@ img.align-center {
     margin-right: auto;
     display: block;
 }
-/* change color of Twitter logo */
-i.fa-twitter-square:before {
-  color: #333;
+
+
+
+
+/* Gallery cards */
+
+.gallery-card .card-header {
+  height: 100%;
+  margin-top: 0rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  } /* example of the default height for title */
+
+
+/* ensure images stay within the column bounds*/
+img {
+  max-width: 100%;
+}
+
+
+/* Landing page cards */
+.card-columns {
+  column-count: 4 !important;
+}
+
+.card-title {
+  margin: 1rem;
+}
+
+.intro-card .card-text {
+  margin:20px 0px;
+  color: var(--onix-txt-color) !important;
+}
+
+.card-img-top {
+  margin-top: 2em;
+}
+
+.card {
+  border: 0;
+}
+
+.intro-card {
+  transition: transform 0.2s ease;
+  border: 0;
+}
+
+.intro-card:hover {
+  transform: scale(1.05);
+}
+
+.col-lg-6 {
+  margin-top: 2em;
+}
+
+/* Gallery cards */
+
+.gallery-card .card-header {
+  height: 100%;
+  margin-top: 0rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+} /* example of the default height for title */
+
+.bd-content {
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.bd-page-width {
+  max-width: 100rem;
+}
+
+.bd-sidebar-primary {
+ width: 20%;
+}
+
+strong {
+ font-weight: bold;
 }

@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classoni_1_1_context_handle" kind="class" language="C#" prot="package">
+    <compoundname>oni::ContextHandle</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">SafeHandleZeroOrMinusOneIsInvalid</basecompoundref>
+      <sectiondef kind="package-func">
+      <memberdef kind="function" id="classoni_1_1_context_handle_1aa536c8b814d6c6e14182a81d1e73811d" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>oni.ContextHandle.ContextHandle</definition>
+        <argsstring>()</argsstring>
+        <name>ContextHandle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/ContextHandle.cs" line="11" column="18" bodyfile="clroni/ContextHandle.cs" bodystart="11" bodyend="11"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classoni_1_1_context_handle_1a643161810f9acc1b5ccfc172d2db0cea" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override bool</type>
+        <definition>override bool oni.ContextHandle.ReleaseHandle</definition>
+        <argsstring>()</argsstring>
+        <name>ReleaseHandle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="clroni/ContextHandle.cs" line="14" column="33" bodyfile="clroni/ContextHandle.cs" bodystart="14" bodyend="17"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>oni.ContextHandle</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SafeHandleZeroOrMinusOneIsInvalid</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>oni.ContextHandle</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SafeHandleZeroOrMinusOneIsInvalid</label>
+      </node>
+    </collaborationgraph>
+    <location file="clroni/ContextHandle.cs" line="9" column="20" bodyfile="clroni/ContextHandle.cs" bodystart="10" bodyend="18"/>
+    <listofallmembers>
+      <member refid="classoni_1_1_context_handle_1aa536c8b814d6c6e14182a81d1e73811d" prot="package" virt="non-virtual"><scope>oni::ContextHandle</scope><name>ContextHandle</name></member>
+      <member refid="classoni_1_1_context_handle_1a643161810f9acc1b5ccfc172d2db0cea" prot="protected" virt="non-virtual"><scope>oni::ContextHandle</scope><name>ReleaseHandle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

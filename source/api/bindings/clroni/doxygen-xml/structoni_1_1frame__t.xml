@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structoni_1_1frame__t" kind="struct" language="C#" prot="package">
+    <compoundname>oni::frame_t</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structoni_1_1frame__t_1a24b26d548a2d926a7531c9b3e35e7304" prot="public" static="no" mutable="no">
+        <type>readonly ulong</type>
+        <definition>readonly ulong oni.frame_t.time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/Frame.cs" line="16" column="31" bodyfile="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/Frame.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structoni_1_1frame__t_1ab3a4beb0ad70323097ec1f8f4355d8ae" prot="public" static="no" mutable="no">
+        <type>readonly uint</type>
+        <definition>readonly uint oni.frame_t.dev_idx</definition>
+        <argsstring></argsstring>
+        <name>dev_idx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/Frame.cs" line="17" column="30" bodyfile="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/Frame.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structoni_1_1frame__t_1aceb9595fa89d0a551b17f9c5c5248737" prot="public" static="no" mutable="no">
+        <type>readonly uint</type>
+        <definition>readonly uint oni.frame_t.data_sz</definition>
+        <argsstring></argsstring>
+        <name>data_sz</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/Frame.cs" line="18" column="30" bodyfile="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/Frame.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structoni_1_1frame__t_1a68919d84664564668de6c4df5b3ccde8" prot="public" static="no" mutable="no">
+        <type>readonly byte *</type>
+        <definition>readonly byte* oni.frame_t.data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/Frame.cs" line="19" column="30" bodyfile="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/Frame.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/Frame.cs" line="14" column="20" bodyfile="C:/Users/open-ephys/Desktop/public/liboni/api/clroni/clroni/Frame.cs" bodystart="15" bodyend="20"/>
+    <listofallmembers>
+      <member refid="structoni_1_1frame__t_1a68919d84664564668de6c4df5b3ccde8" prot="public" virt="non-virtual"><scope>oni::frame_t</scope><name>data</name></member>
+      <member refid="structoni_1_1frame__t_1aceb9595fa89d0a551b17f9c5c5248737" prot="public" virt="non-virtual"><scope>oni::frame_t</scope><name>data_sz</name></member>
+      <member refid="structoni_1_1frame__t_1ab3a4beb0ad70323097ec1f8f4355d8ae" prot="public" virt="non-virtual"><scope>oni::frame_t</scope><name>dev_idx</name></member>
+      <member refid="structoni_1_1frame__t_1a24b26d548a2d926a7531c9b3e35e7304" prot="public" virt="non-virtual"><scope>oni::frame_t</scope><name>time</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
