@@ -2,7 +2,6 @@
 
 Device Table
 ============
-
 The collection of :ref:`devices <device>` governed by a :ref:`controller
 <controller>` is referred as a device table. The :ref:`controller <controller>`
 is responsible for creating this aggregate and sending it to the computer
@@ -12,7 +11,7 @@ of :ref:`device descriptors <dev-desc>`.
 .. list-table:: Example Device Table
    :header-rows: 1
 
-   * - :ref:` Address <dev-address>`
+   * - Address
      - ID
      - Version
      - Read Sample Size (bytes)
@@ -37,7 +36,6 @@ of :ref:`device descriptors <dev-desc>`.
 
 Device Address
 --------------
-
 Each :ref:`device descriptor <dev-desc>` entry in the device table requires a
 device address. This is is a unique, 32-bit number with the following format:
 

@@ -1,6 +1,8 @@
+.. default-domain:: c
+
 .. _making_drivers:
 
-Intefacing with Device Drivers
+Writing Driver Translators
 ==========================================
 A device driver translator (also called ``onidriver``) is a small piece of
 software that sits between the public :ref:`liboni` API and the low-level

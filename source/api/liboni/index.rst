@@ -3,6 +3,7 @@
 liboni
 ##########################################
 
+:Language:      C
 :Source Code:   `github.com/open-ephys/liboni/api/liboni <https://github.com/open-ephys/liboni/tree/main/api/liboni>`_
 :License:       `MIT <https://en.wikipedia.org/wiki/MIT_License>`__
 
