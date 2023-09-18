@@ -57,8 +57,10 @@ systems or other software limitations.
 Data Frames
 ~~~~~~~~~~~
 
-Data from the read channel is packed in frames. Each frame contains data from a
-single device :ref:`sample <dev-sample>`. The frame format is:
+Data from the read channel is packed in frames. Each frame is a timestamped 
+`type-length-value-encoded <https://en.wikipedia.org/wiki/Type%E2%80%93length%E2%80%93value>`__ 
+structure that contains data from a single device :ref:`sample <dev-sample>`. 
+The frame format is:
 
 ::
 
