@@ -7,12 +7,9 @@ Test Driver
 testing the API and software. It has the following limitations:
 
 #. :macro:`ONI_OPT_RUNNING` does nothing.
-#. It only supports a device table with containing devices with a fixed read/write size
 #. The driver is single threaded and synchronous with API function calls and
    therefore quite limited. This means that the asynchronous nature of real
    hardware is not emulated or tested by this driver.
-#. :macro:`ONI_OPT_BLOCKREADSIZE` must be set to an integer multiple of the frame
-   size, which is 28 bytes.
 
 Its only dependency is the C standard library.
 
