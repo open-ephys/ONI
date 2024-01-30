@@ -37,7 +37,7 @@ of :ref:`device descriptors <dev-desc>`.
 Device Address
 --------------
 Each :ref:`device descriptor <dev-desc>` entry in the device table requires a
-device address. This is is a unique, 32-bit number with the following format:
+device address. This is a unique, 32-bit number with the following format:
 
 ::
 
@@ -45,7 +45,7 @@ device address. This is is a unique, 32-bit number with the following format:
 
 * ``Reserved``: Reserved bits. Must be all zeros.
 * ``Hub_Index``: The index of the :ref:`hub <hub>` within the :ref:`controller
-  <controller>` that the devie is managed by.
+  <controller>` that the device is managed by.
 * ``Device_Index``: A unique index of each device within its :ref:`hub <hub>`.
   A valid ``Device_Index`` ranges from 0 to 0xFD. 0xFE is reserved and 0xFF
   indicates an invalid device.
