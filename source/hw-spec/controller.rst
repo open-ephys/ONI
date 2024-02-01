@@ -41,7 +41,7 @@ Read Channel
 -  **Direction** : Read
 
 The *read* channel provides high bandwidth communication from the controller to
-the host computer. Data from the read stream of all devices that support is is
+the host computer. Data from the read stream of all devices that support it is
 aggregated and multiplexed by the controller and sent to the host through this
 channel.
 
@@ -90,14 +90,14 @@ Write Channel
 -  **Direction** : Write
 
 The *write* channel provides high bandwidth communication from the host computer
-to the controller, used to send data to the devices.
+to the controller, and is used to send data to the devices.
 
 Data is sent with a :ref:`frame <frame>` format identical to the one used for
 read, but without the ``Common_Timestamp`` field. It is the responsibility of
 the controller to accept frames at any rate the computer might be sending them.
 Currently, there is no defined mechanism to inform the host of any possible
 dropped frame on the write channel, although this can be included in an
-implementation so long as it does not invalidate other any other ONI
+implementation so long as it does not invalidate any other ONI
 requirements.
 
 .. _sig-chan:
@@ -111,7 +111,7 @@ Signal channel
 
 The *signal* channel provides a way for the controller to inform the host of
 configuration results, which may be provided with a significant delay.
-Additionally, it is the channel over which the controller send the device table
+Additionally, it is the channel over which the controller sends the device table
 to the host following a system reset. Signal data MUST be framed into packets
 using Consistent Overhead Byte Stuffing
 (`COBS <https://en.wikipedia.org/wiki/Consistent_Overhead_Byte_Stuffing>`__).
@@ -231,7 +231,7 @@ configuration channel registers:
   updated with value stored in the register at ``Register Address`` on the
   device at ``Device Address``. If ``Read/Write`` is 1, ``Register Value`` is
   written to register at ``Register Address`` on the device at
-  ``Device Address``. The ``Trigger`` register is always be set low by the
+  ``Device Address``. The ``Trigger`` register is always set low by the
   controller following transmission even if it is not successful or does not
   make sense given the supplied register address and/or value.
 
@@ -324,7 +324,7 @@ control over, the entire acquisition system:
   configuration changes.
 
 - ``Reset``: Set to > 0 to trigger a hardware reset and send a fresh device
-  map to the host. Devices are reset but their manages registers might remain
+  map to the host. Devices are reset but their managed registers might remain
   unchanged, depending on their configuration (See the :ref:`Device registers
   <dev-register>` section for more information). Set to 0 by the controller
   upon entering the reset state.
