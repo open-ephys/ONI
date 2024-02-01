@@ -43,7 +43,7 @@ jobs:
       # 2. Add and commit HTML files to gh-pages branch
       - name: Commit documentation changes
         run: |
-          git clone https://github.com/open-ephys/ONI.git --branch gh-pages --single-branch gh-pages
+          git clone https://github.com/bparks13/ONI.git --branch gh-pages-test --single-branch gh-pages-test
           cp -r docs/html/* gh-pages/
           cd gh-pages
           git config --local user.email "action@github.com"
@@ -51,10 +51,10 @@ jobs:
           git add .
           git commit -m "Update documentation" -a || true
 
-      # 3. Push changes to gh-pages branch (updates documentation page)
+      # 3. Push changes to gh-pages-test branch (updates documentation page)
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          branch: gh-pages
+          branch: gh-pages-test
           directory: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
