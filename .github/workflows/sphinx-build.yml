@@ -51,10 +51,10 @@ jobs:
           git add .
           git commit -m "Update documentation" -a || true
 
-      # 3. Push changes to gh-pages-test branch (updates documentation page)
+      # 3. Push changes to gh-pages branch (updates documentation page)
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          branch: gh-pages-test
-          directory: gh-pages-test
+          branch: gh-pages
+          directory: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
