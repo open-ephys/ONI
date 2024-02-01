@@ -44,8 +44,8 @@ jobs:
       - name: Commit documentation changes
         run: |
           git clone https://github.com/bparks13/ONI.git --branch gh-pages-test --single-branch gh-pages-test
-          cp -r docs/html/* gh-pages/
-          cd gh-pages
+          cp -r docs/html/* gh-pages-test/
+          cd gh-pages-test
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
@@ -56,5 +56,5 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           branch: gh-pages-test
-          directory: gh-pages
+          directory: gh-pages-test
           github_token: ${{ secrets.GITHUB_TOKEN }}
