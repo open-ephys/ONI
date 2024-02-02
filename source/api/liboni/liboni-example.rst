@@ -17,16 +17,16 @@ for real world applications. For instance:
 
 Acquisition Context Creation
 *****************************************
-Every piece of ONI-complaint host hardware (occupying a single PCIe slot, USB
+Every piece of ONI-compliant host hardware (occupying a single PCIe slot, USB
 port, etc) is governed by an acquisition context. Contexts are fully described
 by two parameters: a string specifying the hardware driver and an integer
 specifying which slot the physical hardware occupies on the host computer.
 Context creation and initialization occurs in two function calls.
 :func:`oni_create_ctx` allocates API-internal resources to hold context state and
 returns a handle to the context. :func:`oni_init_ctx` loads the required driver,
-attempts to connect to the hardware (open communication channels), and,
-finally, obtain a device table that maps the acquisition hierarchy governed by
-the context. So, for instance, to create an initialize an acquisition context
+attempts to connect to the hardware (opens communication channels), and,
+finally, obtains a device table that maps the acquisition hierarchy governed by
+the context. So, for instance, to create and initialize an acquisition context
 to govern a PCIe acquisition card using the `RIFFA
 <https://github.com/KastnerRG/riffa>`_ driver, you would use
 
@@ -41,11 +41,11 @@ this function will error. Otherwise, it will allocate the required resources to
 manage the hardware at the specified host index using the specified driver.
 
 .. note:: Specifying a host index of -1 will open the default slot and is
-    useful in cases where there is only on piece of acquisition hardware in the
+    useful in cases where there is only one piece of acquisition hardware in the
     host computer (e.g. a single PCIe card).
 
 When multiple pieces of host hardware exist on a single host (e.g. multiple
-PCIe cards), a new context must be created and initialization to manage each
+PCIe cards), a new context must be created and initialized to manage each
 one. In some cases (e.g. multiple PCIe cards in a single computer), these
 contexts can be synchronized so that each host receiver board shares a common
 hardware clock and acquisition trigger (see :ref:`sync_ctx` for an example).
@@ -56,7 +56,7 @@ synchronized.
     initialized context.  Doing so will return an error.
 
 If the device configuration is changed following context initialization (e.g. a
-headstage is plugged in or turned on), a context reset must be issued which to
+headstage is plugged in or turned on), a context reset must be issued to
 instruct the initialized context to re-evaluate its device table. This can be
 done via
 
@@ -105,7 +105,7 @@ defined as:
 
     typedef struct {
         oni_size_t idx;           // Complete rsv.rsv.hub.idx device table index
-        oni_dev_id_t id;          // Device ID number (see oedevices.h)
+        oni_dev_id_t id;          // Device ID number (see onix.h)
         oni_size_t read_size;     // Device data read size per frame in bytes
         oni_size_t write_size;    // Device data write size per frame in bytes
 
@@ -159,7 +159,7 @@ Setting Read and Write Buffer Sizes
 After context initialization, the internal read and write buffers can be
 manually specified. These buffers exist in order to reduce copying.
 
-- During a called ``oni_read_frame``, the read buffer is checked to see if it
+- During a call to ``oni_read_frame``, the read buffer is checked to see if it
   contains data. If so, the return frame is simply a zero-copy "view" into this
   memory.  If not, a block read is performed to fill the buffer, and again, the
   frame is a view into the beginning of this newly allocated block.
@@ -177,7 +177,7 @@ For this reason, we have chosen to make the read and write buffer size easily
 tunable by the user to optimize for different computer capabilities, data
 bandwidths, and required response latencies. The buffer sizes default to the
 minimum size for a given device table (the maximum frame read and write sizes
-across devices int the table aligned to the bus width of hardware communication
+across devices in the table aligned to the bus width of hardware communication
 link). This provides the lowest latency, but is optimal only for very low
 bandwidth acquisition and deterministic and low-latency threads (e.g. those
 found on real-time operating system). On a normal computer, these buffers can
@@ -246,7 +246,7 @@ write 2 to the ``ONI_OPT_RESETACQCOUNTER`` context option:
     reg = 2; // NOTE: this changed to 2 compared to previous example
     oni_set_opt(ctx, ONI_OPT_RESETACQCOUNTER, &reg, sizeof(oni_size_t));
 
-This will reset the clock and automatically start acquisition (set
+This will reset the clock and automatically start acquisition (this sets
 ``ONI_OPT_RUNNING`` to 1).
 
 .. _liboni_example_read_frame:
@@ -269,7 +269,7 @@ data blocks from a single device within the device table. A
 where ``dev_idx`` is the fully qualified device index within the device table
 (hub.index), ``data_sz`` is the size in bytes of the raw data block, ``time``
 is the system clock count that indicates the frame creation time, and, ``data``
-is a pointer to the raw data block. A single frames can be read from an
+is a pointer to the raw data block. A single frame can be read from an
 acquisition context after it is started (see :ref:`start_ctx`) using repeated
 calls to ``oni_read_frame`` as follows:
 

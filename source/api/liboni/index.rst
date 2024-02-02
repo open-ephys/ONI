@@ -21,7 +21,7 @@ liboni
     driver-translators/index
 
 
-``liboni`` is a C library that functions with hardware that complies with the
+``liboni`` is a C library that functions with hardware that 
 implements the :ref:`oni-hw`. It is written in C to facilitate cross platform
 and cross-language use. It is composed of the following files:
 
@@ -31,7 +31,7 @@ and cross-language use. It is composed of the following files:
    implemented for a particular host hardware connection and
    firmware.
 #. onidriverloader.h: private functions used for dynamically loading the
-   hardware driver. This is used internally by the :ref:`oni.h` and can be
+   hardware driver. This is used internally by :ref:`oni.h` and can be
    ignored during both software and driver development.
 #. :ref:`onix.h`: ONIX-specific, out of ONI API specification
    scope, definitions and functions. Can be ignored for projects that

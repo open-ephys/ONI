@@ -146,6 +146,41 @@ ONI specification and are not required to use the API.
 
         (``24``)
         Raw DS90UB9x deserializer
+        
+    .. macro:: ONIX_TS4231V1ARR
+    
+        (``25``)
+        Triad semiconductor TS421 optical to digital converter array targeting V1 base-stations
+        
+    .. macro:: ONIX_MAX10ADCCORE
+    
+        (``26``)
+        Max10 internal ADC device
+        
+    .. macro:: ONIX_LOADTEST
+    
+        (``27``)
+        Variable load testing device
+        
+    .. macro:: ONIX_MEMUSAGE
+    
+        (``28``)
+        Acquisition hardware buffer usage reporting device
+        
+    .. macro:: ONIX_HARPSYNCINPUT
+    
+        (``30``)
+        Harp synchronization data input device
+        
+    .. macro:: ONIX_RHS2116
+    
+        (``31``)
+        Intan RHS2116 bioamplifier and stimulator
+        
+    .. macro:: ONIX_RHS2116TRIGGER
+    
+        (``32``)
+        Multi Intan RHS2116 stimulation trigger
 
     .. macro:: ONIX_MAXDEVICEID
 
