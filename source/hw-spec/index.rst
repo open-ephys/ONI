@@ -15,7 +15,6 @@ ONI Hardware Specification
 
 .. toctree::
 
-   spec_goals
    glossary
    hierarchy
    comm_channels

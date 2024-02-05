@@ -24,18 +24,18 @@ elements and/or its context within the specification.
   API
 
     ONI application programming interface that can be used to develop software
-    to aquire from and control ONI-conforming hardware.
+    to aquire from and control ONI-compliant hardware.
 
     .. seealso:: :ref:`oni-api`
 
   Controller
     Hardware with a physical interface to the :term:`Host Computer` over a
     single :term:`Host Interconnect` using a :term:`Driver Translator` and
-    ONI-compliant :term:`API` Multiple :term:`controllers <Controller>` can
+    ONI-compliant :term:`API`. Multiple :term:`controllers <Controller>` can
     coexist in a single :term:`Host Computer` and need not use the same
-    :term:`Driver Translator` Controllers communicate via :term:`API` calls
+    :term:`Driver Translator`. Controllers communicate via :term:`API` calls
     that manipulate an :term:`Acquisition Context` and a :term:`Device Table` ,
-    which affect controller state using via the driver translator. :term:`Hubs
+    which affect controller state using the driver translator. :term:`Hubs
     <Hub>` are connected to the controller where data to/from their devices is
     packed and transmitted to/from the host computer. The controller contains a
     main clock which provides a common timestamp to all incoming data, and that
@@ -80,14 +80,14 @@ elements and/or its context within the specification.
   Driver Translator
     A small `device driver <https://en.wikipedia.org/wiki/Device_driver>`__
     translation library that converts abstract :term:`API` calls to
-    hardware-specific system calls that affect the :term`Controller
+    hardware-specific system calls that affect the :term:`Controller
     <controller>` over the :term:`Host Interconnect`.
 
     .. seealso:: :ref:`oni-api`
 
   Host Computer
     The computer supporting acquisition and processing from one or more
-    :term:`controllers <Controller>` and running software implmented using the
+    :term:`controllers <Controller>` and running software implemented using the
     :term:`API`.
 
   Host Interconnect
@@ -97,13 +97,13 @@ elements and/or its context within the specification.
 
   Hub
     A collection of :term:`Devices <Device>` that communicate with a
-    :term:`Controller` over a :term:`Port` and sharing a common
+    :term:`Controller` over a :term:`Port` and share a common
     clock. All data acquired by :term:`devices <Device>` in the same Hub are
     timestamped by this clock. Different Hubs may be governed by asynchronous
     clocks. A Hub either forms a portion of the :term:`Device Table` or the
     entire :term:`Device Table` if it contains all the :term:`devices <Device>`
     within the :term:`Acquisition Context`. Hubs can be exist in separate
-    hardware from the :term:`Controller` (remote hubs) or withing the
+    hardware from the :term:`Controller` (remote hubs) or within the
     :term:`Controller` (local hubs).
 
     .. seealso:: :ref:`Hub Specification <hub>`

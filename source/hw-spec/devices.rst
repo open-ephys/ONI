@@ -25,7 +25,7 @@ order to reach ONI-compliance.
 
 Device ID
 ---------
-Different types of devices MUST have a unqiue identification integer called a
+Different types of devices MUST have a unique identification integer called a
 Device ID. Device IDs are 32-bit integers with the following format:
 
 ::
@@ -36,14 +36,14 @@ Device ID. Device IDs are 32-bit integers with the following format:
 - ``Company``: Any person, lab, institute, informal group, or company can
   communicate with Open Ephys in order to to obtain a unique 8-bit “Company”
   value, and thus be included in the automatic listings of existing ONI API
-  implementations. Open Ephys is 0x0000.
+  implementations. Open Ephys is 0x00.
 - ``Device``: 16-bit Device ID. This number identifies not only the type of
   data produced or consumed by a device, but also a particular implementation.
   For instance, the same sensor will have a unique Device IDs for each digital
   module implementation that is used to communicate with it. This number can
   optionally be divided in two 8-bit values so long as the resulting 16-bit
   integer is unique within a particular “Company” (there is no need for unary
-  are monotonic increments when new devices are introduced).
+  or monotonic increments when new devices are introduced).
 
 .. _dev-desc:
 
@@ -62,8 +62,8 @@ table <dev-table>`. The descriptor must contain the following information:
 
 - ``Device_ID``: :ref:`As previously described. <dev-id>`.
 - ``Device_Version``: A version number to distinguish between implementations
-  of a singular device type. Different versions address minor issues that MUST
-  NOT  change the device’s sample data format or alters an existing register
+  of a singular device type. Different versions that address minor issues MUST
+  NOT  change the device’s sample data format or alter an existing register
   map. However, register additions that do not affect the existing register map
   are allowed. Any change that warrants a modification of a device’s streaming
   data format, read size, write size, or existing register map MUST be
@@ -79,7 +79,7 @@ table <dev-table>`. The descriptor must contain the following information:
 
 Device Sample Format
 --------------------
-Data passed over the read or write streams is transmitted in unit packets,
+Data passed over the read or write streams are transmitted in unit packets,
 or “samples”. A sample transmitted over the read stream MUST have the following
 format:
 
@@ -88,7 +88,7 @@ format:
     uint64    Hub_Timestamp (Read Stream Only)
     var       Payload
 
-- ``Hub_Timestamp``: For samples produced by the device and set to the read
+- ``Hub_Timestamp``: For samples produced by the device and sent to the read
   stream, this is a common counter for all devices in a :ref:`Hub <hub>`,
   indicating the time of sample capture. For samples consumed by the device
   from the write stream, this value is reserved.
@@ -124,7 +124,7 @@ hand, managed registers provide flexibility and abstract control over device
 state. For instance, managed registers may provide access to abstract properties
 that require access to multiple physical registers in hardware, which can all be
 completed in a single register read or write cycle. Thus the firmware can
-managing low-level raw access to the hardware, while exposing only high-level
+manage low-level raw access to the hardware, while exposing only high-level
 abstract registers in order to simplify the interface to user applications.
 
 Register Access and Update
@@ -141,7 +141,7 @@ a Read-Write register, reading a register after being written must reflect the
 new value). However, the *effects* of a register might not occur until the next
 reset. An example of this type of behavior is registers that operate on the
 :ref:`device descriptor <dev-desc>`. The descriptor must be static during runtime,
-but registers affecting it might take action after a reset, providing an updates
+but registers affecting it might take action after a reset, providing an updated
 descriptor to the controller.
 
 Register access, bit-field definitions, reset behavior, and time of effect MUST
@@ -185,9 +185,9 @@ The following information is required in the preamble:
    all valid)
 2. **Author(s)**: Device firmware or chip creator(s). Can be a person/people or
    a company, group, or organization.
-3. **Device Version**: The `device version <dev-desc>` that this datasheet
+3. **Device Version**: The :ref:`device version <dev-desc>` that this datasheet
    corresponds to.
-4. **Device ID**: The `device ID <dev-id>` that this datasheet corresponds
+4. **Device ID**: The :ref:`device ID <dev-id>` that this datasheet corresponds
    to.
 
 Description
@@ -199,15 +199,13 @@ for understanding the nature of the device during their work.
 Register Map
 ~~~~~~~~~~~~
 
-Unmanaged Registers
+Raw Registers
 ^^^^^^^^^^^^^^^^^^^
-If the device uses `unmanaged registers <reg-type>`, then a link to the
+If the device uses :ref:`raw registers <reg-type>`, then a link to the
 manufacturer’s datasheet is all that is required so long as it contains the
-register documentation equivalent to that required by `managed registers
-<dev-ds-managed-reg>`. However, the register map can also be reproduced for
+register documentation equivalent to that required by :ref:`managed registers
+<reg-type>`. However, the register map can also be reproduced for
 clarity or if the manufacturer’s datasheet is missing required information.
-
-.. _dev-ds-managed-reg:
 
 Managed Registers
 ^^^^^^^^^^^^^^^^^
@@ -217,11 +215,11 @@ table, but it MUST contain the following columns
 
 -  **Address**: Register address within the :ref:`register map <dev-reg-map>`.
 -  **Name**: Human readable name for the register. Only capital ASCII letters
-    and underscores are allowed, with no spaces or special characters (e.g.
-    ``VALID`` and ``ALSO_VALID`` vs. ``NotValid`` and ``ALSO-NOT-VALID``).
+   and underscores are allowed, with no spaces or special characters (e.g.
+   ``VALID`` and ``ALSO_VALID`` vs. ``NotValid`` and ``ALSO-NOT-VALID``).
 -  **Access**: Read-only, write-only, or read-write.
--  **Time of Effect**: When does a register write affect hardware state.
-   Immediate or following reset.
+-  **Time of Effect**: When does a register write affect hardware state?
+   Immediately or following reset?
 -  **POR Value**: Power-on reset default value.
 -  **Reset Action**: Upon a reset, what happens to the register? Does it
    maintain its previous state or get reset to some value? If the latter, then
