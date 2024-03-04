@@ -182,11 +182,6 @@ ONI specification and are not required to use the API.
         (``32``)
         Multi Intan RHS2116 stimulation trigger
 
-    .. macro:: ONIX_MAXDEVICEID
-
-        (:macro:`MAXDEVID`)
-        Final reserved device ID. Always on bottom
-
 Functions
 --------------------------------------------
 
