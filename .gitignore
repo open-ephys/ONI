@@ -18,3 +18,6 @@ docs/*
 
 # macOS specific
 .DS_Store
+
+# Batch file
+make.bat

@@ -58,7 +58,7 @@ corresponding context option type used during calls to these functions.
 
         =================== ==================================================
         Option value type   :type:`oni_device_t` *
-        Option description  Pointer to a pre-allocated array of :type:oni_device_t structs
+        Option description  Pointer to a pre-allocated array of :type:`oni_device_t` structs
         Default value       N/A
         Access              Read
         Required run state  IDLE or RUNNING
@@ -188,7 +188,7 @@ corresponding context option type used during calls to these functions.
     .. macro:: ONI_OPT_MAXWRITEFRAMESIZE
 
         (``9``)
-        The maximal size of a (single-packet) :type:`oni_frame_t` comsumed by a
+        The maximal size of a (single-packet) :type:`oni_frame_t` consumed by a
         call to :func:`oni_write_frame` in bytes.  This number is the maximum
         sized frame that can be consumed across every device within the device
         table that accepts write data.
@@ -379,6 +379,16 @@ Return codes for functions in the API.
 
         (``-26``)
         Device table contains repeated device indices
+
+    .. macro:: ONI_EPROTCONFIG
+
+        (``-27``)
+        Attempted to directly read or write a protected configuration option
+
+    .. macro:: ONI_EBADFRAME
+
+        (``-28``)
+        Received malformed frame
 
 
 Hardware Registers

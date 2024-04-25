@@ -30,8 +30,8 @@ then you can build the documentation
 
    pipenv run make html
 
-if you want run ``make`` multiple times, prepend ``pipenv run`` on each command can be annoying,
-you can spawn a subshell with
+if you want to run ``make`` multiple times, prepending ``pipenv run`` on each command can be annoying.
+You can spawn a subshell with
 
 .. code:: shell
 
@@ -46,7 +46,7 @@ and then you can use ``make`` the usual way
    make latexpdf # for latex (will require latexpdf installed)
    make          # list all the available output format
 
-all the outputs will be in docs folder (for html: docs/html)
+All the outputs will be in the docs folder (for html: docs/html)
 
 without pipenv/virtualenv
 -------------------------

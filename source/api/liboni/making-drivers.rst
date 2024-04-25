@@ -10,7 +10,7 @@ libraries or kernel drivers handling actual hardware, taking care of all the
 implementation details. This allows the API to remain hardware-agnostic and
 work with a wide variety of host devices.
 
-Writing an device driver translator requires detailed knowledge of the target
+Writing a device driver translator requires detailed knowledge of the target
 hardware. However, from the API perspective, it is as simple as :ref:`defining
 a driver context <making_drivers_context>` and :ref:`implementing all functions
 <making_drivers_functions>` defined in :ref:`onidriver.h`.
@@ -20,7 +20,7 @@ a driver context <making_drivers_context>` and :ref:`implementing all functions
 Driver Context
 -----------------------
 A driver context is a data structure containing all state information about a
-particular instance of the driver. A instance of this istructure will be
+particular instance of the driver. An instance of this structure will be
 created during liboni context creation phase and passed to the main API as an
 opaque pointer of type :c:type:`oni_driver_ctx` and stored in a field of
 :c:type:`oni_ctx` during its lifetime.
@@ -62,7 +62,7 @@ description of these functions and its parameters.
     they are not actively used.
 
 .. note:: All examples shown in this page, are only orientating and lack
-    elements, such as state checks, that are required in a real development.
+    elements, such as state checks, that are required in real development.
 
 .. tip:: Most functions have the same return scheme, 0, or :c:macro:`ONI_ESUCCESS`
     on successful operation, or any of the :ref:`onidef_error_codes` on failure.
@@ -71,9 +71,9 @@ description of these functions and its parameters.
     error value is up to the driver developer.
 
 .. tip:: Since most functions receive a :ref:`making_drivers_context` parameter
-    are in the form of a :c:type:`oni_driver_ctx` opaque pointer, a cast to the
+    in the form of a :c:type:`oni_driver_ctx` opaque pointer, a cast to the
     appropriate structure pointer is required. It is handy to define a macro
-    taking to take care care of this, instead of manually typing the cast in
+    to take care of this, instead of manually typing the cast in
     every function. For example:
 
     .. code-block:: c
@@ -99,7 +99,7 @@ instance and allocating all required resources. No hardware access should be
 performed in this function, only internal memory allocations as required.
 
 :c:func:`oni_driver_init` is where actual hardware initialization is done. This
-function opens the relevant hardware channels and prepare the driver for normal
+function opens the relevant hardware channels and prepares the driver for normal
 operation.
 
 :c:func:`oni_destroy_ctx` must close any open hardware connection and release
@@ -175,7 +175,7 @@ is done through the functions :c:func:`oni_driver_read_config` and :c:func:`oni_
 
 Again, the specifics on how to access such registers are dependent on the hardware interface.
 
-.. tip:: This functions can be used to perform additional actions when the API accesses specific registers.
+.. tip:: These functions can be used to perform additional actions when the API accesses specific registers.
     An example would be a device that requires some additional low-level actions, besides the usual register
     trigger, when performing a reset or starting/stopping acquisition.
 
@@ -227,7 +227,7 @@ function can simply return :c:macro:`ONI_ESUCCESS`.
     adding extra actions in register I/O calls because it is called after any
     library operations are also performed. For example, if
     :c:func:`oni_driver_set_opt_callback` were to react to
-    :c:macro:`ONI_OPT_RESET`, it would make it so after the new device table
+    :c:macro:`ONI_OPT_RESET`, it would act after the new device table
     has been loaded, while an extra action in :c:func:`oni_driver_write_config`
     would act before, during low-level register access.
 
@@ -236,7 +236,7 @@ function can simply return :c:macro:`ONI_ESUCCESS`.
 
     int oni_driver_set_opt_callback(oni_driver_ctx driver_ctx, int oni_option, const void *value, size_t option_len)
     {
-        //Example of a device requiring reacting to changed on block read size
+        //Example of a device reacting to changes in block read size
         CTX_CAST;
         if (oni_option == ONI_OPT_BLOCKREADSIZE)
         {
@@ -257,7 +257,7 @@ be cases when special options need to be passed to the driver translator.
 this. This two functions are transparently called from the public :ref:`liboni`
 API functions :c:func:`oni_set_driver_opt` and :c:func:`oni_get_driver_opt`.
 
-In most cases this functions will simply return :c:macro:`ONI_EINVALOPT`.
+In most cases these functions will simply return :c:macro:`ONI_EINVALOPT`.
 
 .. _making_drivers_functions_info:
 

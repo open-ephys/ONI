@@ -309,11 +309,11 @@ needed during the development of user-facing software.
     current device table. This can be used to verify the success of calls to
     :func:`oni_write_reg` or to obtain state information about devices managed
     by the current acquisition context. Register specifications (addresses,
-    read- and write-access, and descriptions are provided on the :ref:`ONI-device
-    datasheet <dev-datasheet>`).
+    read- and write-access, and descriptions) are provided on the :ref:`ONI-device
+    datasheet <dev-datasheet>`.
 
     :param ctx: :type:`oni_ctx` context that manages the requested device
-    :param dev_idx: fully-qualifies device index within the device table
+    :param dev_idx: fully-qualified device index within the device table
     :param addr: Address of register to be read
     :param value: Pointer to an unsigned integer that will store the value
         of the register at ``addr`` on ``dev_idx``.
@@ -325,9 +325,9 @@ needed during the development of user-facing software.
     Change the value of a configuration register from specific devices within
     the current device table. This can be used to change the functionality of
     devices, e.g. set filter bandwidth, select active channels, or change
-    stimulation parameters).  Register specifications (addresses, read- and
-    write-access, acceptable values, and descriptions are provided on the
-    :ref:`ONI-device datasheet <dev-datasheet>`).
+    stimulation parameters.  Register specifications (addresses, read- and
+    write-access, acceptable values, and descriptions) are provided on the
+    :ref:`ONI-device datasheet <dev-datasheet>`.
 
     :param ctx: :type:`oni_ctx` context that manages the requested device
     :param dev_idx: fully-qualified device index within the device table
@@ -342,7 +342,7 @@ needed during the development of user-facing software.
     :func:`oni_read_frame` allocates host memory and populates it with a single
     :struct:`oni_frame_t` struct using the data input stream. This call will
     block until either enough data available on the stream to construct an
-    underlying block buffer (see :macro:ONI_OPT_BLOCKREADSIZE and
+    underlying block buffer (see :macro:`ONI_OPT_BLOCKREADSIZE` and
     :ref:`liboni_example_set_buffers`). :struct:`oni_frame_t`'s created during
     calls to :func:`oni_read_frame` are zero-copy views into this buffer.
 
@@ -358,7 +358,7 @@ needed during the development of user-facing software.
 
 .. function:: int oni_create_frame(const oni_ctx ctx, oni_frame_t **frame, oni_dev_idx_t dev_idx, void* data, size_t data_sz)
 
-    Create an :oni_frame_t` for consumption by :func:`oni_write_frame`.
+    Create an :struct:`oni_frame_t` for consumption by :func:`oni_write_frame`.
 
     .. attention:: It is the user's responsibility to free the resources allocated by
         this call by passing the resulting frame pointer to
@@ -401,7 +401,7 @@ needed during the development of user-facing software.
 .. function:: void oni_destroy_frame(oni_frame_t *frame)
 
     .. note:: Each call to :func:`oni_create_frame` or :func:`oni_read_frame`
-        must matched by a  call to :func:`oni_destroy_frame` to prevent memory
+        must be matched by a call to :func:`oni_destroy_frame` to prevent memory
         leaks.
 
 .. function:: void oni_version(int *major, int *minor, int *patch)
@@ -409,12 +409,12 @@ needed during the development of user-facing software.
     Report the liboni library version. This library uses `Semantic Versioning
     <https://semver.org/>`_. Briefly, the major revision is for incompatible API
     changes. Minor version is for backwards compatible changes. The patch
-    number is for backwards-compatible bug fixes. When this function returns,
+    number is for backwards compatible bug fixes. When this function returns,
     input pointers will reference the library's version.
 
     :param major: major library version for incompatible API changes
     :param minor: minor library version for backwards compatible changes.
-    :param patch: patch number for backwards-compatible bug fixes.
+    :param patch: patch number for backwards compatible bug fixes.
 
 .. function:: oni_driver_info_t* oni_get_driver_info(const oni_ctx ctx)
 

@@ -79,7 +79,7 @@ hardware access as needed.
 
     Initializes a driver translator context opening a specific hardware instance.
 
-    :param driver_ctx: Handle to the context to initialized
+    :param driver_ctx: Handle to the context to be initialized
 
     :param host_idx: Index of the hardware device to open. The enumeration depends
         on the specific hardware. ``-1`` always means open the first available device
@@ -99,7 +99,7 @@ hardware access as needed.
     :param size: Size, in bytes, of the data to read. Must read this amount from the device.
 
     :return: Bytes retrieved in case of a successful read, see :ref:`onidef_error_codes` otherwise. If the amount 
-        of retrieved bytes were different from ``size``, it would be also treated as an error by the API.
+        of retrieved bytes were different from ``size``, it would also be treated as an error by the API.
 
 .. function:: int oni_driver_write_stream(oni_driver_ctx driver_ctx, oni_write_stream_t stream, const char *data, size_t size)
 
@@ -109,7 +109,7 @@ hardware access as needed.
 
     :param stream: The output stream to perform the write operation on
 
-    :param data: Pointer to the data buffer. It must contain the amoutn of data requested to write
+    :param data: Pointer to the data buffer. It must contain the amount of data requested to write
 
     :param size: Size, in bytes, of the data to write.
 
@@ -117,7 +117,7 @@ hardware access as needed.
 
 .. function:: int oni_driver_read_config(oni_driver_ctx driver_ctx, oni_config_t config, oni_reg_val_t *value)
 
-    Performs a read operation from one of the hardware configuration registers described on the ONI specification.
+    Performs a read operation from one of the hardware configuration registers described in the ONI specification.
 
     :param driver_ctx: Context handling the device driver translator state
 
@@ -129,7 +129,7 @@ hardware access as needed.
 
 .. function:: int oni_driver_write_config(oni_driver_ctx driver_ctx, oni_config_t config, oni_reg_val_t value)
 
-    Performs a write operation to one of the hardware configuration registers described on the ONI specification.
+    Performs a write operation to one of the hardware configuration registers described in the ONI specification.
 
     :param driver_ctx: Context handling the device driver translator state
 
@@ -158,8 +158,7 @@ hardware access as needed.
 .. function:: int oni_driver_set_opt(oni_driver_ctx driver_ctx, int driver_option, const void *value, size_t option_len)
 
     Sets an internal option specific to the driver translator. Called directly by :c:func:`oni_set_driver_opt`.
-    If not such options exist in a specific driver
-    this can be an empty function returning :macro:`ONI_EINVALOPT`.
+    If no such options exist in a specific driver this can be an empty function returning :macro:`ONI_EINVALOPT`.
 
     :param driver_ctx: Context handling the device driver translator state
 
@@ -175,8 +174,7 @@ hardware access as needed.
 .. function:: int oni_driver_get_opt(oni_driver_ctx driver_ctx, int driver_option, void *value, size_t* option_len)
 
     Reads an internal option specific to the driver translator. Called directly by :c:func:`oni_get_driver_opt`.
-    If not such options exist in a specific driver
-    this can be an empty function returning :macro:`ONI_EINVALOPT`.
+    If no such options exist in a specific driver this can be an empty function returning :macro:`ONI_EINVALOPT`.
 
     :param driver_ctx: Context handling the device driver translator state
 

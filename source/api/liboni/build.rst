@@ -106,5 +106,5 @@ Build in Windows
 Open the included `Visual Studio Coummunity
 <https://visualstudio.microsoft.com/vs/community/>`_ solution and press play.
 For whatever reason, it seems that the selected startup project is not
-consistently saved with the solution. So make sure that is set to
-``liboni-test`` in the solution properties.
+consistently saved with the solution. So make sure that it is set to
+``oni-repl`` in the solution properties.

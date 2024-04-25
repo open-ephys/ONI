@@ -3,7 +3,6 @@
   <compounddef id="classoni_1_1_context" kind="class" language="C#" prot="public">
     <compoundname>oni::Context</compoundname>
     <basecompoundref prot="public" virt="non-virtual">IDisposable</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">IDisposable</basecompoundref>
       <sectiondef kind="private-type">
       <memberdef kind="enum" id="classoni_1_1_context_1a513e430aeacbdd22315b8d9f95a9fad0" prot="private" static="no" strong="yes">
         <type>int</type>
