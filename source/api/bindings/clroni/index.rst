@@ -35,15 +35,15 @@ Mono
 
 .. code::
 
-    $ cd clroepcie
+    $ cd clroni-repl
     $ make
 
 Test Programs
 =======================================
-The :code:`clroepcie-test` directory contains minimal working programs that use this
+The :code:`clroni-repl` directory contains minimal working programs that use this
 library
 
-1. :code:`Host.exe` : Basic data acquisition loop. Communicate with
+1. :code:`clroni-repl.exe` : Basic data acquisition loop. Communicate with
    emmulated (e.g. :ref:`test_driver`) or actual (e.g. :ref:`riffa`)
    hardware.
 
@@ -52,7 +52,7 @@ can also be built using mono via
 
 .. code::
 
-    $ cd clroni-test
+    $ cd clroni-repl
     $ make
 
 License
