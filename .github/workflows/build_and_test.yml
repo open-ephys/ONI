@@ -33,7 +33,7 @@ jobs:
       - name: Check all external links
         id: make_linkcheck
         run: |
-          pipenv run make linkcheck SPHINXOPTS="-W --keep-going -n" # -n: nit-picky mode, generates warnings for all missing references
+          pipenv run make linkcheck SPHINXOPTS="-W --keep-going"
 
       - name: Upload docs
         uses: actions/upload-artifact@v4
