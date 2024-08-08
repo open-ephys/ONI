@@ -25,8 +25,8 @@ liboni
 implements the :ref:`oni-hw`. It is written in C to facilitate cross platform
 and cross-language use. It is composed of the following files:
 
-#. :ref:`onidefs.h`: common definitions
-#. :ref:`oni.h`: core API
+#. :ref:`onidefs.h`: common definitions.
+#. :ref:`oni.h`: core API.
 #. :ref:`onidriver.h`: device driver translation layer that must be
    implemented for a particular host hardware connection and
    firmware.

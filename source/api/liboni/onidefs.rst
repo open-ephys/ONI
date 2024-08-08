@@ -11,35 +11,35 @@ Integer Types
 ---------------------------------------
 
 .. warning:: All of these types will be almost certainly be deprecated in
-    future API revisions to handle drivers with different channel bit widths
+    future API revisions to handle drivers with different channel bit widths.
 
 .. type:: uint32_t oni_size_t
 
-    Data sizes are 32-bit uints
+    Data sizes are 32-bit uints.
 
 .. type:: uint32_t oni_dev_id_t
 
-    Device IDs are 32-bit values
+    Device IDs are 32-bit values.
 
 .. type:: uint32_t oni_dev_idx_t
 
-    Device idx are 32-bit, byte.byte.btye.byte addresses
+    Device idx are 32-bit, byte.byte.byte.byte addresses.
 
 .. type:: uint32_t oni_reg_addr_t
 
-    Registers use a 32-bit address
+    Registers use a 32-bit address.
 
 .. type:: uint32_t oni_reg_val_t
 
-    Registers have 32-bit values
+    Registers have 32-bit values.
 
 .. type:: uint32_t oni_fifo_dat_t
 
-    FIFOs use 32-bit words
+    FIFOs use 32-bit words.
 
 .. type:: uint64_t oni_fifo_time_t
 
-    FIFO bound timers use 64-bit words
+    FIFO bound timers use 64-bit words.
 
 .. _onidef_context_options:
 
@@ -85,7 +85,7 @@ corresponding context option type used during calls to these functions.
         not reset context options or the sample counter. All data not shifted out
         of hardware will be cleared. To obtain the very first samples produced by
         high-bandwidth devices, see :macro:`ONI_OPT_RESETACQCOUNTER` to see how to
-        start acqusition sychronously with a clock reset.
+        start acquisition synchronously with a clock reset.
 
         =================== ==================================================
         Option value type   :type:`oni_reg_val_t`
@@ -98,9 +98,9 @@ corresponding context option type used during calls to these functions.
     .. macro:: ONI_OPT_RESET
 
         (``3``)
-        Trigger global hardware reset. Any value great than 0 will trigger a
+        Trigger global hardware reset. Any value greater than 0 will trigger a
         hardware reset. In this case, acquisition is stopped and resets are issued
-        to all devices in the device table. Following a
+        to all devices in the device table.
 
         =================== ==================================================
         Option value type   :type:`oni_reg_val_t`
@@ -127,13 +127,13 @@ corresponding context option type used during calls to these functions.
     .. macro:: ONI_OPT_ACQCLKHZ
 
         (``5``)
-        Host system acqusition clock frequency in Hz, derived from
+        Host system acquisition clock frequency in Hz, derived from
         :macro:`ONI_OPT_SYSCLKHZ`. This describes the frequency of the clock used
-        to drive the acqusition counter which is used timestamp data frames.
+        to drive the acquisition counter which is used to timestamp data frames.
 
         =================== ==================================================
         Option value type   :type:`oni_reg_val_t`
-        Option description  Host acqusition clock frequency in Hz
+        Option description  Host acquisition clock frequency in Hz
         Default value       N/A
         Access              Read
         Required run state  IDLE or RUNNING
@@ -142,9 +142,9 @@ corresponding context option type used during calls to these functions.
     .. macro:: ONI_OPT_RESETACQCOUNTER
 
         (``6``)
-        Trigger a reset of the acqusition clock counter. A value of 1 will trigger
-        an acqusition clock counter reset. A value of 2 or greater will trigger
-        synchronous acqusition clock counter reset and set :macro:`ONI_OPT_RUNNING`
+        Trigger a reset of the acquisition clock counter. A value of 1 will trigger
+        an acquisition clock counter reset. A value of 2 or greater will trigger
+        synchronous acquisition clock counter reset and set :macro:`ONI_OPT_RUNNING`
         to 1.
 
         =================== ==================================================
@@ -158,8 +158,8 @@ corresponding context option type used during calls to these functions.
     .. macro:: ONI_OPT_HWADDRESS
 
         (``7``)
-        The address of the host hardware within the acqusition computer.
-        Determines the sychronization role of the hardware in multi-host
+        The address of the host hardware within the acquisition computer.
+        Determines the synchronization role of the hardware in multi-host
         systems.
 
         =================== ==================================================
@@ -409,7 +409,7 @@ as the underlying hardware endpoint for functions such as :func:`oni_get_opt`,
     .. macro:: ONI_CONFIG_REG_ADDR
 
         ( ``1``)
-        Device register access: Target adress
+        Device register access: Target address
 
     .. macro:: ONI_CONFIG_REG_VALUE
 
@@ -453,7 +453,7 @@ as the underlying hardware endpoint for functions such as :func:`oni_get_opt`,
     .. macro:: ONI_CONFIG_HWADDRESS
 
         ( ``10``)
-        The address of the host hardware within the acqusition computer. Accessed through :macro:`ONI_OPT_HWADDRESS`
+        The address of the host hardware within the acquisition computer. Accessed through :macro:`ONI_OPT_HWADDRESS`
 
 .. _oni_driver_info_t:
 

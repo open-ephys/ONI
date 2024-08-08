@@ -11,15 +11,15 @@ See https://semver.org/ for a complete explanation of these macro definitions.
 
 .. c:macro:: CPPONI_VERSION_MAJOR
 
-    MAJOR version for incompatible API changes
+    MAJOR version for incompatible API changes.
 
 .. c:macro:: CPPONI_VERSION_MINOR
 
-    MINOR version for added functionality that is backwards compatible
+    MINOR version for added functionality that is backwards compatible.
 
 .. c:macro:: CPPONI_VERSION_PATCH
 
-    PATCH version for backwards compatible bug fixes
+    PATCH version for backwards compatible bug fixes.
 
 .. c:macro:: CPPONI_MAKE_VERSION(major, minor, patch)
 
@@ -37,7 +37,7 @@ See https://semver.org/ for a complete explanation of these macro definitions.
 
     .. code-block:: c
 
-        CPPONI_MAKE_VERSION(CPPONI_VERSION_MAJOR CPPONI_VERSION_MINOR, CPPONI_VERSION_PATCH).
+        CPPONI_MAKE_VERSION(CPPONI_VERSION_MAJOR CPPONI_VERSION_MINOR, CPPONI_VERSION_PATCH)
 
 .. function:: std::tuple<int, int, int> oni::version()
 
@@ -59,10 +59,10 @@ Errors
 
         Constructor. Not generally needed for cpponi use since
         :class:`oni::error_t` is constructed and thrown from within cpponi and
-        only need to be handled by the host application.
+        only needs to be handled by the host application.
 
         :param errnum: liboni error code integer, generally resulting from a non-zero
-            return value of an Underlying liboni function.
+            return value of an underlying liboni function.
 
     .. function:: const char *what() const noexcept override
 
@@ -94,15 +94,15 @@ Frames
     `RAII <https://en.cppreference.com/w/cpp/language/raii>`__-capable wrapper
     for :c:struct:`oni_frame_t`. User programs generally should not call the
     frame_t constructor directly but deal with frames created by a
-    :class:`oni::context_t`
+    :class:`oni::context_t`.
 
     .. function:: uint64_t time() const
 
-        :return: Underlying :c:struct:`oni_frame_t.time`
+        :return: Underlying :c:struct:`oni_frame_t.time`.
 
     .. function:: oni_dev_idx_t device_index() const
 
-        :return: Underlying :c:struct:`oni_frame_t.dev_idx`
+        :return: Underlying :c:struct:`oni_frame_t.dev_idx`.
 
     .. function:: template <typename raw_t>\
                   std::span<const raw_t> data() const   
@@ -115,7 +115,7 @@ Frames
             <https://en.cppreference.com/w/cpp/container/span>`__ Automatically
             made available when compiled with stdlib >= C++20. Otherwise, this
             function reverts to returning a `std::vector
-            <https://en.cppreference.com/w/cpp/container/vector>`__
+            <https://en.cppreference.com/w/cpp/container/vector>`__.
 
 Context
 --------------------------------------
@@ -140,7 +140,7 @@ Context
         :param host_idx: The index of the hardware we are going to
             manage using the initialized context and driver. A value of -1 will
             attempt to open the default host index and is useful if there is only a
-            single ONIX host managed by driver selected in :func:`oni_create_ctx`
+            single ONIX host managed by driver selected in :func:`oni_create_ctx`.
         :throws: `std::system_error
             <https://en.cppreference.com/w/cpp/error/system_error>`_ if underlying
             context cannot be allocated.
@@ -160,7 +160,7 @@ Context
 
     .. function:: context_t &operator=(context_t &&rhs) noexcept
 
-        Move assignment operator. 
+        Move assignment operator.
 
         :param rhs: Existing :class:`context_t` instance to move from. 
 
@@ -274,15 +274,15 @@ Context
         .. note:: ``data.size()`` must be
 
             #. An integer multiple of the selected ``dev_idx``'s write size as
-               indicated within the device table
+               indicated within the device table.
             #. Smaller than the internal write block memory size (see 
-               :c:macro:`ONI_OPT_BLOCKWRITESIZE` and :ref:`liboni_example_set_buffers`)
+               :c:macro:`ONI_OPT_BLOCKWRITESIZE` and :ref:`liboni_example_set_buffers`).
 
         .. note:: `std::span
             <https://en.cppreference.com/w/cpp/container/span>`__ is
             automatically made available when compiled with stdlib >= C++20.
             Otherwise, this function reverts to returning a `std::vector
-            <https://en.cppreference.com/w/cpp/container/vector>`__
+            <https://en.cppreference.com/w/cpp/container/vector>`__.
 
         .. seealso::
             :c:func:`oni_create_frame`

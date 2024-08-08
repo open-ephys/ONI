@@ -24,7 +24,7 @@ elements and/or its context within the specification.
   API
 
     ONI application programming interface that can be used to develop software
-    to aquire from and control ONI-compliant hardware.
+    to acquire from and control ONI-compliant hardware.
 
     .. seealso:: :ref:`oni-api`
 
@@ -34,7 +34,7 @@ elements and/or its context within the specification.
     ONI-compliant :term:`API`. Multiple :term:`controllers <Controller>` can
     coexist in a single :term:`Host Computer` and need not use the same
     :term:`Driver Translator`. Controllers communicate via :term:`API` calls
-    that manipulate an :term:`Acquisition Context` and a :term:`Device Table` ,
+    that manipulate an :term:`Acquisition Context` and a :term:`Device Table`,
     which affect controller state using the driver translator. :term:`Hubs
     <Hub>` are connected to the controller where data to/from their devices is
     packed and transmitted to/from the host computer. The controller contains a
@@ -45,7 +45,7 @@ elements and/or its context within the specification.
 
   Device
     A configurable piece of hardware with its own register address space
-    (e.g. an integrated circuit) or a digital “core” that emulates this.
+    (e.g., an integrated circuit) or a digital “core” that emulates this.
     Devices may or may not produce and/or accept :term:`streaming data <Stream
     Channel>` , but that must at least implement a minimal :term:`register
     programming channel <Register Channel>`. They must be documented, using a
@@ -72,8 +72,8 @@ elements and/or its context within the specification.
     A collection of :term:`device addresses <Device Address>` and corresponding
     metadata for all :ref:`devices <device>` governed by a :term:`controller
     <controller>`. The device table contains all meta-information required to
-    for proper interaction with each device. E.g.  packet read-size, packet
-    write-size, burst read cycles, etc.
+    for proper interaction with each device (e.g., packet read-size, packet
+    write-size, burst read cycles, etc.).
 
     .. seealso:: :ref:`Device Table Specification <dev-table>`
 
@@ -91,7 +91,7 @@ elements and/or its context within the specification.
     :term:`API`.
 
   Host Interconnect
-    A hardware abstraction layer consisting of a physical bus (e.g. PCIe, USB,
+    A hardware abstraction layer consisting of a physical bus (e.g., PCIe, USB,
     or Ethernet) along with a :term:`Driver Translator` that the
     :term:`Controller` uses to communicate with the :term:`Host Computer`.
 
@@ -111,6 +111,6 @@ elements and/or its context within the specification.
   Port
     A `physical bus <https://en.wikipedia.org/wiki/Bus_(computing)>`__ between
     a :term:`Hub` and a :term:`Controller`. This could be an external link to
-    a :term:`Hub` that is separated from the :term:`Controller` (e.g. a wire or
+    a :term:`Hub` that is separated from the :term:`Controller` (e.g., a wire or
     wireless communication channel) or it could be a bus inside of the
     :term:`Controller` in the case of a local hub.
