@@ -51,13 +51,13 @@ Acquisition Context
 
     .. attention:: Context details are hidden in the implementation file
         (``oni.c``). Direct manipulation of :type:`oni_ctx` data members is never
-        nessesary or correct.
+        necessary or correct.
 
     Each :type:`oni_ctx` instance manages the device driver, device table, read
     and write buffers, acquisition run state, etc. Following a hardware reset,
     which is triggered either by a call to :func:`oni_init_ctx` or
     :func:`oni_set_opt` using the :macro:`ONI_OPT_RESET` context option, the
-    context run state is set to ``UNINTIALIZED`` and the device table is pushed
+    context run state is set to ``UNINITIALIZED`` and the device table is pushed
     onto the host signal stream by the host hardware as `COBS
     <https://en.wikipedia.org/wiki/Consistent_Overhead_Byte_Stuffing>`_-encoded
     packets. On the signal stream, the device table is organized as follows,
@@ -86,28 +86,28 @@ Device
 
         Fully qualified **RSV.RSV.HUB.IDX** device table index.
 
-        :RSV: 8-bit unsigned integer (reserved)
-        :HUB: 8-bit unsigned integer indicating the hub index
-        :IDX: 8-bit unsigned integer indicating the device index
+        :RSV: 8-bit unsigned integer (reserved).
+        :HUB: 8-bit unsigned integer indicating the hub index.
+        :IDX: 8-bit unsigned integer indicating the device index.
 
     .. member:: oni_dev_id_t id
 
-        Device ID number (see :ref:`onix.h` for ONIX-specific definitions)
+        Device ID number (see :ref:`onix.h` for ONIX-specific definitions).
 
     .. member:: oni_size_t read_size
 
-        Device data read size per frame in bytes
+        Device data read size per frame in bytes.
 
     .. member:: oni_size_t write_size
 
-        Device data write size per frame in bytes
+        Device data write size per frame in bytes.
 
     An ONI-compliant device implementation. An :struct:`oni_device_t` describes
     one of potentially many pieces of hardware managed by an :type:`oni_ctx`.
     Examples of individual devices might include ephys chips, IMUs, optical
     stimulators, camera sensors, etc.
 
-    .. tip:: Look at device index defintions in :ref:`onix.h` to see available
+    .. tip:: Look at device index definitions in :ref:`onix.h` to see available
         ONIX-specific device definitions and enum ranges that will not interfere with
         ONIX for custom or closed-source projects.
 
@@ -123,15 +123,15 @@ Frame
 
     .. member:: const oni_fifo_time_t time
 
-        Frame time (:macro:`ONI_OPT_ACQCLKHZ` host clock counter)
+        Frame time (:macro:`ONI_OPT_ACQCLKHZ` host clock counter).
 
     .. member:: const oni_fifo_dat_t dev_idx
 
-        Device index that produced or accepts the frame
+        Device index that produced or accepts the frame.
 
     .. member:: const oni_fifo_dat_t data_sz
 
-        Size of data in bytes
+        Size of data in bytes.
 
     .. member:: uint8_t *data
 
@@ -186,7 +186,7 @@ needed during the development of user-facing software.
     streaming, memory management, etc. On success the selected driver is loaded
     and an :type:`oni_ctx` is allocated and created, and its handle is passed
     to the user.  Many API functions take a :type:`oni_ctx` as a first
-    agrument.
+    argument.
 
     :param drv_name: A string specifying the device driver used by
         the context to control hardware. This string corresponds a compiled
@@ -196,14 +196,14 @@ needed during the development of user-facing software.
     :return: An opaque handle to the newly created context if
         successful. Otherwise it shall return ``NULL`` and set ``errno`` to
         ``EAGAIN``.
-    :example: See :ref:`liboni_example_ctx_creation`
+    :example: See :ref:`liboni_example_ctx_creation`.
 
     .. seealso::
 
         :func:`oni_get_opt`
-            Inspect :type:`oni_ctx` state
+            Inspect :type:`oni_ctx` state.
         :func:`oni_set_opt`
-            Modify :type:`oni_ctx` state
+            Modify :type:`oni_ctx` state.
 
 .. function:: int oni_init_ctx(oni_ctx ctx, int host_idx)
 
@@ -214,20 +214,20 @@ needed during the development of user-facing software.
     following events occur:
 
     #. All required data streams are opened.
-    #. A hardware reset issued using :macro:`ONI_OPT_RESET`
+    #. A hardware reset issued using :macro:`ONI_OPT_RESET`.
     #. A device table is obtained from the hardware.
     #. The minimal :macro:`ONI_OPT_BLOCKREADSIZE` and
        :macro:`ONI_OPT_BLOCKWRITESIZE` values are calculated and
        stored.
     #. The context run state is moved from ``UNINITIALIZED`` to ``IDLE``.
 
-    :param ctx: The acquisition context to be initialized
+    :param ctx: The acquisition context to be initialized.
     :param host_idx: The index of the hardware we are going to
         manage using the initialized context and driver. A value of -1 will
         attempt to open the default host index and is useful if there is only a
-        single ONIX host managed by driver selected in :func:`oni_create_ctx`
+        single ONIX host managed by driver selected in :func:`oni_create_ctx`.
     :return: 0 on success otherwise see :ref:`onidef_error_codes`.
-    :example: See :ref:`liboni_example_ctx_creation`
+    :example: See :ref:`liboni_example_ctx_creation`.
 
 .. function:: int oni_destroy_ctx(oni_ctx ctx)
 
@@ -240,7 +240,7 @@ needed during the development of user-facing software.
 
     :param ctx: The acquisition context to close.
     :return: 0 on success otherwise see :ref:`onidef_error_codes`.
-    :example: See :ref:`liboni_example_ctx_destruction`
+    :example: See :ref:`liboni_example_ctx_destruction`.
 
 .. function:: int oni_get_opt(oni_ctx ctx, int option, void *value, size_t *size)
 
@@ -256,15 +256,15 @@ needed during the development of user-facing software.
     :ref:`onidef_context_options` for a description of each possible
     ``option``, including access constraints.
 
-    :param ctx: :type:`oni_ctx` context to read an option from
+    :param ctx: :type:`oni_ctx` context to read an option from.
     :param option: Selected option to read. See :ref:`onidef_context_options`
         for valid options.
-    :param value: buffer to store value of ``option`` after it is read
+    :param value: buffer to store value of ``option`` after it is read.
     :param size: Pointer to the size of ``value`` buffer (including terminating
         null character, if applicable) in bytes.
     :return: 0 on success otherwise see :ref:`onidef_error_codes`.
     :example: See :ref:`liboni_example_device_table` and
-        :ref:`liboni_example_set_buffers`
+        :ref:`liboni_example_set_buffers`.
 
     .. seealso::
         :ref:`onidef_context_options`
@@ -282,14 +282,14 @@ needed during the development of user-facing software.
     disobeyed, the function will error. See :ref:`onidef_context_options` for
     description of each possible ``option``, including access constraints.
 
-    :param ctx: :type:`oni_ctx` context to read an option from
+    :param ctx: :type:`oni_ctx` context to read an option from.
     :param option: Selected option to set. See :ref:`onidef_context_options`
         for valid options.
-    :param value: buffer containing data to be written to ``option``
+    :param value: buffer containing data to be written to ``option``.
     :param size: Size of ``value`` buffer (including terminating null
         character, if applicable) in bytes.
-    :return: 0 on success otherwise see :ref:`onidef_error_codes`
-    :example: See :ref:`liboni_example_device_table` and :ref:`liboni_example_set_buffers`
+    :return: 0 on success otherwise see :ref:`onidef_error_codes`.
+    :example: See :ref:`liboni_example_device_table` and :ref:`liboni_example_set_buffers`.
 
     .. seealso::
         :ref:`onidef_context_options`
@@ -312,13 +312,13 @@ needed during the development of user-facing software.
     read- and write-access, and descriptions) are provided on the :ref:`ONI-device
     datasheet <dev-datasheet>`.
 
-    :param ctx: :type:`oni_ctx` context that manages the requested device
-    :param dev_idx: fully-qualified device index within the device table
-    :param addr: Address of register to be read
+    :param ctx: :type:`oni_ctx` context that manages the requested device.
+    :param dev_idx: fully-qualified device index within the device table.
+    :param addr: Address of register to be read.
     :param value: Pointer to an unsigned integer that will store the value
         of the register at ``addr`` on ``dev_idx``.
-    :return: 0 on success otherwise see :ref:`onidef_error_codes`
-    :example: See :ref:`liboni_example_read_write_reg`
+    :return: 0 on success otherwise see :ref:`onidef_error_codes`.
+    :example: See :ref:`liboni_example_read_write_reg`.
 
 .. function:: int oni_write_reg(const oni_ctx ctx, oni_dev_idx_t dev_idx, oni_reg_addr_t addr, oni_reg_val_t value)
 
@@ -329,32 +329,32 @@ needed during the development of user-facing software.
     write-access, acceptable values, and descriptions) are provided on the
     :ref:`ONI-device datasheet <dev-datasheet>`.
 
-    :param ctx: :type:`oni_ctx` context that manages the requested device
-    :param dev_idx: fully-qualified device index within the device table
-    :param addr: Address of register to be read
+    :param ctx: :type:`oni_ctx` context that manages the requested device.
+    :param dev_idx: fully-qualified device index within the device table.
+    :param addr: Address of register to be read.
     :param value: Value to write to the register at ``addr`` on ``dev_idx``.
-    :return: 0 on success otherwise see :ref:`onidef_error_codes`
-    :example: See :ref:`liboni_example_read_write_reg`
+    :return: 0 on success otherwise see :ref:`onidef_error_codes`.
+    :example: See :ref:`liboni_example_read_write_reg`.
 
 .. function:: int oni_read_frame(const oni_ctx ctx, oni_frame_t **frame)
 
     Read high-bandwidth data from the data input channel.
     :func:`oni_read_frame` allocates host memory and populates it with a single
     :struct:`oni_frame_t` struct using the data input stream. This call will
-    block until either enough data available on the stream to construct an
+    block until enough data is available on the stream to construct an
     underlying block buffer (see :macro:`ONI_OPT_BLOCKREADSIZE` and
     :ref:`liboni_example_set_buffers`). :struct:`oni_frame_t`'s created during
     calls to :func:`oni_read_frame` are zero-copy views into this buffer.
 
     .. attention:: It is the user's responsibility to free the resources allocated by
         this call by passing the resulting frame pointer to
-        :func:`oni_destroy_frame`
+        :func:`oni_destroy_frame`.
 
     :param ctx: :type:`oni_ctx` context that manages the high-bandwidth input
-        channel that the frame will be read from
-    :param frame: NULL pointer to reference using internal memory
-    :return: 0 on success otherwise see :ref:`onidef_error_codes`
-    :example: See :ref:`liboni_example_read_frame`
+        channel that the frame will be read from.
+    :param frame: NULL pointer to reference using internal memory.
+    :return: 0 on success otherwise see :ref:`onidef_error_codes`.
+    :example: See :ref:`liboni_example_read_frame`.
 
 .. function:: int oni_create_frame(const oni_ctx ctx, oni_frame_t **frame, oni_dev_idx_t dev_idx, void* data, size_t data_sz)
 
@@ -365,14 +365,14 @@ needed during the development of user-facing software.
         :func:`oni_destroy_frame`
 
     :param ctx: :type:`oni_ctx` context that manages the high-bandwidth output
-        channel that the frame will be written through
-    :param frame: NULL pointer to reference using internal memory
+        channel that the frame will be written through.
+    :param frame: NULL pointer to reference using internal memory.
     :param dev_idx: fully-qualified device index within the device table that
         the frame will be written to.
     :param data: Raw data block to be copied into the frame.
     :param data_sz: Size of ``data`` in byes.
-    :return: 0 on success otherwise see :ref:`onidef_error_codes`
-    :example: See :ref:`liboni_example_write_frame`
+    :return: 0 on success otherwise see :ref:`onidef_error_codes`.
+    :example: See :ref:`liboni_example_write_frame`.
 
     .. attention:: ``data_sz`` Must be
 
@@ -388,14 +388,14 @@ needed during the development of user-facing software.
 
     :param ctx: :type:`oni_ctx` context that manages the high-bandwidth output
         channel that the frame will be written through
-    :param frame: Pointer to frame created duing a call to :func:`oni_create_frame`
+    :param frame: Pointer to frame created during a call to :func:`oni_create_frame`
     :return: 0 on success otherwise see :ref:`onidef_error_codes`
     :example: See :ref:`liboni_example_write_frame`
 
     .. tip:: Frames created by using :func:`oni_create_frame` can be written to
         a device multiple times by using them as input arguments to
         :func:`oni_write_frame` multiple times. This allows pre-allocation of
-        frame resources from improved latency and determinism in closed-loop
+        frame resources for improved latency and determinism in closed-loop
         applications.
 
 .. function:: void oni_destroy_frame(oni_frame_t *frame)
@@ -412,7 +412,7 @@ needed during the development of user-facing software.
     number is for backwards compatible bug fixes. When this function returns,
     input pointers will reference the library's version.
 
-    :param major: major library version for incompatible API changes
+    :param major: major library version for incompatible API changes.
     :param minor: minor library version for backwards compatible changes.
     :param patch: patch number for backwards compatible bug fixes.
 
@@ -423,12 +423,12 @@ needed during the development of user-facing software.
     version.
 
     :param ctx: :type:`oni_ctx` context of which the loaded driver translator information
-        will be reported
-    :return: A pointer to a constant structure containing the driver translator information
+        will be reported.
+    :return: A pointer to a constant structure containing the driver translator information.
 
 .. function:: const char *oni_error_str(int err)
 
     Convert a return code (see :ref:`onidef_error_codes`) into a human readable
     string.
 
-    :param err: The error code to convert
+    :param err: The error code to convert.

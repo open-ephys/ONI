@@ -33,7 +33,7 @@ opaque pointer of type :c:type:`oni_driver_ctx` and stored in a field of
     in :c:func:`oni_driver_create_ctx` and accessed through the :c:type:`oni_driver_ctx`
     parameter present in most function calls. No static variables can be used to
     keep any state information. This is necessary for multiple instances of the driver
-    to exist simultaneously, acessing different devices of the same type.
+    to exist simultaneously, accessing different devices of the same type.
 
 An example of such a context for a simple, file-descriptor accessed device,
 could be
@@ -106,7 +106,7 @@ operation.
 all allocated resources.
 
 .. code-block:: c
-    :caption: Context managment examples
+    :caption: Context management examples.
 
     oni_driver_ctx oni_driver_create_ctx()
     {
@@ -164,7 +164,7 @@ interface used.
         else return ONI_EPATHINVALID;
     }
 
-.. note:: Read operations must return the same number of bytes as requested, or it will be treated as an error
+.. note:: Read operations must return the same number of bytes as requested, or it will be treated as an error.
 
 .. _making_drivers_functions_register:
 
@@ -180,7 +180,7 @@ Again, the specifics on how to access such registers are dependent on the hardwa
     trigger, when performing a reset or starting/stopping acquisition.
 
 .. code-block:: c
-    :caption: Examples of register access
+    :caption: Examples of register access.
 
     int oni_driver_read_config(oni_driver_ctx driver_ctx, oni_config_t config, oni_reg_val_t *value)
     {
@@ -232,7 +232,7 @@ function can simply return :c:macro:`ONI_ESUCCESS`.
     would act before, during low-level register access.
 
 .. code-block:: c
-    :caption: Example post-option callback
+    :caption: Example post-option callback.
 
     int oni_driver_set_opt_callback(oni_driver_ctx driver_ctx, int oni_option, const void *value, size_t option_len)
     {
@@ -267,10 +267,10 @@ A driver translator must be able to report its name and version information.
 This is done using the :ref:`oni_driver_info_t` structure, which contains
 information following the `Semantic Versioning <https://semver.org/>`_
 specification. This structure should be a constant, and a pointer to it should
-be returned by :c:func:`oni_get_driver_info`
+be returned by :c:func:`oni_get_driver_info`.
 
 .. code-block:: c
-    :caption: Example implemention
+    :caption: Example implementation
 
     const oni_driver_info_t oni_driver_info = {
         .name = "simple",

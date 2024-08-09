@@ -12,7 +12,7 @@ Constants and Types
 
 .. enum:: oni_read_stream_t
 
-    Represent the available data streams from the device to the host
+    Represent the available data streams from the device to the host.
 
     .. macro:: ONI_READ_STREAM_DATA
 
@@ -26,7 +26,7 @@ Constants and Types
 
 .. enum:: oni_write_stream_t
 
-    Represent the available data streams from the host to the device
+    Represent the available data streams from the host to the device.
 
     .. macro:: ONI_WRITE_STREAM_DATA
 
@@ -46,7 +46,7 @@ Constants and Types
 Functions
 ------------------------
 All driver translators must implement these functions. They are called
-internally by the public interface decribed in :ref:`oni.h` and perform direct
+internally by the public interface described in :ref:`oni.h` and perform direct
 hardware access as needed.
 
 .. alias::  oni_driver_create_ctx
@@ -71,7 +71,7 @@ hardware access as needed.
 
     Destroys the driver translator context and frees its resources.
 
-    :param driver_ctx: Handle to the open context to destroy
+    :param driver_ctx: Handle to the open context to destroy.
 
     :return: 0 on success otherwise see :ref:`onidef_error_codes`.
 
@@ -79,10 +79,10 @@ hardware access as needed.
 
     Initializes a driver translator context opening a specific hardware instance.
 
-    :param driver_ctx: Handle to the context to be initialized
+    :param driver_ctx: Handle to the context to be initialized.
 
     :param host_idx: Index of the hardware device to open. The enumeration depends
-        on the specific hardware. ``-1`` always means open the first available device
+        on the specific hardware. ``-1`` always means open the first available device.
 
     :return: 0 on success otherwise see :ref:`onidef_error_codes`.
 
@@ -90,11 +90,11 @@ hardware access as needed.
 
     Performs a read operation over the specified input stream.
 
-    :param driver_ctx: Context handling the device driver translator state
+    :param driver_ctx: Context handling the device driver translator state.
 
-    :param stream: The input stream to perform the read operation on
+    :param stream: The input stream to perform the read operation on.
 
-    :param data: Pointer to the data buffer. It must be big enough to fit the requested amount of data
+    :param data: Pointer to the data buffer. It must be big enough to fit the requested amount of data.
 
     :param size: Size, in bytes, of the data to read. Must read this amount from the device.
 
@@ -105,11 +105,11 @@ hardware access as needed.
 
     Performs a write operation over the specified output stream.
 
-    :param driver_ctx: Context handling the device driver translator state
+    :param driver_ctx: Context handling the device driver translator state.
 
-    :param stream: The output stream to perform the write operation on
+    :param stream: The output stream to perform the write operation on.
 
-    :param data: Pointer to the data buffer. It must contain the amount of data requested to write
+    :param data: Pointer to the data buffer. It must contain the amount of data requested to write.
 
     :param size: Size, in bytes, of the data to write.
 
@@ -119,11 +119,11 @@ hardware access as needed.
 
     Performs a read operation from one of the hardware configuration registers described in the ONI specification.
 
-    :param driver_ctx: Context handling the device driver translator state
+    :param driver_ctx: Context handling the device driver translator state.
 
-    :param config: Register to read from
+    :param config: Register to read from.
 
-    :param value: Variable to store the register value after it is read
+    :param value: Variable to store the register value after it is read.
 
     :return: 0 on success otherwise see :ref:`onidef_error_codes`.
 
@@ -131,11 +131,11 @@ hardware access as needed.
 
     Performs a write operation to one of the hardware configuration registers described in the ONI specification.
 
-    :param driver_ctx: Context handling the device driver translator state
+    :param driver_ctx: Context handling the device driver translator state.
 
-    :param config: Register to write to
+    :param config: Register to write to.
 
-    :param value: Value to be written
+    :param value: Value to be written.
 
     :return: 0 on success otherwise see :ref:`onidef_error_codes`.
 
@@ -145,7 +145,7 @@ hardware access as needed.
     use this for any internal adjustment required. See :ref:`making_drivers` for examples. If this function is
     not used, it is safe to do nothing and return :macro:`ONI_ESUCCESS`.
 
-    :param driver_ctx: Context handling the device driver translator state
+    :param driver_ctx: Context handling the device driver translator state.
 
     :param oni_option: Option set, as specified in the originating :func:`oni_set_opt` call.
 
@@ -160,11 +160,11 @@ hardware access as needed.
     Sets an internal option specific to the driver translator. Called directly by :c:func:`oni_set_driver_opt`.
     If no such options exist in a specific driver this can be an empty function returning :macro:`ONI_EINVALOPT`.
 
-    :param driver_ctx: Context handling the device driver translator state
+    :param driver_ctx: Context handling the device driver translator state.
 
-    :param driver_option: Option index to set, specific to the device driver translator
+    :param driver_option: Option index to set, specific to the device driver translator.
 
-    :param value: buffer containing data to be written to ``driver_option``
+    :param value: buffer containing data to be written to ``driver_option``.
 
     :param option_len: Size of ``value`` buffer (including terminating null
         character, if applicable) in bytes.
@@ -176,11 +176,11 @@ hardware access as needed.
     Reads an internal option specific to the driver translator. Called directly by :c:func:`oni_get_driver_opt`.
     If no such options exist in a specific driver this can be an empty function returning :macro:`ONI_EINVALOPT`.
 
-    :param driver_ctx: Context handling the device driver translator state
+    :param driver_ctx: Context handling the device driver translator state.
 
-    :param driver_option: Option index to read, specific to the device driver translator
+    :param driver_option: Option index to read, specific to the device driver translator.
 
-    :param value: buffer to store value of ``driver_option`` after it is read
+    :param value: buffer to store value of ``driver_option`` after it is read.
 
     :param option_len: Pointer to the size of ``value`` buffer (including terminating
         null character, if applicable) in bytes.
@@ -189,7 +189,7 @@ hardware access as needed.
 
 .. function:: const oni_driver_info_t *oni_driver_info()
 
-    Provides static information about the driver translator
+    Provides static information about the driver translator.
 
-    :return: A :ref:`oni_driver_info_t` structure containing information about the driver translator
+    :return: A :ref:`oni_driver_info_t` structure containing information about the driver translator.
 

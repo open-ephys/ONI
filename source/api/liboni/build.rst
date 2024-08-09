@@ -103,7 +103,7 @@ full leak check on ``host``:
 
 Build in Windows
 ********************************************
-Open the included `Visual Studio Coummunity
+Open the included `Visual Studio Community
 <https://visualstudio.microsoft.com/vs/community/>`_ solution and press play.
 For whatever reason, it seems that the selected startup project is not
 consistently saved with the solution. So make sure that it is set to

@@ -24,7 +24,7 @@ Windows
 =======================================
 1. Open the :code:`clroni.sln` solution in Visual Studio 2019 or newer.
 2. "Running" the solution will compile the library and test program, and then
-   run the test program
+   run the test program.
 3. The Nuget package can be built by right clicking the clroni project and
    clicking "pack".
 
@@ -44,7 +44,7 @@ The :code:`clroni-repl` directory contains minimal working programs that use thi
 library
 
 1. :code:`clroni-repl.exe` : Basic data acquisition loop. Communicate with
-   emmulated (e.g. :ref:`test_driver`) or actual (e.g. :ref:`riffa`)
+   emulated (e.g., :ref:`test_driver`) or actual (e.g., :ref:`riffa`)
    hardware.
 
 This will be automatically built when the Visual Studio solution is built. It

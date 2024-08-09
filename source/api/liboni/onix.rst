@@ -55,7 +55,7 @@ ONI specification and are not required to use the API.
     .. macro:: ONIX_TS4231
 
         (``6``)
-        Triad semiconductor TS421 optical to digital converter
+        Triad semiconductor TS4231 optical to digital converter
 
     .. macro:: ONIX_DINPUT32
 
@@ -130,7 +130,7 @@ ONI specification and are not required to use the API.
     .. macro:: ONIX_TS4231V2ARR
 
         (``21``)
-        Triad semiconductor TS421 optical to digital converter array targeting V2 base-stations
+        Triad semiconductor TS4231 optical to digital converter array targeting V2 base-stations
 
     .. macro:: ONIX_FMCANALOG1R3
 
@@ -150,7 +150,7 @@ ONI specification and are not required to use the API.
     .. macro:: ONIX_TS4231V1ARR
     
         (``25``)
-        Triad semiconductor TS421 optical to digital converter array targeting V1 base-stations
+        Triad semiconductor TS4231 optical to digital converter array targeting V1 base-stations
         
     .. macro:: ONIX_MAX10ADCCORE
     

@@ -3,7 +3,7 @@
 Device Table
 ============
 The collection of :ref:`devices <device>` governed by a :ref:`controller
-<controller>` is referred as a device table. The :ref:`controller <controller>`
+<controller>` is referred to as a device table. The :ref:`controller <controller>`
 is responsible for creating this aggregate and sending it to the computer
 following a reset. The table consists of an :ref:`addressed <dev-address>` list
 of :ref:`device descriptors <dev-desc>`.

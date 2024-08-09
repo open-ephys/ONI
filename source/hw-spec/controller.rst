@@ -2,7 +2,7 @@
 
 Controller
 ==========
-The controller’s purpose is to interface an ONI hardware system with the host
+The controller's purpose is to interface an ONI hardware system with the host
 computer. It aggregates and routes device data and provides transparent access
 to all devices, independently of their physical location. The host also
 contains a common clock that is used to timestamp data from all devices,
@@ -29,7 +29,7 @@ is defined as a single register read or write cycle to an individual address.
 
 The required characteristics of these channels are described in the following
 sections. A complete understanding of their use during software development
-requires an undersanding of the the :ref:`oni-api`.
+requires an understanding of the :ref:`oni-api`.
 
 .. _data-rd-chan:
 
@@ -115,7 +115,7 @@ Additionally, it is the channel over which the controller sends the device table
 to the host following a system reset. Signal data MUST be framed into packets
 using Consistent Overhead Byte Stuffing
 (`COBS <https://en.wikipedia.org/wiki/Consistent_Overhead_Byte_Stuffing>`__).
-Within this scheme, packets are delimited using 0’s and always have the
+Within this scheme, packets are delimited using 0's and always have the
 following format:
 
 ::
@@ -205,7 +205,7 @@ Address    Name                      Type
 
 Device Register Programming Interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The device programming interface allows transparent access to each device’s
+The device programming interface allows transparent access to each device's
 :ref:`register map <dev-reg-map>`. It defines a general purpose bus that hides
 the specifics of any particular implementation. It is composed of the following
 configuration channel registers:
@@ -220,7 +220,7 @@ configuration channel registers:
 
 - ``Register Value``: Value to be written to or read from and that corresponds
   to the register ``Register Address`` of device located at
-  ``Device   Address``.
+  ``Device Address``.
 
 - ``Read/Write``: A flag indicating if a read or write should be performed. 0
   indicates read operation. A value > 0 indicates write operation.
@@ -238,7 +238,7 @@ configuration channel registers:
 Appropriate values of ``Register Address`` and ``Register Value`` are
 determined by:
 
-- Looking at a device’s data sheet if the device is an integrated circuit and
+- Looking at a device's data sheet if the device is an integrated circuit and
   using :ref:`raw registers <reg-type>`.
 - Examining the :ref:`ONI Device Datasheet <dev-datasheet>` for :ref:`managed
   registers <reg-type>`.
@@ -255,7 +255,7 @@ must be performed:
       cannot be issued.
 
 2. The target device is selected by writing its address, as featured on the
-   device map, into ``Device Address`` on the controller
+   device map, into ``Device Address`` on the controller.
 3. The desired register address within the device register map is written into
    ``Register Address`` on the controller.
 4. The ``Read/Write`` register on the controller is set to 0x00.
@@ -276,7 +276,7 @@ must be performed:
    -  Failed to read the register in which case the value of ``Register Value``
       contains invalid data.
 
-7. If operation was successful, the ``Register Value`` can be read
+7. If operation was successful, the ``Register Value`` can be read.
 
 Register Write Sequence
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -306,8 +306,8 @@ sequence must be performed:
 6. The signal stream must be pumped until either ``CONFIGWACK`` or
    ``CONFIGWNACK`` is received indicating that the controller has either:
 
-   -  Successfully completed writing the specified device register
-   -  Failed to write the register
+   -  Successfully completed writing the specified device register.
+   -  Failed to write the register.
 
 Following successful or unsuccessful device register read or write, the
 appropriate ACK or NACK packets *must* be passed to the :ref:`signal channel
@@ -340,7 +340,7 @@ control over, the entire acquisition system:
 
 - ``Reset Acquisition Counter``: This register is used to reset the counter
   generating the ``Common_Timestamp`` used in the :ref:`device frames <frame>`.
-  A value if 1 will reset the counter to 0 without affecting the ``Running``
+  A value of 1 will reset the counter to 0 without affecting the ``Running``
   state. A value of 2 will reset the counter and, at the same time, set
   ``Running`` to 1, starting data production.
 

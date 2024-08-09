@@ -31,5 +31,5 @@ Bindings
 :ref:`C++ Binding Reference <cpponi>`
     C++17 & C++20 bindings for :ref:`liboni`.
 
-:ref:`.NET Binding Refernece <clroni>`
+:ref:`.NET Binding Reference <clroni>`
     CLR/.NET bindings for :ref:`liboni`.

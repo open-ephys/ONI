@@ -81,7 +81,7 @@
 /* navigation bar: when page title is selected*/
 .navbar-nav > .active > .nav-link {
   background-color: #e6eddf !important; /* selected text background fill */
-  color: #2f401f !important; /* selected text colour*/
+  color: #2f401f !important; /* selected text color*/
   font-weight: normal !important;
   transition-duration: 0.4s; /* how quickly to change*/
 }
