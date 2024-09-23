@@ -1,4 +1,4 @@
-W.. title:: Home
+.. title:: Home
 
 .. toctree::
    :hidden:
