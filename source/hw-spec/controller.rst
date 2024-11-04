@@ -36,7 +36,7 @@ requires an understanding of the :ref:`oni-api`.
 Read Channel
 ------------
 
--  **Word size** : 32 bits
+-  **Data alignment** : 8 bits
 -  **Channel type** : Stream
 -  **Direction** : Read
 
@@ -85,7 +85,7 @@ Where
 Write Channel
 -------------
 
--  **Word size** : 32 bits
+-  **Data alignment** : 8 bits
 -  **Channel type** : Stream
 -  **Direction** : Write
 
@@ -97,15 +97,14 @@ read, but without the ``Common_Timestamp`` field. It is the responsibility of
 the controller to accept frames at any rate the computer might be sending them.
 Currently, there is no defined mechanism to inform the host of any possible
 dropped frame on the write channel, although this can be included in an
-implementation so long as it does not invalidate any other ONI
-requirements.
+implementation so long as it does not invalidate any other ONI requirements.
 
 .. _sig-chan:
 
 Signal channel
 --------------
 
--  **Word size** : 8 bits
+-  **Data alignment** : 8 bits
 -  **Channel type** : Stream
 -  **Direction** : Read
 
@@ -113,10 +112,10 @@ The *signal* channel provides a way for the controller to inform the host of
 configuration results, which may be provided with a significant delay.
 Additionally, it is the channel over which the controller sends the device table
 to the host following a system reset. Signal data MUST be framed into packets
-using Consistent Overhead Byte Stuffing
-(`COBS <https://en.wikipedia.org/wiki/Consistent_Overhead_Byte_Stuffing>`__).
-Within this scheme, packets are delimited using 0's and always have the
-following format:
+using Consistent Overhead Byte Stuffing (`COBS
+<https://en.wikipedia.org/wiki/Consistent_Overhead_Byte_Stuffing>`__). Within
+this scheme, packets are delimited using 0's and always have the following
+format:
 
 ::
 
@@ -173,7 +172,7 @@ transaction. For instance, on a successful register read:
 Configuration Channel
 ---------------------
 
--  **Word size** : 32 bits
+-  **Data alignment** : 32 bits
 -  **Channel type** : Register
 -  **Direction** : Read-Write
 
