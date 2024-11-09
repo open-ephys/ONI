@@ -37,31 +37,32 @@ identifier.
 
 Special Devices
 ---------------
-There are two kinds of special devices that are required by this specification:
+There are two kinds of special devices that are required by this specification: 
 An information device on each hub and a heartbeat device in local hub 0.
 
 Information Device
 ~~~~~~~~~~~~~~~~~~
-Every hub in an ONI system must feature a special device, located at
-:ref:`Device_Address <dev-table>` 0xFE, which supplies information about the hub.
-Because this device is required to exist at a fixed address, it is not listed
-in the device table and, thus, has no :ref:`device descriptor <dev-desc>`.  The only
-communication channel it must expose is the register interface, and it must not
-include any streams. The required register map is:
+Every hub in an ONI system MUST feature a special device, located at
+:ref:`Device_Address <dev-table>` 0xXXXXXXFE, which supplies information about the
+hub. Because this device is required to exist at a fixed address, it is not
+listed in the device table and, thus, has no :ref:`device descriptor
+<dev-desc>`.  It MUST expose is the register interface, and it MUST NOT include
+any streams. The required register map is:
 
-======= ================================
-Address Register
-======= ================================
-0x0000  Hardware ID
-0x0001  Hardware revision
-0x0002  Firmware version
-0x0003  (OPTIONAL) Safe firmware version
-0x0004  Hub clock frequency
-0x0005  Hub data latency
-======= ================================
+========== ================================
+Address    Register
+========== ================================
+0x00000000 Hardware ID
+0x00000001 Hardware revision
+0x00000002 Firmware version
+0x00000003 (OPTIONAL) Safe firmware version
+0x00000004 Hub clock frequency
+0x00000005 Hub data latency
+========== ================================
 
 Although all register reads are 32-bits in nature, not all registers make use of
-the complete width. The detailed meaning of each register is:
+the complete width. The detailed description of each Information Devices
+registers is as follows:
 
 - **Hardware ID**: A 32-bit value that uniquely identifies the hub. It has a
   similar format to the :ref:`Device ID <dev-id>`:
@@ -99,7 +100,7 @@ the complete width. The detailed meaning of each register is:
   nanoseconds, of the physical link between the hub and the controller. Usually
   0 in local hubs.
 
-All 16-bit versions are in the format of:
+All 16-bit valued registers are in the format of:
 
 ::
 
@@ -113,7 +114,7 @@ Heartbeat Device
 ~~~~~~~~~~~~~~~~
 Local hub 0 must contain a “heartbeat device”. This is a simple device that
 periodically produces :ref:`samples <dev-sample>` containing only the ``Hub
-Timestamp`` and an empty payload, at a minimum rate of 10 Hz. Its ``ENABLE``
+Timestamp`` and an empty payload, at a fixed rate of 100 Hz. Its ``ENABLE``
 register must be fixed and always active. This device ensures that API calls
 accessing the read stream are guaranteed to be unblocked in the case that no
 other devices in the system are producing data.

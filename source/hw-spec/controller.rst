@@ -250,7 +250,7 @@ must be performed:
 
 1. Check the value of ``Trigger``.
 
-   -  If it is 0, the procedure can proceed.
+   -  If it is 0x00000000, the procedure can proceed.
    -  Else, the hardware is busy with a previous transaction and a new one
       cannot be issued.
 
@@ -258,13 +258,13 @@ must be performed:
    device map, into ``Device Address`` on the controller.
 3. The desired register address within the device register map is written into
    ``Register Address`` on the controller.
-4. The ``Read/Write`` register on the controller is set to 0x00.
-5. The ``Trigger`` register on the controller is set to 0x01, triggering
+4. The ``Read/Write`` register on the controller is set to 0x00000000.
+5. The ``Trigger`` register on the controller is set to 0x00000001, triggering
    configuration transmission.
 
    1. (Controller) A register read is routed by the controller to the
       appropriate device.
-   2. (Controller) ``Trigger`` is set to 0x00 once the operation finishes.
+   2. (Controller) ``Trigger`` is set to 0x00000000 once the operation finishes.
    3. (Controller) ``CONFIGRACK`` is pushed into the signal stream if the
       operation was successful, ``CONFIGRNACK`` is pushed if it failed.
 
@@ -285,7 +285,7 @@ sequence must be performed:
 
 1. Check the value of ``Trigger``.
 
-   -  If it is 0, the procedure can proceed.
+   -  If it is 0x00000000, the procedure can proceed.
    -  Else, the hardware is busy with a previous transaction and a new one
       cannot be issued.
 
@@ -293,13 +293,13 @@ sequence must be performed:
    device map, into ``Device Address`` on the controller
 3. The desired register address within the device register map is written into
    ``Register Address`` on the controller.
-4. The ``Read/Write`` register on the controller is set to 0x01.
-5. The ``Trigger`` register on the controller is set to 0x01, triggering
+4. The ``Read/Write`` register on the controller is set to 0x00000001.
+5. The ``Trigger`` register on the controller is set to 0x00000001, triggering
    configuration transmission.
 
    1. (Controller) A register write is routed by the controller to the
       appropriate device.
-   2. (Controller) ``Trigger`` is set to 0x00 once the operation finishes.
+   2. (Controller) ``Trigger`` is set to 0x00000000 once the operation finishes.
    3. (Controller) ``CONFIGWACK`` is pushed into the signal stream if the
       operation was successful, ``CONFIGWNACK`` is pushed if it failed.
 

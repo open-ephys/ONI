@@ -159,23 +159,23 @@ following rules:
 
 - Bits 31 down to 1 of the ``ENABLE`` are reserved.
 - For devices that produce data through the :ref:`data-rd-chan`, ``ENABLE`` is a
-  Read/Write register that takes effect after reset. When the least signficant
-  bit of ``ENABLE`` is set to 0b0, the device MUST NOT produce any data on the
-  :ref:`data-rd-chan`. When its least signficant bit is set to 0b1, the device
-  it MUST produce data :ref:`data-rd-chan` in accordance with behavior
-  documented on its :ref:`dev-datasheet`.
+  Read/Write register that takes effect after reset. When ``ENABLE`` is set to
+  0x00000000, the device MUST NOT produce any data on the :ref:`data-rd-chan`.
+  When ``ENABLE`` is set to 0x00000001, the device it MUST produce data
+  :ref:`data-rd-chan` in accordance with behavior documented on its
+  :ref:`dev-datasheet`.
 - For devices that do not produce data through the :ref:`data-rd-chan`,
   ``ENABLE`` is a Read-Only register with value 0. Attempting to write to the
   register results in ``CONFIGWNACK`` on the :ref:`sig-chan`.
 
-The location of the managed registers depends on the existence of raw
-registers. If the device implements raw registers, those are mapped to
-addresses 0x0000 to 0x7FFF, corresponding to the same address map of the
-underlying hardware, and managed registers start from 0x80000. If no raw
-registers are present, managed registers start from 0x0000 instead.
+The location of the managed registers depends on the existence of raw registers.
+If the device implements raw registers, those are mapped to addresses 0x00000000
+to 0x00007FFF, corresponding to the same address map of the underlying hardware,
+and managed registers start from 0x00008000. If no raw registers are present,
+managed registers start from 0x00000000 instead.
 
-The ``ENABLE`` register MUST be the first of the managed registers, at 0x0000 if
-no raw registers are present, 0x8000 if raw registers are implemented.
+The ``ENABLE`` register MUST be the first of the managed registers, at 0x00000000 if
+no raw registers are present, 0x00008000 if raw registers are implemented.
 
 .. _dev-datasheet:
 
