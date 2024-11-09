@@ -77,11 +77,11 @@ table <dev-table>`. The descriptor must contain the following information:
   <com-channels>`. This value must be *at least* as a large as the number of
   bytes in the Device Sample indicated by the :ref:`dev-datasheet-write-format`.
 
-.. note:: ``Read_Sample_Size`` and ``Write_Sample_Size`` may include trailing padding 
-   bytes that are a result of data alignment requirments imposed by different underlying 
-   hardware and drivers. Different types of ONI-compliant :ref:`controller:`
-   may present different ``Read_Sample_Size`` and ``Write_Sample_Size`` for Devices 
-   with identical :ref:`Device IDs <dev-id>`. The API's functionality must not be 
+.. note:: ``Read_Sample_Size`` and ``Write_Sample_Size`` may include trailing padding
+   bytes that are a result of data alignment requirments imposed by different underlying
+   hardware and drivers. Different types of ONI-compliant :ref:`controller`
+   may present different ``Read_Sample_Size`` and ``Write_Sample_Size`` for Devices
+   with identical :ref:`Device IDs <dev-id>`. The API's functionality must not be
    affected by this.
 
 .. _dev-sample:
@@ -103,11 +103,11 @@ format:
   from the write stream, this value is reserved.
 - ``Payload``: Device-specific data.
 
-  -  For :ref:`read streams <com-channels>`, this data must be _at least_ :ref:`Read Sample
-     Size <dev-desc>` - 8.
-  -  For :ref:`write streams <com-channels>`, this data must be of :ref:`Write Sample
-     Size <dev-desc>`. Thus, the whole sample packet fits into the sample
-     size specified in the :ref:`device descriptor <dev-desc>`.
+  - For :ref:`read streams <com-channels>`, this data must be *at least*
+    :ref:`Read Sample Size <dev-desc>` - 8.
+  - For :ref:`write streams <com-channels>`, this data must be of :ref:`Write Sample
+    Size <dev-desc>`. Thus, the whole sample packet fits into the sample
+    size specified in the :ref:`device descriptor <dev-desc>`.
 
 .. _dev-register:
 
@@ -239,6 +239,7 @@ Additional columns are permitted so long as their information does not conflict
 with that in the required columns.
 
 .. _dev-datasheet-read-format:
+
 Read Frame Format
 ~~~~~~~~~~~~~~~~~
 If the device produces frames, a
@@ -247,6 +248,7 @@ frame structure is required. Bits can be grouped into words as is convenient. If
 no frames are produced, then a statement of such is required.
 
 .. _dev-datasheet-write-format:
+
 Write Frame Format
 ~~~~~~~~~~~~~~~~~~
 If the device accepts frames, a
