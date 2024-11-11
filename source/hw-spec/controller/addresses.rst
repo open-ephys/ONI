@@ -7,6 +7,14 @@ An ONI :term:`Controller` has a 16-bit address register space, accessible throug
 
 The full address space is divided into three address blocks and a fourth currently reserved. The address blocks are:
 
+:ref:`address_global`: 0x0000-0x3FFF
+
+:ref:`address_spec`: 0x4000-0x7FFF
+
+:ref:`address_custom`: 0x8000-0xBFFF
+
+:ref:`address_reserved`: xC000-0xFFFF
+
 .. _address_global:
 
 Operation registers
@@ -37,8 +45,8 @@ Address    Name                      Type
 
 Global Acquisition Registers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The following global acquisition registers provide information about, and
-control over, the entire acquisition system:
+The following global acquisition registers govern acquisition over a single
+controller.
 
 - ``Running``: Set to > 0 to run the system clock and produce data. Set to 0 to
   stop the system clock and therefore stop data flow. Results in no other
@@ -139,3 +147,10 @@ This block is reserved for hardware-specific registers that fall out of the scop
 but might be required for the correct operation of a specific hardware implementation.
 
 The :term:`Driver Translator` should, to the possible extent, hide these from the :term:`API`.
+
+.. _address_reserved:
+
+Reserved
+----------
+
+This address space is currently unused and must be reserved for future updates.
