@@ -1,6 +1,6 @@
 .. _addresses:
 
-ONI Controller address space
+Controller Address Space
 =================================
 
 An ONI :term:`Controller` has a 16-bit address register space, accessible through the :ref:`conf-chan`.

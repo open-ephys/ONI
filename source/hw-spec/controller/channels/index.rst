@@ -1,6 +1,6 @@
 .. _controller_channels:
 
-Controller communication channels
+Controller Communication Channels
 ==================================
 
 Communication between the controller and the host computer shall occur over

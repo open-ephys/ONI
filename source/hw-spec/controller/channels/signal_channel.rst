@@ -1,6 +1,6 @@
 .. _sig-chan:
 
-Signal channel
+Signal Channel
 ===============
 
 -  **Data alignment** : 8 bits

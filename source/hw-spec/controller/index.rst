@@ -10,7 +10,7 @@ independently of their origin hub.
 
 .. _controller_params:
 
-Hardware-specific parameters
+Hardware-specific Parameters
 -----------------------------
 
 Different ONI-compliant controller implementations might specify hardware-specific parameters related to standard ONI elements.
@@ -18,7 +18,7 @@ These need to be informed through a :ref:`specific address space <address_spec>`
 :term:`Driver translators <Driver Translator>` can use this information to hide hardware-specific details to the 
 relevant :term:`API`.
 
-Optional features
+Optional Features
 ^^^^^^^^^^^^^^^^^^^
 
 Some features defined in the specification will be marked with the text ``(OPTIONAL)``. These features are not mandatory,

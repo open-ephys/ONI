@@ -23,7 +23,7 @@ invalidate any other ONI requirements.
 
 .. _write-word-alignment:
 
-Write word alignment
+Write Word Alignment
 ---------------------
 
 Hardware implementations of controllers might require a :ref:`word size<write-word-alignment-reg>`

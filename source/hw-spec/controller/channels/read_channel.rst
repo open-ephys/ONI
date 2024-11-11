@@ -21,7 +21,7 @@ systems or other software limitations.
 
 .. _read-word-alignment:
 
-Read word alignment
+Read Word Alignment
 ---------------------
 
 Hardware implementations of controllers might require a :ref:`word size<read-word-alignment-reg>`
