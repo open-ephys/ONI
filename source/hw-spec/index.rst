@@ -21,6 +21,6 @@ ONI Hardware Specification
    dev_table
    devices
    hubs
-   controller
+   controller/index
 
 
