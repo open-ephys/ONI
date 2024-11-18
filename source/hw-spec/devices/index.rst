@@ -7,7 +7,7 @@ physical element interfacing with the environment (e.g. an external sensor with
 a digital communication interface), something programmed within the firmware to
 emulate this (e.g. a digital logic module on an FPGA) or a purely internal data
 source (e.g. a controller based digital logic module that generates system
-status reports). A device MUST expose the following :ref:`communication channels
+status reports). A device exposes the following :ref:`communication channels
 <com-channels>`:
 
 - A REQUIRED register interface
@@ -27,7 +27,6 @@ order to reach ONI-compliance.
    devid
    descriptor
    sample
-   descriptor
    registers
    datasheet
    hubs
