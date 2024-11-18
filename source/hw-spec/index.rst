@@ -19,8 +19,7 @@ ONI Hardware Specification
    hierarchy
    comm_channels
    dev_table
-   devices
-   hubs
+   devices/index
    controller/index
 
 
