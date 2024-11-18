@@ -3,8 +3,8 @@
 Hubs
 ====
 Hubs are collections of devices sharing a common clock. They can be independent
-hardware aggregates connected to the controller (e.g., a headstage for neural
-acquisition) or a logical partition of existing hardware (e.g., a collection of
+hardware aggregates connected to the controller (e.g. a headstage for neural
+acquisition) or a logical partition of existing hardware (e.g. a collection of
 devices implemented in the same firmware as the controller). Hubs that exist on
 hardware that is physically separated from the :ref:`controller <controller>` are
 referred to as remote hubs, while hubs existing on the controller are local hubs.
@@ -32,5 +32,3 @@ particular collection of devices on a specific hardware platform communicating
 with the controller through a specific link. Changes in the device collection,
 the communications link or the general hardware architecture require a new
 identifier.
-
-
