@@ -2,20 +2,23 @@
 
 Hubs
 ====
-Hubs are collections of devices sharing a common clock. They can be independent
-hardware aggregates connected to the controller (e.g. a headstage for neural
-acquisition) or a logical partition of existing hardware (e.g. a collection of
-devices implemented in the same firmware as the controller). Hubs that exist on
-hardware that is physically separated from the :ref:`controller <controller>` are
+
+Devices MUST be grouped in logical or physical collections, called Hubs. 
+They can be independent hardware aggregates connected to the controller 
+(e.g. a headstage for neural acquisition) or a logical partition of existing hardware 
+(e.g. a collection of devices implemented in the same firmware as the controller). 
+
+Every hub MUST have access to a high-resolution timer. All devices within
+a hub MUST use this clock to generate the ``Hub_Timestamp`` value of their 
+:ref:`data samples <dev-sample>`.
+
+Hubs that exist on hardware that is physically separated from the :ref:`controller <controller>` are
 referred to as remote hubs, while hubs existing on the controller are local hubs.
 An ONI-compliant system MUST implement at least one local hub, located at
 :ref:`Hub_Index 0 <dev-address>` and sharing the clock of controller's main
 state machine, and can implement up to 253 additional hubs, local or remote. All
 devices reflecting or modifying the :ref:`controller <controller>` state and/or 
 reporting errors or similar status messages must be implemented in local hub 0.
-
-Every hub MUST have access to a high-resolution timer that is used by all its devices
-to generate a ``Hub_Timestamp`` for a :ref:`data sample <dev-sample>`.
 
 Data from all the devices of a hub is collected and passed to the controller.
 The specific interface between a hub and the controller is highly
