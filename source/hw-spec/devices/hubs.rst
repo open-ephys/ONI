@@ -8,9 +8,9 @@ They can be independent hardware aggregates connected to the controller
 (e.g. a headstage for neural acquisition) or a logical partition of existing hardware 
 (e.g. a collection of devices implemented in the same firmware as the controller). 
 
-Every hub MUST have access to a high-resolution timer. All devices within
-a hub MUST use this clock to generate the ``Hub_Timestamp`` value of their 
-:ref:`data samples <dev-sample>`.
+Every hub MUST have access to a counter driven by a high resolution clock. 
+All devices within a hub MUST use the values of this counter for the the 
+``hubclk_cnt`` field of their :ref:`data samples <dev-sample>`.
 
 Hubs that exist on hardware that is physically separated from the :ref:`controller <controller>` are
 referred to as remote hubs, while hubs existing on the controller are local hubs.
