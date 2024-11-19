@@ -14,17 +14,16 @@ four abstract communication channels:
    events from controller to host.
 #. :ref:`conf-chan`: Bidirectional, addressed access to device registers.
 
-API access to all these channels is blocking, i.e.: an API call that accesses
-any channel will not return until the requested transaction on that channel is
-complete. Concurrent access to a single channel by different threads is NOT
-permitted. However, channels are independent and concurrent access to
-*different* channels MUST be permitted. A stream transaction is defined as a
-blocking read or write of a set number of bytes, while a register transaction
-is defined as a single register read or write cycle to an individual address.
+These channels are implemented by the combination of the controller hardware and the :term:`Driver Translator`.
 
-The required characteristics of these channels are described in the following
-sections. A complete understanding of their use during software development
-requires an understanding of the :ref:`oni-api`.
+Concurrent access to a single channel by the host (e.g. by multiple threads of execution or applications) is 
+NOT permitted. However, individual channels MUST be able to be accessed independently.
+
+.. note:: Concurrent access requirements relate only to the hardware implementation. Functions in 
+   a high-level :term:`API` MAY introduce their own access dependencies and concurrency limitations.
+
+The required characteristics of the controller channels are described in the following
+sections.
 
 .. toctree:: 
    :hidden:
