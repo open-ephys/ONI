@@ -14,8 +14,8 @@ state machine, and can implement up to 253 additional hubs, local or remote. All
 devices reflecting or modifying the :ref:`controller <controller>` state and/or 
 reporting errors or similar status messages must be implemented in local hub 0.
 
-Every hub MUST have access to a high-resolution timer that is used by all its devices
-to generate a ``Hub_Timestamp`` for a :ref:`data sample <dev-sample>`.
+Every hub MUST have access to a high-resolution timer that is used by all its
+devices to generate a ``hubclk_cnt`` for a :ref:`data sample <dev-sample>`.
 
 Data from all the devices of a hub is collected and passed to the controller.
 The specific interface between a hub and the controller is highly
