@@ -8,9 +8,9 @@ An information device on each hub and a heartbeat device in local hub 0.
 Information Device
 --------------------
 Every hub in an ONI system MUST feature a special device, located at
-:ref:`Device_Address <dev-table>` 0xXXXXXXFE, which supplies information about the
-hub. Because this device is required to exist at a fixed address, it is not
-listed in the device table and, thus, has no :ref:`device descriptor
+:ref:`Device_Index <dev-table>` 0xFE within the hub, which supplies information
+about the hub. Because this device is required to exist at a fixed address, it
+is not listed in the device table and, thus, has no :ref:`device descriptor
 <dev-desc>`.  It MUST expose is the register interface, and it MUST NOT include
 any streams. The required register map is:
 
@@ -76,9 +76,12 @@ and its firmware, where that hub is located.
 
 Heartbeat Device
 ------------------
-Local hub 0 must contain a “heartbeat device”. This is a simple device that
+Local hub 0 MUST contain a “heartbeat device”. This is a simple device that
 periodically produces :ref:`samples <dev-sample>` containing only the
 ``hubclk_cnt`` and an empty payload, at a fixed rate of 100 Hz. Its ``ENABLE``
-register must be fixed and always active. This device ensures that API calls
+register must be read-only and always active. This device ensures that API calls
 accessing the read stream are guaranteed to be unblocked in the case that no
 other devices in the system are producing data.
+
+Other, identical heartbeat devices but with configurable ``ENABLE`` and data
+rate MAY exist as part of any hub.

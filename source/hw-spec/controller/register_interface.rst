@@ -86,7 +86,7 @@ Register Write Sequence
 -------------------------
 
 When a host requests one or more device register *writes*, the following
-following sequence must be performed:
+sequence must be performed:
 
 1. Check the value of ``Trigger``.
 

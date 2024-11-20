@@ -24,8 +24,9 @@ systems or other software limitations.
 Read Word Alignment
 ---------------------
 
-Hardware implementations of controllers might require a :ref:`word size<read-word-alignment-reg>`
-greater than 8 bits. In that case, the controller is required to increase the ``Read_Sample_Size`` 
-values of all devices on the :ref:`dev-table` so they fit into the required
-word alignment. Extra bytes after the size defined on the :term:`Device Datasheet`
-will be padded with 0xFF.
+Hardware implementations of controllers might require a :ref:`word
+size<read-word-alignment-reg>` greater than 8 bits. In that case, the controller
+MUST increase the ``rd_samp_size`` provided each devices' :ref:`dev-desc` within
+the :ref:`dev-table` so they fit into the required word alignment. Extra bytes
+after the size defined on the :term:`Device Datasheet`'s
+:ref:`dev-datasheet-read-format` will be padded with 0xFF.
