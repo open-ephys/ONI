@@ -38,6 +38,24 @@ The register programming interface is composed of the following
   to write ``Register Value`` to the register at ``Register Address`` on the
   device at ``Device Address`` is queued. Reading the ``Trigger`` register
   returns 0x00000000 if the queue is empty or 1 if there are pending operations.
+
+  .. note :: 
+
+      In order to conform with the register reading and writing sequences that
+      are described in the following sections, the meaning of the ``Trigger``
+      register differs depending on if it is being read or written to.
+      Specifically,
+
+      - When reading the ``Trigger`` register, the returned value indicates if
+        the the device register read or write transaction queue is empty (value
+        is 0x00000000) or has pending transactions that have not yet been
+        executed (value is 0x00000001). 
+
+      - When a value is written to the ``Trigger`` register, a request is sent
+        to the controller to insert a device register read or write transaction
+        into its queue. Note that this does not directly affect a the value of
+        ``Trigger`` as this value will always reflect the state indicated in the
+        previous bullet point.
    
 Appropriate values of ``Register Address`` and ``Register Value`` are
 determined by:
