@@ -4,7 +4,7 @@ Device Sample Format
 =====================
 
 Data passed over the read or write streams are transmitted in unit packets,
-or “samples”. 
+or "samples". 
 
 Read samples
 -------------
@@ -15,11 +15,11 @@ Read samples MUST have the following format:
 ::
 
     uint64    hubclk_cnt
-    var       hayload
+    var       payload
 
 - ``hubclk_cnt``: Hub Clock Counter. This is the common counter for all devices in 
   a :ref:`Hub <hub>`, indicating the time of sample capture. 
-- ``payload``: Device-specific data. This data MUST be 
+- ``payload``: :ref:`Device-specific<dev-datasheet-read-format>` data. This data MUST be 
   :ref:`Read Sample Size <dev-desc>` - 8 bytes long.
 
 Write samples
@@ -32,5 +32,5 @@ Write samples MUST have the following format.
 
   var payload
 
-- ``payload``: Device-specific data. This data MUST be 
+- ``payload``: :ref:`Device-specific<dev-datasheet-write-format>` data. This data MUST be 
   :ref:`Write Sample Size <dev-desc>` bytes long. 
