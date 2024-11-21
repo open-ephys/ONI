@@ -30,14 +30,14 @@ The register programming interface is composed of the following
   is not recommended.
 
 - ``Read/Write``: A flag indicating if a read or write should be performed. 0
-  indicates read operation. A value > 0 indicates write operation.
+  indicates a read operation. A value of 0x00000001 indicates a write operation.
 
-- ``Trigger``: Set > 0 to add either a register read or write operation
-  depending on the state of ``Read/Write``. If ``Read/Write`` is 0, a read 
-  operation is queued. If ``Read/Write`` is 1, an operation to write ``Register Value`` 
-  to the register at ``Register Address`` on the device at ``Device Address`` is queued. 
-  Reading the ``Triger`` register returns 0 if the queue is empty or 1 if there are
-  pending operations.
+- ``Trigger``: Set to 0x00000001 to add either a register read or write
+  operation depending on the state of ``Read/Write``. If ``Read/Write`` is
+  0x00000000, a read operation is queued. If ``Read/Write`` is 1, an operation
+  to write ``Register Value`` to the register at ``Register Address`` on the
+  device at ``Device Address`` is queued. Reading the ``Trigger`` register
+  returns 0x00000000 if the queue is empty or 1 if there are pending operations.
    
 Appropriate values of ``Register Address`` and ``Register Value`` are
 determined by:
@@ -55,21 +55,22 @@ must be performed:
 
 1. Check the value of ``Trigger``.
 
-   -  If it is 0, the queue is empty and the procedure can safely proceed.
+   -  If it is 0x00000000, the queue is empty and the procedure can safely proceed.
    -  Else, there are transactions pending on the queue. Since the 
       exact number of pending elements is unknown, adding new transactions
       is not recommended.
 
-2. For each register read transaction to be added to the queue:  
+2. For each register read transaction to be added to the queue:
 
    1. The target device is selected by writing its address, as featured on the
       device map, into ``Device Address`` on the controller.
-   2. The desired register address within the device register map is written into
-      ``Register Address`` on the controller.
-   3. The ``Read/Write`` register on the controller is set to 0x00.
-   4. The ``Trigger`` register on the controller is set to 0x01, inserting the 
-      operation on the queue.
-   5. Repeat as needed until al read transactions have been queued.
+   2. The desired register address within the device register map is written
+      into ``Register Address`` on the controller.
+   3. The ``Read/Write`` register on the controller is set to 0x00000000.
+   4. The ``Trigger`` register on the controller is set to 0x00000001, inserting
+      the operation on the queue.
+   5. The host repeats steps 1-4 as needed until all read transactions have been
+      queued.
 
 3. For each element on the queue, the controller will:
 
@@ -84,12 +85,12 @@ must be performed:
 Register Write Sequence
 -------------------------
 
-When a host requests one or more device register *writes*, the following following
+When a host requests one or more device register *writes*, the following
 sequence must be performed:
 
 1. Check the value of ``Trigger``.
 
-   -  If it is 0, the queue is empty and the procedure can safely proceed.
+   -  If it is 0x00000000, the queue is empty and the procedure can safely proceed.
    -  Else, there are transactions pending on the queue. Since the 
       exact number of pending elements is unknown, adding new transactions
       is not recommended.
@@ -98,13 +99,13 @@ sequence must be performed:
 
    1. The target device is selected by writing its address, as featured on the
       device map, into ``Device Address`` on the controller
-   2. The desired register address within the device register map is written into
-      ``Register Address`` on the controller.
-   3. The ``Read/Write`` register on the controller is set to 0x01.
+   2. The desired register address within the device register map is written
+      into ``Register Address`` on the controller.
+   3. The ``Read/Write`` register on the controller is set to 0x00000001.
    4. The value to be written into the device register is written into 
       the ``Register Value``  register in the controller.
-   5. The ``Trigger`` register on the controller is set to 0x01, inserting the 
-      operation on the queue.
+   5. The ``Trigger`` register on the controller is set to 0x00000001, inserting
+      the operation on the queue.
    6. Repeat as needed until al read transactions have been queued.
 
 3. For each element on the queue, the controller will:

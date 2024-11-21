@@ -4,7 +4,7 @@ Device Sample Format
 =====================
 
 Data passed over the read or write streams are transmitted in unit packets,
-or â€œsamplesâ€. 
+or “samples”. 
 
 Read samples
 -------------

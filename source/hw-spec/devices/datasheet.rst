@@ -60,16 +60,20 @@ table, but it MUST contain the following columns:
 Additional columns are permitted so long as their information does not conflict
 with that in the required columns.
 
+.. _dev-datasheet-read-format:
+
 Read Frame Format
 ~~~~~~~~~~~~~~~~~
-If the device produces frames, a
-`bitfield <https://en.wikipedia.org/wiki/Bit_field>`__ diagram describing the
-frame structure is required. Bits can be grouped into words as is convenient. If
-no frames are produced, then a statement of such is required.
+If the device produces :ref:`samples <dev-sample>`, a `bitfield
+<https://en.wikipedia.org/wiki/Bit_field>`__ diagram describing the frame
+structure is required. Bits can be grouped into words as is convenient. If no
+frames are produced, then a statement of such is required.
+
+.. _dev-datasheet-write-format:
 
 Write Frame Format
 ~~~~~~~~~~~~~~~~~~
-If the device accepts frames, a
-`bitfield <https://en.wikipedia.org/wiki/Bit_field>`__ diagram describing the
-frame structure is required. Bits can be grouped into words as is convenient. If
-no frames are accepted, then a statement of such is required.
+If the device accepts :ref:`samples <dev-sample>`, a `bitfield
+<https://en.wikipedia.org/wiki/Bit_field>`__ diagram describing the frame
+structure is required. Bits can be grouped into words as is convenient. If no
+frames are accepted, then a statement of such is required.
