@@ -48,15 +48,15 @@ Global Acquisition Registers
 The following global acquisition registers govern acquisition over a single
 controller.
 
+- ``RESET``: System Reset. Set to 0x00000001 to trigger a hardware reset and send a fresh device
+  map to the host. Devices are reset but their managed registers might remain
+  unchanged, depending on their configuration (See the :ref:`Device registers
+  <dev-register>` section for more information). This reggister is set to 0x00000000 
+  by the controller upon entering the reset state.
+
 - ``ACQ_RUNNING``: Acquisition Running. Set to 0x00000001 to run the system clock and produce data. 
   Set to 0x00000000 to stop the system clock and therefore stop data flow. Results in no other
   configuration changes.
-
-- ``RESET``: Set to 0x00000001 to trigger a hardware reset and send a fresh device
-  map to the host. Devices are reset but their managed registers might remain
-  unchanged, depending on their configuration (See the :ref:`Device registers
-  <dev-register>` section for more information). Set to 0x00000000 by the controller
-  upon entering the reset state.
 
 - ``SYS_CLK_HZ``: System Clock. A read-only register specifying the controller 
   main hardware clock frequency in Hz. This is the clock used by the controller 
@@ -64,7 +64,8 @@ controller.
 
 - ``ACQ_CLK_HZ``: Acquisition Clock. A read-only register specifying the 
   :ref:`Acquisition Counter<acq_clk>` frequency in Hz. This clock is used to 
-  generate an acquisition counter that timestamps data from all the devices. 
+  generate an acquisition counter, common to all devices, that timestamps samples
+  when packaged into frames by the controller.
   The ``acqclk_cnt`` in the read :ref:`frame <frame>` header is incremented at this frequency.
 
 - ``ACQ_CNT_RESET``: Reset Acquisition Counter. This register is used to reset the :ref:`counter<acq_clk>`
@@ -80,12 +81,12 @@ controller.
   The presence and limits of this capability are indicated in
   the :ref:`ONI_ATTR_NUM_SYNC_DEVS<optional-num-sync-dev-reg>` register.
   In configurations that support hardware synchronization, resetting the acquisition counter through
-  ``ACQ_CNT_RESET`` on a device with a ``SYNC_HW_ADDR`` of 0 will broadcast a hardware signal
+  ``ACQ_CNT_RESET`` on a device with a ``SYNC_HW_ADDR`` of 0x00000000 will broadcast a hardware signal
   to all connected non-zero controllers, resetting all counters simultaneously.
   
   .. note:: Hardware synchronization is guaranteed only among controllers with the same hardware 
-    implementation. Synchronization between controllers with different implementations is not assured, 
-    even if they support this capability.
+    implementation and that indicate support for this capability. Synchronization between controllers 
+    with different implementations is not assured, even if they indicate support for this capability.
 
 Other addresses in this block are reserved and MUST NOT be used.
 
@@ -107,15 +108,15 @@ capabilities and ONI specification compliance.
 
 Currently defined addresses are:
 
-======== ===========================
+======== ===============================
 Address  Name
-======== ===========================
+======== ===============================
 0x4000   ONI_SPEC_VER
 0x4001   ONI_ATTR_READ_STR_ALIGN
 0x4002   ONI_ATTR_WRITE_STR_ALIGN
-0x4003   ONI_ATTR_MAX_REGISTER_Q
+0x4003   ONI_ATTR_MAX_REGISTER_Q_SIZE
 0x4004   ONI_ATTR_NUM_SYNC_DEVS
-======== ===========================
+======== ===============================
 
 - ``ONI_SPEC_VER``: ONI specification version. Specifies the version of the ONI specification the 
   controller adheres to. Format is, bits 31-24: Major, 23-16: Minor, 15-8: patch, 7-0: reserved
@@ -123,16 +124,18 @@ Address  Name
 .. _read-word-alignment-reg:
   
 - ``ONI_ATTR_READ_STR_ALIGN``: Read stream alignment. Specifies, in bits, the data word size the hardware 
-  implementation of the :ref:`read channel <data-rd-chan>` uses for transmission.
+  implementation of the :ref:`read channel <data-rd-chan>` uses for transmission. This value must be divisible
+  by 8.
 
 .. _write-word-alignment-reg:
 
 - ``ONI_ATTR_WRITE_STR_ALIGN``: Write stream alignment. Specifies, in bits, the data word size the hardware 
-  implementation of the :ref:`write channel <data-wr-chan>` uses for transmission.
+  implementation of the :ref:`write channel <data-wr-chan>` uses for transmission. This value must be divisible
+  by 8.
 
 .. _max-devaccess-reg:
 
-- ``ONI_ATTR_MAX_REGISTER_Q``: Maximum queued device register operations. Maximum number of operations that 
+- ``ONI_ATTR_MAX_REGISTER_Q_SIZE``: Maximum queued device register operations. Maximum number of operations that 
   can be queued through the :ref:`register_interface`.
 
 .. _optional-num-sync-dev-reg:
@@ -154,13 +157,12 @@ Hardware-specific registers
 This block is reserved for hardware-specific registers that fall out of the scope of this specification
 but might be required for the correct operation of a specific hardware implementation.
 
-The :term:`Driver Translator` should, to the possible extent, hide these from the :term:`API`.
-
 .. note:: These addresses SHOULD be reserved for low-level configuration of the hardware. Most
   hardware-specific operations SHOULD, if possible, be implemented either in 
   :ref:`hardware specific registers<hub_addr_hw_specific>` in the controller hub-0
   :ref:`hub information device<hub_info_dev>` or in dedicated devices to access these hardware
-  characteristics (e.g. hub link controllers).
+  characteristics (e.g. hub link controllers). When registers in this block are used, the 
+  :term:`Driver Translator` should, to the possible extent, hide these from the :term:`API`.
 
 .. _address_reserved:
 
