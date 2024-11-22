@@ -4,9 +4,26 @@ Controller
 ==========
 The :term:`controller`'s purpose is to interface an ONI hardware system with the host
 computer. It aggregates and routes device data and provides transparent access
-to all devices, independently of their physical location. The host also
-contains a common clock that is used to timestamp data from all devices,
-independently of their origin hub.
+to all devices, independently of their physical location. 
+
+.. _acq_clk:
+
+Acquisition Counter
+---------------------
+
+The controller MUST have access to a high resolution clock. The tick count from this
+clock is used to synchronize data from all devices independently of their origin hub.
+The controller MUST capture the counter value when receiving a :ref:`sample<dev-sample>`
+and use that value for the ``acqclk_cnt`` field of the corresponding :ref:`frame<frame>`.
+
+.. note:: The controller adds the acquisition counter when it receives the samples
+    and proceeds to create the associated frame. However, due to hub to controller
+    transmission delays, this time may have an offset from sample creation time.
+    To account for this, hubs contain a register indicating the measured
+    transmission delay. Users can use this value to more precisely synchronize
+    samples between hubs.
+
+.. todo::  update note admonition to links after the register map is updated
 
 .. _controller_params:
 
@@ -32,7 +49,7 @@ Communication
 
 .. toctree::
     :maxdepth: 1
-
+ 
     channels/index
     addresses
     register_interface
