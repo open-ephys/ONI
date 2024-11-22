@@ -21,10 +21,9 @@ relevant :term:`API`.
 Optional Features
 ^^^^^^^^^^^^^^^^^^^
 
-Some features defined in the specification will be marked with the text ``(OPTIONAL)``. These features are not mandatory,
-so different hardware implementations of a controller might chose to implement them or not. The ONI compliance
-address space has specific registers for each declared optional feature which determine the availability of each 
-optional feature and its parameters, if applicable.
+The specification includes features that MAY or MAY NOT be implemented in controller hardware. 
+The :ref:`ONI compliance address space <address_spec>` includes registers to determine the availability 
+of each optional feature and its parameters, if applicable.
 
 
 Communication

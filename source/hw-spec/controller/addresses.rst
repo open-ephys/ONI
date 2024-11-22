@@ -13,7 +13,7 @@ The full address space is divided into three address blocks and a fourth current
 
 :ref:`address_custom`: 0x8000-0xBFFF
 
-:ref:`address_reserved`: xC000-0xFFFF
+:ref:`address_reserved`: 0xC000-0xFFFF
 
 .. _address_global:
 
@@ -30,17 +30,17 @@ The address map for this block is as follows:
 ========== ========================= ==================
 Address    Name                      Type
 ========== ========================= ==================
-0x0000     Reset                     Global
-0x0001     Running                   Global
-0x0002     System Clock              Global
-0x0003     Acquisition Clock         Global
-0x0004     Reset Acquisition Counter Global
-0x0005     Hardware Address          Global
-0x0006     Device Address            Register interface
-0x0007     Register Address          Register interface
-0x0008     Register Value            Register interface
-0x0009     Read/Write                Register interface
-0x000A     Trigger                   Register interface
+0x0000     RESET                     Global
+0x0001     ACQ_RUNNING               Global
+0x0002     SYS_CLK_HZ                Global
+0x0003     ACQ_CLK_HZ                Global
+0x0004     ACQ_CNT_RESET             Global
+0x0005     SYNC_HW_ADDR              Global
+0x0006     RI_DEV_ADDR               Register interface
+0x0007     RI_REG_ADDR               Register interface
+0x0008     RI_REG_VAL                Register interface
+0x0009     RI_RW                     Register interface
+0x000A     RI_TRIGGER                Register interface
 ========== ========================= ==================
 
 Global Acquisition Registers
@@ -48,40 +48,46 @@ Global Acquisition Registers
 The following global acquisition registers govern acquisition over a single
 controller.
 
-- ``Running``: Set to > 0 to run the system clock and produce data. Set to 0 to
-  stop the system clock and therefore stop data flow. Results in no other
+- ``ACQ_RUNNING``: Acquisition Running. Set to 0x00000001 to run the system clock and produce data. 
+  Set to 0x00000000 to stop the system clock and therefore stop data flow. Results in no other
   configuration changes.
 
-- ``Reset``: Set to > 0 to trigger a hardware reset and send a fresh device
+- ``RESET``: Set to 0x00000001 to trigger a hardware reset and send a fresh device
   map to the host. Devices are reset but their managed registers might remain
   unchanged, depending on their configuration (See the :ref:`Device registers
-  <dev-register>` section for more information). Set to 0 by the controller
+  <dev-register>` section for more information). Set to 0x00000000 by the controller
   upon entering the reset state.
 
-- ``System Clock``: A read-only register specifying the master hardware clock
-  frequency in Hz. This is the clock used by the controller to perform data
-  transmission.
+- ``SYS_CLK_HZ``: System Clock. A read-only register specifying the controller 
+  main hardware clock frequency in Hz. This is the clock used by the controller 
+  to perform data transmission.
 
-- ``Acquisition Clock``: A read-only register specifying the system common
-  clock frequency in Hz. This clock is used to generate an acquisition counter
-  that timestamps data from all the devices. The ``Common_Timestamp`` in the
-  read :ref:`frame <frame>` header is incremented at this frequency.
+- ``ACQ_CLK_HZ``: Acquisition Clock. A read-only register specifying the 
+  :ref:`Acquisition Counter<acq_clk>` frequency in Hz. This clock is used to 
+  generate an acquisition counter that timestamps data from all the devices. 
+  The ``acqclk_cnt`` in the read :ref:`frame <frame>` header is incremented at this frequency.
 
-- ``Reset Acquisition Counter``: This register is used to reset the counter
-  generating the ``Common_Timestamp`` used in the :ref:`device frames <frame>`.
-  A value of 1 will reset the counter to 0 without affecting the ``Running``
-  state. A value of 2 will reset the counter and, at the same time, set
-  ``Running`` to 1, starting data production.
+- ``ACQ_CNT_RESET``: Reset Acquisition Counter. This register is used to reset the :ref:`counter<acq_clk>`
+  generating the ``acqclk_cnt`` used in the :ref:`device frames <frame>`.
+  A value of 0x00000001 will reset the counter to 0 without affecting the ``Running``
+  state. A value of 0x00000002 will reset the counter and, at the same time, set
+  ``Running`` to 0x00000001, starting data production.
 
   .. _optional-num-sync-dev:
 
-- ``Hardware Address``: :ref:`(OPTIONAL) <optional-num-sync-dev-reg>` This is used for systems that allow multiple
-  controllers with a link between them to synchronize their
-  ``Common_Timestamps``. When resetting the acquisition counter through the
-  ``Reset acquisition counter`` on a device with a ``Hardware Address`` of 0,
-  this command will be sent through an external link to all non-zero devices,
-  synchronizing the counters. When supported, synchronization is only required
-  for controllers sharing a hardware implementation.
+- ``SYNC_HW_ADDR``: Hardware address. This register MAY be used for implementations that allow multiple
+  controllers with a link between them to synchronize their :ref:`acquisition counters<acq_clk>`.
+  The presence and limits of this capability are indicated in
+  the :ref:`ONI_ATTR_NUM_SYNC_DEVS<optional-num-sync-dev-reg>` register.
+  In configurations that support hardware synchronization, resetting the acquisition counter through
+  ``ACQ_CNT_RESET`` on a device with a ``SYNC_HW_ADDR`` of 0 will broadcast a hardware signal
+  to all connected non-zero controllers, resetting all counters simultaneously.
+  
+  .. note:: Hardware synchronization is guaranteed only among controllers with the same hardware 
+    implementation. Synchronization between controllers with different implementations is not assured, 
+    even if they support this capability.
+
+Other addresses in this block are reserved and MUST NOT be used.
 
 Device Register Interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -104,37 +110,39 @@ Currently defined addresses are:
 ======== ===========================
 Address  Name
 ======== ===========================
-0x4000   ONI specification version
-0x4001   Read stream alignment
-0x4002   Write stream alignment
-0x4003   Maximum queued device register operations
-0x4004   Number of supported synchronized devices
+0x4000   ONI_SPEC_VER
+0x4001   ONI_ATTR_READ_STR_ALIGN
+0x4002   ONI_ATTR_WRITE_STR_ALIGN
+0x4003   ONI_ATTR_MAX_REGISTER_Q
+0x4004   ONI_ATTR_NUM_SYNC_DEVS
 ======== ===========================
 
-- **ONI specification version**: Specifies the version of the ONI specification the controller adheres to.
-  Format is, bits 31-24: Major, 23-16: Minor, 15-8: patch, 7-0: reserved
+- ``ONI_SPEC_VER``: ONI specification version. Specifies the version of the ONI specification the 
+  controller adheres to. Format is, bits 31-24: Major, 23-16: Minor, 15-8: patch, 7-0: reserved
 
 .. _read-word-alignment-reg:
   
-- **Read stream alignment**: Specifies, in bits, the data word size the hardware implementation of 
-  the :ref:`read channel <data-rd-chan>` uses for transmission.
+- ``ONI_ATTR_READ_STR_ALIGN``: Read stream alignment. Specifies, in bits, the data word size the hardware 
+  implementation of the :ref:`read channel <data-rd-chan>` uses for transmission.
 
 .. _write-word-alignment-reg:
 
-- **Write stream alignment**: Specifies, in bits, the data word size the hardware implementation of 
-  the :ref:`write channel <data-wr-chan>` uses for transmission.
+- ``ONI_ATTR_WRITE_STR_ALIGN``: Write stream alignment. Specifies, in bits, the data word size the hardware 
+  implementation of the :ref:`write channel <data-wr-chan>` uses for transmission.
 
 .. _max-devaccess-reg:
 
-- **Maximum queued device register operations**: Maximum number of operations that can be queued through the
-  :ref:`register_interface`
+- ``ONI_ATTR_MAX_REGISTER_Q``: Maximum queued device register operations. Maximum number of operations that 
+  can be queued through the :ref:`register_interface`.
 
 .. _optional-num-sync-dev-reg:
 
-- **Number of supported synchronized devices**: This register indicates if the optional capability
+- ``ONI_ATTR_NUM_SYNC_DEVS``: Number of supported synchronized devices: This register indicates if the optional capability
   for :ref:`hardware synchronization<optional-num-sync-dev>` is supported. If 0, this controller can
-  not synchronize with others. if >0, it indicates the maximum number of controllers that can be synchronized
+  not synchronize with others. if > 0, it indicates the maximum number of controllers that can be synchronized
   together. If the value is 0xFFFFFFFF, then there is no upper bound to this number.
+
+Other addresses in this block are reserved and MUST NOT be used.
 
 
 .. _address_custom:
@@ -147,6 +155,12 @@ This block is reserved for hardware-specific registers that fall out of the scop
 but might be required for the correct operation of a specific hardware implementation.
 
 The :term:`Driver Translator` should, to the possible extent, hide these from the :term:`API`.
+
+.. note:: These addresses SHOULD be reserved for low-level configuration of the hardware. Most
+  hardware-specific operations SHOULD, if possible, be implemented either in 
+  :ref:`hardware specific registers<hub_addr_hw_specific>` in the controller hub-0
+  :ref:`hub information device<hub_info_dev>` or in dedicated devices to access these hardware
+  characteristics (e.g. hub link controllers).
 
 .. _address_reserved:
 

@@ -29,9 +29,86 @@ common for a remote hub to feature a centralized IC (e.g., an FPGA or
 microcontroller) integrating the device controllers and communication interface
 to fill this duty, but other schemes are possible.
 
+.. _hub_id:
+
+Hub Hardware ID
+----------------
+
 Multiple hubs are differentiated through a unique identifier, or Hardware ID.
 This identifier represents a specific implementation of a hub, defined by a
 particular collection of devices on a specific hardware platform communicating
 with the controller through a specific link. Changes in the device collection,
 the communications link or the general hardware architecture require a new
 identifier.
+
+Hub Hardware IDs are 32-bit values with the following format:
+
+::
+
+        Reserved(8-bit).Company(8-bit).Hub(16-bit)
+
+- ``Reserved``: Reserved for future specification revision. Currently
+  ignored.
+- ``Company``: Any person, lab, institute, informal group, or company can
+  communicate with Open Ephys in order to to obtain a unique 8-bit “Company”
+  value, and thus be included in the automatic listings of existing ONI API
+  implementations. Open Ephys is 0x00.
+- ``Hub``: 16-bit Hub ID. This number usually identifies a physical product
+  and would correspond to a stock keeping unit SKU or part number in a
+  commercial setting. However, there is no formal restriction on these bits
+  other than uniqueness.
+
+
+
+.. _hub-datasheet:
+
+Hub Datasheet
+---------------
+All ONI-compliant hubs MUST have a corresponding datasheet that provides
+information on its devices and connectivity. The datasheet must be served
+publicly. It can be a text file, PDF, or website. The required datasheet
+sections and information are described below.
+
+Preamble
+~~~~~~~~
+The following information MUST be included in the preamble:
+
+1. **Informal hub name**: Name of the hub. There are no textual
+   requirements for this field. (e.g., Headstage64, Neuropixels2.0e, are
+   all valid).
+2. **Author(s)**: Hub creator(s). Can be a person/people or
+   a company, group, or organization.
+3. **Hub Hardware ID**: The :ref:`hub ID<hub_id>` that this datasheet corresponds
+   to.
+4. **Connection type**: Must be ``local`` for local hubs or ``remote`` for remote hubs.
+5. **Connection name**: Name of the connection interface between the hub and the controller.
+   There are no textual requirements for this field. (e.g, ONIX1-local, ONIX1-Coax, AcqBoard-Rhythm, 
+   are all valid)
+
+.. note:: The connection name is not regulated and only provides a general idea of the
+    type of connection used. Complete connectivity compatibility lists should be provided
+    by the manufacturer of controller and hub hardware.
+
+Device Map
+~~~~~~~~~~~
+
+The datasheet MUST include a map of the devices included on it. It must include 
+the following information:
+
+1. **Device index**: 0-based index of the device within the hub
+2. **Device ID**: :ref:`Device ID<dev-id>`.
+3. **Informal device name**: Device name as stated on its :ref:`datasheet<dev-datasheet>`.
+
+The special :ref:`Hub Information Device<hub_info_dev>` MAY NOT appear on this table,
+as its existence is mandatory and assumed.
+
+Hardware Specific Registers
+-----------------------------
+ 
+If the hub implements :ref:`hardware specific registers<hub_addr_hw_specific>`
+on its :ref:`Hub Information Device<hub_info_dev>`, the datasheet MUST include
+a complete list and description of these.
+
+Any complex procedure regarding these registers (e.g. firmware update procedures)
+SHOULD be documented in this section.
+
