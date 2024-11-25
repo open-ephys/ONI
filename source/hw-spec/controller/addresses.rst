@@ -7,13 +7,10 @@ An ONI :term:`Controller` has a 16-bit address register space, accessible throug
 
 The full address space is divided into three address blocks and a fourth currently reserved. The address blocks are:
 
-:ref:`address_global`: 0x0000-0x3FFF
-
-:ref:`address_spec`: 0x4000-0x7FFF
-
-:ref:`address_custom`: 0x8000-0xBFFF
-
-:ref:`address_reserved`: 0xC000-0xFFFF
+- :ref:`address_global`: 0x0000-0x3FFF
+- :ref:`address_spec`: 0x4000-0x7FFF
+- :ref:`address_custom`: 0x8000-0xBFFF
+- :ref:`address_reserved`: 0xC000-0xFFFF
 
 .. _address_global:
 

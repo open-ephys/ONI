@@ -2,8 +2,11 @@
 
 Special Devices
 ================
-There are two kinds of special devices that are required by this specification:
-An information device on each hub and a heartbeat device in local hub 0.
+There are two kinds of special devices that are required by this specification.
+These devices are tied to specific :ref:`hubs<hub>`. The required devices are:
+
+- An :ref:`hub_info_dev` on each hub 
+- A :ref:`hub_heartbeat` in local hub 0.
 
 .. _hub_info_dev:
 
@@ -16,16 +19,15 @@ is not listed in the device table and, thus, has no :ref:`device descriptor
 <dev-desc>`.  It MUST expose is the register interface, and it MUST NOT include
 any streams. The register map is divided in two ranges:
 
-:ref:`hub_addr_common`: 0x00000000 - 0x00007FFF
-
-:ref:`hub_addr_hw_specific`: 0x00008000 - 0xFFFFFFFF
+- :ref:`hub_addr_common`: 0x00000000 - 0x00007FFF
+- :ref:`hub_addr_hw_specific`: 0x00008000 - 0xFFFFFFFF
 
 .. _hub_addr_common:
 
 Common Registers
 ^^^^^^^^^^^^^^^^^^^^^^
 
-**Address range:**  0x00000000 - 0x00007FFF
+**Address Range:**  0x00000000 - 0x00007FFF
 
 The registers in this block provide general information about the hub.
 All Hub Information Devices MUST provide the following registers:
@@ -80,21 +82,26 @@ All 16-bit versions are in the format:
 
        Major(8-bit).Minor(8-bit).
 
-For example, 0x0103 would imply version 1.3. In the case of the information
-device located on hub 0, the versions refer to the physical controller hardware
-and its firmware, where that hub is located.
+For example, 0x0103 would imply version 1.3. 
+
+In the case of the information
+device located on hub 0, the versions MUST refer to the physical controller hardware
+and its firmware, where that hub is located, while ``HUB_CLK_HZ`` MUST be equivalent
+to the ``ACQ_CLK_HZ`` :ref:`controller register<address_global>`.
 
 .. _hub_addr_hw_specific:
 
 Hardware Specific Registers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Address range:**  0x00008000 - 0xFFFFFFFF
+**Address Range:**  0x00008000 - 0xFFFFFFFF
 
 This address range contains registers that are specific for the hardware implementation
-of the hub (e.g. Firmware update registers, buffer memory status, etc...)
+of the hub (e.g., firmware update registers, buffer memory status, etc...)
 
 A detailed list of the registers of each hub MUST be available on their :ref:`datasheet<hub-datasheet>`.
+
+.. _hub_heartbeat:
 
 Heartbeat Device
 ------------------

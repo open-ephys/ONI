@@ -58,8 +58,6 @@ Hub Hardware IDs are 32-bit values with the following format:
   commercial setting. However, there is no formal restriction on these bits
   other than uniqueness.
 
-
-
 .. _hub-datasheet:
 
 Hub Datasheet
@@ -73,33 +71,29 @@ Preamble
 ~~~~~~~~
 The following information MUST be included in the preamble:
 
-1. **Informal hub name**: Name of the hub. There are no textual
-   requirements for this field. (e.g., Headstage64, Neuropixels2.0e, are
+1. **Informal Hub Name**: Name of the hub. This field MUST contain only alphanumeric
+   characters and punctuation marks (i.e. ``?!*+-_~.()``). Other characters, including special
+   characters MUST NOT be used (e.g., Headstage64, Neuropixels2.0e, are
    all valid).
 2. **Author(s)**: Hub creator(s). Can be a person/people or
    a company, group, or organization.
 3. **Hub Hardware ID**: The :ref:`hub ID<hub_id>` that this datasheet corresponds
    to.
-4. **Connection type**: Must be ``local`` for local hubs or ``remote`` for remote hubs.
-5. **Connection name**: Name of the connection interface between the hub and the controller.
-   There are no textual requirements for this field. (e.g, ONIX1-local, ONIX1-Coax, AcqBoard-Rhythm, 
-   are all valid)
-
-.. note:: The connection name is not regulated and only provides a general idea of the
-    type of connection used. Complete connectivity compatibility lists should be provided
-    by the manufacturer of controller and hub hardware.
+4. **Connection Type**: MUST be ``local`` for local hubs or ``remote`` for remote hubs.
+5. **Notes**: Other relevant information for the hub not covered by this specification.
+   For remote hubs, this field SHOULD include some description of the physical 
+   connection to the controller.
 
 Device Map
 ~~~~~~~~~~~
-
 The datasheet MUST include a map of the devices included on it. It must include 
 the following information:
 
-1. **Device index**: 0-based index of the device within the hub
+1. **Device Index**: 0-based index of the device within the hub
 2. **Device ID**: :ref:`Device ID<dev-id>`.
-3. **Informal device name**: Device name as stated on its :ref:`datasheet<dev-datasheet>`.
+3. **Informal Device Name**: Device name as stated on its :ref:`datasheet<dev-datasheet>`.
 
-The special :ref:`Hub Information Device<hub_info_dev>` MAY NOT appear on this table,
+The special :ref:`Hub Information Device<hub_info_dev>` SHOULD NOT appear on this table,
 as its existence is mandatory and assumed.
 
 Hardware Specific Registers

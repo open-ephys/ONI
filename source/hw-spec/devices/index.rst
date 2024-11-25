@@ -29,5 +29,4 @@ order to reach ONI-compliance.
    sample
    registers
    datasheet
-   hubs
    special
