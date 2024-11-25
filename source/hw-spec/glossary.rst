@@ -114,3 +114,9 @@ elements and/or its context within the specification.
     a :term:`Hub` that is separated from the :term:`Controller` (e.g., a wire or
     wireless communication channel) or it could be a bus inside of the
     :term:`Controller` in the case of a local hub.
+
+  Register
+    A 32-bit addressed value.
+
+    .. seealso:: :term:`Register Channel`
+

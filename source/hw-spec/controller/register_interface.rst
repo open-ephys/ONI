@@ -1,9 +1,9 @@
 .. _register_interface:
 
-Device Register Programming Interface
+Device Register Interface
 ======================================
 
-The device programming interface allows transparent access to each device's
+The device interface allows transparent access to each device's
 :ref:`register map <dev-reg-map>`. It defines a general purpose bus that hides
 the specifics of any particular implementation. 
 
@@ -12,7 +12,7 @@ queue. The controller will execute the requests in order. The :term:`Driver Tran
 and :term:`API` must ensure that the number of pending requests in the does not
 exceed the :ref:`maximum queue size<max-devaccess-reg>`.
 
-The register programming interface is composed of the following
+The register interface is composed of the following
 :ref:`conf-chan` registers, which are used to insert requests into the queue:
 
 - ``Device Address``: The fully qualified address of a device as enumerated in
