@@ -19,11 +19,9 @@ and use that value for the ``acqclk_cnt`` field of the corresponding :ref:`frame
 .. note:: The controller adds the acquisition counter when it receives the samples
     and proceeds to create the associated frame. However, due to hub to controller
     transmission delays, this time may have an offset from sample creation time.
-    To account for this, hubs contain a register indicating the measured
-    transmission delay. Users can use this value to more precisely synchronize
+    To account for this, hubs contain a :ref:`register<hub_tx_latency>` indicating the measured
+    transmission latency. Users can use this value to more precisely synchronize
     samples between hubs.
-
-.. todo::  update note admonition to links after the register map is updated
 
 .. _controller_params:
 
@@ -38,10 +36,9 @@ relevant :term:`API`.
 Optional Features
 ^^^^^^^^^^^^^^^^^^^
 
-Some features defined in the specification will be marked with the text ``(OPTIONAL)``. These features are not mandatory,
-so different hardware implementations of a controller might chose to implement them or not. The ONI compliance
-address space has specific registers for each declared optional feature which determine the availability of each 
-optional feature and its parameters, if applicable.
+The specification includes features that MAY or MAY NOT be implemented in controller hardware. 
+The :ref:`ONI compliance address space <address_spec>` includes registers to determine the availability 
+of each optional feature and its parameters, if applicable.
 
 
 Communication

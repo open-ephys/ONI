@@ -11,8 +11,9 @@ Preamble
 ~~~~~~~~
 The following information is required in the preamble:
 
-1. **Informal device name**: Name of the device. There are no textual
-   requirements for this field. (e.g., ChipXYX, Chip XYX, and My~Chip-12ab!, are
+1. **Informal Device Name**: Name of the device. This field MUST contain only alphanumeric
+   characters and punctuation marks (i.e. ``?!*+-_~.()``). Other characters, including special
+   characters MUST NOT be used (e.g., ChipXYX, Chip XYX, and My~Chip-12ab!, are
    all valid).
 2. **Author(s)**: Device firmware or chip creator(s). Can be a person/people or
    a company, group, or organization.

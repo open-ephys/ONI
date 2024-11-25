@@ -20,6 +20,7 @@ ONI Hardware Specification
    comm_channels
    dev_table
    devices/index
+   hubs
    controller/index
 
 
