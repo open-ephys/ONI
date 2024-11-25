@@ -51,11 +51,12 @@ The register programming interface is composed of the following
         is 0x00000000) or has pending transactions that have not yet been
         executed (value is 0x00000001). 
 
-      - When a value is written to the ``Trigger`` register, a request is sent
-        to the controller to insert a device register read or write transaction
-        into its queue. Note that this does not directly affect a the value of
-        ``Trigger`` as this value will always reflect the state indicated in the
-        previous bullet point.
+      - When a value of 0x00000001 is written to the ``Trigger`` register, a
+        request is sent to the controller to insert a device register read or
+        write transaction into its queue. If any other value is written, no
+        operation is performed. Note that writing a value to this register does
+        not directly affect a its read value, as that will always reflect the
+        state indicated in the previous bullet point.
    
 Appropriate values of ``Register Address`` and ``Register Value`` are
 determined by:
