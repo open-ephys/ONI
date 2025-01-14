@@ -107,7 +107,10 @@ html_static_path = ["_static"]
 html_style = "_static/theme_overrides.css"
 
 html_sidebars = {
-    'index': ['search-field.html'],
+    'index': [
+        'search-field.html',
+        'sidebar/sphinx_versioning.html'
+    ],
     "**": [
         "sidebar-nav-bs.html",
         'sidebar/sphinx_versioning.html',
