@@ -1,0 +1,845 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Context &#8212; ONI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../../../_static/documentation_options.js?v=5c79bd3c"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/bindings/clroni/context';</script>
+    <link rel="icon" href="../../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Hub" href="hub.html" />
+    <link rel="prev" title="clroni" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../../_static/oe_logo_name.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../_static/oe_logo_name.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../hw-spec/index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../hw-spec/index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../liboni/index.html">liboni</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../liboni/onidefs.html">onidefs.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../liboni/oni.html">oni.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../liboni/onidriver.html">onidriver.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../liboni/onix.html">onix.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../liboni/build.html">Building liboni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../liboni/liboni-example.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../liboni/making-drivers.html">Writing Driver Translators</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../liboni/driver-translators/index.html">Driver Translators</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../liboni/driver-translators/test.html">Test Driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../liboni/driver-translators/riffa.html">RIFFA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../liboni/driver-translators/ft600.html">ft600</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Bindings</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cpponi/index.html">cpponi</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cpponi/oni.html">oni.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cpponi/onix.html">onix.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">clroni</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hub.html">Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="device.html">Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frame.html">Frame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oniexception.html">ONIException</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+        <div class="sidebar-primary-item"><div id="sphinx_versioning_container">
+  <span style="vertical-align: middle">Versions</span>
+  <select
+    style="vertical-align: middle; margin-left: 5px"
+    onchange="window.location.href=this.value"
+    id="sphinx_versioning_dropdown_menu"
+  >
+    <option value="/">Latest</option>
+    <!-- Additional versions will be populated here by JavaScript -->
+  </select>
+</div>
+<script>
+  fetch('/_static/sphinx_versioning_plugin/versions.json')
+    .then((response) => response.json())
+    .then((versions) => {
+      const dropdown = document.getElementById('sphinx_versioning_dropdown_menu');
+      const container = document.getElementById('sphinx_versioning_container');
+
+      // Check if the versions array is empty
+      if (versions.length === 0) {
+        // Hide the entire container if there are no versions
+        container.style.display = 'none';
+      } else {
+        versions.forEach((version) => {
+          const option = document.createElement('option');
+          option.value = `/_static/sphinx_versioning_plugin/${version}/`;
+          option.text = version;
+
+          // If current page URL contains this version, set it as selected
+          if (window.location.pathname.includes(`_static/sphinx_versioning_plugin/${version}/`)) {
+            option.selected = true;
+          }
+          dropdown.appendChild(option);
+        });
+      }
+    });
+</script></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">ONI API Documentation</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">clroni</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Context</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="context">
+<span id="context-cs"></span><h1>Context<a class="headerlink" href="#context" title="Link to this heading">#</a></h1>
+<dl class="cs class">
+<dt class="sig sig-object cs" id="class-oni.Context">
+<span class="target" id="classoni_1_1_context"></span><em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">oni.Context</span></span> <span class="pre">:</span> <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/System.IDisposable" title="type: msdn ~&gt; System.IDisposable"><span class="pre">IDisposable</span></a><a class="headerlink" href="#class-oni.Context" title="Link to this definition">#</a></dt>
+<dd><p>Open Neuro Interface (ONI) compliant acquisition context. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-oni.Context.Context">
+<span class="target" id="classoni_1_1_context_1a058a82f190e4d4b6f1f14916362a645e"></span><span class="sig-name descname"><span class="pre">Context</span></span> <span class="sig-paren">(</span><span class="pre">string</span> <em><span class="pre">driver</span></em>, <span class="pre">int</span> <em><span class="pre">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-oni.Context.Context" title="Link to this definition">#</a></dt>
+<dd><p>Initializes a new instance of <a class="reference internal" href="#classoni_1_1_context"><span class="std std-ref">Context</span></a> with the specified hardware translation driver and host hardware index. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param driver<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A string specifying the device driver used by the context to control hardware. This string corresponds a compiled implementation of onidriver.h that has the name onidriver_&lt;drv_name&gt;.so/dll.</p>
+</dd>
+<dt class="field-even">Param index<span class="colon">:</span></dt>
+<dd class="field-even"><p>An index specifying the physical location within the host that the host hardware resides. A value of -1 will use the default location.</p>
+</dd>
+<dt class="field-odd">Throws System.InvalidProgramException<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Thrown when the specified driver cannot be found or is invalid.</p>
+</dd>
+<dt class="field-even">Throws ONIException<span class="colon">:</span></dt>
+<dd class="field-even"><p>Thrown when there is an error during hardware initialization (e.g. an invalid device table).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-oni.Context.SetCustomOption">
+<span class="target" id="classoni_1_1_context_1ad1c43916c7883426b7bcb6c6e148d7b7"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">SetCustomOption</span></span> <span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">option</span></em>, <span class="pre">int</span> <em><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-oni.Context.SetCustomOption" title="Link to this definition">#</a></dt>
+<dd><p>Set an the value of implementation-specific context option (those beyond ONI-specified options). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param option<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Implementation-specific option to set.</p>
+</dd>
+<dt class="field-even">Param value<span class="colon">:</span></dt>
+<dd class="field-even"><p>Option value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-oni.Context.GetCustomOption">
+<span class="target" id="classoni_1_1_context_1a7549c1eee95d06f887b6dbc3f987b370"></span><span class="pre">int</span> <span class="sig-name descname"><span class="pre">GetCustomOption</span></span> <span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">option</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-oni.Context.GetCustomOption" title="Link to this definition">#</a></dt>
+<dd><p>Retrieve the value of an implementation-specific context option. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param option<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#classoni_1_1_context"><span class="std std-ref">Context</span></a> option to retrieve.</p>
+</dd>
+<dt class="field-even">Throws ONIException<span class="colon">:</span></dt>
+<dd class="field-even"><p>Thrown when option is invalid. </p>
+</dd>
+<dt class="field-odd">Return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value of the context option.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-oni.Context.Start">
+<span class="target" id="classoni_1_1_context_1a2385c7779042ea4ccf5a507c9d41132d"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">Start</span></span> <span class="sig-paren">(</span><span class="pre">bool</span> <em><span class="pre">reset_frame_clock</span></em><em> <span class="pre">=</span> <span class="pre">true</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-oni.Context.Start" title="Link to this definition">#</a></dt>
+<dd><p>Start data acquisition. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param reset_frame_clock<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If true, the acquisition clock counter is reset synchronously to the start of data acquisition in hardware (see <a class="reference internal" href="#classoni_1_1_context_1a163ec1e876f6981496f53b63e6192854"><span class="std std-ref">AcquisitionClockHz</span></a>). This is equivalent to calling this function and <a class="reference internal" href="#classoni_1_1_context_1ad5a5c9afef192fb9c9ded5d2adf951c0"><span class="std std-ref">ResetFrameClock</span></a> at precisely the same moment, which is impossible in software.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-oni.Context.Stop">
+<span class="target" id="classoni_1_1_context_1a6cc69f1d6399bc8a3b499bc69e2b7044"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">Stop</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-oni.Context.Stop" title="Link to this definition">#</a></dt>
+<dd><p>Stop data acquisition. </p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-oni.Context.ResetFrameClock">
+<span class="target" id="classoni_1_1_context_1ad5a5c9afef192fb9c9ded5d2adf951c0"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">ResetFrameClock</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-oni.Context.ResetFrameClock" title="Link to this definition">#</a></dt>
+<dd><p>Reset the acquisition clock counter to 0 (<a class="reference internal" href="#classoni_1_1_context_1a163ec1e876f6981496f53b63e6192854"><span class="std std-ref">AcquisitionClockHz</span></a>). </p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-oni.Context.ReadRegister">
+<span class="target" id="classoni_1_1_context_1a2e76f912ee86a01557366ab6f44979dc"></span><span class="pre">uint</span> <span class="sig-name descname"><span class="pre">ReadRegister</span></span> <span class="sig-paren">(</span><span class="pre">uint</span> <em><span class="pre">dev_index</span></em>, <span class="pre">uint</span> <em><span class="pre">register_address</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-oni.Context.ReadRegister" title="Link to this definition">#</a></dt>
+<dd><p>Read the value of a configuration register from a specific device within the current <a class="reference internal" href="#classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785"><span class="std std-ref">oni.Context.DeviceTable</span></a>. This can be used to verify the success of calls to <a class="reference internal" href="#classoni_1_1_context_1a2e76f912ee86a01557366ab6f44979dc"><span class="std std-ref">Context.ReadRegister(uint, uint)</span></a> or to obtain state information about devices managed by the current acquisition context. Register specifications (addresses, read- and write-access, and descriptions are provided on the ONI-device datasheet). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param dev_index<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Fully-qualified device index within the <a class="reference internal" href="#classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785"><span class="std std-ref">Context.DeviceTable</span></a></p>
+</dd>
+<dt class="field-even">Param register_address<span class="colon">:</span></dt>
+<dd class="field-even"><p>Address of register to be read.</p>
+</dd>
+<dt class="field-odd">Throws ONIException<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Thrown if the device and/or register address in invalid or if register is write only.</p>
+</dd>
+<dt class="field-even">Return<span class="colon">:</span></dt>
+<dd class="field-even"><p>Value of the register.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-oni.Context.WriteRegister">
+<span class="target" id="classoni_1_1_context_1a77644e7ac3ebec4fc31b62c7d0a8053c"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">WriteRegister</span></span> <span class="sig-paren">(</span><span class="pre">uint</span> <em><span class="pre">dev_index</span></em>, <span class="pre">uint</span> <em><span class="pre">register_address</span></em>, <span class="pre">uint</span> <em><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-oni.Context.WriteRegister" title="Link to this definition">#</a></dt>
+<dd><p>Change the value of a configuration register from specific devices within the current <a class="reference internal" href="#classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785"><span class="std std-ref">Context.DeviceTable</span></a>. Register specifications (addresses, read- and write-access, acceptable values, and descriptions are provided on the ONI device datasheet). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param dev_index<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Fully-qualified device index within the <a class="reference internal" href="#classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785"><span class="std std-ref">Context.DeviceTable</span></a></p>
+</dd>
+<dt class="field-even">Param register_address<span class="colon">:</span></dt>
+<dd class="field-even"><p>Address of register to write to.</p>
+</dd>
+<dt class="field-odd">Param value<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value to write to the register.</p>
+</dd>
+<dt class="field-even">Throws ONIException<span class="colon">:</span></dt>
+<dd class="field-even"><p>Thrown if the device and/or register address in invalid or if register is read only.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-oni.Context.ReadFrame">
+<span class="target" id="classoni_1_1_context_1a2774341ba95650f63722dfbcbc2ddd77"></span><a class="reference internal" href="frame.html#class-oni.Frame" title="class: oni.Frame"><span class="pre">Frame</span></a> <span class="sig-name descname"><span class="pre">ReadFrame</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-oni.Context.ReadFrame" title="Link to this definition">#</a></dt>
+<dd><p>Read a device data frame from the high-bandwidth data input channel. This call will block until either enough data available on the stream to construct an underlying block buffer (see <a class="reference internal" href="#classoni_1_1_context_1aa2e1fe9220a2865f144731a4a3fcaa0c"><span class="std std-ref">Context.BlockReadSize</span></a>). This function is zero-copy. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws ONIException<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Thrown if there is an error reading a frame.</p>
+</dd>
+<dt class="field-even">Return<span class="colon">:</span></dt>
+<dd class="field-even"><p>A device data frame.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-oni.Context.Write">
+<span class="target" id="classoni_1_1_context_1ac056a266ec61c27a6497c943486d399c"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">Write</span></span><span class="pre">&lt;</span><span class="pre">T</span><span class="pre">&gt;</span> <span class="sig-paren">(</span><span class="pre">uint</span> <em><span class="pre">dev_index</span></em>, <span class="pre">T</span> <em><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-oni.Context.Write" title="Link to this definition">#</a></dt>
+<dd><p>Write a single value to a particular device within the <a class="reference internal" href="#classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785"><span class="std std-ref">Context.DeviceTable</span></a> using the high-bandwidth output channel. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Tparam T<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Type of the value to be written. Must be an unmanaged type.</p>
+</dd>
+<dt class="field-even">Param dev_index<span class="colon">:</span></dt>
+<dd class="field-even"><p>Fully-qualified device index within the <a class="reference internal" href="#classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785"><span class="std std-ref">oni.Context.DeviceTable</span></a></p>
+</dd>
+<dt class="field-odd">Param value<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value to write to the device.</p>
+</dd>
+<dt class="field-even">Throws ONIException<span class="colon">:</span></dt>
+<dd class="field-even"><p>Throw if data is an invalid size or the selected device does not accept write data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classoni_1_1_context_1ab094107504bf176e6682e59303d9f5bb"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">Write</span></span><span class="pre">&lt;</span><span class="pre">T</span><span class="pre">&gt;</span> <span class="sig-paren">(</span><span class="pre">uint</span> <em><span class="pre">dev_index</span></em>, <span class="pre">T</span><span class="pre">[]</span> <em><span class="pre">data</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Write an array to a particular device within the <a class="reference internal" href="#classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785"><span class="std std-ref">Context.DeviceTable</span></a> using the high-bandwidth output channel. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Tparam T<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Type of the value to be written. Must be an unmanaged type.</p>
+</dd>
+<dt class="field-even">Param dev_index<span class="colon">:</span></dt>
+<dd class="field-even"><p>Fully-qualified device index within the <a class="reference internal" href="#classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785"><span class="std std-ref">Context.DeviceTable</span></a></p>
+</dd>
+<dt class="field-odd">Param data<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Data array to write to the device.</p>
+</dd>
+<dt class="field-even">Throws ONIException<span class="colon">:</span></dt>
+<dd class="field-even"><p>Throw if data array is an invalid size or the selected device does not accept write data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs">
+<span class="target" id="classoni_1_1_context_1ad67376eff7e78f3f7768df805cb76818"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">Write</span></span> <span class="sig-paren">(</span><span class="pre">uint</span> <em><span class="pre">dev_index</span></em>, <span class="pre">IntPtr</span> <em><span class="pre">data</span></em>, <span class="pre">int</span> <em><span class="pre">data_size</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Write data at an IntPtr to a particular device within the <a class="reference internal" href="#classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785"><span class="std std-ref">Context.DeviceTable</span></a> using the high-bandwidth output channel. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param dev_index<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Fully-qualified device index within the <a class="reference internal" href="#classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785"><span class="std std-ref">Context.DeviceTable</span></a></p>
+</dd>
+<dt class="field-even">Param data<span class="colon">:</span></dt>
+<dd class="field-even"><p>Pointer to data to write to the device.</p>
+</dd>
+<dt class="field-odd">Param data_size<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Size of data pointed to by <em>data</em>  in bytes.</p>
+</dd>
+<dt class="field-even">Throws ONIException<span class="colon">:</span></dt>
+<dd class="field-even"><p>Throw if <em>data_size</em>  is an invalid size or the selected device does not accept write data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-oni.Context.Dispose">
+<span class="target" id="classoni_1_1_context_1a45ad882d26de9399b8e738e5feeabcba"></span><span class="pre">void</span> <span class="sig-name descname"><span class="pre">Dispose</span></span> <span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#function-oni.Context.Dispose" title="Link to this definition">#</a></dt>
+<dd><p>Dispose this <a class="reference internal" href="#classoni_1_1_context"><span class="std std-ref">Context</span></a>. </p>
+</dd></dl>
+
+<dl class="cs function">
+<dt class="sig sig-object cs" id="function-oni.Context.GetHub">
+<span class="target" id="classoni_1_1_context_1a2643f7175d845603a43db8a2c9c4dc56"></span><a class="reference internal" href="hub.html#class-oni.Hub" title="class: oni.Hub"><span class="pre">Hub</span></a> <span class="sig-name descname"><span class="pre">GetHub</span></span> <span class="sig-paren">(</span><span class="pre">uint</span> <em><span class="pre">device_address</span></em><span class="sig-paren">)</span><a class="headerlink" href="#function-oni.Context.GetHub" title="Link to this definition">#</a></dt>
+<dd><p>Retrieve the hub that a given <a class="reference internal" href="device.html#structoni_1_1_device"><span class="std std-ref">Device</span></a> resides in. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param device_address<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The fully specified <a class="reference internal" href="device.html#structoni_1_1_device_1a66ecf6d5fbbcd857605dde6a16e8c120"><span class="std std-ref">Device.Address</span></a> to retrieve the hub for.</p>
+</dd>
+<dt class="field-even">Return<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <a class="reference internal" href="hub.html#classoni_1_1_hub"><span class="std std-ref">Hub</span></a>containing hub metadata.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cs var">
+<dt class="sig sig-object cs" id="var-oni.Context.SystemClockHz">
+<span class="target" id="classoni_1_1_context_1a119cccc458153acf6800084b6718a8a6"></span><em class="property"><span class="pre">readonly</span></em> <span class="pre">uint</span> <span class="sig-name descname"><span class="pre">SystemClockHz</span></span><a class="headerlink" href="#var-oni.Context.SystemClockHz" title="Link to this definition">#</a></dt>
+<dd><p>Host system clock frequency in Hz. This describes the frequency of the clock governing the host hardware. </p>
+</dd></dl>
+
+<dl class="cs var">
+<dt class="sig sig-object cs" id="var-oni.Context.AcquisitionClockHz">
+<span class="target" id="classoni_1_1_context_1a163ec1e876f6981496f53b63e6192854"></span><em class="property"><span class="pre">readonly</span></em> <span class="pre">uint</span> <span class="sig-name descname"><span class="pre">AcquisitionClockHz</span></span><a class="headerlink" href="#var-oni.Context.AcquisitionClockHz" title="Link to this definition">#</a></dt>
+<dd><p>Host system acquisition clock frequency in Hz, derived from <a class="reference internal" href="#classoni_1_1_context_1a119cccc458153acf6800084b6718a8a6"><span class="std std-ref">SystemClockHz</span></a>. This describes the frequency of the clock used to drive the acquisition counter which is used timestamp data frames. </p>
+</dd></dl>
+
+<dl class="cs var">
+<dt class="sig sig-object cs" id="var-oni.Context.MaxReadFrameSize">
+<span class="target" id="classoni_1_1_context_1a30319fa039a6ef86aa120d9dc623f2c2"></span><em class="property"><span class="pre">readonly</span></em> <span class="pre">uint</span> <span class="sig-name descname"><span class="pre">MaxReadFrameSize</span></span><a class="headerlink" href="#var-oni.Context.MaxReadFrameSize" title="Link to this definition">#</a></dt>
+<dd><p>The maximal size of a frame produced by a call to <a class="reference internal" href="#classoni_1_1_context_1a2774341ba95650f63722dfbcbc2ddd77"><span class="std std-ref">ReadFrame</span></a> in bytes. This number is the maximum sized frame that can be produced across every device within the device table that generates read data. </p>
+</dd></dl>
+
+<dl class="cs var">
+<dt class="sig sig-object cs" id="var-oni.Context.MaxWriteFrameSize">
+<span class="target" id="classoni_1_1_context_1a972bab2364c5cf1cc8493ed452375887"></span><em class="property"><span class="pre">readonly</span></em> <span class="pre">uint</span> <span class="sig-name descname"><span class="pre">MaxWriteFrameSize</span></span><a class="headerlink" href="#var-oni.Context.MaxWriteFrameSize" title="Link to this definition">#</a></dt>
+<dd><p>The maximal size of consumed by a call to <a class="reference internal" href="#classoni_1_1_context_1ad67376eff7e78f3f7768df805cb76818"><span class="std std-ref">Write</span></a> in bytes. This number is the maximum sized frame that can be consumed across every device within the device table that accepts write data. </p>
+</dd></dl>
+
+<dl class="cs var">
+<dt class="sig sig-object cs" id="var-oni.Context.DeviceTable">
+<span class="target" id="classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785"></span><em class="property"><span class="pre">readonly</span></em> <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.Dictionary-2" title="type: msdn ~&gt; System.Collections.Generic.Dictionary"><span class="pre">Dictionary</span></a><span class="pre">&lt;</span><span class="pre">uint</span><span class="pre">,</span> <a class="reference internal" href="device.html#struct-oni.Device" title="struct: oni.Device"><span class="pre">Device</span></a><span class="pre">&gt;</span> <span class="sig-name descname"><span class="pre">DeviceTable</span></span><a class="headerlink" href="#var-oni.Context.DeviceTable" title="Link to this definition">#</a></dt>
+<dd><p>ONI specified device table containing the full device hierarchy governed by this acquisition context. This IDictionary maps a fully-qualified <a class="reference internal" href="device.html#structoni_1_1_device_1a66ecf6d5fbbcd857605dde6a16e8c120"><span class="std std-ref">Device.Address</span></a> to a <a class="reference internal" href="device.html#structoni_1_1_device"><span class="std std-ref">Device</span></a> instance. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-properties">Properties</p>
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-oni.Context.Running">
+<span class="target" id="classoni_1_1_context_1a4d969ef951413141e2e47e4920845169"></span><span class="pre">bool</span> <span class="sig-name descname"><span class="pre">Running</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-oni.Context.Running" title="Link to this definition">#</a></dt>
+<dd><p>Indicates whether or not data acquisition is running. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-oni.Context.HardwareAddress">
+<span class="target" id="classoni_1_1_context_1a428dbe9704ed59092e638ed1a7ffbfc2"></span><span class="pre">int</span> <span class="sig-name descname"><span class="pre">HardwareAddress</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-oni.Context.HardwareAddress" title="Link to this definition">#</a></dt>
+<dd><p>The address of the host hardware within the acquisition computer. Determines the synchronization role of the hardware in multi-host systems. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-oni.Context.BlockReadSize">
+<span class="target" id="classoni_1_1_context_1aa2e1fe9220a2865f144731a4a3fcaa0c"></span><span class="pre">int</span> <span class="sig-name descname"><span class="pre">BlockReadSize</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-oni.Context.BlockReadSize" title="Link to this definition">#</a></dt>
+<dd><p>Number of bytes read during each driver access to the high-bandwidth read channel using <a class="reference internal" href="#classoni_1_1_context_1a2774341ba95650f63722dfbcbc2ddd77"><span class="std std-ref">Context.ReadFrame</span></a>. This option allows control over a fundamental trade-off between closed-loop response time and overall bandwidth. The minimum (default) value will provide the lowest response latency. Larger values will reduce syscall frequency and may improve processing performance for high-bandwidth data sources. This minimum size of this option is determined by <a class="reference internal" href="#classoni_1_1_context_1a30319fa039a6ef86aa120d9dc623f2c2"><span class="std std-ref">Context.MaxReadFrameSize</span></a>. </p>
+</dd></dl>
+
+<dl class="cs property">
+<dt class="sig sig-object cs" id="property-oni.Context.BlockWriteSize">
+<span class="target" id="classoni_1_1_context_1ad225a8ed2c9ec9c9e696cfa54515b5b5"></span><span class="pre">int</span> <span class="sig-name descname"><span class="pre">BlockWriteSize</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-oni.Context.BlockWriteSize" title="Link to this definition">#</a></dt>
+<dd><p>Number of bytes pre-allocated for calls to <a class="reference internal" href="#classoni_1_1_context_1ac056a266ec61c27a6497c943486d399c"><span class="std std-ref">Write&lt;T&gt;(uint, T)</span></a>, <a class="reference internal" href="#classoni_1_1_context_1ab094107504bf176e6682e59303d9f5bb"><span class="std std-ref">Write&lt;T&gt;(uint, T[])</span></a>, and <a class="reference internal" href="#classoni_1_1_context_1ad67376eff7e78f3f7768df805cb76818"><span class="std std-ref">Write(uint, IntPtr, int)</span></a>. A larger size will reduce the average amount of dynamic memory allocation system calls but increase the cost of each of those calls. The minimum size of this option is determined by <a class="reference internal" href="#classoni_1_1_context_1a972bab2364c5cf1cc8493ed452375887"><span class="std std-ref">Context.MaxWriteFrameSize</span></a>. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">clroni</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="hub.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Hub</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/open-ephys/ONI/edit/main/source/api/bindings/clroni/context.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../../_sources/api/bindings/clroni/context.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2010-2025, Open Ephys &amp; Contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

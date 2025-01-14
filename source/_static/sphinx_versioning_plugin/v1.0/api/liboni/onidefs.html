@@ -1,0 +1,1322 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>onidefs.h &#8212; ONI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../../_static/documentation_options.js?v=5c79bd3c"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/liboni/onidefs';</script>
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="oni.h" href="oni.html" />
+    <link rel="prev" title="liboni" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/oe_logo_name.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/oe_logo_name.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../hw-spec/index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../hw-spec/index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">liboni</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">onidefs.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oni.html">oni.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onidriver.html">onidriver.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onix.html">onix.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build.html">Building liboni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="liboni-example.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="making-drivers.html">Writing Driver Translators</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="driver-translators/index.html">Driver Translators</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="driver-translators/test.html">Test Driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="driver-translators/riffa.html">RIFFA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="driver-translators/ft600.html">ft600</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../bindings/index.html">Bindings</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../bindings/cpponi/index.html">cpponi</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/cpponi/oni.html">oni.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/cpponi/onix.html">onix.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../bindings/clroni/index.html">clroni</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/clroni/context.html">Context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/clroni/hub.html">Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/clroni/device.html">Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/clroni/frame.html">Frame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/clroni/oniexception.html">ONIException</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+        <div class="sidebar-primary-item"><div id="sphinx_versioning_container">
+  <span style="vertical-align: middle">Versions</span>
+  <select
+    style="vertical-align: middle; margin-left: 5px"
+    onchange="window.location.href=this.value"
+    id="sphinx_versioning_dropdown_menu"
+  >
+    <option value="/">Latest</option>
+    <!-- Additional versions will be populated here by JavaScript -->
+  </select>
+</div>
+<script>
+  fetch('/_static/sphinx_versioning_plugin/versions.json')
+    .then((response) => response.json())
+    .then((versions) => {
+      const dropdown = document.getElementById('sphinx_versioning_dropdown_menu');
+      const container = document.getElementById('sphinx_versioning_container');
+
+      // Check if the versions array is empty
+      if (versions.length === 0) {
+        // Hide the entire container if there are no versions
+        container.style.display = 'none';
+      } else {
+        versions.forEach((version) => {
+          const option = document.createElement('option');
+          option.value = `/_static/sphinx_versioning_plugin/${version}/`;
+          option.text = version;
+
+          // If current page URL contains this version, set it as selected
+          if (window.location.pathname.includes(`_static/sphinx_versioning_plugin/${version}/`)) {
+            option.selected = true;
+          }
+          dropdown.appendChild(option);
+        });
+      }
+    });
+</script></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">ONI API Documentation</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">liboni</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">onidefs.h</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="onidefs-h">
+<span id="id1"></span><h1>onidefs.h<a class="headerlink" href="#onidefs-h" title="Link to this heading">#</a></h1>
+<p>Macro and constant definitions common to both <a class="reference internal" href="oni.html#oni-h"><span class="std std-ref">oni.h</span></a> and <a class="reference internal" href="onidriver.html#onidriver-h"><span class="std std-ref">onidriver.h</span></a>.</p>
+<section id="integer-types">
+<span id="onidef-integer-types"></span><h2>Integer Types<a class="headerlink" href="#integer-types" title="Link to this heading">#</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>All of these types will be almost certainly be deprecated in
+future API revisions to handle drivers with different channel bit widths.</p>
+</div>
+<dl class="c type">
+<dt class="sig sig-object c" id="c.oni_size_t">
+<span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_size_t</span></span></span><a class="headerlink" href="#c.oni_size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Data sizes are 32-bit uints.</p>
+</dd></dl>
+
+<dl class="c type">
+<dt class="sig sig-object c" id="c.oni_dev_id_t">
+<span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_dev_id_t</span></span></span><a class="headerlink" href="#c.oni_dev_id_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Device IDs are 32-bit values.</p>
+</dd></dl>
+
+<dl class="c type">
+<dt class="sig sig-object c" id="c.oni_dev_idx_t">
+<span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_dev_idx_t</span></span></span><a class="headerlink" href="#c.oni_dev_idx_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Device idx are 32-bit, byte.byte.byte.byte addresses.</p>
+</dd></dl>
+
+<dl class="c type">
+<dt class="sig sig-object c" id="c.oni_reg_addr_t">
+<span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_reg_addr_t</span></span></span><a class="headerlink" href="#c.oni_reg_addr_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Registers use a 32-bit address.</p>
+</dd></dl>
+
+<dl class="c type">
+<dt class="sig sig-object c" id="c.oni_reg_val_t">
+<span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_reg_val_t</span></span></span><a class="headerlink" href="#c.oni_reg_val_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Registers have 32-bit values.</p>
+</dd></dl>
+
+<dl class="c type">
+<dt class="sig sig-object c" id="c.oni_fifo_dat_t">
+<span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_fifo_dat_t</span></span></span><a class="headerlink" href="#c.oni_fifo_dat_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>FIFOs use 32-bit words.</p>
+</dd></dl>
+
+<dl class="c type">
+<dt class="sig sig-object c" id="c.oni_fifo_time_t">
+<span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_fifo_time_t</span></span></span><a class="headerlink" href="#c.oni_fifo_time_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>FIFO bound timers use 64-bit words.</p>
+</dd></dl>
+
+</section>
+<section id="context-options">
+<span id="onidef-context-options"></span><h2>Context Options<a class="headerlink" href="#context-options" title="Link to this heading">#</a></h2>
+<p>Context options that can be used in calls to <a class="reference internal" href="oni.html#c.oni_get_opt" title="oni_get_opt"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_get_opt()</span></code></a> and
+<a class="reference internal" href="oni.html#c.oni_set_opt" title="oni_set_opt"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_set_opt()</span></code></a>. The tables under each option provide information about the
+corresponding context option type used during calls to these functions.</p>
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.&#64;ctx_opts_enum">
+<span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">[anonymous]</span></span></span><a class="headerlink" href="#c.@ctx_opts_enum" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;ctx_opts_enum.ONI_OPT_DEVICETABLE">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_OPT_DEVICETABLE</span></span></span><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_DEVICETABLE" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">0</span></code>)
+Device table.</p>
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Option value type</p></td>
+<td><p><a class="reference internal" href="oni.html#c.oni_device_t" title="oni_device_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">oni_device_t</span></code></a> *</p></td>
+</tr>
+<tr class="row-even"><td><p>Option description</p></td>
+<td><p>Pointer to a pre-allocated array of <a class="reference internal" href="oni.html#c.oni_device_t" title="oni_device_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">oni_device_t</span></code></a> structs</p></td>
+</tr>
+<tr class="row-odd"><td><p>Default value</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>Access</p></td>
+<td><p>Read</p></td>
+</tr>
+<tr class="row-odd"><td><p>Required run state</p></td>
+<td><p>IDLE or RUNNING</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;ctx_opts_enum.ONI_OPT_NUMDEVICES">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_OPT_NUMDEVICES</span></span></span><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_NUMDEVICES" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">1</span></code>)
+Number of devices in the device table.</p>
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Option value type</p></td>
+<td><p><a class="reference internal" href="#c.oni_reg_val_t" title="oni_reg_val_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">oni_reg_val_t</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Option description</p></td>
+<td><p>The number of devices supported by the firmware</p></td>
+</tr>
+<tr class="row-odd"><td><p>Default value</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>Access</p></td>
+<td><p>Read</p></td>
+</tr>
+<tr class="row-odd"><td><p>Required run state</p></td>
+<td><p>IDLE or RUNNING</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;ctx_opts_enum.ONI_OPT_RUNNING">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_OPT_RUNNING</span></span></span><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_RUNNING" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">2</span></code>)
+Set/clear data input gate. Any value greater than 0 will turn data
+acquisition on.  Writing 0 to this option will stop acquisition, but will
+not reset context options or the sample counter. All data not shifted out
+of hardware will be cleared. To obtain the very first samples produced by
+high-bandwidth devices, see <a class="reference internal" href="#c.&#64;ctx_opts_enum.ONI_OPT_RESETACQCOUNTER" title="ONI_OPT_RESETACQCOUNTER"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_RESETACQCOUNTER</span></code></a> to see how to
+start acquisition synchronously with a clock reset.</p>
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Option value type</p></td>
+<td><p><a class="reference internal" href="#c.oni_reg_val_t" title="oni_reg_val_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">oni_reg_val_t</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Option description</p></td>
+<td><p>Any value greater than 0 will start acquisition</p></td>
+</tr>
+<tr class="row-odd"><td><p>Default value</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Access</p></td>
+<td><p>Write and Read</p></td>
+</tr>
+<tr class="row-odd"><td><p>Required run state</p></td>
+<td><p>IDLE or RUNNING</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;ctx_opts_enum.ONI_OPT_RESET">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_OPT_RESET</span></span></span><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_RESET" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">3</span></code>)
+Trigger global hardware reset. Any value greater than 0 will trigger a
+hardware reset. In this case, acquisition is stopped and resets are issued
+to all devices in the device table.</p>
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Option value type</p></td>
+<td><p><a class="reference internal" href="#c.oni_reg_val_t" title="oni_reg_val_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">oni_reg_val_t</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Option description</p></td>
+<td><p>Any value greater than 0 will trigger a reset</p></td>
+</tr>
+<tr class="row-odd"><td><p>Default value</p></td>
+<td><p>0 (Untriggered)</p></td>
+</tr>
+<tr class="row-even"><td><p>Access</p></td>
+<td><p>Write</p></td>
+</tr>
+<tr class="row-odd"><td><p>Required run state</p></td>
+<td><p>IDLE</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;ctx_opts_enum.ONI_OPT_SYSCLKHZ">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_OPT_SYSCLKHZ</span></span></span><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_SYSCLKHZ" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">4</span></code>)
+Host system clock frequency in Hz. This describes the frequency of the
+clock governing the host hardware.</p>
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Option value type</p></td>
+<td><p><a class="reference internal" href="#c.oni_reg_val_t" title="oni_reg_val_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">oni_reg_val_t</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Option description</p></td>
+<td><p>Host main clock frequency in Hz</p></td>
+</tr>
+<tr class="row-odd"><td><p>Default value</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>Access</p></td>
+<td><p>Read</p></td>
+</tr>
+<tr class="row-odd"><td><p>Required run state</p></td>
+<td><p>IDLE or RUNNING</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;ctx_opts_enum.ONI_OPT_ACQCLKHZ">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_OPT_ACQCLKHZ</span></span></span><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_ACQCLKHZ" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">5</span></code>)
+Host system acquisition clock frequency in Hz, derived from
+<a class="reference internal" href="#c.&#64;ctx_opts_enum.ONI_OPT_SYSCLKHZ" title="ONI_OPT_SYSCLKHZ"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_SYSCLKHZ</span></code></a>. This describes the frequency of the clock used
+to drive the acquisition counter which is used to timestamp data frames.</p>
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Option value type</p></td>
+<td><p><a class="reference internal" href="#c.oni_reg_val_t" title="oni_reg_val_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">oni_reg_val_t</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Option description</p></td>
+<td><p>Host acquisition clock frequency in Hz</p></td>
+</tr>
+<tr class="row-odd"><td><p>Default value</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>Access</p></td>
+<td><p>Read</p></td>
+</tr>
+<tr class="row-odd"><td><p>Required run state</p></td>
+<td><p>IDLE or RUNNING</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;ctx_opts_enum.ONI_OPT_RESETACQCOUNTER">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_OPT_RESETACQCOUNTER</span></span></span><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_RESETACQCOUNTER" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">6</span></code>)
+Trigger a reset of the acquisition clock counter. A value of 1 will trigger
+an acquisition clock counter reset. A value of 2 or greater will trigger
+synchronous acquisition clock counter reset and set <a class="reference internal" href="#c.&#64;ctx_opts_enum.ONI_OPT_RUNNING" title="ONI_OPT_RUNNING"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_RUNNING</span></code></a>
+to 1.</p>
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Option value type</p></td>
+<td><p><a class="reference internal" href="#c.oni_reg_val_t" title="oni_reg_val_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">oni_reg_val_t</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Option description</p></td>
+<td><p>1: reset clock counter, 2: reset clock counter and set <a class="reference internal" href="#c.&#64;ctx_opts_enum.ONI_OPT_RUNNING" title="ONI_OPT_RUNNING"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_RUNNING</span></code></a> to 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Default value</p></td>
+<td><p>0 (Untriggered)</p></td>
+</tr>
+<tr class="row-even"><td><p>Access</p></td>
+<td><p>Write</p></td>
+</tr>
+<tr class="row-odd"><td><p>Required run state</p></td>
+<td><p>IDLE or RUNNING</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;ctx_opts_enum.ONI_OPT_HWADDRESS">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_OPT_HWADDRESS</span></span></span><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_HWADDRESS" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">7</span></code>)
+The address of the host hardware within the acquisition computer.
+Determines the synchronization role of the hardware in multi-host
+systems.</p>
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Option value type</p></td>
+<td><p><a class="reference internal" href="#c.oni_reg_val_t" title="oni_reg_val_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">oni_reg_val_t</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Option description</p></td>
+<td><p>TODO</p></td>
+</tr>
+<tr class="row-odd"><td><p>Default value</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Access</p></td>
+<td><p>Read and Write</p></td>
+</tr>
+<tr class="row-odd"><td><p>Required run state</p></td>
+<td><p>IDLE or RUNNING</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;ctx_opts_enum.ONI_OPT_MAXREADFRAMESIZE">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_OPT_MAXREADFRAMESIZE</span></span></span><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_MAXREADFRAMESIZE" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">8</span></code>)
+The maximal size of a frame produced by a call to <code class="docutils literal notranslate"><span class="pre">oni_read_frame</span></code> in
+bytes.  This number is the maximum sized frame that can be produced across
+every device within the device table that generates read data.</p>
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Option value type</p></td>
+<td><p><a class="reference internal" href="#c.oni_reg_val_t" title="oni_reg_val_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">oni_reg_val_t</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Option description</p></td>
+<td><p>Maximal read <a class="reference internal" href="oni.html#c.oni_frame_t" title="oni_frame_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">oni_frame_t</span></code></a> size in bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Default value</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>Access</p></td>
+<td><p>Read</p></td>
+</tr>
+<tr class="row-odd"><td><p>Required run state</p></td>
+<td><p>IDLE or RUNNING</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;ctx_opts_enum.ONI_OPT_MAXWRITEFRAMESIZE">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_OPT_MAXWRITEFRAMESIZE</span></span></span><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_MAXWRITEFRAMESIZE" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">9</span></code>)
+The maximal size of a (single-packet) <a class="reference internal" href="oni.html#c.oni_frame_t" title="oni_frame_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">oni_frame_t</span></code></a> consumed by a
+call to <a class="reference internal" href="oni.html#c.oni_write_frame" title="oni_write_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_write_frame()</span></code></a> in bytes.  This number is the maximum
+sized frame that can be consumed across every device within the device
+table that accepts write data.</p>
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Option value type</p></td>
+<td><p><a class="reference internal" href="#c.oni_reg_val_t" title="oni_reg_val_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">oni_reg_val_t</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Option description</p></td>
+<td><p>Maximal (single packet) write <a class="reference internal" href="oni.html#c.oni_frame_t" title="oni_frame_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">oni_frame_t</span></code></a> size in bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Default value</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>Access</p></td>
+<td><p>Read</p></td>
+</tr>
+<tr class="row-odd"><td><p>Required run state</p></td>
+<td><p>IDLE or RUNNING</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;ctx_opts_enum.ONI_OPT_BLOCKREADSIZE">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_OPT_BLOCKREADSIZE</span></span></span><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_BLOCKREADSIZE" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">10</span></code>)
+Number of bytes read during each driver access to the high-bandwidth read
+channel using <a class="reference internal" href="oni.html#c.oni_read_frame" title="oni_read_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_read_frame()</span></code></a>. This option allows control over a
+fundamental trade-off between closed-loop response time and overall
+bandwidth. The minimum (default) value will provide the lowest response
+latency. Larger values will reduce syscall frequency and may improve
+processing performance for high-bandwidth data sources. This minimum size
+of this option is determined by <a class="reference internal" href="#c.&#64;ctx_opts_enum.ONI_OPT_MAXREADFRAMESIZE" title="ONI_OPT_MAXREADFRAMESIZE"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_MAXREADFRAMESIZE</span></code></a>.</p>
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Option value type</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">size_t</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Option description</p></td>
+<td><p>Size, in bytes, of high-bandwidth hardware read that may be triggered during a call to <a class="reference internal" href="oni.html#c.oni_read_frame" title="oni_read_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_read_frame()</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Default value</p></td>
+<td><p>Value of <a class="reference internal" href="#c.&#64;ctx_opts_enum.ONI_OPT_MAXREADFRAMESIZE" title="ONI_OPT_MAXREADFRAMESIZE"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_MAXREADFRAMESIZE</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Access</p></td>
+<td><p>Read and Write</p></td>
+</tr>
+<tr class="row-odd"><td><p>Required run state</p></td>
+<td><p>Read: IDLE or RUNNING; Write: IDLE</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;ctx_opts_enum.ONI_OPT_BLOCKWRITESIZE">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_OPT_BLOCKWRITESIZE</span></span></span><a class="headerlink" href="#c.@ctx_opts_enum.ONI_OPT_BLOCKWRITESIZE" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">11</span></code>)
+Number of bytes pre-allocated to create frames using
+<a class="reference internal" href="oni.html#c.oni_create_frame" title="oni_create_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_create_frame()</span></code></a>. A larger size will reduce the amount of dynamic
+memory allocation system calls but increase the cost of each of those
+calls. The minimum size of this option is determined by
+<a class="reference internal" href="#c.&#64;ctx_opts_enum.ONI_OPT_MAXWRITEFRAMESIZE" title="ONI_OPT_MAXWRITEFRAMESIZE"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_MAXWRITEFRAMESIZE</span></code></a>.</p>
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Option value type</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">size_t</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Option description</p></td>
+<td><p>Pre-allocation size of buffer used to make frames used by <a class="reference internal" href="oni.html#c.oni_write_frame" title="oni_write_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_write_frame()</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Default value</p></td>
+<td><p>Value of <a class="reference internal" href="#c.&#64;ctx_opts_enum.ONI_OPT_MAXWRITEFRAMESIZE" title="ONI_OPT_MAXWRITEFRAMESIZE"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_MAXWRITEFRAMESIZE</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Access</p></td>
+<td><p>Read and Write</p></td>
+</tr>
+<tr class="row-odd"><td><p>Required run state</p></td>
+<td><p>Read: IDLE or RUNNING; Write: IDLE</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="error-codes">
+<span id="onidef-error-codes"></span><h2>Error Codes<a class="headerlink" href="#error-codes" title="Link to this heading">#</a></h2>
+<p>Return codes for functions in the API.</p>
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum">
+<span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">[anonymous]</span></span></span><a class="headerlink" href="#c.@oni_error_enum" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_ESUCCESS">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_ESUCCESS</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_ESUCCESS" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">0</span></code>)
+Success</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EPATHINVALID">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EPATHINVALID</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EPATHINVALID" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-1</span></code>)
+Invalid stream path, fail on open</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EDEVID">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EDEVID</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EDEVID" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-2</span></code>)
+Invalid device ID</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EDEVIDX">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EDEVIDX</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EDEVIDX" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-3</span></code>)
+Invalid device index</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EWRITESIZE">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EWRITESIZE</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EWRITESIZE" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-4</span></code>)
+Data size is not an integer multiple of the write size for the designated device</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EREADFAILURE">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EREADFAILURE</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EREADFAILURE" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-5</span></code>)
+Failure to read from a stream/register</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EWRITEFAILURE">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EWRITEFAILURE</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EWRITEFAILURE" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-6</span></code>)
+Failure to write to a stream/register</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_ENULLCTX">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_ENULLCTX</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_ENULLCTX" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-7</span></code>)
+Attempt to use a NULL context</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_ESEEKFAILURE">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_ESEEKFAILURE</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_ESEEKFAILURE" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-8</span></code>)
+Failure to seek on stream</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EINVALSTATE">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EINVALSTATE</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EINVALSTATE" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-9</span></code>)
+Invalid operation for the current context run state</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EINVALOPT">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EINVALOPT</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EINVALOPT" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-10</span></code>)
+Invalid context option</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EINVALARG">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EINVALARG</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EINVALARG" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-11</span></code>)
+Invalid function arguments</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_ECOBSPACK">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_ECOBSPACK</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_ECOBSPACK" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-12</span></code>)
+Invalid COBS packet</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_ERETRIG">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_ERETRIG</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_ERETRIG" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-13</span></code>)
+Attempt to trigger an already triggered operation</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EBUFFERSIZE">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EBUFFERSIZE</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EBUFFERSIZE" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-14</span></code>)
+Supplied buffer is too small</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EBADDEVTABLE">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EBADDEVTABLE</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EBADDEVTABLE" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-15</span></code>)
+Badly formatted device table supplied by firmware</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EBADALLOC">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EBADALLOC</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EBADALLOC" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-16</span></code>)
+Bad dynamic memory allocation</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_ECLOSEFAIL">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_ECLOSEFAIL</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_ECLOSEFAIL" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-17</span></code>)
+File descriptor close failure (check errno)</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EREADONLY">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EREADONLY</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EREADONLY" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-18</span></code>)
+Attempted write to read only object (register, context option, etc)</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EUNIMPL">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EUNIMPL</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EUNIMPL" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-19</span></code>)
+Specified, but unimplemented, feature</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EINVALREADSIZE">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EINVALREADSIZE</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EINVALREADSIZE" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-20</span></code>)
+Block read size is smaller than the maximal read frame size</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_ENOREADDEV">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_ENOREADDEV</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_ENOREADDEV" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-21</span></code>)
+Frame read attempted when there are no readable devices in the device table</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EINIT">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EINIT</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EINIT" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-22</span></code>)
+Hardware initialization failed</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EWRITEONLY">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EWRITEONLY</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EWRITEONLY" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-23</span></code>)
+Attempted to read from a write only object (register, context option, etc)</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EINVALWRITESIZE">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EINVALWRITESIZE</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EINVALWRITESIZE" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-24</span></code>)
+Write buffer pre-allocation size is smaller than the maximal write frame size</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_ENOTWRITEDEV">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_ENOTWRITEDEV</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_ENOTWRITEDEV" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-25</span></code>)
+Frame allocation attempted for a non-writable device</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EDEVIDXREPEAT">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EDEVIDXREPEAT</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EDEVIDXREPEAT" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-26</span></code>)
+Device table contains repeated device indices</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EPROTCONFIG">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EPROTCONFIG</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EPROTCONFIG" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-27</span></code>)
+Attempted to directly read or write a protected configuration option</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.&#64;oni_error_enum.ONI_EBADFRAME">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_EBADFRAME</span></span></span><a class="headerlink" href="#c.@oni_error_enum.ONI_EBADFRAME" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">-28</span></code>)
+Received malformed frame</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="hardware-registers">
+<h2>Hardware Registers<a class="headerlink" href="#hardware-registers" title="Link to this heading">#</a></h2>
+<p>These constants are used by <a class="reference internal" href="driver-translators/index.html#drivers"><span class="std std-ref">Driver Translators</span></a> to implement the ONI-specified
+register programming interface. These correspond to the hardware registers
+described in the specification and are used by the driver translators
+as the underlying hardware endpoint for functions such as <a class="reference internal" href="oni.html#c.oni_get_opt" title="oni_get_opt"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_get_opt()</span></code></a>,
+<a class="reference internal" href="oni.html#c.oni_set_opt" title="oni_set_opt"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_set_opt()</span></code></a>, <a class="reference internal" href="oni.html#c.oni_read_reg" title="oni_read_reg"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_read_reg()</span></code></a> and <a class="reference internal" href="oni.html#c.oni_write_reg" title="oni_write_reg"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_write_reg()</span></code></a></p>
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.oni_config_t">
+<span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_config_t</span></span></span><a class="headerlink" href="#c.oni_config_t" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="c macro">
+<dt class="sig sig-object c" id="c.oni_config_t.ONI_CONFIG_DEV_IDX">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_CONFIG_DEV_IDX</span></span></span><a class="headerlink" href="#c.oni_config_t.ONI_CONFIG_DEV_IDX" title="Link to this definition">#</a><br /></dt>
+<dd><p>( <code class="docutils literal notranslate"><span class="pre">0</span></code>)
+Device register access: Target device index</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.oni_config_t.ONI_CONFIG_REG_ADDR">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_CONFIG_REG_ADDR</span></span></span><a class="headerlink" href="#c.oni_config_t.ONI_CONFIG_REG_ADDR" title="Link to this definition">#</a><br /></dt>
+<dd><p>( <code class="docutils literal notranslate"><span class="pre">1</span></code>)
+Device register access: Target address</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.oni_config_t.ONI_CONFIG_REG_VALUE">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_CONFIG_REG_VALUE</span></span></span><a class="headerlink" href="#c.oni_config_t.ONI_CONFIG_REG_VALUE" title="Link to this definition">#</a><br /></dt>
+<dd><p>( <code class="docutils literal notranslate"><span class="pre">2</span></code>)
+Device register access: Register value</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.oni_config_t.ONI_CONFIG_RW">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_CONFIG_RW</span></span></span><a class="headerlink" href="#c.oni_config_t.ONI_CONFIG_RW" title="Link to this definition">#</a><br /></dt>
+<dd><p>( <code class="docutils literal notranslate"><span class="pre">3</span></code>)
+Device register access: Select read <code class="docutils literal notranslate"><span class="pre">0</span></code> or write <code class="docutils literal notranslate"><span class="pre">1</span></code> operation</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.oni_config_t.ONI_CONFIG_TRIG">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_CONFIG_TRIG</span></span></span><a class="headerlink" href="#c.oni_config_t.ONI_CONFIG_TRIG" title="Link to this definition">#</a><br /></dt>
+<dd><p>( <code class="docutils literal notranslate"><span class="pre">4</span></code>)
+Device register access: Operation start trigger (Write-only)</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.oni_config_t.ONI_CONFIG_RUNNING">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_CONFIG_RUNNING</span></span></span><a class="headerlink" href="#c.oni_config_t.ONI_CONFIG_RUNNING" title="Link to this definition">#</a><br /></dt>
+<dd><p>( <code class="docutils literal notranslate"><span class="pre">5</span></code>)
+Select acquisition running state. Accessed through <a class="reference internal" href="#c.&#64;ctx_opts_enum.ONI_OPT_RUNNING" title="ONI_OPT_RUNNING"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_RUNNING</span></code></a></p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.oni_config_t.ONI_CONFIG_RESET">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_CONFIG_RESET</span></span></span><a class="headerlink" href="#c.oni_config_t.ONI_CONFIG_RESET" title="Link to this definition">#</a><br /></dt>
+<dd><p>( <code class="docutils literal notranslate"><span class="pre">6</span></code>)
+Reset operation and refresh device map trigger. Accessed through <a class="reference internal" href="#c.&#64;ctx_opts_enum.ONI_OPT_RESET" title="ONI_OPT_RESET"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_RESET</span></code></a> (Write-only)</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.oni_config_t.ONI_CONFIG_SYSCLKHZ">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_CONFIG_SYSCLKHZ</span></span></span><a class="headerlink" href="#c.oni_config_t.ONI_CONFIG_SYSCLKHZ" title="Link to this definition">#</a><br /></dt>
+<dd><p>( <code class="docutils literal notranslate"><span class="pre">7</span></code>)
+ONI Host system clock speed, reported to <a class="reference internal" href="#c.&#64;ctx_opts_enum.ONI_OPT_SYSCLKHZ" title="ONI_OPT_SYSCLKHZ"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_SYSCLKHZ</span></code></a> (Read-only)</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.oni_config_t.ONI_CONFIG_ACQCLKHZ">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_CONFIG_ACQCLKHZ</span></span></span><a class="headerlink" href="#c.oni_config_t.ONI_CONFIG_ACQCLKHZ" title="Link to this definition">#</a><br /></dt>
+<dd><p>( <code class="docutils literal notranslate"><span class="pre">8</span></code>)
+ONI Host acquisition clock speed, reported to <a class="reference internal" href="#c.&#64;ctx_opts_enum.ONI_OPT_ACQCLKHZ" title="ONI_OPT_ACQCLKHZ"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_ACQCLKHZ</span></code></a> (Read-only)</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.oni_config_t.ONI_CONFIG_RESETACQCOUNTER">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_CONFIG_RESETACQCOUNTER</span></span></span><a class="headerlink" href="#c.oni_config_t.ONI_CONFIG_RESETACQCOUNTER" title="Link to this definition">#</a><br /></dt>
+<dd><p>( <code class="docutils literal notranslate"><span class="pre">9</span></code>)
+Trigger a reset of the acquisition counter. Accessed through <a class="reference internal" href="#c.&#64;ctx_opts_enum.ONI_OPT_RESETACQCOUNTER" title="ONI_OPT_RESETACQCOUNTER"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_RESETACQCOUNTER</span></code></a> (Write-only)</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.oni_config_t.ONI_CONFIG_HWADDRESS">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_CONFIG_HWADDRESS</span></span></span><a class="headerlink" href="#c.oni_config_t.ONI_CONFIG_HWADDRESS" title="Link to this definition">#</a><br /></dt>
+<dd><p>( <code class="docutils literal notranslate"><span class="pre">10</span></code>)
+The address of the host hardware within the acquisition computer. Accessed through <a class="reference internal" href="#c.&#64;ctx_opts_enum.ONI_OPT_HWADDRESS" title="ONI_OPT_HWADDRESS"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_HWADDRESS</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="driver-information">
+<span id="oni-driver-info-t"></span><h2>Driver Information<a class="headerlink" href="#driver-information" title="Link to this heading">#</a></h2>
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.oni_driver_info_t">
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_info_t</span></span></span><a class="headerlink" href="#c.oni_driver_info_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>This structure contains information about the loaded <a class="reference internal" href="driver-translators/index.html#drivers"><span class="std std-ref">driver translator</span></a>.</p>
+<dl class="c member">
+<dt class="sig sig-object c" id="c.oni_driver_info_t.name">
+<span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><a class="headerlink" href="#c.oni_driver_info_t.name" title="Link to this definition">#</a><br /></dt>
+<dd><p>Name of the driver translator</p>
+</dd></dl>
+
+<dl class="c member">
+<dt class="sig sig-object c" id="c.oni_driver_info_t.major">
+<span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">major</span></span></span><a class="headerlink" href="#c.oni_driver_info_t.major" title="Link to this definition">#</a><br /></dt>
+<dd><p>Major version component, according to <a class="reference external" href="https://semver.org/">Semantic versioning</a>.</p>
+</dd></dl>
+
+<dl class="c member">
+<dt class="sig sig-object c" id="c.oni_driver_info_t.minor">
+<span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">minor</span></span></span><a class="headerlink" href="#c.oni_driver_info_t.minor" title="Link to this definition">#</a><br /></dt>
+<dd><p>Minor version component, according to <a class="reference external" href="https://semver.org/">Semantic versioning</a>.</p>
+</dd></dl>
+
+<dl class="c member">
+<dt class="sig sig-object c" id="c.oni_driver_info_t.patch">
+<span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">patch</span></span></span><a class="headerlink" href="#c.oni_driver_info_t.patch" title="Link to this definition">#</a><br /></dt>
+<dd><p>Patch version component, according to <a class="reference external" href="https://semver.org/">Semantic versioning</a>.</p>
+</dd></dl>
+
+<dl class="c member">
+<dt class="sig sig-object c" id="c.oni_driver_info_t.pre_release">
+<span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">pre_release</span></span></span><a class="headerlink" href="#c.oni_driver_info_t.pre_release" title="Link to this definition">#</a><br /></dt>
+<dd><p>Pre-release optional string. Can be <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">liboni</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="oni.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">oni.h</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-types">Integer Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#context-options">Context Options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-codes">Error Codes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-registers">Hardware Registers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#driver-information">Driver Information</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/open-ephys/ONI/edit/main/source/api/liboni/onidefs.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/api/liboni/onidefs.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2010-2025, Open Ephys &amp; Contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

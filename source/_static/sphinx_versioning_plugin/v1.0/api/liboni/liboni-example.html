@@ -1,0 +1,923 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Examples &#8212; ONI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../../_static/documentation_options.js?v=5c79bd3c"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/liboni/liboni-example';</script>
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Writing Driver Translators" href="making-drivers.html" />
+    <link rel="prev" title="Building liboni" href="build.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/oe_logo_name.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/oe_logo_name.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../hw-spec/index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../hw-spec/index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">liboni</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="onidefs.html">onidefs.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oni.html">oni.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onidriver.html">onidriver.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onix.html">onix.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build.html">Building liboni</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="making-drivers.html">Writing Driver Translators</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="driver-translators/index.html">Driver Translators</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="driver-translators/test.html">Test Driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="driver-translators/riffa.html">RIFFA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="driver-translators/ft600.html">ft600</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../bindings/index.html">Bindings</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../bindings/cpponi/index.html">cpponi</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/cpponi/oni.html">oni.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/cpponi/onix.html">onix.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../bindings/clroni/index.html">clroni</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/clroni/context.html">Context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/clroni/hub.html">Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/clroni/device.html">Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/clroni/frame.html">Frame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/clroni/oniexception.html">ONIException</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+        <div class="sidebar-primary-item"><div id="sphinx_versioning_container">
+  <span style="vertical-align: middle">Versions</span>
+  <select
+    style="vertical-align: middle; margin-left: 5px"
+    onchange="window.location.href=this.value"
+    id="sphinx_versioning_dropdown_menu"
+  >
+    <option value="/">Latest</option>
+    <!-- Additional versions will be populated here by JavaScript -->
+  </select>
+</div>
+<script>
+  fetch('/_static/sphinx_versioning_plugin/versions.json')
+    .then((response) => response.json())
+    .then((versions) => {
+      const dropdown = document.getElementById('sphinx_versioning_dropdown_menu');
+      const container = document.getElementById('sphinx_versioning_container');
+
+      // Check if the versions array is empty
+      if (versions.length === 0) {
+        // Hide the entire container if there are no versions
+        container.style.display = 'none';
+      } else {
+        versions.forEach((version) => {
+          const option = document.createElement('option');
+          option.value = `/_static/sphinx_versioning_plugin/${version}/`;
+          option.text = version;
+
+          // If current page URL contains this version, set it as selected
+          if (window.location.pathname.includes(`_static/sphinx_versioning_plugin/${version}/`)) {
+            option.selected = true;
+          }
+          dropdown.appendChild(option);
+        });
+      }
+    });
+</script></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">ONI API Documentation</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">liboni</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Examples</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="examples">
+<span id="liboni-example"></span><h1>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h1>
+<p>The following examples demonstrate common uses of <code class="docutils literal notranslate"><span class="pre">liboni</span></code>. They generally
+omit checking return codes, which should be done when the library is used in
+for real world applications. For instance:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">oni_function</span><span class="p">(...);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="k">goto</span><span class="w"> </span><span class="n">fail</span><span class="p">;</span>
+</pre></div>
+</div>
+<section id="acquisition-context-creation">
+<span id="liboni-example-ctx-creation"></span><h2>Acquisition Context Creation<a class="headerlink" href="#acquisition-context-creation" title="Link to this heading">#</a></h2>
+<p>Every piece of ONI-compliant host hardware (occupying a single PCIe slot, USB
+port, etc) is governed by an acquisition context. Contexts are fully described
+by two parameters: a string specifying the hardware driver and an integer
+specifying which slot the physical hardware occupies on the host computer.
+Context creation and initialization occurs in two function calls.
+<a class="reference internal" href="oni.html#c.oni_create_ctx" title="oni_create_ctx"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_create_ctx()</span></code></a> allocates API-internal resources to hold context state and
+returns a handle to the context. <a class="reference internal" href="oni.html#c.oni_init_ctx" title="oni_init_ctx"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_init_ctx()</span></code></a> loads the required driver,
+attempts to connect to the hardware (opens communication channels), and,
+finally, obtains a device table that maps the acquisition hierarchy governed by
+the context. So, for instance, to create and initialize an acquisition context
+to govern a PCIe acquisition card using the <a class="reference external" href="https://github.com/KastnerRG/riffa">RIFFA</a> driver, you would use</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">oni_create_ctx</span><span class="p">(</span><span class="s">&quot;riffa&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;riffa&quot; is the driver name</span>
+<span class="n">oni_init_ctx</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// 0 is the host index. You can use -1 to get default slot</span>
+</pre></div>
+</div>
+<p>If the driver translation library <code class="docutils literal notranslate"><span class="pre">onilibrary_&lt;drv_name&gt;.&lt;so/dll&gt;</span></code> cannot be
+found by the linker, or the driver finds that the requested index is vacant,
+this function will error. Otherwise, it will allocate the required resources to
+manage the hardware at the specified host index using the specified driver.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Specifying a host index of -1 will open the default slot and is
+useful in cases where there is only one piece of acquisition hardware in the
+host computer (e.g., a single PCIe card).</p>
+</div>
+<p>When multiple pieces of host hardware exist on a single host (e.g., multiple
+PCIe cards), a new context must be created and initialized to manage each
+one. In some cases (e.g., multiple PCIe cards in a single computer), these
+contexts can be synchronized so that each host receiver board shares a common
+hardware clock and acquisition trigger (see <a class="reference internal" href="#sync-ctx"><span class="std std-ref">Synchronizing Contexts</span></a> for an example).
+This is not always possible. For instance, multiple USB hosts cannot be
+synchronized.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><a class="reference internal" href="oni.html#c.oni_init_ctx" title="oni_init_ctx"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_init_ctx()</span></code></a> cannot be called on a previously
+initialized context.  Doing so will return an error.</p>
+</div>
+<p>If the device configuration is changed following context initialization (e.g., a
+headstage is plugged in or turned on), a context reset must be issued to
+instruct the initialized context to re-evaluate its device table. This can be
+done via</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_size_t</span><span class="w"> </span><span class="n">reset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="n">oni_set_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_OPT_RESET</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">reset</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">reset</span><span class="p">));</span>
+</pre></div>
+</div>
+</section>
+<section id="closing-an-acquisition-context">
+<span id="liboni-example-ctx-destruction"></span><h2>Closing an Acquisition Context<a class="headerlink" href="#closing-an-acquisition-context" title="Link to this heading">#</a></h2>
+<p>When an acquisition context is no longer needed, it must be disposed to prevent
+memory leaks. This is accomplished via</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_destroy_ctx</span><span class="p">(</span><span class="n">ctx</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>which will free all resources used by the API and underlying device driver and
+close system-level descriptors providing links to hardware.</p>
+</section>
+<section id="examining-the-device-table">
+<span id="liboni-example-device-table"></span><h2>Examining the Device Table<a class="headerlink" href="#examining-the-device-table" title="Link to this heading">#</a></h2>
+<p>Following context initialization or reset, it is useful to examine the device
+table to see the devices that host has access to. To examine the device table,
+we query the context for the number of devices in the table, allocate enough
+space to hold the table, and then populate it:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_size_t</span><span class="w"> </span><span class="n">num_devs</span><span class="p">;</span>
+<span class="kt">size_t</span><span class="w"> </span><span class="n">num_devs_sz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">num_devs</span><span class="p">);</span>
+<span class="n">oni_get_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_OPT_NUMDEVICES</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">num_devs</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">num_devs_sz</span><span class="p">);</span>
+
+<span class="kt">size_t</span><span class="w"> </span><span class="n">devices_sz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">oni_device_t</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">num_devs</span><span class="p">;</span>
+<span class="n">oni_device_t</span><span class="w"> </span><span class="o">*</span><span class="n">devices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">devices</span><span class="p">,</span><span class="w"> </span><span class="n">devices_sz</span><span class="p">);</span>
+<span class="n">oni_get_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_OPT_DEVICETABLE</span><span class="p">,</span><span class="w"> </span><span class="n">devices</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">devices_sz</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This will return an array of <code class="docutils literal notranslate"><span class="pre">oni_device_t</span></code> structs where <code class="docutils literal notranslate"><span class="pre">oni_device_t</span></code> is
+defined as:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">oni_size_t</span><span class="w"> </span><span class="n">idx</span><span class="p">;</span><span class="w">           </span><span class="c1">// Complete rsv.rsv.hub.idx device table index</span>
+<span class="w">    </span><span class="n">oni_dev_id_t</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w">          </span><span class="c1">// Device ID number (see onix.h)</span>
+<span class="w">    </span><span class="n">oni_size_t</span><span class="w"> </span><span class="n">read_size</span><span class="p">;</span><span class="w">     </span><span class="c1">// Device data read size per frame in bytes</span>
+<span class="w">    </span><span class="n">oni_size_t</span><span class="w"> </span><span class="n">write_size</span><span class="p">;</span><span class="w">    </span><span class="c1">// Device data write size per frame in bytes</span>
+
+<span class="p">}</span><span class="w"> </span><span class="n">oni_device_t</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><code class="docutils literal notranslate"><span class="pre">device_t.idx</span></code> is the fully qualified address (hub.index) of a
+device within the acquisition hierarchy. Do not expect these values to increase
+linearly with the position in array returned when querying the device table as
+some bit ranges are used to specify the hub address.</p>
+</div>
+</section>
+<section id="reading-and-writing-device-registers">
+<span id="liboni-example-read-write-reg"></span><h2>Reading and Writing Device Registers<a class="headerlink" href="#reading-and-writing-device-registers" title="Link to this heading">#</a></h2>
+<p>It is often necessary to inspect and configure devices prior to or during
+acquisition. As described in the ONI specification, a device is a leaf element
+in the device table with <em>at least</em> the following properties:</p>
+<ol class="arabic simple">
+<li><p>Its own register address space.</p></li>
+<li><p>Register access through a standardized register programming interface.</p></li>
+<li><p>A datasheet that describes access to these registers.</p></li>
+</ol>
+<p>Device registers can be read as follows:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_reg_val_t</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">oni_read_reg</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">dev_idx</span><span class="p">,</span><span class="w"> </span><span class="n">addr</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">val</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">dev_idx</span></code> is the fully specified device table index (hub.index) found
+in the device table, <code class="docutils literal notranslate"><span class="pre">addr</span></code> is the register address as specified within the
+ONI device datasheet. Because this is a register read, <code class="docutils literal notranslate"><span class="pre">val</span></code> is just a
+pointer to a register to be filled during the read. This function will return
+an error if the context is in an inappropriate state (e.g., not initialized),
+the specified device is not in the device table, or the register is write-only.
+Registers can be written as follows:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_reg_val_t</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
+<span class="n">oni_write_reg</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">dev_idx</span><span class="p">,</span><span class="w"> </span><span class="n">addr</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>where the function arguments have the same definitions as <code class="docutils literal notranslate"><span class="pre">oni_read_reg</span></code>.
+This function will return an error if the context is in an inappropriate state,
+the device does not exist in the device table, or the register is read-only.</p>
+</section>
+<section id="setting-read-and-write-buffer-sizes">
+<span id="liboni-example-set-buffers"></span><h2>Setting Read and Write Buffer Sizes<a class="headerlink" href="#setting-read-and-write-buffer-sizes" title="Link to this heading">#</a></h2>
+<p>After context initialization, the internal read and write buffers can be
+manually specified. These buffers exist in order to reduce copying.</p>
+<ul class="simple">
+<li><p>During a call to <code class="docutils literal notranslate"><span class="pre">oni_read_frame</span></code>, the read buffer is checked to see if it
+contains data. If so, the return frame is simply a zero-copy “view” into this
+memory.  If not, a block read is performed to fill the buffer, and again, the
+frame is a view into the beginning of this newly allocated block.</p></li>
+<li><p>During a call to <code class="docutils literal notranslate"><span class="pre">oni_create_frame</span></code>, a very similar process occurs in the
+opposite direction, using the write buffer. Write frames are views into a
+pre-allocated memory block.</p></li>
+</ul>
+<p>The size of these buffers dictates a trade off between response bandwidth and
+latency, especially during frame reads. In the case of reads, smaller buffers
+will be filled faster by the hardware and allow access to data that is closer
+in time to its physical creation. However, smaller buffers increase the memory
+allocation rate and decrease the maximum bandwidth of the read link.</p>
+<p>For this reason, we have chosen to make the read and write buffer size easily
+tunable by the user to optimize for different computer capabilities, data
+bandwidths, and required response latencies. The buffer sizes default to the
+minimum size for a given device table (the maximum frame read and write sizes
+across devices in the table aligned to the bus width of hardware communication
+link). This provides the lowest latency, but is optimal only for very low
+bandwidth acquisition and deterministic and low-latency threads (e.g. those
+found on real-time operating system). On a normal computer, these buffers can
+be set manually to optimize the bandwidth/latency trade off. For example, to
+set the buffer read and write sizes to 1024 and 8192 bytes respectively, use
+<code class="docutils literal notranslate"><span class="pre">oni_set_opt</span></code>:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_size_t</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="p">;</span>
+<span class="kt">size_t</span><span class="w"> </span><span class="n">block_size_sz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">block_size</span><span class="p">);</span>
+<span class="n">oni_set_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_OPT_BLOCKREADSIZE</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">block_size</span><span class="p">,</span><span class="w"> </span><span class="n">block_size_sz</span><span class="p">);</span>
+
+<span class="n">block_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8192</span><span class="p">;</span>
+<span class="n">block_size_sz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">block_size</span><span class="p">);</span>
+<span class="n">oni_set_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_OPT_BLOCKWRITESIZE</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">block_size</span><span class="p">,</span><span class="w"> </span><span class="n">block_size_sz</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If you attempt to set the buffer size to less than the minimal required in a
+particular context, these functions will return an error. To examine the buffer
+sizes, use <code class="docutils literal notranslate"><span class="pre">oni_get_opt</span></code> as follows</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">oni_size_t</span><span class="w"> </span><span class="n">block_size</span><span class="p">;</span>
+<span class="kt">size_t</span><span class="w"> </span><span class="n">block_size_sz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">block_size</span><span class="p">);</span>
+
+<span class="n">oni_get_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_OPT_BLOCKREADSIZE</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">block_size</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">block_size_sz</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Block read size: %u bytes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">block_size</span><span class="p">);</span>
+
+<span class="n">oni_get_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_OPT_BLOCKWRITESIZE</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">block_size</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">block_size_sz</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Write pre-allocation size: %u bytes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">block_size</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="starting-acquisition">
+<span id="start-ctx"></span><h2>Starting Acquisition<a class="headerlink" href="#starting-acquisition" title="Link to this heading">#</a></h2>
+<p>Prior to reading and writing to/from the high bandwidth data streams,
+acquisition must be started. To do this, write 1 to the <code class="docutils literal notranslate"><span class="pre">ONI_OPT_RUNNING</span></code>
+context option:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="n">oni_set_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_OPT_RUNNING</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">reg</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">oni_size_t</span><span class="p">));</span>
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Following the start of data acquisition, hardware memory
+resources are used to queue incoming device data. To prevent buffer overflows,
+the user must issue calls to <code class="docutils literal notranslate"><span class="pre">oni_read_frame</span></code> fast enough to keep up with
+data production.</p>
+</div>
+<p>To reset the main system clock counter (frame timer) at any point during or
+prior to starting acquisition, write 1 to the <code class="docutils literal notranslate"><span class="pre">ONI_OPT_RESETACQCOUNTER</span></code>
+context option:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="n">oni_set_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_OPT_RESETACQCOUNTER</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">reg</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">oni_size_t</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Often, the start of data acquisition should precisely co-occur with a clock
+reset. To perform both a clock reset and acquisition start in perfect sync,
+write 2 to the <code class="docutils literal notranslate"><span class="pre">ONI_OPT_RESETACQCOUNTER</span></code> context option:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// NOTE: this changed to 2 compared to previous example</span>
+<span class="n">oni_set_opt</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_OPT_RESETACQCOUNTER</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">reg</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">oni_size_t</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>This will reset the clock and automatically start acquisition (this sets
+<code class="docutils literal notranslate"><span class="pre">ONI_OPT_RUNNING</span></code> to 1).</p>
+</section>
+<section id="reading-data-frames">
+<span id="liboni-example-read-frame"></span><h2>Reading Data Frames<a class="headerlink" href="#reading-data-frames" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="oni.html#c.oni_frame_t" title="oni_frame_t"><code class="xref c c-struct docutils literal notranslate"><span class="pre">oni_frame_t</span></code></a>’s are minimal packets containing metadata and raw binary
+data blocks from a single device within the device table. A
+<a class="reference internal" href="onidefs.html#c.oni_size_t" title="oni_size_t"><code class="xref c c-struct docutils literal notranslate"><span class="pre">oni_size_t</span></code></a> is defined as</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">oni_frame</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">dev_idx</span><span class="p">;</span><span class="w">  </span><span class="c1">// Device index that produced or accepts the frame</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">data_sz</span><span class="p">;</span><span class="w">  </span><span class="c1">// Size in bytes of data buffer</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">time</span><span class="p">;</span><span class="w">     </span><span class="c1">// Frame time (ACQCLKHZ)</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">;</span><span class="w">           </span><span class="c1">// Raw data block</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">dev_idx</span></code> is the fully qualified device index within the device table
+(hub.index), <code class="docutils literal notranslate"><span class="pre">data_sz</span></code> is the size in bytes of the raw data block, <code class="docutils literal notranslate"><span class="pre">time</span></code>
+is the system clock count that indicates the frame creation time, and, <code class="docutils literal notranslate"><span class="pre">data</span></code>
+is a pointer to the raw data block. A single frame can be read from an
+acquisition context after it is started (see <a class="reference internal" href="#start-ctx"><span class="std std-ref">Starting Acquisition</span></a>) using repeated
+calls to <code class="docutils literal notranslate"><span class="pre">oni_read_frame</span></code> as follows:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Read a frame</span>
+<span class="n">oni_frame_t</span><span class="w"> </span><span class="o">*</span><span class="n">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="n">oni_read_frame</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">frame</span><span class="p">);</span>
+
+<span class="c1">// Perform desired operations with frame</span>
+
+<span class="c1">// Dispose of frame</span>
+<span class="n">oni_destroy_frame</span><span class="p">(</span><span class="n">frame</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In the preceding example, <code class="docutils literal notranslate"><span class="pre">frame</span></code> is initialized to <code class="docutils literal notranslate"><span class="pre">NULL</span></code> because a call
+to <code class="docutils literal notranslate"><span class="pre">oni_read_frame</span></code> will assign its contents to an existing, pre-allocated
+memory block (see <a class="reference internal" href="#liboni-example-set-buffers"><span class="std std-ref">Setting Read and Write Buffer Sizes</span></a>). <code class="docutils literal notranslate"><span class="pre">oni_read_frame</span></code> will
+return an error if the acquisition context is in an inappropriate state (e.g.,
+not started). If the hardware is not producing frames, it will wait
+indefinitely.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>After acquisition is started, <code class="docutils literal notranslate"><span class="pre">oni_read_frame</span></code> must be called
+frequently enough such that hardware buffers do not overflow.</p>
+</div>
+<p>After they have been used, frames must be disposed using <code class="docutils literal notranslate"><span class="pre">oni_destroy_frame</span></code>.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Every call to <code class="docutils literal notranslate"><span class="pre">oni_read_frame</span></code> must be matched by a call to
+<code class="docutils literal notranslate"><span class="pre">oni_destroy_frame</span></code>. Not doing so will result in a memory leak.</p>
+</div>
+</section>
+<section id="writing-data-frames">
+<span id="liboni-example-write-frame"></span><h2>Writing Data Frames<a class="headerlink" href="#writing-data-frames" title="Link to this heading">#</a></h2>
+<p>Writing frames to an appropriate device in the device table follows similar
+steps to reading frames.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Required elements to create frame</span>
+<span class="n">oni_frame_t</span><span class="w"> </span><span class="o">*</span><span class="n">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="kt">size_t</span><span class="w"> </span><span class="n">dev_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">256</span><span class="p">;</span>
+<span class="kt">size_t</span><span class="w"> </span><span class="n">data_sz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w"> </span><span class="c1">// or 16, 24, 32, etc</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">data</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">};</span>
+
+<span class="c1">// Create a frame</span>
+<span class="n">oni_create_frame</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">frame</span><span class="p">,</span><span class="w"> </span><span class="n">dev_idx</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">data_sz</span><span class="p">);</span>
+
+<span class="c1">// Write the frame</span>
+<span class="n">oni_write_frame</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">frame</span><span class="p">);</span>
+
+<span class="c1">// Dispose the frame</span>
+<span class="n">oni_destroy_frame</span><span class="p">(</span><span class="n">frame</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>First, a frame is created using a call to <code class="docutils literal notranslate"><span class="pre">oni_create_frame</span></code> (analogous to
+<code class="docutils literal notranslate"><span class="pre">oni_read_frame</span></code>, except that frame data is provided by the user instead of
+the hardware). In the preceding example, it is assumed that the user has
+queried the device table to ensure that the device with qualified index 256 is
+writable and has a write size of 8 bytes. If the device at <code class="docutils literal notranslate"><span class="pre">dev_idx</span></code> does not
+accept writes or <code class="docutils literal notranslate"><span class="pre">data</span></code>/<code class="docutils literal notranslate"><span class="pre">data_sz</span></code> are not a multiple of the device write
+size, then <code class="docutils literal notranslate"><span class="pre">oni_create_frame</span></code> will return an error.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When calling <code class="docutils literal notranslate"><span class="pre">oni_create_frame</span></code>, <code class="docutils literal notranslate"><span class="pre">data</span></code>/<code class="docutils literal notranslate"><span class="pre">data_sz</span></code> can be a
+multiple of the write size for a particular device. This way, a frame can be
+loaded with multiple data packets that are written to the device as quickly as
+the hardware and device driver permit.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Attempting to write multi-packet frames that are larger than
+<a class="reference internal" href="onidefs.html#c.&#64;ctx_opts_enum.ONI_OPT_BLOCKWRITESIZE" title="ONI_OPT_BLOCKWRITESIZE"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_BLOCKWRITESIZE</span></code></a> will result in a error.</p>
+</div>
+<p>After a frame has been created, it can then be written to hardware using
+<code class="docutils literal notranslate"><span class="pre">oni_write_frame</span></code>. Just like frames produced by <code class="docutils literal notranslate"><span class="pre">oni_read_frame</span></code>, frames
+generated by <code class="docutils literal notranslate"><span class="pre">oni_create_frame</span></code> must be disposed of using
+<code class="docutils literal notranslate"><span class="pre">oni_destroy_frame</span></code> when the are no longer needed.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Frames created using <code class="docutils literal notranslate"><span class="pre">oni_create_frame</span></code> can be reused by re-writing
+their data field following a frame write.</p>
+</div>
+<p>The following example shows a single frame being used for two writes with a
+change in the data field in between writes:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Required elements to create frame</span>
+<span class="n">oni_frame_t</span><span class="w"> </span><span class="o">*</span><span class="n">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="kt">size_t</span><span class="w"> </span><span class="n">dev_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">256</span><span class="p">;</span>
+<span class="kt">size_t</span><span class="w"> </span><span class="n">data_sz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w"> </span><span class="c1">// or 16, 24, 32, etc</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">};</span>
+
+<span class="c1">// Create a frame</span>
+<span class="n">oni_create_frame</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">frame</span><span class="p">,</span><span class="w"> </span><span class="n">dev_idx</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">data_sz</span><span class="p">);</span>
+
+<span class="c1">// Write the frame</span>
+<span class="n">oni_write_frame</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">frame</span><span class="p">);</span>
+
+<span class="c1">// Reuse the same frame</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">new_data</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">};</span>
+<span class="n">memcpy</span><span class="p">(</span><span class="n">frame</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">new_data</span><span class="p">,</span><span class="w"> </span><span class="n">data_sz</span><span class="p">);</span>
+
+<span class="c1">// Write the frame with new_data</span>
+<span class="n">oni_write_frame</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">frame</span><span class="p">);</span>
+
+<span class="c1">// Dispose the frame</span>
+<span class="n">oni_destroy_frame</span><span class="p">(</span><span class="n">frame</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="synchronizing-contexts">
+<span id="sync-ctx"></span><h2>Synchronizing Contexts<a class="headerlink" href="#synchronizing-contexts" title="Link to this heading">#</a></h2>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Document.</p>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="build.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Building liboni</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="making-drivers.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Writing Driver Translators</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acquisition-context-creation">Acquisition Context Creation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-an-acquisition-context">Closing an Acquisition Context</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examining-the-device-table">Examining the Device Table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-and-writing-device-registers">Reading and Writing Device Registers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-read-and-write-buffer-sizes">Setting Read and Write Buffer Sizes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-acquisition">Starting Acquisition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-data-frames">Reading Data Frames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-data-frames">Writing Data Frames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synchronizing-contexts">Synchronizing Contexts</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/open-ephys/ONI/edit/main/source/api/liboni/liboni-example.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/api/liboni/liboni-example.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2010-2025, Open Ephys &amp; Contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

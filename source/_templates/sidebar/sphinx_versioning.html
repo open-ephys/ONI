@@ -1,0 +1,37 @@
+<div id="sphinx_versioning_container">
+  <span style="vertical-align: middle">{{ _('Versions') }}</span>
+  <select
+    style="vertical-align: middle; margin-left: 5px"
+    onchange="window.location.href=this.value"
+    id="sphinx_versioning_dropdown_menu"
+  >
+    <option value="/">Latest</option>
+    <!-- Additional versions will be populated here by JavaScript -->
+  </select>
+</div>
+<script>
+  fetch('/_static/sphinx_versioning_plugin/versions.json')
+    .then((response) => response.json())
+    .then((versions) => {
+      const dropdown = document.getElementById('sphinx_versioning_dropdown_menu');
+      const container = document.getElementById('sphinx_versioning_container');
+
+      // Check if the versions array is empty
+      if (versions.length === 0) {
+        // Hide the entire container if there are no versions
+        container.style.display = 'none';
+      } else {
+        versions.forEach((version) => {
+          const option = document.createElement('option');
+          option.value = `/_static/sphinx_versioning_plugin/${version}/`;
+          option.text = version;
+
+          // If current page URL contains this version, set it as selected
+          if (window.location.pathname.includes(`_static/sphinx_versioning_plugin/${version}/`)) {
+            option.selected = true;
+          }
+          dropdown.appendChild(option);
+        });
+      }
+    });
+</script>

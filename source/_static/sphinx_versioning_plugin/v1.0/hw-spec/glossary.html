@@ -1,0 +1,647 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Glossary of Terms &#8212; ONI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../_static/documentation_options.js?v=5c79bd3c"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'hw-spec/glossary';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Hardware Hierarchy" href="hierarchy.html" />
+    <link rel="prev" title="ONI Hardware Specification" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../_static/oe_logo_name.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/oe_logo_name.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api/index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api/index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Glossary of Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hierarchy.html">Hardware Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comm_channels.html">Channel Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_table.html">Device Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hubs.html">Hubs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controller.html">Controller</a></li>
+</ul>
+</div>
+</nav></div>
+        <div class="sidebar-primary-item"><div id="sphinx_versioning_container">
+  <span style="vertical-align: middle">Versions</span>
+  <select
+    style="vertical-align: middle; margin-left: 5px"
+    onchange="window.location.href=this.value"
+    id="sphinx_versioning_dropdown_menu"
+  >
+    <option value="/">Latest</option>
+    <!-- Additional versions will be populated here by JavaScript -->
+  </select>
+</div>
+<script>
+  fetch('/_static/sphinx_versioning_plugin/versions.json')
+    .then((response) => response.json())
+    .then((versions) => {
+      const dropdown = document.getElementById('sphinx_versioning_dropdown_menu');
+      const container = document.getElementById('sphinx_versioning_container');
+
+      // Check if the versions array is empty
+      if (versions.length === 0) {
+        // Hide the entire container if there are no versions
+        container.style.display = 'none';
+      } else {
+        versions.forEach((version) => {
+          const option = document.createElement('option');
+          option.value = `/_static/sphinx_versioning_plugin/${version}/`;
+          option.text = version;
+
+          // If current page URL contains this version, set it as selected
+          if (window.location.pathname.includes(`_static/sphinx_versioning_plugin/${version}/`)) {
+            option.selected = true;
+          }
+          dropdown.appendChild(option);
+        });
+      }
+    });
+</script></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">ONI Hardware Specification</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Glossary of Terms</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="glossary-of-terms">
+<span id="glossary"></span><h1>Glossary of Terms<a class="headerlink" href="#glossary-of-terms" title="Link to this heading">#</a></h1>
+<p>Here we provide glossary of terms used terms in this specification. A complete
+understanding of the term may require knowledge of interaction with other
+elements and/or its context within the specification.</p>
+<dl class="glossary">
+<dt id="term-Acquisition-Context">Acquisition Context<a class="headerlink" href="#term-Acquisition-Context" title="Link to this term">#</a></dt><dd><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Can be abbreviated as “Context”.</p>
+</div>
+<p>A top-level <a class="reference internal" href="#term-API"><span class="xref std std-term">API</span></a> element that holds acquisition state, a
+<a class="reference internal" href="#term-Device-Table"><span class="xref std std-term">Device Table</span></a>, and <a class="reference internal" href="#term-Driver-Translator"><span class="xref std std-term">Driver Translator</span></a> state in order to
+communicate with a single <a class="reference internal" href="#term-Controller"><span class="xref std std-term">Controller</span></a>. A context is manipulated and
+interacted with using <a class="reference internal" href="#term-API"><span class="xref std std-term">API</span></a> function calls, and ultimately affects
+hardware state over the <a class="reference internal" href="#term-Host-Interconnect"><span class="xref std std-term">Host Interconnect</span></a> via a <a class="reference internal" href="#term-Driver-Translator"><span class="xref std std-term">Driver
+Translator</span></a>. Multiple contexts can coexist on a single host system and
+these may each use a different <a class="reference internal" href="#term-Driver-Translator"><span class="xref std std-term">Driver Translator</span></a> and/or physical
+interface.</p>
+</dd>
+<dt id="term-API">API<a class="headerlink" href="#term-API" title="Link to this term">#</a></dt><dd><p>ONI application programming interface that can be used to develop software
+to acquire from and control ONI-compliant hardware.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../api/index.html#oni-api"><span class="std std-ref">ONI API Documentation</span></a></p>
+</div>
+</dd>
+<dt id="term-Controller">Controller<a class="headerlink" href="#term-Controller" title="Link to this term">#</a></dt><dd><p>Hardware with a physical interface to the <a class="reference internal" href="#term-Host-Computer"><span class="xref std std-term">Host Computer</span></a> over a
+single <a class="reference internal" href="#term-Host-Interconnect"><span class="xref std std-term">Host Interconnect</span></a> using a <a class="reference internal" href="#term-Driver-Translator"><span class="xref std std-term">Driver Translator</span></a> and
+ONI-compliant <a class="reference internal" href="#term-API"><span class="xref std std-term">API</span></a>. Multiple <a class="reference internal" href="#term-Controller"><span class="xref std std-term">controllers</span></a> can
+coexist in a single <a class="reference internal" href="#term-Host-Computer"><span class="xref std std-term">Host Computer</span></a> and need not use the same
+<a class="reference internal" href="#term-Driver-Translator"><span class="xref std std-term">Driver Translator</span></a>. Controllers communicate via <a class="reference internal" href="#term-API"><span class="xref std std-term">API</span></a> calls
+that manipulate an <a class="reference internal" href="#term-Acquisition-Context"><span class="xref std std-term">Acquisition Context</span></a> and a <a class="reference internal" href="#term-Device-Table"><span class="xref std std-term">Device Table</span></a>,
+which affect controller state using the driver translator. <a class="reference internal" href="#term-Hub"><span class="xref std std-term">Hubs</span></a> are connected to the controller where data to/from their devices is
+packed and transmitted to/from the host computer. The controller contains a
+main clock which provides a common timestamp to all incoming data, and that
+can be synchronized with other controllers.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="controller.html#controller"><span class="std std-ref">Controller Specification</span></a></p>
+</div>
+</dd>
+<dt id="term-Device">Device<a class="headerlink" href="#term-Device" title="Link to this term">#</a></dt><dd><p>A configurable piece of hardware with its own register address space
+(e.g., an integrated circuit) or a digital “core” that emulates this.
+Devices may or may not produce and/or accept <a class="reference internal" href="comm_channels.html#term-Stream-Channel"><span class="xref std std-term">streaming data</span></a> , but that must at least implement a minimal <a class="reference internal" href="comm_channels.html#term-Register-Channel"><span class="xref std std-term">register
+programming channel</span></a>. They must be documented, using a
+<a class="reference internal" href="#term-Device-Datasheet"><span class="xref std std-term">Device Datasheet</span></a>. Devices are the endpoints for most communication
+operations and often are the hardware interfacing with the physical
+environment.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="devices.html#device"><span class="std std-ref">Device Specification</span></a></p>
+</div>
+</dd>
+<dt id="term-Device-Address">Device Address<a class="headerlink" href="#term-Device-Address" title="Link to this term">#</a></dt><dd><p>A unique, 32-bit address for each device entry in a <a class="reference internal" href="#term-Device-Table"><span class="xref std std-term">Device Table</span></a>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="dev_table.html#dev-address"><span class="std std-ref">Device Address Specification</span></a></p>
+</div>
+</dd>
+<dt id="term-Device-Datasheet">Device Datasheet<a class="headerlink" href="#term-Device-Datasheet" title="Link to this term">#</a></dt><dd><p>Documentation for a device which describes how it generates and accepts
+data, if any, along with a guide for programming and reading registers.
+This might take the form of a manufacturer datasheet if all chip
+functionality is exposed via raw register access.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="devices.html#dev-datasheet"><span class="std std-ref">Device Datasheet Specification</span></a></p>
+</div>
+</dd>
+<dt id="term-Device-Table">Device Table<a class="headerlink" href="#term-Device-Table" title="Link to this term">#</a></dt><dd><p>A collection of <a class="reference internal" href="#term-Device-Address"><span class="xref std std-term">device addresses</span></a> and corresponding
+metadata for all <a class="reference internal" href="devices.html#device"><span class="std std-ref">devices</span></a> governed by a <a class="reference internal" href="#term-Controller"><span class="xref std std-term">controller</span></a>. The device table contains all meta-information required to
+for proper interaction with each device (e.g., packet read-size, packet
+write-size, burst read cycles, etc.).</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="dev_table.html#dev-table"><span class="std std-ref">Device Table Specification</span></a></p>
+</div>
+</dd>
+<dt id="term-Driver-Translator">Driver Translator<a class="headerlink" href="#term-Driver-Translator" title="Link to this term">#</a></dt><dd><p>A small <a class="reference external" href="https://en.wikipedia.org/wiki/Device_driver">device driver</a>
+translation library that converts abstract <a class="reference internal" href="#term-API"><span class="xref std std-term">API</span></a> calls to
+hardware-specific system calls that affect the <a class="reference internal" href="#term-Controller"><span class="xref std std-term">Controller</span></a> over the <a class="reference internal" href="#term-Host-Interconnect"><span class="xref std std-term">Host Interconnect</span></a>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../api/index.html#oni-api"><span class="std std-ref">ONI API Documentation</span></a></p>
+</div>
+</dd>
+<dt id="term-Host-Computer">Host Computer<a class="headerlink" href="#term-Host-Computer" title="Link to this term">#</a></dt><dd><p>The computer supporting acquisition and processing from one or more
+<a class="reference internal" href="#term-Controller"><span class="xref std std-term">controllers</span></a> and running software implemented using the
+<a class="reference internal" href="#term-API"><span class="xref std std-term">API</span></a>.</p>
+</dd>
+<dt id="term-Host-Interconnect">Host Interconnect<a class="headerlink" href="#term-Host-Interconnect" title="Link to this term">#</a></dt><dd><p>A hardware abstraction layer consisting of a physical bus (e.g., PCIe, USB,
+or Ethernet) along with a <a class="reference internal" href="#term-Driver-Translator"><span class="xref std std-term">Driver Translator</span></a> that the
+<a class="reference internal" href="#term-Controller"><span class="xref std std-term">Controller</span></a> uses to communicate with the <a class="reference internal" href="#term-Host-Computer"><span class="xref std std-term">Host Computer</span></a>.</p>
+</dd>
+<dt id="term-Hub">Hub<a class="headerlink" href="#term-Hub" title="Link to this term">#</a></dt><dd><p>A collection of <a class="reference internal" href="#term-Device"><span class="xref std std-term">Devices</span></a> that communicate with a
+<a class="reference internal" href="#term-Controller"><span class="xref std std-term">Controller</span></a> over a <a class="reference internal" href="#term-Port"><span class="xref std std-term">Port</span></a> and share a common
+clock. All data acquired by <a class="reference internal" href="#term-Device"><span class="xref std std-term">devices</span></a> in the same Hub are
+timestamped by this clock. Different Hubs may be governed by asynchronous
+clocks. A Hub either forms a portion of the <a class="reference internal" href="#term-Device-Table"><span class="xref std std-term">Device Table</span></a> or the
+entire <a class="reference internal" href="#term-Device-Table"><span class="xref std std-term">Device Table</span></a> if it contains all the <a class="reference internal" href="#term-Device"><span class="xref std std-term">devices</span></a>
+within the <a class="reference internal" href="#term-Acquisition-Context"><span class="xref std std-term">Acquisition Context</span></a>. Hubs can be exist in separate
+hardware from the <a class="reference internal" href="#term-Controller"><span class="xref std std-term">Controller</span></a> (remote hubs) or within the
+<a class="reference internal" href="#term-Controller"><span class="xref std std-term">Controller</span></a> (local hubs).</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="hubs.html#hub"><span class="std std-ref">Hub Specification</span></a></p>
+</div>
+</dd>
+<dt id="term-Port">Port<a class="headerlink" href="#term-Port" title="Link to this term">#</a></dt><dd><p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Bus_(computing)">physical bus</a> between
+a <a class="reference internal" href="#term-Hub"><span class="xref std std-term">Hub</span></a> and a <a class="reference internal" href="#term-Controller"><span class="xref std std-term">Controller</span></a>. This could be an external link to
+a <a class="reference internal" href="#term-Hub"><span class="xref std std-term">Hub</span></a> that is separated from the <a class="reference internal" href="#term-Controller"><span class="xref std std-term">Controller</span></a> (e.g., a wire or
+wireless communication channel) or it could be a bus inside of the
+<a class="reference internal" href="#term-Controller"><span class="xref std std-term">Controller</span></a> in the case of a local hub.</p>
+</dd>
+</dl>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">ONI Hardware Specification</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="hierarchy.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Hardware Hierarchy</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/open-ephys/ONI/edit/main/source/hw-spec/glossary.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/hw-spec/glossary.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2010-2025, Open Ephys &amp; Contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

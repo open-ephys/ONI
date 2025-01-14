@@ -1,0 +1,668 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Hubs &#8212; ONI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../_static/documentation_options.js?v=5c79bd3c"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'hw-spec/hubs';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Controller" href="controller.html" />
+    <link rel="prev" title="Devices" href="devices.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../_static/oe_logo_name.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/oe_logo_name.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api/index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api/index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hierarchy.html">Hardware Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comm_channels.html">Channel Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_table.html">Device Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Hubs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controller.html">Controller</a></li>
+</ul>
+</div>
+</nav></div>
+        <div class="sidebar-primary-item"><div id="sphinx_versioning_container">
+  <span style="vertical-align: middle">Versions</span>
+  <select
+    style="vertical-align: middle; margin-left: 5px"
+    onchange="window.location.href=this.value"
+    id="sphinx_versioning_dropdown_menu"
+  >
+    <option value="/">Latest</option>
+    <!-- Additional versions will be populated here by JavaScript -->
+  </select>
+</div>
+<script>
+  fetch('/_static/sphinx_versioning_plugin/versions.json')
+    .then((response) => response.json())
+    .then((versions) => {
+      const dropdown = document.getElementById('sphinx_versioning_dropdown_menu');
+      const container = document.getElementById('sphinx_versioning_container');
+
+      // Check if the versions array is empty
+      if (versions.length === 0) {
+        // Hide the entire container if there are no versions
+        container.style.display = 'none';
+      } else {
+        versions.forEach((version) => {
+          const option = document.createElement('option');
+          option.value = `/_static/sphinx_versioning_plugin/${version}/`;
+          option.text = version;
+
+          // If current page URL contains this version, set it as selected
+          if (window.location.pathname.includes(`_static/sphinx_versioning_plugin/${version}/`)) {
+            option.selected = true;
+          }
+          dropdown.appendChild(option);
+        });
+      }
+    });
+</script></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">ONI Hardware Specification</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Hubs</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="hubs">
+<span id="hub"></span><h1>Hubs<a class="headerlink" href="#hubs" title="Link to this heading">#</a></h1>
+<p>Hubs are collections of devices sharing a common clock. They can be independent
+hardware aggregates connected to the controller (e.g., a headstage for neural
+acquisition) or a logical partition of existing hardware (e.g., a collection of
+devices implemented in the same firmware as the controller). Hubs that exist on
+hardware that is physically separated from the <a class="reference internal" href="controller.html#controller"><span class="std std-ref">controller</span></a> are
+referred to as remote hubs, while hubs existing on the controller are local hubs.
+An ONI-compliant system MUST implement at least one local hub, located at
+<a class="reference internal" href="dev_table.html#dev-address"><span class="std std-ref">Hub_Index 0</span></a> and sharing the clock of controller’s main
+state machine, and can implement up to 253 additional hubs, local or remote. All
+devices reflecting or modifying the <a class="reference internal" href="controller.html#controller"><span class="std std-ref">controller</span></a> state and/or
+reporting errors or similar status messages must be implemented in local hub 0.</p>
+<p>Every hub MUST have access to a high-resolution timer that is used by all its devices
+to generate a <code class="docutils literal notranslate"><span class="pre">Hub_Timestamp</span></code> for a <a class="reference internal" href="devices.html#dev-sample"><span class="std std-ref">data sample</span></a>.</p>
+<p>Data from all the devices of a hub is collected and passed to the controller.
+The specific interface between a hub and the controller is highly
+implementation-dependent and, thus, not in the scope of this document. In
+any case, it is the duty of the hub to provide the controller with all the
+device descriptors and communication channels in a transparent manner. It is
+common for a remote hub to feature a centralized IC (e.g., an FPGA or
+microcontroller) integrating the device controllers and communication interface
+to fill this duty, but other schemes are possible.</p>
+<p>Multiple hubs are differentiated through a unique identifier, or Hardware ID.
+This identifier represents a specific implementation of a hub, defined by a
+particular collection of devices on a specific hardware platform communicating
+with the controller through a specific link. Changes in the device collection,
+the communications link or the general hardware architecture require a new
+identifier.</p>
+<section id="special-devices">
+<span id="special-devs"></span><h2>Special Devices<a class="headerlink" href="#special-devices" title="Link to this heading">#</a></h2>
+<p>There are two kinds of special devices that are required by this specification:
+An information device on each hub and a heartbeat device in local hub 0.</p>
+<section id="information-device">
+<h3>Information Device<a class="headerlink" href="#information-device" title="Link to this heading">#</a></h3>
+<p>Every hub in an ONI system must feature a special device, located at
+<a class="reference internal" href="dev_table.html#dev-table"><span class="std std-ref">Device_Address</span></a> 0xFE, which supplies information about the hub.
+Because this device is required to exist at a fixed address, it is not listed
+in the device table and, thus, has no <a class="reference internal" href="devices.html#dev-desc"><span class="std std-ref">device descriptor</span></a>.  The only
+communication channel it must expose is the register interface, and it must not
+include any streams. The required register map is:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Address</p></th>
+<th class="head"><p>Register</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x0000</p></td>
+<td><p>Hardware ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0001</p></td>
+<td><p>Hardware revision</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0002</p></td>
+<td><p>Firmware version</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0003</p></td>
+<td><p>(OPTIONAL) Safe firmware version</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0004</p></td>
+<td><p>Hub clock frequency</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0005</p></td>
+<td><p>Hub data latency</p></td>
+</tr>
+</tbody>
+</table>
+<p>Although all register reads are 32-bits in nature, not all registers make use of
+the complete width. The detailed meaning of each register is:</p>
+<ul>
+<li><p><strong>Hardware ID</strong>: A 32-bit value that uniquely identifies the hub. It has a
+similar format to the <a class="reference internal" href="devices.html#dev-id"><span class="std std-ref">Device ID</span></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Reserved</span><span class="p">(</span><span class="mi">8</span><span class="o">-</span><span class="n">bit</span><span class="p">)</span><span class="o">.</span><span class="n">Company</span><span class="p">(</span><span class="mi">8</span><span class="o">-</span><span class="n">bit</span><span class="p">)</span><span class="o">.</span><span class="n">Hub</span><span class="p">(</span><span class="mi">16</span><span class="o">-</span><span class="n">bit</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Reserved</span></code>: Reserved for future specification revision. Currently
+ignored.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Company</span></code>: Any person, lab, institute, informal group, or company can
+communicate with Open Ephys in order to to obtain a unique 8-bit “Company”
+value, and thus be included in the automatic listings of existing ONI API
+implementations. Open Ephys is 0x00.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Hub</span></code>: 16-bit Hub ID. This number usually identifies a physical product
+and would correspond to a stock keeping unit SKU or part number in a
+commercial setting. However, there is no formal restriction on these bits
+other than uniqueness.</p></li>
+</ul>
+</li>
+<li><p><strong>Hardware revision</strong>: A 16-bit value identifying changes in the hardware
+that do not affect the overall operation of the hub and, therefore, do not
+require a new ID. These are typically related to a PCB revision.</p></li>
+<li><p><strong>Firmware version</strong>: A 16-bit value specifying firmware or gateware version
+of the main component driving the hub (e.g., an FPGA, microcontroller, or
+EEPROM for logic-free hubs).</p></li>
+<li><p><strong>Safe firmware version</strong>: (Optional) For hubs that allow online updates of
+the firmware, 16-bit version of the fallback safe image, if any.</p></li>
+<li><p><strong>Hub clock frequency</strong>: 32-bit value holding the frequency, in Hz, of the
+hub clock that drives the <em>Hub_Timestamp</em> passed to the devices.</p></li>
+<li><p><strong>Hub data latency</strong>: 32-bit value representing the average latency, in
+nanoseconds, of the physical link between the hub and the controller. Usually
+0 in local hubs.</p></li>
+</ul>
+<p>All 16-bit versions are in the format of:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Major</span><span class="p">(</span><span class="mi">8</span><span class="o">-</span><span class="n">bit</span><span class="p">)</span><span class="o">.</span><span class="n">Minor</span><span class="p">(</span><span class="mi">8</span><span class="o">-</span><span class="n">bit</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>For example, 0x0103 would imply version 1.3. In the case of the information
+device located on hub 0, the versions refer to the physical controller hardware
+and its firmware, where that hub is located.</p>
+</section>
+<section id="heartbeat-device">
+<h3>Heartbeat Device<a class="headerlink" href="#heartbeat-device" title="Link to this heading">#</a></h3>
+<p>Local hub 0 must contain a “heartbeat device”. This is a simple device that
+periodically produces <a class="reference internal" href="devices.html#dev-sample"><span class="std std-ref">samples</span></a> containing only the <code class="docutils literal notranslate"><span class="pre">Hub</span>
+<span class="pre">Timestamp</span></code> and an empty payload, at a minimum rate of 10 Hz. Its <code class="docutils literal notranslate"><span class="pre">ENABLE</span></code>
+register must be fixed and always active. This device ensures that API calls
+accessing the read stream are guaranteed to be unblocked in the case that no
+other devices in the system are producing data.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="devices.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Devices</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="controller.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Controller</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-devices">Special Devices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-device">Information Device</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heartbeat-device">Heartbeat Device</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/open-ephys/ONI/edit/main/source/hw-spec/hubs.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/hw-spec/hubs.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2010-2025, Open Ephys &amp; Contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

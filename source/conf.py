@@ -45,6 +45,7 @@ extensions = [
     'sphinx.ext.githubpages',
     'breathe',
     'sphinx_csharp',
+    'sphinx_versioning'
 ]
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -107,7 +108,10 @@ html_style = "_static/theme_overrides.css"
 
 html_sidebars = {
     'index': ['search-field.html'],
-    "**": ["sidebar-nav-bs.html"]
+    "**": [
+        "sidebar-nav-bs.html",
+        'sidebar/sphinx_versioning.html',
+    ]
 }
 
 # Custom sidebar templates, must be a dictionary that maps document names

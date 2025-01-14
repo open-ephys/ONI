@@ -21,3 +21,6 @@ docs/*
 
 # Batch file
 make.bat
+
+# Requirements text file (used to create a new sphinx-version)
+req.txt

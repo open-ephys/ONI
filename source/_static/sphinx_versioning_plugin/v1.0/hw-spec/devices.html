@@ -1,0 +1,780 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Devices &#8212; ONI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../_static/documentation_options.js?v=5c79bd3c"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'hw-spec/devices';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Hubs" href="hubs.html" />
+    <link rel="prev" title="Device Table" href="dev_table.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../_static/oe_logo_name.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/oe_logo_name.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api/index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api/index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hierarchy.html">Hardware Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comm_channels.html">Channel Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_table.html">Device Table</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hubs.html">Hubs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controller.html">Controller</a></li>
+</ul>
+</div>
+</nav></div>
+        <div class="sidebar-primary-item"><div id="sphinx_versioning_container">
+  <span style="vertical-align: middle">Versions</span>
+  <select
+    style="vertical-align: middle; margin-left: 5px"
+    onchange="window.location.href=this.value"
+    id="sphinx_versioning_dropdown_menu"
+  >
+    <option value="/">Latest</option>
+    <!-- Additional versions will be populated here by JavaScript -->
+  </select>
+</div>
+<script>
+  fetch('/_static/sphinx_versioning_plugin/versions.json')
+    .then((response) => response.json())
+    .then((versions) => {
+      const dropdown = document.getElementById('sphinx_versioning_dropdown_menu');
+      const container = document.getElementById('sphinx_versioning_container');
+
+      // Check if the versions array is empty
+      if (versions.length === 0) {
+        // Hide the entire container if there are no versions
+        container.style.display = 'none';
+      } else {
+        versions.forEach((version) => {
+          const option = document.createElement('option');
+          option.value = `/_static/sphinx_versioning_plugin/${version}/`;
+          option.text = version;
+
+          // If current page URL contains this version, set it as selected
+          if (window.location.pathname.includes(`_static/sphinx_versioning_plugin/${version}/`)) {
+            option.selected = true;
+          }
+          dropdown.appendChild(option);
+        });
+      }
+    });
+</script></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">ONI Hardware Specification</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Devices</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="devices">
+<span id="device"></span><h1>Devices<a class="headerlink" href="#devices" title="Link to this heading">#</a></h1>
+<p>Devices are the endpoint of most ONI transactions. They can represent a
+physical element interfacing with the environment (e.g., an external sensor with
+a digital communication interface), something programmed within the firmware to
+emulate this (e.g., a digital logic module on an FPGA) or a purely internal data
+source (e.g., a controller based digital logic module that generates system
+status reports). A device exposes the following <a class="reference internal" href="comm_channels.html#com-channels"><span class="std std-ref">communication channels</span></a>:</p>
+<ul class="simple">
+<li><p>A MANDATORY register interface</p></li>
+<li><p>An OPTIONAL read stream</p></li>
+<li><p>An OPTIONAL write stream</p></li>
+</ul>
+<p>Communication over streams follows a specific <a class="reference internal" href="#dev-sample"><span class="std std-ref">sample format</span></a>, while the register interface must comply with a specific bus
+communication cycle. Details on each are provided in following sections. Device
+developers MUST provide a <a class="reference internal" href="#dev-datasheet"><span class="std std-ref">datasheet</span></a> describing the
+register map, stream data format, along with general behavior of the device in
+order to reach ONI-compliance.</p>
+<section id="device-id">
+<span id="dev-id"></span><h2>Device ID<a class="headerlink" href="#device-id" title="Link to this heading">#</a></h2>
+<p>Different types of devices MUST have a unique identification integer called a
+Device ID. Device IDs are 32-bit integers with the following format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Reserved</span><span class="p">(</span><span class="mi">8</span><span class="o">-</span><span class="n">bit</span><span class="p">)</span><span class="o">.</span><span class="n">Company</span><span class="p">(</span><span class="mi">8</span><span class="o">-</span><span class="n">bit</span><span class="p">)</span><span class="o">.</span><span class="n">Device</span><span class="p">(</span><span class="mi">16</span><span class="o">-</span><span class="n">bit</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Reserved</span></code>: Reserved for future specification revision. Currently ignored.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Company</span></code>: Any person, lab, institute, informal group, or company can
+communicate with Open Ephys in order to to obtain a unique 8-bit “Company”
+value, and thus be included in the automatic listings of existing ONI API
+implementations. Open Ephys is 0x00.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Device</span></code>: 16-bit Device ID. This number identifies not only the type of
+data produced or consumed by a device, but also a particular implementation.
+For instance, the same sensor will have a unique Device ID for each digital
+module implementation that is used to communicate with it. This number can
+optionally be divided in two 8-bit values so long as the resulting 16-bit
+integer is unique within a particular “Company” (there is no need for unary
+or monotonic increments when new devices are introduced).</p></li>
+</ul>
+</section>
+<section id="device-descriptor">
+<span id="dev-desc"></span><h2>Device Descriptor<a class="headerlink" href="#device-descriptor" title="Link to this heading">#</a></h2>
+<p>A device MUST expose a descriptor that is read by the <a class="reference internal" href="controller.html#controller"><span class="std std-ref">controller</span></a> following a reset and that is incorporated into the <a class="reference internal" href="dev_table.html#dev-table"><span class="std std-ref">device
+table</span></a>. The descriptor must contain the following information:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uint32</span>    <span class="n">Device_ID</span>
+<span class="n">uint32</span>    <span class="n">Device_Version</span>
+<span class="n">uint32</span>    <span class="n">Read_Sample_Size</span>
+<span class="n">uint32</span>    <span class="n">Write_Sample_Size</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Device_ID</span></code>: <a class="reference internal" href="#dev-id"><span class="std std-ref">As previously described.</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Device_Version</span></code>: A version number to distinguish between implementations
+of a singular device type. Different versions that address minor issues MUST
+NOT  change the device’s sample data format or alter an existing register
+map. However, register additions that do not affect the existing register map
+are allowed. Any change that warrants a modification of a device’s streaming
+data format, read size, write size, or existing register map MUST be
+implemented as a new <a class="reference internal" href="#dev-id"><span class="std std-ref">Device ID</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Read_Sample_Size</span></code>: The length in bytes of a single <a class="reference internal" href="#dev-sample"><span class="std std-ref">device sample</span></a> produced by the device and sent to the <a class="reference internal" href="comm_channels.html#com-channels"><span class="std std-ref">read stream</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Write_Sample_Size</span></code>: The length in bytes of a single <a class="reference internal" href="#dev-sample"><span class="std std-ref">device
+sample</span></a> consumed by the device from the <a class="reference internal" href="comm_channels.html#com-channels"><span class="std std-ref">write stream</span></a>.</p></li>
+</ul>
+</section>
+<section id="device-sample-format">
+<span id="dev-sample"></span><h2>Device Sample Format<a class="headerlink" href="#device-sample-format" title="Link to this heading">#</a></h2>
+<p>Data passed over the read or write streams are transmitted in unit packets,
+or “samples”. A sample transmitted over the read stream MUST have the following
+format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uint64</span>    <span class="n">Hub_Timestamp</span> <span class="p">(</span><span class="n">Read</span> <span class="n">Stream</span> <span class="n">Only</span><span class="p">)</span>
+<span class="n">var</span>       <span class="n">Payload</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Hub_Timestamp</span></code>: For samples produced by the device and sent to the read
+stream, this is a common counter for all devices in a <a class="reference internal" href="hubs.html#hub"><span class="std std-ref">Hub</span></a>,
+indicating the time of sample capture. For samples consumed by the device
+from the write stream, this value is reserved.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Payload</span></code>: Device-specific data.</p>
+<ul>
+<li><p>For <a class="reference internal" href="comm_channels.html#com-channels"><span class="std std-ref">read streams</span></a>, this data must be of <a class="reference internal" href="#dev-desc"><span class="std std-ref">Read Sample
+Size</span></a> - 8.</p></li>
+<li><p>For <a class="reference internal" href="comm_channels.html#com-channels"><span class="std std-ref">write streams</span></a>, this data must be of <a class="reference internal" href="#dev-desc"><span class="std std-ref">Write Sample
+Size</span></a>. Thus, the whole sample packet fits into the sample
+size specified in the <a class="reference internal" href="#dev-desc"><span class="std std-ref">device descriptor</span></a>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="device-registers">
+<span id="dev-register"></span><h2>Device Registers<a class="headerlink" href="#device-registers" title="Link to this heading">#</a></h2>
+<section id="register-type">
+<span id="reg-type"></span><h3>Register Type<a class="headerlink" href="#register-type" title="Link to this heading">#</a></h3>
+<p>Device registers can be separated into two types:</p>
+<ul class="simple">
+<li><p><strong>Raw registers</strong>: Those that correspond 1:1 to the physical register space
+of an external electrical component (e.g., the register map in the
+manufacturer datasheet of a sensor IC).</p></li>
+<li><p><strong>Managed registers</strong>: Those designed to interface exclusively with an ONI
+system, usually implemented in firmware and described in a <a class="reference internal" href="#dev-datasheet"><span class="std std-ref">ONI Device
+Datasheet</span></a>.</p></li>
+</ul>
+<p>Raw registers provide a direct window to the underlying hardware. On the other
+hand, managed registers provide flexibility and abstract control over device
+state. For instance, managed registers may provide access to abstract properties
+that require access to multiple physical registers in hardware, which can all be
+completed in a single register read or write cycle. Thus the firmware can
+manage low-level raw access to the hardware, while exposing only high-level
+abstract registers in order to simplify the interface to user applications.</p>
+</section>
+<section id="register-access-and-update">
+<h3>Register Access and Update<a class="headerlink" href="#register-access-and-update" title="Link to this heading">#</a></h3>
+<p>Registers, independently of their <a class="reference internal" href="#reg-type"><span class="std std-ref">type</span></a>, can be defined as
+Read-Write, Read-Only or Write-Only. All registers MUST have a valid value at
+power-on. Whenever a device receives a reset request generated by the
+controller, registers might either be reset to their power-on value or keep
+their current value. This can be defined independently for each register.</p>
+<p>All register writes, regardless of reset behavior, MUST be immediate (i.e., for
+a Read-Write register, reading a register after being written must reflect the
+new value). However, the <em>effects</em> of a register might not occur until the next
+reset. An example of this type of behavior is registers that operate on the
+<a class="reference internal" href="#dev-desc"><span class="std std-ref">device descriptor</span></a>. The descriptor must be static during runtime,
+but registers affecting it might take action after a reset, providing an updated
+descriptor to the controller.</p>
+<p>Register access, bit-field definitions, reset behavior, and time of effect MUST
+be specified in the hardware datasheet for raw registers or the <a class="reference internal" href="#dev-datasheet"><span class="std std-ref">ONI Device
+Datasheet</span></a> for managed registers.</p>
+</section>
+<section id="register-map">
+<span id="dev-reg-map"></span><h3>Register Map<a class="headerlink" href="#register-map" title="Link to this heading">#</a></h3>
+<p>A device can optionally implement raw registers and MUST implement at least one
+managed register, <code class="docutils literal notranslate"><span class="pre">ENABLE</span></code>, a Read-Write register that takes effect after
+reset. When <code class="docutils literal notranslate"><span class="pre">ENABLE</span></code> is disabled, the device must not produce any data
+through the <a class="reference internal" href="comm_channels.html#com-channels"><span class="std std-ref">read stream</span></a>.</p>
+<p>The location of the managed registers depends on the existence of raw
+registers.  If the device implements raw registers, those are mapped to
+addresses 0x0000 to 0x7FFF, corresponding to the same address map of the
+underlying hardware, and managed registers start from 0x80000. If no raw
+registers are present, managed registers start from 0x0000 instead.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ENABLE</span></code> register MUST be the first of the managed registers, at 0x0000 if
+no raw registers are present, 0x8000 if raw registers are implemented.</p>
+</section>
+</section>
+<section id="device-datasheet">
+<span id="dev-datasheet"></span><h2>Device Datasheet<a class="headerlink" href="#device-datasheet" title="Link to this heading">#</a></h2>
+<p>All ONI-compliant devices MUST have a corresponding datasheet that provides
+information on register programming and data IO. The datasheet must be served
+publicly. It can be a text file, PDF, or website. The required datasheet
+sections and information are described below.</p>
+<section id="preamble">
+<h3>Preamble<a class="headerlink" href="#preamble" title="Link to this heading">#</a></h3>
+<p>The following information is required in the preamble:</p>
+<ol class="arabic simple">
+<li><p><strong>Informal device name</strong>: Name of the device. There are no textual
+requirements for this field. (e.g., ChipXYX, Chip XYX, and My~Chip-12ab!, are
+all valid).</p></li>
+<li><p><strong>Author(s)</strong>: Device firmware or chip creator(s). Can be a person/people or
+a company, group, or organization.</p></li>
+<li><p><strong>Device Version</strong>: The <a class="reference internal" href="#dev-desc"><span class="std std-ref">device version</span></a> that this datasheet
+corresponds to.</p></li>
+<li><p><strong>Device ID</strong>: The <a class="reference internal" href="#dev-id"><span class="std std-ref">device ID</span></a> that this datasheet corresponds
+to.</p></li>
+</ol>
+</section>
+<section id="description">
+<h3>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h3>
+<p>A textual description of the functionality of the device. This can be simple or
+detailed and is meant to be useful for upstream hardware and software develops
+for understanding the nature of the device during their work.</p>
+</section>
+<section id="id1">
+<h3>Register Map<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="raw-registers">
+<h4>Raw Registers<a class="headerlink" href="#raw-registers" title="Link to this heading">#</a></h4>
+<p>If the device uses <a class="reference internal" href="#reg-type"><span class="std std-ref">raw registers</span></a>, then a link to the
+manufacturer’s datasheet is all that is required so long as it contains the
+register documentation equivalent to that required by <a class="reference internal" href="#reg-type"><span class="std std-ref">managed registers</span></a>. However, the register map can also be reproduced for
+clarity or if the manufacturer’s datasheet is missing required information.</p>
+</section>
+<section id="managed-registers">
+<h4>Managed Registers<a class="headerlink" href="#managed-registers" title="Link to this heading">#</a></h4>
+<p>If the device uses <a class="reference internal" href="#reg-type"><span class="std std-ref">managed registers</span></a>, a table that describes the
+managed register map is required. There are no formatting requirements for this
+table, but it MUST contain the following columns:</p>
+<ul class="simple">
+<li><p><strong>Address</strong>: Register address within the <a class="reference internal" href="#dev-reg-map"><span class="std std-ref">register map</span></a>.</p></li>
+<li><p><strong>Name</strong>: Human readable name for the register. Only capital ASCII letters
+and underscores are allowed, with no spaces or special characters (e.g.
+<code class="docutils literal notranslate"><span class="pre">VALID</span></code> and <code class="docutils literal notranslate"><span class="pre">ALSO_VALID</span></code> vs. <code class="docutils literal notranslate"><span class="pre">NotValid</span></code> and <code class="docutils literal notranslate"><span class="pre">ALSO-NOT-VALID</span></code>).</p></li>
+<li><p><strong>Access</strong>: Read-only, write-only, or read-write.</p></li>
+<li><p><strong>Time of Effect</strong>: When does a register write affect hardware state?
+Immediately or following reset?</p></li>
+<li><p><strong>POR Value</strong>: Power-on reset default value.</p></li>
+<li><p><strong>Reset Action</strong>: Upon a reset, what happens to the register? Does it
+maintain its previous state or get reset to some value? If the latter, then
+what value?</p></li>
+<li><p><strong>Description</strong>: Word description of the register’s function.</p></li>
+</ul>
+<p>Additional columns are permitted so long as their information does not conflict
+with that in the required columns.</p>
+</section>
+</section>
+<section id="read-frame-format">
+<h3>Read Frame Format<a class="headerlink" href="#read-frame-format" title="Link to this heading">#</a></h3>
+<p>If the device produces frames, a
+<a class="reference external" href="https://en.wikipedia.org/wiki/Bit_field">bitfield</a> diagram describing the
+frame structure is required. Bits can be grouped into words as is convenient. If
+no frames are produced, then a statement of such is required.</p>
+</section>
+<section id="write-frame-format">
+<h3>Write Frame Format<a class="headerlink" href="#write-frame-format" title="Link to this heading">#</a></h3>
+<p>If the device accepts frames, a
+<a class="reference external" href="https://en.wikipedia.org/wiki/Bit_field">bitfield</a> diagram describing the
+frame structure is required. Bits can be grouped into words as is convenient. If
+no frames are accepted, then a statement of such is required.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dev_table.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Device Table</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="hubs.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Hubs</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-id">Device ID</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-descriptor">Device Descriptor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-sample-format">Device Sample Format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-registers">Device Registers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#register-type">Register Type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#register-access-and-update">Register Access and Update</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#register-map">Register Map</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-datasheet">Device Datasheet</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preamble">Preamble</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Register Map</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#raw-registers">Raw Registers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#managed-registers">Managed Registers</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-frame-format">Read Frame Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-frame-format">Write Frame Format</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/open-ephys/ONI/edit/main/source/hw-spec/devices.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/hw-spec/devices.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2010-2025, Open Ephys &amp; Contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

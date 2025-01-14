@@ -1,0 +1,842 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>onix.h &#8212; ONI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../../_static/documentation_options.js?v=5c79bd3c"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/liboni/onix';</script>
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Building liboni" href="build.html" />
+    <link rel="prev" title="onidriver.h" href="onidriver.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/oe_logo_name.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/oe_logo_name.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../hw-spec/index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../hw-spec/index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">liboni</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="onidefs.html">onidefs.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oni.html">oni.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onidriver.html">onidriver.h</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">onix.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build.html">Building liboni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="liboni-example.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="making-drivers.html">Writing Driver Translators</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="driver-translators/index.html">Driver Translators</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="driver-translators/test.html">Test Driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="driver-translators/riffa.html">RIFFA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="driver-translators/ft600.html">ft600</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../bindings/index.html">Bindings</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../bindings/cpponi/index.html">cpponi</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/cpponi/oni.html">oni.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/cpponi/onix.html">onix.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../bindings/clroni/index.html">clroni</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/clroni/context.html">Context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/clroni/hub.html">Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/clroni/device.html">Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/clroni/frame.html">Frame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/clroni/oniexception.html">ONIException</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+        <div class="sidebar-primary-item"><div id="sphinx_versioning_container">
+  <span style="vertical-align: middle">Versions</span>
+  <select
+    style="vertical-align: middle; margin-left: 5px"
+    onchange="window.location.href=this.value"
+    id="sphinx_versioning_dropdown_menu"
+  >
+    <option value="/">Latest</option>
+    <!-- Additional versions will be populated here by JavaScript -->
+  </select>
+</div>
+<script>
+  fetch('/_static/sphinx_versioning_plugin/versions.json')
+    .then((response) => response.json())
+    .then((versions) => {
+      const dropdown = document.getElementById('sphinx_versioning_dropdown_menu');
+      const container = document.getElementById('sphinx_versioning_container');
+
+      // Check if the versions array is empty
+      if (versions.length === 0) {
+        // Hide the entire container if there are no versions
+        container.style.display = 'none';
+      } else {
+        versions.forEach((version) => {
+          const option = document.createElement('option');
+          option.value = `/_static/sphinx_versioning_plugin/${version}/`;
+          option.text = version;
+
+          // If current page URL contains this version, set it as selected
+          if (window.location.pathname.includes(`_static/sphinx_versioning_plugin/${version}/`)) {
+            option.selected = true;
+          }
+          dropdown.appendChild(option);
+        });
+      }
+    });
+</script></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">ONI API Documentation</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">liboni</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">onix.h</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="onix-h">
+<span id="id1"></span><h1>onix.h<a class="headerlink" href="#onix-h" title="Link to this heading">#</a></h1>
+<p>ONIX hardware-specific definitions that extend the <code class="docutils literal notranslate"><span class="pre">liboni</span></code> and are outside
+the scope of the ONI specification. This file is not needed to use the API
+(<a class="reference internal" href="oni.html#oni-h"><span class="std std-ref">oni.h</span></a>, <a class="reference internal" href="onidriver.html#onidriver-h"><span class="std std-ref">onidriver.h</span></a>, etc.).</p>
+<section id="onix-devices">
+<h2>ONIX Devices<a class="headerlink" href="#onix-devices" title="Link to this heading">#</a></h2>
+<p>Device definitions for ONIX hardware. These definitions are allowances of the
+ONI specification and are not required to use the API.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Many of the devices in this enumeration have no ready-made route
+to use in high-level software. This is true for a variety of reasons. For
+instance, they may be prototype hardware or test fixture that we wish to
+maintain for backward compatibility (e.g. <code class="xref c c-macro docutils literal notranslate"><span class="pre">ONIX_TESTREG0</span></code>). Or, they
+may be a low level device (e.g. <code class="xref c c-macro docutils literal notranslate"><span class="pre">ONIX_AD7617</span></code>) that is used in the
+background by other, higher order devices in the list (e.g.
+<code class="xref c c-macro docutils literal notranslate"><span class="pre">ONIX_FMCANALOG1R3</span></code>).</p>
+</div>
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.onix_device_id_t">
+<span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">onix_device_id_t</span></span></span><a class="headerlink" href="#c.onix_device_id_t" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_NULL">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_NULL</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_NULL" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">0</span></code>)
+Placeholder device</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_INFO">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_INFO</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_INFO" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">1</span></code>)
+Virtual device that provides status and error information</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_RHD2132">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_RHD2132</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_RHD2132" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">2</span></code>)
+Intan RHD2132 bioamplifier</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_RHD2164">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_RHD2164</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_RHD2164" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">3</span></code>)
+Intan RHD2162 bioamplifier</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_ESTIM">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_ESTIM</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_ESTIM" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">4</span></code>)
+Electrical stimulation subcircuit</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_OSTIM">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_OSTIM</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_OSTIM" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">5</span></code>)
+Optical stimulation subcircuit</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_TS4231">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_TS4231</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_TS4231" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">6</span></code>)
+Triad semiconductor TS4231 optical to digital converter</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_DINPUT32">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_DINPUT32</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_DINPUT32" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">7</span></code>)
+32-bit digital input port</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_DOUTPUT32">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_DOUTPUT32</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_DOUTPUT32" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">8</span></code>)
+32-bit digital output port</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_BNO055">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_BNO055</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_BNO055" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">9</span></code>)
+BNO055 9-DOF IMU</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_TEST0">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_TEST0</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_TEST0" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">10</span></code>)
+A test device used for debugging</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_NEUROPIX1R0">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_NEUROPIX1R0</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_NEUROPIX1R0" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">11</span></code>)
+Neuropixels 1.0</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_HEARTBEAT">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_HEARTBEAT</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_HEARTBEAT" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">12</span></code>)
+Host heartbeat</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_AD51X2">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_AD51X2</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_AD51X2" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">13</span></code>)
+AD51X2 digital potentiometer</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_FMCVCTRL">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_FMCVCTRL</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_FMCVCTRL" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">14</span></code>)
+Open Ephys FMC Host Board rev. 1.3 link voltage control subcircuit</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_AD7617">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_AD7617</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_AD7617" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">15</span></code>)
+AD7617 ADC/DAS</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_AD576X">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_AD576X</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_AD576X" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">16</span></code>)
+AD576X DAC</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_TESTREG0">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_TESTREG0</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_TESTREG0" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">17</span></code>)
+A test device used for testing remote register programming</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_BREAKDIG1R3">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_BREAKDIG1R3</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_BREAKDIG1R3" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">18</span></code>)
+Open Ephys Breakout Board rev. 1.3 digital and user IO</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_FMCCLKIN1R3">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_FMCCLKIN1R3</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_FMCCLKIN1R3" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">19</span></code>)
+Open Ephys FMC Host Board rev. 1.3 clock input subcircuit</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_FMCCLKOUT1R3">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_FMCCLKOUT1R3</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_FMCCLKOUT1R3" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">20</span></code>)
+Open Ephys FMC Host Board rev. 1.3 clock output subcircuit</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_TS4231V2ARR">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_TS4231V2ARR</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_TS4231V2ARR" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">21</span></code>)
+Triad semiconductor TS4231 optical to digital converter array targeting V2 base-stations</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_FMCANALOG1R3">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_FMCANALOG1R3</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_FMCANALOG1R3" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">22</span></code>)
+Open Ephys FMC Host Board rev. 1.3 analog IO subcircuit</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_FMCLINKCTRL">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_FMCLINKCTRL</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_FMCLINKCTRL" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">23</span></code>)
+Open Ephys FMC Host Board coaxial headstage link control circuit</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_DS90UB9RAW">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_DS90UB9RAW</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_DS90UB9RAW" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">24</span></code>)
+Raw DS90UB9x deserializer</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_TS4231V1ARR">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_TS4231V1ARR</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_TS4231V1ARR" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">25</span></code>)
+Triad semiconductor TS4231 optical to digital converter array targeting V1 base-stations</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_MAX10ADCCORE">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_MAX10ADCCORE</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_MAX10ADCCORE" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">26</span></code>)
+Max10 internal ADC device</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_LOADTEST">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_LOADTEST</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_LOADTEST" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">27</span></code>)
+Variable load testing device</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_MEMUSAGE">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_MEMUSAGE</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_MEMUSAGE" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">28</span></code>)
+Acquisition hardware buffer usage reporting device</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_HARPSYNCINPUT">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_HARPSYNCINPUT</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_HARPSYNCINPUT" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">30</span></code>)
+Harp synchronization data input device</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_RHS2116">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_RHS2116</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_RHS2116" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">31</span></code>)
+Intan RHS2116 bioamplifier and stimulator</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.onix_device_id_t.ONIX_RHS2116TRIGGER">
+<span class="sig-name descname"><span class="n"><span class="pre">ONIX_RHS2116TRIGGER</span></span></span><a class="headerlink" href="#c.onix_device_id_t.ONIX_RHS2116TRIGGER" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">32</span></code>)
+Multi Intan RHS2116 stimulation trigger</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
+<dl class="c function">
+<dt class="sig sig-object c" id="c.onix_device_str">
+<span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">onix_device_str</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">dev_id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.onix_device_str" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns a human-readable description from a given <a class="reference internal" href="#c.onix_device_id_t" title="onix_device_id_t"><code class="xref c c-enum docutils literal notranslate"><span class="pre">onix_device_id_t</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dev_id</strong> – The <a class="reference internal" href="#c.onix_device_id_t" title="onix_device_id_t"><code class="xref c c-enum docutils literal notranslate"><span class="pre">onix_device_id_t</span></code></a> to get the description of.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A C string containing the device description, which could simply
+be “Unknown device” if the device is not a member of
+<a class="reference internal" href="#c.onix_device_id_t" title="onix_device_id_t"><code class="xref c c-enum docutils literal notranslate"><span class="pre">onix_device_id_t</span></code></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="onidriver.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">onidriver.h</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="build.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Building liboni</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#onix-devices">ONIX Devices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/open-ephys/ONI/edit/main/source/api/liboni/onix.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/api/liboni/onix.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2010-2025, Open Ephys &amp; Contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

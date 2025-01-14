@@ -1,0 +1,1022 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>oni.hpp &#8212; ONI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../../../_static/documentation_options.js?v=5c79bd3c"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/bindings/cpponi/oni';</script>
+    <link rel="icon" href="../../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="onix.hpp" href="onix.html" />
+    <link rel="prev" title="cpponi" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../../_static/oe_logo_name.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../_static/oe_logo_name.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../hw-spec/index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../hw-spec/index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../liboni/index.html">liboni</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../liboni/onidefs.html">onidefs.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../liboni/oni.html">oni.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../liboni/onidriver.html">onidriver.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../liboni/onix.html">onix.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../liboni/build.html">Building liboni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../liboni/liboni-example.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../liboni/making-drivers.html">Writing Driver Translators</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../liboni/driver-translators/index.html">Driver Translators</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../liboni/driver-translators/test.html">Test Driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../liboni/driver-translators/riffa.html">RIFFA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../liboni/driver-translators/ft600.html">ft600</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Bindings</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">cpponi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">oni.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="onix.html">onix.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../clroni/index.html">clroni</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../clroni/context.html">Context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clroni/hub.html">Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clroni/device.html">Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clroni/frame.html">Frame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clroni/oniexception.html">ONIException</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+        <div class="sidebar-primary-item"><div id="sphinx_versioning_container">
+  <span style="vertical-align: middle">Versions</span>
+  <select
+    style="vertical-align: middle; margin-left: 5px"
+    onchange="window.location.href=this.value"
+    id="sphinx_versioning_dropdown_menu"
+  >
+    <option value="/">Latest</option>
+    <!-- Additional versions will be populated here by JavaScript -->
+  </select>
+</div>
+<script>
+  fetch('/_static/sphinx_versioning_plugin/versions.json')
+    .then((response) => response.json())
+    .then((versions) => {
+      const dropdown = document.getElementById('sphinx_versioning_dropdown_menu');
+      const container = document.getElementById('sphinx_versioning_container');
+
+      // Check if the versions array is empty
+      if (versions.length === 0) {
+        // Hide the entire container if there are no versions
+        container.style.display = 'none';
+      } else {
+        versions.forEach((version) => {
+          const option = document.createElement('option');
+          option.value = `/_static/sphinx_versioning_plugin/${version}/`;
+          option.text = version;
+
+          // If current page URL contains this version, set it as selected
+          if (window.location.pathname.includes(`_static/sphinx_versioning_plugin/${version}/`)) {
+            option.selected = true;
+          }
+          dropdown.appendChild(option);
+        });
+      }
+    });
+</script></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">ONI API Documentation</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">cpponi</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">oni.hpp</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="oni-hpp">
+<span id="id1"></span><h1>oni.hpp<a class="headerlink" href="#oni-hpp" title="Link to this heading">#</a></h1>
+<p>This file includes <a class="reference internal" href="../../liboni/oni.html#oni-h"><span class="std std-ref">oni.h</span></a>.</p>
+<section id="version">
+<h2>Version<a class="headerlink" href="#version" title="Link to this heading">#</a></h2>
+<p>See <a class="reference external" href="https://semver.org/">https://semver.org/</a> for a complete explanation of these macro definitions.</p>
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.CPPONI_VERSION_MAJOR">
+<span class="sig-name descname"><span class="n"><span class="pre">CPPONI_VERSION_MAJOR</span></span></span><a class="headerlink" href="#c.CPPONI_VERSION_MAJOR" title="Link to this definition">#</a><br /></dt>
+<dd><p>MAJOR version for incompatible API changes.</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.CPPONI_VERSION_MINOR">
+<span class="sig-name descname"><span class="n"><span class="pre">CPPONI_VERSION_MINOR</span></span></span><a class="headerlink" href="#c.CPPONI_VERSION_MINOR" title="Link to this definition">#</a><br /></dt>
+<dd><p>MINOR version for added functionality that is backwards compatible.</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.CPPONI_VERSION_PATCH">
+<span class="sig-name descname"><span class="n"><span class="pre">CPPONI_VERSION_PATCH</span></span></span><a class="headerlink" href="#c.CPPONI_VERSION_PATCH" title="Link to this definition">#</a><br /></dt>
+<dd><p>PATCH version for backwards compatible bug fixes.</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.CPPONI_MAKE_VERSION">
+<span class="sig-name descname"><span class="n"><span class="pre">CPPONI_MAKE_VERSION</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">major</span></span>, <span class="n"><span class="pre">minor</span></span>, <span class="n"><span class="pre">patch</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.CPPONI_MAKE_VERSION" title="Link to this definition">#</a><br /></dt>
+<dd><p>Defined as</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">MAJOR</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">MINOR</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">PATCH</span>
+</pre></div>
+</div>
+<p>Provides compile-time access to the API version.</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.CPPONI_VERSION">
+<span class="sig-name descname"><span class="n"><span class="pre">CPPONI_VERSION</span></span></span><a class="headerlink" href="#c.CPPONI_VERSION" title="Link to this definition">#</a><br /></dt>
+<dd><p>Compile-time API version. Defined as</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">CPPONI_MAKE_VERSION</span><span class="p">(</span><span class="n">CPPONI_VERSION_MAJOR</span><span class="w"> </span><span class="n">CPPONI_VERSION_MINOR</span><span class="p">,</span><span class="w"> </span><span class="n">CPPONI_VERSION_PATCH</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3oni7versionEv">
+<span id="_CPPv3N3oni7versionEv"></span><span id="_CPPv2N3oni7versionEv"></span><span id="oni::version"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tuple</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">oni</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3oni7versionEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the <code class="docutils literal notranslate"><span class="pre">cpponi</span></code> version.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">std::tuple&lt;MAJOR,</span> <span class="pre">MINOR,</span> <span class="pre">PATCH&gt;</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="errors">
+<h2>Errors<a class="headerlink" href="#errors" title="Link to this heading">#</a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni7error_tE">
+<span id="_CPPv3N3oni3oni7error_tE"></span><span id="_CPPv2N3oni3oni7error_tE"></span><span id="oni::oni::error_t"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">oni</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">error_t</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">exception</span></span><a class="headerlink" href="#_CPPv4N3oni3oni7error_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference external" href="https://en.cppreference.com/w/cpp/error/exception">std::exception</a>
+wrapper for liboni <a class="reference internal" href="../../liboni/onidefs.html#onidef-error-codes"><span class="std std-ref">Error Codes</span></a>. These exceptions are thrown
+from cpponi in lieu of C return codes.</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni7error_t7error_tEi">
+<span id="_CPPv3N3oni3oni7error_t7error_tEi"></span><span id="_CPPv2N3oni3oni7error_t7error_tEi"></span><span id="oni::oni::error_t::error_t__i"></span><span class="sig-name descname"><span class="n"><span class="pre">error_t</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">errnum</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3oni3oni7error_t7error_tEi" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor. Not generally needed for cpponi use since
+<a class="reference internal" href="#_CPPv4N3oni3oni7error_tE" title="oni::oni::error_t"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">oni::error_t</span></code></a> is constructed and thrown from within cpponi and
+only needs to be handled by the host application.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>errnum</strong> – liboni error code integer, generally resulting from a non-zero
+return value of an underlying liboni function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3oni3oni7error_t4whatEv">
+<span id="_CPPv3NK3oni3oni7error_t4whatEv"></span><span id="_CPPv2NK3oni3oni7error_t4whatEv"></span><span id="oni::oni::error_t::whatC"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">what</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK3oni3oni7error_t4whatEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Wrapper for <a class="reference internal" href="../../liboni/oni.html#c.oni_error_str" title="oni_error_str"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_error_str()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Human-readable error code description.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="devices">
+<h2>Devices<a class="headerlink" href="#devices" title="Link to this heading">#</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni8device_tE">
+<span id="_CPPv3N3oni3oni8device_tE"></span><span id="_CPPv2N3oni3oni8device_tE"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">oni</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">device_t</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">oni_device_t</span></span><a class="headerlink" href="#_CPPv4N3oni3oni8device_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Type alias for <a class="reference internal" href="../../liboni/oni.html#c.oni_device_t" title="oni_device_t"><code class="xref c c-struct docutils literal notranslate"><span class="pre">oni_device_t</span></code></a>.</p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni12device_map_tE">
+<span id="_CPPv3N3oni3oni12device_map_tE"></span><span id="_CPPv2N3oni3oni12device_map_tE"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">oni</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">device_map_t</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">oni_dev_idx_t</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">oni</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N3oni3oni8device_tE" title="oni::oni::device_t"><span class="n"><span class="pre">device_t</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N3oni3oni12device_map_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference internal" href="#_CPPv4N3oni3oni8device_tE" title="oni::oni::device_t"><code class="xref cpp cpp-type docutils literal notranslate"><span class="pre">oni::device_t</span></code></a> table type. <a class="reference external" href="https://en.cppreference.com/w/cpp/container/unordered_map">std::unordered_map</a> replaces
+a minimal internal hash table used in liboni and allows fast device lookup based on
+device index.</p>
+</dd></dl>
+
+</section>
+<section id="frames">
+<h2>Frames<a class="headerlink" href="#frames" title="Link to this heading">#</a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni7frame_tE">
+<span id="_CPPv3N3oni3oni7frame_tE"></span><span id="_CPPv2N3oni3oni7frame_tE"></span><span id="oni::oni::frame_t"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">oni</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">frame_t</span></span></span><a class="headerlink" href="#_CPPv4N3oni3oni7frame_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference external" href="https://en.cppreference.com/w/cpp/language/raii">RAII</a>-capable wrapper
+for <a class="reference internal" href="../../liboni/oni.html#c.oni_frame_t" title="oni_frame_t"><code class="xref c c-struct docutils literal notranslate"><span class="pre">oni_frame_t</span></code></a>. User programs generally should not call the
+frame_t constructor directly but deal with frames created by a
+<a class="reference internal" href="#_CPPv4N3oni3oni9context_tE" title="oni::oni::context_t"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">oni::context_t</span></code></a>.</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3oni3oni7frame_t4timeEv">
+<span id="_CPPv3NK3oni3oni7frame_t4timeEv"></span><span id="_CPPv2NK3oni3oni7frame_t4timeEv"></span><span id="oni::oni::frame_t::timeC"></span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">time</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3oni3oni7frame_t4timeEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Underlying <a class="reference internal" href="../../liboni/oni.html#c.oni_frame_t.time" title="oni_frame_t.time"><code class="xref c c-struct docutils literal notranslate"><span class="pre">oni_frame_t.time</span></code></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3oni3oni7frame_t12device_indexEv">
+<span id="_CPPv3NK3oni3oni7frame_t12device_indexEv"></span><span id="_CPPv2NK3oni3oni7frame_t12device_indexEv"></span><span id="oni::oni::frame_t::device_indexC"></span><span class="n"><span class="pre">oni_dev_idx_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">device_index</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3oni3oni7frame_t12device_indexEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Underlying <a class="reference internal" href="../../liboni/oni.html#c.oni_frame_t.dev_idx" title="oni_frame_t.dev_idx"><code class="xref c c-struct docutils literal notranslate"><span class="pre">oni_frame_t.dev_idx</span></code></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0ENK3oni3oni7frame_t4dataENSt4spanIK5raw_tEEv">
+<span id="_CPPv3I0ENK3oni3oni7frame_t4dataEv"></span><span id="_CPPv2I0ENK3oni3oni7frame_t4dataEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">raw_t</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0ENK3oni3oni7frame_t4dataENSt4spanIK5raw_tEEv" title="oni::oni::frame_t::data::raw_t"><span class="n"><span class="pre">raw_t</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">data</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0ENK3oni3oni7frame_t4dataENSt4spanIK5raw_tEEv" title="Link to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK3oni3oni7frame_t4dataEv">
+<span id="_CPPv3NK3oni3oni7frame_t4dataEv"></span><span id="_CPPv2NK3oni3oni7frame_t4dataEv"></span><span id="oni::oni::frame_t::dataC"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0ENK3oni3oni7frame_t4dataENSt4spanIK5raw_tEEv" title="oni::oni::frame_t::data::raw_t"><span class="n"><span class="pre">raw_t</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">data</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3oni3oni7frame_t4dataEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A type-cast view (or copy if stdlib &lt; C++20) of the underlying
+<a class="reference internal" href="../../liboni/oni.html#c.oni_frame_t.data" title="oni_frame_t.data"><code class="xref c c-struct docutils literal notranslate"><span class="pre">oni_frame_t.data</span></code></a>.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference external" href="https://en.cppreference.com/w/cpp/container/span">std::span</a> Automatically
+made available when compiled with stdlib &gt;= C++20. Otherwise, this
+function reverts to returning a <a class="reference external" href="https://en.cppreference.com/w/cpp/container/vector">std::vector</a>.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="context">
+<h2>Context<a class="headerlink" href="#context" title="Link to this heading">#</a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni9context_tE">
+<span id="_CPPv3N3oni3oni9context_tE"></span><span id="_CPPv2N3oni3oni9context_tE"></span><span id="oni::oni::context_t"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">oni</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">context_t</span></span></span><a class="headerlink" href="#_CPPv4N3oni3oni9context_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference external" href="https://en.cppreference.com/w/cpp/language/raii">RAII</a>-capable wrapper
+for a liboni <a class="reference internal" href="../../liboni/oni.html#oni-h-acquisition-context"><span class="std std-ref">Acquisition Context</span></a> as well as the majority of
+functions within the liboni API.</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni9context_t9context_tEPKci">
+<span id="_CPPv3N3oni3oni9context_t9context_tEPKci"></span><span id="_CPPv2N3oni3oni9context_t9context_tEPKci"></span><span id="oni::oni::context_t::context_t__cCP.i"></span><span class="sig-name descname"><span class="n"><span class="pre">context_t</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">driver_name</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">host_idx</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3oni3oni9context_t9context_tEPKci" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor. Creates and initializes the underlying
+<a class="reference internal" href="../../liboni/oni.html#oni-h-acquisition-context"><span class="std std-ref">Acquisition Context</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>drv_name</strong> – A string specifying the device driver used by
+the context to control hardware. This string corresponds a compiled
+implementation of <a class="reference internal" href="../../liboni/onidriver.html#onidriver-h"><span class="std std-ref">onidriver.h</span></a> that has the name
+<code class="docutils literal notranslate"><span class="pre">onidriver_&lt;drv_name&gt;.&lt;so/dll&gt;</span></code>. If this library is not on the
+dynamic library search path, the function will error.</p></li>
+<li><p><strong>host_idx</strong> – The index of the hardware we are going to
+manage using the initialized context and driver. A value of -1 will
+attempt to open the default host index and is useful if there is only a
+single ONIX host managed by driver selected in <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">oni_create_ctx()</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://en.cppreference.com/w/cpp/error/system_error">std::system_error</a> if underlying
+context cannot be allocated.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../../liboni/oni.html#c.oni_create_ctx" title="oni_create_ctx"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_create_ctx()</span></code></a></dt><dd><p>Underlying context creation.</p>
+</dd>
+<dt><a class="reference internal" href="../../liboni/oni.html#c.oni_init_ctx" title="oni_init_ctx"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_init_ctx()</span></code></a></dt><dd><p>Underlying context initialization.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni9context_t9context_tERR9context_t">
+<span id="_CPPv3N3oni3oni9context_t9context_tERR9context_t"></span><span id="_CPPv2N3oni3oni9context_t9context_tERR9context_t"></span><span id="oni::oni::context_t::context_t__context_tRR"></span><span class="sig-name descname"><span class="n"><span class="pre">context_t</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3oni3oni9context_t9context_tERR9context_t" title="oni::oni::context_t::context_t"><span class="n"><span class="pre">context_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3oni3oni9context_t9context_tERR9context_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Move constructor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rhs</strong> – Existing <a class="reference internal" href="#_CPPv4N3oni3oni9context_tE" title="oni::oni::context_t"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">context_t</span></code></a> instance to move from.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni9context_taSERR9context_t">
+<span id="_CPPv3N3oni3oni9context_taSERR9context_t"></span><span id="_CPPv2N3oni3oni9context_taSERR9context_t"></span><span id="oni::oni::context_t::assign-operator__context_tRR"></span><a class="reference internal" href="#_CPPv4N3oni3oni9context_tE" title="oni::oni::context_t"><span class="n"><span class="pre">context_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3oni3oni9context_tE" title="oni::oni::context_t"><span class="n"><span class="pre">context_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3oni3oni9context_taSERR9context_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Move assignment operator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rhs</strong> – Existing <a class="reference internal" href="#_CPPv4N3oni3oni9context_tE" title="oni::oni::context_t"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">context_t</span></code></a> instance to move from.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0ENK3oni3oni9context_t7get_optE5opt_ti">
+<span id="_CPPv3I0ENK3oni3oni9context_t7get_optEi"></span><span id="_CPPv2I0ENK3oni3oni9context_t7get_optEi"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">opt_t</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><a class="reference internal" href="#_CPPv4I0ENK3oni3oni9context_t7get_optE5opt_ti" title="oni::oni::context_t::get_opt::opt_t"><span class="n"><span class="pre">opt_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_opt</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">option</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0ENK3oni3oni9context_t7get_optE5opt_ti" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get a context option.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>option</strong> – <a class="reference internal" href="../../liboni/onidefs.html#c.&#64;ctx_opts_enum" title="[anonymous]"><code class="xref c c-enum docutils literal notranslate"><span class="pre">[anonymous]</span></code></a> option selection. See each option
+description for valid opt_t types.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>opt_t option value.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../../liboni/oni.html#c.oni_get_opt" title="oni_get_opt"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_get_opt()</span></code></a></dt><dd><p>Underlying C function.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN3oni3oni9context_t7set_optEviRK5opt_t">
+<span id="_CPPv3I0EN3oni3oni9context_t7set_optEiRK5opt_t"></span><span id="_CPPv2I0EN3oni3oni9context_t7set_optEiRK5opt_t"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">opt_t</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_opt</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">option</span></span>, <a class="reference internal" href="#_CPPv4I0EN3oni3oni9context_t7set_optEviRK5opt_t" title="oni::oni::context_t::set_opt::opt_t"><span class="n"><span class="pre">opt_t</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">optval</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3oni3oni9context_t7set_optEviRK5opt_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set a context option.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../../liboni/oni.html#c.oni_set_opt" title="oni_set_opt"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_set_opt()</span></code></a></dt><dd><p>Underlying C function.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0ENK3oni3oni9context_t14get_driver_optE5opt_ti">
+<span id="_CPPv3I0ENK3oni3oni9context_t14get_driver_optEi"></span><span id="_CPPv2I0ENK3oni3oni9context_t14get_driver_optEi"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">opt_t</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><a class="reference internal" href="#_CPPv4I0ENK3oni3oni9context_t14get_driver_optE5opt_ti" title="oni::oni::context_t::get_driver_opt::opt_t"><span class="n"><span class="pre">opt_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_driver_opt</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">option</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0ENK3oni3oni9context_t14get_driver_optE5opt_ti" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get a driver option.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../../liboni/oni.html#c.oni_get_driver_opt" title="oni_get_driver_opt"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_get_driver_opt()</span></code></a></dt><dd><p>Underlying C function.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN3oni3oni9context_t14set_driver_optEviRK5opt_t">
+<span id="_CPPv3I0EN3oni3oni9context_t14set_driver_optEiRK5opt_t"></span><span id="_CPPv2I0EN3oni3oni9context_t14set_driver_optEiRK5opt_t"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">opt_t</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_driver_opt</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">option</span></span>, <a class="reference internal" href="#_CPPv4I0EN3oni3oni9context_t14set_driver_optEviRK5opt_t" title="oni::oni::context_t::set_driver_opt::opt_t"><span class="n"><span class="pre">opt_t</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">optval</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3oni3oni9context_t14set_driver_optEviRK5opt_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set a driver option.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../../liboni/oni.html#c.oni_get_driver_opt" title="oni_get_driver_opt"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_get_driver_opt()</span></code></a></dt><dd><p>Underlying C function.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni9context_t8read_regE13oni_dev_idx_t14oni_reg_addr_t">
+<span id="_CPPv3N3oni3oni9context_t8read_regE13oni_dev_idx_t14oni_reg_addr_t"></span><span id="_CPPv2N3oni3oni9context_t8read_regE13oni_dev_idx_t14oni_reg_addr_t"></span><span id="oni::oni::context_t::read_reg__oni_dev_idx_t.oni_reg_addr_t"></span><span class="n"><span class="pre">oni_reg_val_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read_reg</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">oni_dev_idx_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dev_idx</span></span>, <span class="n"><span class="pre">oni_reg_addr_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">addr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3oni3oni9context_t8read_regE13oni_dev_idx_t14oni_reg_addr_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Read a device register.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../../liboni/oni.html#c.oni_read_reg" title="oni_read_reg"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_read_reg()</span></code></a></dt><dd><p>Underlying C function.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3oni3oni9context_t9write_regE13oni_dev_idx_t14oni_reg_addr_t13oni_reg_val_t">
+<span id="_CPPv3N3oni3oni9context_t9write_regE13oni_dev_idx_t14oni_reg_addr_t13oni_reg_val_t"></span><span id="_CPPv2N3oni3oni9context_t9write_regE13oni_dev_idx_t14oni_reg_addr_t13oni_reg_val_t"></span><span id="oni::oni::context_t::write_reg__oni_dev_idx_t.oni_reg_addr_t.oni_reg_val_t"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write_reg</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">oni_dev_idx_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dev_idx</span></span>, <span class="n"><span class="pre">oni_reg_addr_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">addr</span></span>, <span class="n"><span class="pre">oni_reg_val_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3oni3oni9context_t9write_regE13oni_dev_idx_t14oni_reg_addr_t13oni_reg_val_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Write a device register.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../../liboni/oni.html#c.oni_write_reg" title="oni_write_reg"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_write_reg()</span></code></a></dt><dd><p>Underlying C function.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3oni3oni9context_t10device_mapEv">
+<span id="_CPPv3NK3oni3oni9context_t10device_mapEv"></span><span id="_CPPv2NK3oni3oni9context_t10device_mapEv"></span><span id="oni::oni::context_t::device_mapC"></span><a class="reference internal" href="#_CPPv4N3oni3oni12device_map_tE" title="oni::oni::device_map_t"><span class="n"><span class="pre">device_map_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">device_map</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK3oni3oni9context_t10device_mapEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Convenience function to examine the context’s current device table as a
+<a class="reference external" href="https://en.cppreference.com/w/cpp/container/unordered_map">std::unordered_map</a> from
+table index to device instance. The raw device table can still be
+acquired using <a class="reference internal" href="#_CPPv4I0ENK3oni3oni9context_t7get_optE5opt_ti" title="oni::oni::context_t::get_opt"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">get_opt()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#_CPPv4N3oni3oni12device_map_tE" title="oni::oni::device_map_t"><code class="xref cpp cpp-type docutils literal notranslate"><span class="pre">device_map_t</span></code></a> containing <code class="docutils literal notranslate"><span class="pre">this</span></code>’s device table.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../../liboni/oni.html#c.oni_get_opt" title="oni_get_opt"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_get_opt()</span></code></a></p>
+<blockquote>
+<div><p>Underlying C function when used in combination with
+<a class="reference internal" href="../../liboni/onidefs.html#c.&#64;ctx_opts_enum.ONI_OPT_DEVICETABLE" title="ONI_OPT_DEVICETABLE"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_DEVICETABLE</span></code></a>.</p>
+</div></blockquote>
+</div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3oni3oni9context_t10read_frameEv">
+<span id="_CPPv3NK3oni3oni9context_t10read_frameEv"></span><span id="_CPPv2NK3oni3oni9context_t10read_frameEv"></span><span id="oni::oni::context_t::read_frameC"></span><a class="reference internal" href="#_CPPv4N3oni3oni7frame_tE" title="oni::oni::frame_t"><span class="n"><span class="pre">frame_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read_frame</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3oni3oni9context_t10read_frameEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Read a <a class="reference internal" href="#_CPPv4N3oni3oni7frame_tE" title="oni::oni::frame_t"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">frame_t</span></code></a> data from the acquisition context.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#_CPPv4N3oni3oni7frame_tE" title="oni::oni::frame_t"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">frame_t</span></code></a> from one of the devices in the device table.</p>
+</dd>
+</dl>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This function must be called frequently enough to
+prevent overflow of the acquisition hardware buffer.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../../liboni/oni.html#c.oni_read_frame" title="oni_read_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_read_frame()</span></code></a></p>
+<p><a class="reference internal" href="../../liboni/oni.html#c.oni_destroy_frame" title="oni_destroy_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_destroy_frame()</span></code></a></p>
+<blockquote>
+<div><p>Underlying C functions.</p>
+</div></blockquote>
+</div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0ENK3oni3oni9context_t5writeEv6size_tNSt4spanIK6data_tEE">
+<span id="_CPPv3I0ENK3oni3oni9context_t5writeE6size_tNSt4spanIK6data_tEE"></span><span id="_CPPv2I0ENK3oni3oni9context_t5writeE6size_tNSt4spanIK6data_tEE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">data_t</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dev_idx</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0ENK3oni3oni9context_t5writeEv6size_tNSt4spanIK6data_tEE" title="oni::oni::context_t::write::data_t"><span class="n"><span class="pre">data_t</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0ENK3oni3oni9context_t5writeEv6size_tNSt4spanIK6data_tEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Write data to a device. This function wraps an entire
+<a class="reference internal" href="../../liboni/oni.html#c.oni_create_frame" title="oni_create_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_create_frame()</span></code></a>, <a class="reference internal" href="../../liboni/oni.html#c.oni_write_frame" title="oni_write_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_write_frame()</span></code></a>, and
+<a class="reference internal" href="../../liboni/oni.html#c.oni_destroy_frame" title="oni_destroy_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_destroy_frame()</span></code></a> function call cycle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dev_idx</strong> – Fully qualified <a class="reference internal" href="../../liboni/oni.html#c.oni_device_t.idx" title="oni_device_t.idx"><code class="xref c c-struct docutils literal notranslate"><span class="pre">oni_device_t.idx</span></code></a> specifying the
+device to write data to.</p></li>
+<li><p><strong>data</strong> – Data block to write to the device.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">data.size()</span></code> must be</p>
+<ol class="arabic simple">
+<li><p>An integer multiple of the selected <code class="docutils literal notranslate"><span class="pre">dev_idx</span></code>’s write size as
+indicated within the device table.</p></li>
+<li><p>Smaller than the internal write block memory size (see
+<a class="reference internal" href="../../liboni/onidefs.html#c.&#64;ctx_opts_enum.ONI_OPT_BLOCKWRITESIZE" title="ONI_OPT_BLOCKWRITESIZE"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_BLOCKWRITESIZE</span></code></a> and <a class="reference internal" href="../../liboni/liboni-example.html#liboni-example-set-buffers"><span class="std std-ref">Setting Read and Write Buffer Sizes</span></a>).</p></li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference external" href="https://en.cppreference.com/w/cpp/container/span">std::span</a> is
+automatically made available when compiled with stdlib &gt;= C++20.
+Otherwise, this function reverts to returning a <a class="reference external" href="https://en.cppreference.com/w/cpp/container/vector">std::vector</a>.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../../liboni/oni.html#c.oni_create_frame" title="oni_create_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_create_frame()</span></code></a></p>
+<p><a class="reference internal" href="../../liboni/oni.html#c.oni_write_frame" title="oni_write_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_write_frame()</span></code></a></p>
+<p><a class="reference internal" href="../../liboni/oni.html#c.oni_destroy_frame" title="oni_destroy_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_destroy_frame()</span></code></a></p>
+<blockquote>
+<div><p>Underlying C functions.</p>
+</div></blockquote>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">cpponi</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="onix.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">onix.hpp</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version">Version</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3oni7versionEv"><code class="docutils literal notranslate"><span class="pre">version()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errors">Errors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3oni3oni7error_tE"><code class="docutils literal notranslate"><span class="pre">error_t</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3oni3oni7error_t7error_tEi"><code class="docutils literal notranslate"><span class="pre">error_t::error_t()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3oni3oni7error_t4whatEv"><code class="docutils literal notranslate"><span class="pre">error_t::what()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#devices">Devices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3oni3oni8device_tE"><code class="docutils literal notranslate"><span class="pre">device_t</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3oni3oni12device_map_tE"><code class="docutils literal notranslate"><span class="pre">device_map_t</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frames">Frames</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3oni3oni7frame_tE"><code class="docutils literal notranslate"><span class="pre">frame_t</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3oni3oni7frame_t4timeEv"><code class="docutils literal notranslate"><span class="pre">frame_t::time()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3oni3oni7frame_t12device_indexEv"><code class="docutils literal notranslate"><span class="pre">frame_t::device_index()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0ENK3oni3oni7frame_t4dataENSt4spanIK5raw_tEEv"><code class="docutils literal notranslate"><span class="pre">frame_t::data()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3oni3oni7frame_t4dataEv"><code class="docutils literal notranslate"><span class="pre">frame_t::data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#context">Context</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3oni3oni9context_tE"><code class="docutils literal notranslate"><span class="pre">context_t</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3oni3oni9context_t9context_tEPKci"><code class="docutils literal notranslate"><span class="pre">context_t::context_t()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3oni3oni9context_t9context_tERR9context_t"><code class="docutils literal notranslate"><span class="pre">context_t::context_t()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3oni3oni9context_taSERR9context_t"><code class="docutils literal notranslate"><span class="pre">context_t::operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0ENK3oni3oni9context_t7get_optE5opt_ti"><code class="docutils literal notranslate"><span class="pre">context_t::get_opt()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN3oni3oni9context_t7set_optEviRK5opt_t"><code class="docutils literal notranslate"><span class="pre">context_t::set_opt()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0ENK3oni3oni9context_t14get_driver_optE5opt_ti"><code class="docutils literal notranslate"><span class="pre">context_t::get_driver_opt()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN3oni3oni9context_t14set_driver_optEviRK5opt_t"><code class="docutils literal notranslate"><span class="pre">context_t::set_driver_opt()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3oni3oni9context_t8read_regE13oni_dev_idx_t14oni_reg_addr_t"><code class="docutils literal notranslate"><span class="pre">context_t::read_reg()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3oni3oni9context_t9write_regE13oni_dev_idx_t14oni_reg_addr_t13oni_reg_val_t"><code class="docutils literal notranslate"><span class="pre">context_t::write_reg()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3oni3oni9context_t10device_mapEv"><code class="docutils literal notranslate"><span class="pre">context_t::device_map()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3oni3oni9context_t10read_frameEv"><code class="docutils literal notranslate"><span class="pre">context_t::read_frame()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0ENK3oni3oni9context_t5writeEv6size_tNSt4spanIK6data_tEE"><code class="docutils literal notranslate"><span class="pre">context_t::write()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/open-ephys/ONI/edit/main/source/api/bindings/cpponi/oni.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../../_sources/api/bindings/cpponi/oni.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2010-2025, Open Ephys &amp; Contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,846 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>onidriver.h &#8212; ONI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../../_static/documentation_options.js?v=5c79bd3c"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/liboni/onidriver';</script>
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="onix.h" href="onix.html" />
+    <link rel="prev" title="oni.h" href="oni.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/oe_logo_name.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/oe_logo_name.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../hw-spec/index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../hw-spec/index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">liboni</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="onidefs.html">onidefs.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oni.html">oni.h</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">onidriver.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onix.html">onix.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build.html">Building liboni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="liboni-example.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="making-drivers.html">Writing Driver Translators</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="driver-translators/index.html">Driver Translators</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="driver-translators/test.html">Test Driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="driver-translators/riffa.html">RIFFA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="driver-translators/ft600.html">ft600</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../bindings/index.html">Bindings</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../bindings/cpponi/index.html">cpponi</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/cpponi/oni.html">oni.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/cpponi/onix.html">onix.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../bindings/clroni/index.html">clroni</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/clroni/context.html">Context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/clroni/hub.html">Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/clroni/device.html">Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/clroni/frame.html">Frame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bindings/clroni/oniexception.html">ONIException</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+        <div class="sidebar-primary-item"><div id="sphinx_versioning_container">
+  <span style="vertical-align: middle">Versions</span>
+  <select
+    style="vertical-align: middle; margin-left: 5px"
+    onchange="window.location.href=this.value"
+    id="sphinx_versioning_dropdown_menu"
+  >
+    <option value="/">Latest</option>
+    <!-- Additional versions will be populated here by JavaScript -->
+  </select>
+</div>
+<script>
+  fetch('/_static/sphinx_versioning_plugin/versions.json')
+    .then((response) => response.json())
+    .then((versions) => {
+      const dropdown = document.getElementById('sphinx_versioning_dropdown_menu');
+      const container = document.getElementById('sphinx_versioning_container');
+
+      // Check if the versions array is empty
+      if (versions.length === 0) {
+        // Hide the entire container if there are no versions
+        container.style.display = 'none';
+      } else {
+        versions.forEach((version) => {
+          const option = document.createElement('option');
+          option.value = `/_static/sphinx_versioning_plugin/${version}/`;
+          option.text = version;
+
+          // If current page URL contains this version, set it as selected
+          if (window.location.pathname.includes(`_static/sphinx_versioning_plugin/${version}/`)) {
+            option.selected = true;
+          }
+          dropdown.appendChild(option);
+        });
+      }
+    });
+</script></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">ONI API Documentation</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">liboni</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">onidriver.h</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="onidriver-h">
+<span id="id1"></span><h1>onidriver.h<a class="headerlink" href="#onidriver-h" title="Link to this heading">#</a></h1>
+<p>Definitions and function prototypes for implementing <a class="reference internal" href="driver-translators/index.html#drivers"><span class="std std-ref">Driver Translators</span></a>.</p>
+<section id="constants-and-types">
+<span id="onidriver-types"></span><h2>Constants and Types<a class="headerlink" href="#constants-and-types" title="Link to this heading">#</a></h2>
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.oni_read_stream_t">
+<span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_read_stream_t</span></span></span><a class="headerlink" href="#c.oni_read_stream_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Represent the available data streams from the device to the host.</p>
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.oni_read_stream_t.ONI_READ_STREAM_DATA">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_READ_STREAM_DATA</span></span></span><a class="headerlink" href="#c.oni_read_stream_t.ONI_READ_STREAM_DATA" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">0</span></code>)
+High-speed data stream to host</p>
+</dd></dl>
+
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.oni_read_stream_t.ONI_READ_STREAM_SIGNAL">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_READ_STREAM_SIGNAL</span></span></span><a class="headerlink" href="#c.oni_read_stream_t.ONI_READ_STREAM_SIGNAL" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">1</span></code>)
+Low-speed signaling stream</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.oni_write_stream_t">
+<span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_write_stream_t</span></span></span><a class="headerlink" href="#c.oni_write_stream_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Represent the available data streams from the host to the device.</p>
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.oni_write_stream_t.ONI_WRITE_STREAM_DATA">
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_WRITE_STREAM_DATA</span></span></span><a class="headerlink" href="#c.oni_write_stream_t.ONI_WRITE_STREAM_DATA" title="Link to this definition">#</a><br /></dt>
+<dd><p>(<code class="docutils literal notranslate"><span class="pre">0</span></code>)
+High-speed data stream from host</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="c type">
+<dt class="sig sig-object c" id="c.oni_driver_ctx">
+<span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_ctx</span></span></span><a class="headerlink" href="#c.oni_driver_ctx" title="Link to this definition">#</a><br /></dt>
+<dd><p>A handle to a driver translator context. Each driver creates its own
+context storing all state variables required for its functionality. This
+common type is used to interchange this context between the common API,
+which does not needed to know its contents, and the driver translator
+implementation.</p>
+</dd></dl>
+
+</section>
+<section id="functions">
+<span id="onidriver-h-functions"></span><h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
+<p>All driver translators must implement these functions. They are called
+internally by the public interface described in <a class="reference internal" href="oni.html#oni-h"><span class="std std-ref">oni.h</span></a> and perform direct
+hardware access as needed.</p>
+<dl>
+<dt class="sig sig-object c">
+<a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><a class="reference internal" href="#c.oni_driver_create_ctx" title="oni_driver_create_ctx"><span class="n"><span class="pre">oni_driver_create_ctx</span></span></a><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_driver_destroy_ctx" title="oni_driver_destroy_ctx"><span class="n"><span class="pre">oni_driver_destroy_ctx</span></span></a><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_driver_init" title="oni_driver_init"><span class="n"><span class="pre">oni_driver_init</span></span></a><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">host_idx</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_driver_read_stream" title="oni_driver_read_stream"><span class="n"><span class="pre">oni_driver_read_stream</span></span></a><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_read_stream_t" title="oni_read_stream_t"><span class="n"><span class="pre">oni_read_stream_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">stream</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_driver_write_stream" title="oni_driver_write_stream"><span class="n"><span class="pre">oni_driver_write_stream</span></span></a><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_write_stream_t" title="oni_write_stream_t"><span class="n"><span class="pre">oni_write_stream_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">stream</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_driver_read_config" title="oni_driver_read_config"><span class="n"><span class="pre">oni_driver_read_config</span></span></a><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="onidefs.html#c.oni_config_t" title="oni_config_t"><span class="n"><span class="pre">oni_config_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="onidefs.html#c.oni_reg_val_t" title="oni_reg_val_t"><span class="n"><span class="pre">oni_reg_val_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_driver_write_config" title="oni_driver_write_config"><span class="n"><span class="pre">oni_driver_write_config</span></span></a><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="onidefs.html#c.oni_config_t" title="oni_config_t"><span class="n"><span class="pre">oni_config_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="onidefs.html#c.oni_reg_val_t" title="oni_reg_val_t"><span class="n"><span class="pre">oni_reg_val_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_driver_set_opt_callback" title="oni_driver_set_opt_callback"><span class="n"><span class="pre">oni_driver_set_opt_callback</span></span></a><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">oni_option</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">option_len</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_driver_set_opt" title="oni_driver_set_opt"><span class="n"><span class="pre">oni_driver_set_opt</span></span></a><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">driver_option</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">option_len</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_driver_get_opt" title="oni_driver_get_opt"><span class="n"><span class="pre">oni_driver_get_opt</span></span></a><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">driver_option</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">option_len</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dt class="sig sig-object c">
+<span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="onidefs.html#c.oni_driver_info_t" title="oni_driver_info_t"><span class="n"><span class="pre">oni_driver_info_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><a class="reference internal" href="#c.oni_driver_info" title="oni_driver_info"><span class="n"><span class="pre">oni_driver_info</span></span></a><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+</dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.oni_driver_create_ctx">
+<a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_create_ctx</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_create_ctx" title="Link to this definition">#</a><br /></dt>
+<dd><p>Creates the driver translator context.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A handle to the newly created internal context, if successful, <code class="docutils literal notranslate"><span class="pre">NULL</span></code> otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.oni_driver_destroy_ctx">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_destroy_ctx</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_destroy_ctx" title="Link to this definition">#</a><br /></dt>
+<dd><p>Destroys the driver translator context and frees its resources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>driver_ctx</strong> – Handle to the open context to destroy.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>0 on success otherwise see <a class="reference internal" href="onidefs.html#onidef-error-codes"><span class="std std-ref">Error Codes</span></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.oni_driver_init">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_init</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">host_idx</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_init" title="Link to this definition">#</a><br /></dt>
+<dd><p>Initializes a driver translator context opening a specific hardware instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>driver_ctx</strong> – Handle to the context to be initialized.</p></li>
+<li><p><strong>host_idx</strong> – Index of the hardware device to open. The enumeration depends
+on the specific hardware. <code class="docutils literal notranslate"><span class="pre">-1</span></code> always means open the first available device.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>0 on success otherwise see <a class="reference internal" href="onidefs.html#onidef-error-codes"><span class="std std-ref">Error Codes</span></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.oni_driver_read_stream">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_read_stream</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <a class="reference internal" href="#c.oni_read_stream_t" title="oni_read_stream_t"><span class="n"><span class="pre">oni_read_stream_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">stream</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">data</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_read_stream" title="Link to this definition">#</a><br /></dt>
+<dd><p>Performs a read operation over the specified input stream.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>driver_ctx</strong> – Context handling the device driver translator state.</p></li>
+<li><p><strong>stream</strong> – The input stream to perform the read operation on.</p></li>
+<li><p><strong>data</strong> – Pointer to the data buffer. It must be big enough to fit the requested amount of data.</p></li>
+<li><p><strong>size</strong> – Size, in bytes, of the data to read. Must read this amount from the device.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Bytes retrieved in case of a successful read, see <a class="reference internal" href="onidefs.html#onidef-error-codes"><span class="std std-ref">Error Codes</span></a> otherwise. If the amount
+of retrieved bytes were different from <code class="docutils literal notranslate"><span class="pre">size</span></code>, it would also be treated as an error by the API.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.oni_driver_write_stream">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_write_stream</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <a class="reference internal" href="#c.oni_write_stream_t" title="oni_write_stream_t"><span class="n"><span class="pre">oni_write_stream_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">stream</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">data</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_write_stream" title="Link to this definition">#</a><br /></dt>
+<dd><p>Performs a write operation over the specified output stream.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>driver_ctx</strong> – Context handling the device driver translator state.</p></li>
+<li><p><strong>stream</strong> – The output stream to perform the write operation on.</p></li>
+<li><p><strong>data</strong> – Pointer to the data buffer. It must contain the amount of data requested to write.</p></li>
+<li><p><strong>size</strong> – Size, in bytes, of the data to write.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Bytes sent in case of a successful write, see <a class="reference internal" href="onidefs.html#onidef-error-codes"><span class="std std-ref">Error Codes</span></a> otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.oni_driver_read_config">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_read_config</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <a class="reference internal" href="onidefs.html#c.oni_config_t" title="oni_config_t"><span class="n"><span class="pre">oni_config_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">config</span></span>, <a class="reference internal" href="onidefs.html#c.oni_reg_val_t" title="oni_reg_val_t"><span class="n"><span class="pre">oni_reg_val_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_read_config" title="Link to this definition">#</a><br /></dt>
+<dd><p>Performs a read operation from one of the hardware configuration registers described in the ONI specification.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>driver_ctx</strong> – Context handling the device driver translator state.</p></li>
+<li><p><strong>config</strong> – Register to read from.</p></li>
+<li><p><strong>value</strong> – Variable to store the register value after it is read.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>0 on success otherwise see <a class="reference internal" href="onidefs.html#onidef-error-codes"><span class="std std-ref">Error Codes</span></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.oni_driver_write_config">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_write_config</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <a class="reference internal" href="onidefs.html#c.oni_config_t" title="oni_config_t"><span class="n"><span class="pre">oni_config_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">config</span></span>, <a class="reference internal" href="onidefs.html#c.oni_reg_val_t" title="oni_reg_val_t"><span class="n"><span class="pre">oni_reg_val_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_write_config" title="Link to this definition">#</a><br /></dt>
+<dd><p>Performs a write operation to one of the hardware configuration registers described in the ONI specification.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>driver_ctx</strong> – Context handling the device driver translator state.</p></li>
+<li><p><strong>config</strong> – Register to write to.</p></li>
+<li><p><strong>value</strong> – Value to be written.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>0 on success otherwise see <a class="reference internal" href="onidefs.html#onidef-error-codes"><span class="std std-ref">Error Codes</span></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.oni_driver_set_opt_callback">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_set_opt_callback</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">oni_option</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">option_len</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_set_opt_callback" title="Link to this definition">#</a><br /></dt>
+<dd><p>This function gets called as the last step after a successful <a class="reference internal" href="oni.html#c.oni_set_opt" title="oni_set_opt"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_set_opt()</span></code></a>. The driver can optionally
+use this for any internal adjustment required. See <a class="reference internal" href="making-drivers.html#making-drivers"><span class="std std-ref">Writing Driver Translators</span></a> for examples. If this function is
+not used, it is safe to do nothing and return <a class="reference internal" href="onidefs.html#c.&#64;oni_error_enum.ONI_ESUCCESS" title="ONI_ESUCCESS"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_ESUCCESS</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>driver_ctx</strong> – Context handling the device driver translator state.</p></li>
+<li><p><strong>oni_option</strong> – Option set, as specified in the originating <a class="reference internal" href="oni.html#c.oni_set_opt" title="oni_set_opt"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_set_opt()</span></code></a> call.</p></li>
+<li><p><strong>value</strong> – Option value, as specified in the originating <a class="reference internal" href="oni.html#c.oni_set_opt" title="oni_set_opt"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_set_opt()</span></code></a> call.</p></li>
+<li><p><strong>option_len</strong> – Value length, as specified in the originating <a class="reference internal" href="oni.html#c.oni_set_opt" title="oni_set_opt"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_set_opt()</span></code></a> call.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>0 on success otherwise see <a class="reference internal" href="onidefs.html#onidef-error-codes"><span class="std std-ref">Error Codes</span></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.oni_driver_set_opt">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_set_opt</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">driver_option</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">option_len</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_set_opt" title="Link to this definition">#</a><br /></dt>
+<dd><p>Sets an internal option specific to the driver translator. Called directly by <a class="reference internal" href="oni.html#c.oni_set_driver_opt" title="oni_set_driver_opt"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_set_driver_opt()</span></code></a>.
+If no such options exist in a specific driver this can be an empty function returning <a class="reference internal" href="onidefs.html#c.&#64;oni_error_enum.ONI_EINVALOPT" title="ONI_EINVALOPT"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_EINVALOPT</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>driver_ctx</strong> – Context handling the device driver translator state.</p></li>
+<li><p><strong>driver_option</strong> – Option index to set, specific to the device driver translator.</p></li>
+<li><p><strong>value</strong> – buffer containing data to be written to <code class="docutils literal notranslate"><span class="pre">driver_option</span></code>.</p></li>
+<li><p><strong>option_len</strong> – Size of <code class="docutils literal notranslate"><span class="pre">value</span></code> buffer (including terminating null
+character, if applicable) in bytes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>0 on success otherwise see <a class="reference internal" href="onidefs.html#onidef-error-codes"><span class="std std-ref">Error Codes</span></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.oni_driver_get_opt">
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_get_opt</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">driver_option</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">option_len</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_get_opt" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reads an internal option specific to the driver translator. Called directly by <a class="reference internal" href="oni.html#c.oni_get_driver_opt" title="oni_get_driver_opt"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_get_driver_opt()</span></code></a>.
+If no such options exist in a specific driver this can be an empty function returning <a class="reference internal" href="onidefs.html#c.&#64;oni_error_enum.ONI_EINVALOPT" title="ONI_EINVALOPT"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_EINVALOPT</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>driver_ctx</strong> – Context handling the device driver translator state.</p></li>
+<li><p><strong>driver_option</strong> – Option index to read, specific to the device driver translator.</p></li>
+<li><p><strong>value</strong> – buffer to store value of <code class="docutils literal notranslate"><span class="pre">driver_option</span></code> after it is read.</p></li>
+<li><p><strong>option_len</strong> – Pointer to the size of <code class="docutils literal notranslate"><span class="pre">value</span></code> buffer (including terminating
+null character, if applicable) in bytes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>0 on success otherwise see <a class="reference internal" href="onidefs.html#onidef-error-codes"><span class="std std-ref">Error Codes</span></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.oni_driver_info">
+<span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="onidefs.html#c.oni_driver_info_t" title="oni_driver_info_t"><span class="n"><span class="pre">oni_driver_info_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_info</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_info" title="Link to this definition">#</a><br /></dt>
+<dd><p>Provides static information about the driver translator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A <a class="reference internal" href="onidefs.html#oni-driver-info-t"><span class="std std-ref">Driver Information</span></a> structure containing information about the driver translator.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="oni.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">oni.h</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="onix.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">onix.h</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constants-and-types">Constants and Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/open-ephys/ONI/edit/main/source/api/liboni/onidriver.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/api/liboni/onidriver.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2010-2025, Open Ephys &amp; Contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

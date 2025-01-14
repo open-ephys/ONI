@@ -1,0 +1,948 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Controller &#8212; ONI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../_static/documentation_options.js?v=5c79bd3c"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'hw-spec/controller';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ONI API Documentation" href="../api/index.html" />
+    <link rel="prev" title="Hubs" href="hubs.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../_static/oe_logo_name.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/oe_logo_name.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api/index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api/index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hierarchy.html">Hardware Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comm_channels.html">Channel Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_table.html">Device Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hubs.html">Hubs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Controller</a></li>
+</ul>
+</div>
+</nav></div>
+        <div class="sidebar-primary-item"><div id="sphinx_versioning_container">
+  <span style="vertical-align: middle">Versions</span>
+  <select
+    style="vertical-align: middle; margin-left: 5px"
+    onchange="window.location.href=this.value"
+    id="sphinx_versioning_dropdown_menu"
+  >
+    <option value="/">Latest</option>
+    <!-- Additional versions will be populated here by JavaScript -->
+  </select>
+</div>
+<script>
+  fetch('/_static/sphinx_versioning_plugin/versions.json')
+    .then((response) => response.json())
+    .then((versions) => {
+      const dropdown = document.getElementById('sphinx_versioning_dropdown_menu');
+      const container = document.getElementById('sphinx_versioning_container');
+
+      // Check if the versions array is empty
+      if (versions.length === 0) {
+        // Hide the entire container if there are no versions
+        container.style.display = 'none';
+      } else {
+        versions.forEach((version) => {
+          const option = document.createElement('option');
+          option.value = `/_static/sphinx_versioning_plugin/${version}/`;
+          option.text = version;
+
+          // If current page URL contains this version, set it as selected
+          if (window.location.pathname.includes(`_static/sphinx_versioning_plugin/${version}/`)) {
+            option.selected = true;
+          }
+          dropdown.appendChild(option);
+        });
+      }
+    });
+</script></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">ONI Hardware Specification</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Controller</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="controller">
+<span id="id1"></span><h1>Controller<a class="headerlink" href="#controller" title="Link to this heading">#</a></h1>
+<p>The controller’s purpose is to interface an ONI hardware system with the host
+computer. It aggregates and routes device data and provides transparent access
+to all devices, independently of their physical location. The host also
+contains a common clock that is used to timestamp data from all devices,
+independently of their origin hub.</p>
+<p>Communication between the controller and the host computer shall occur over
+four abstract communication channels:</p>
+<ol class="arabic simple">
+<li><p><strong>Read</strong>: Read-only, high-bandwidth stream of device output samples from
+controller to host.</p></li>
+<li><p><strong>Write</strong>: Write-only, high-bandwidth stream of device input samples from
+host to controller.</p></li>
+<li><p><strong>Signal</strong>: Read-only stream of short-messages and asynchronous hardware
+events from controller to host.</p></li>
+<li><p><strong>Configuration</strong>: Bidirectional, addressed access to device registers.</p></li>
+</ol>
+<p>API access to all these channels is blocking, i.e.: an API call that accesses
+any channel will not return until the requested transaction on that channel is
+complete. Concurrent access to a single channel by different threads is NOT
+permitted. However, channels are independent and concurrent access to
+<em>different</em> channels MUST be permitted. A stream transaction is defined as a
+blocking read or write of a set number of bytes, while a register transaction
+is defined as a single register read or write cycle to an individual address.</p>
+<p>The required characteristics of these channels are described in the following
+sections. A complete understanding of their use during software development
+requires an understanding of the <a class="reference internal" href="../api/index.html#oni-api"><span class="std std-ref">ONI API Documentation</span></a>.</p>
+<section id="read-channel">
+<span id="data-rd-chan"></span><h2>Read Channel<a class="headerlink" href="#read-channel" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Word size</strong> : 32 bits</p></li>
+<li><p><strong>Channel type</strong> : Stream</p></li>
+<li><p><strong>Direction</strong> : Read</p></li>
+</ul>
+<p>The <em>read</em> channel provides high bandwidth communication from the controller to
+the host computer. Data from the read stream of all devices that support it is
+aggregated and multiplexed by the controller and sent to the host through this
+channel.</p>
+<p>Data should be pushed to this channel as quickly as possible. It is the
+responsibility of the host computer to read data from the stream quickly enough
+to keep up with data production by the controller. Therefore, it is highly
+recommended that an ONI system implements some kind of internal buffering to
+ameliorate the effects of uneven reading times caused by computer operating
+systems or other software limitations.</p>
+<section id="data-frames">
+<span id="frame"></span><h3>Data Frames<a class="headerlink" href="#data-frames" title="Link to this heading">#</a></h3>
+<p>Data from the read channel is packed in frames. Each frame is a timestamped
+<a class="reference external" href="https://en.wikipedia.org/wiki/Type%E2%80%93length%E2%80%93value">type-length-value-encoded</a>
+structure that contains data from a single device <a class="reference internal" href="devices.html#dev-sample"><span class="std std-ref">sample</span></a>.
+The frame format is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uint64</span>  <span class="n">Common_Timestamp</span>
+<span class="n">uint32</span>  <span class="n">Device_Address</span>
+<span class="n">uint32</span>  <span class="n">Sample_Size</span>
+<span class="n">var</span>     <span class="n">Sample</span>
+</pre></div>
+</div>
+<p>Where</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Common_Timestamp</span></code>: A counter common to all devices generated by the
+controller common acquisition clock.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Device_Address</span></code>: The address of the device producing the data, as featured
+on the <a class="reference internal" href="dev_table.html#dev-table"><span class="std std-ref">device table</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sample_Size</span></code>: The full size of the sample, and must be equal to the
+<code class="docutils literal notranslate"><span class="pre">Read_Sample_Size</span></code> field of the <a class="reference internal" href="devices.html#dev-desc"><span class="std std-ref">device descriptor</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sample</span></code>: The complete data sample as described on the <a class="reference internal" href="devices.html#dev-sample"><span class="std std-ref">device sample
+format</span></a> section.</p></li>
+</ul>
+</section>
+</section>
+<section id="write-channel">
+<span id="data-wr-chan"></span><h2>Write Channel<a class="headerlink" href="#write-channel" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Word size</strong> : 32 bits</p></li>
+<li><p><strong>Channel type</strong> : Stream</p></li>
+<li><p><strong>Direction</strong> : Write</p></li>
+</ul>
+<p>The <em>write</em> channel provides high bandwidth communication from the host computer
+to the controller, and is used to send data to the devices.</p>
+<p>Data is sent with a <a class="reference internal" href="#frame"><span class="std std-ref">frame</span></a> format identical to the one used for
+read, but without the <code class="docutils literal notranslate"><span class="pre">Common_Timestamp</span></code> field. It is the responsibility of
+the controller to accept frames at any rate the computer might be sending them.
+Currently, there is no defined mechanism to inform the host of any possible
+dropped frame on the write channel, although this can be included in an
+implementation so long as it does not invalidate any other ONI
+requirements.</p>
+</section>
+<section id="signal-channel">
+<span id="sig-chan"></span><h2>Signal channel<a class="headerlink" href="#signal-channel" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Word size</strong> : 8 bits</p></li>
+<li><p><strong>Channel type</strong> : Stream</p></li>
+<li><p><strong>Direction</strong> : Read</p></li>
+</ul>
+<p>The <em>signal</em> channel provides a way for the controller to inform the host of
+configuration results, which may be provided with a significant delay.
+Additionally, it is the channel over which the controller sends the device table
+to the host following a system reset. Signal data MUST be framed into packets
+using Consistent Overhead Byte Stuffing
+(<a class="reference external" href="https://en.wikipedia.org/wiki/Consistent_Overhead_Byte_Stuffing">COBS</a>).
+Within this scheme, packets are delimited using 0’s and always have the
+following format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span> <span class="o">|</span> <span class="n">PACKET_FLAG</span><span class="p">,</span> <span class="n">data0</span><span class="p">,</span> <span class="n">data1</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">data_k</span> <span class="o">|</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">PACKET_FLAG</span></code> is 32-bit unsigned integer with a single unique bit
+setting, <code class="docutils literal notranslate"><span class="pre">|</span></code> represents a packet delimiter (in this case, 0), “<code class="docutils literal notranslate"><span class="pre">,</span></code>” are for
+visual clarity and are not actually in the data stream, and <code class="docutils literal notranslate"><span class="pre">...</span></code> represents
+other packets. This stream can be read and ignored until a desired packet is
+received. Reading this stream shall block if no data is available, which allows
+asynchronous configuration acknowledgment. Valid <code class="docutils literal notranslate"><span class="pre">PACKET_FLAG</span></code>s are:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Flag</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NULLSIG</p></td>
+<td><p>0x00000001</p></td>
+<td><p>Null signal, ignored by host</p></td>
+</tr>
+<tr class="row-odd"><td><p>CONFIGWACK</p></td>
+<td><p>0x00000002</p></td>
+<td><p>Configuration write-acknowledgment</p></td>
+</tr>
+<tr class="row-even"><td><p>CONFIGWNACK</p></td>
+<td><p>0x00000004</p></td>
+<td><p>Configuration no-write-acknowledgment</p></td>
+</tr>
+<tr class="row-odd"><td><p>CONFIGRACK</p></td>
+<td><p>0x00000008</p></td>
+<td><p>Configuration read-acknowledgment</p></td>
+</tr>
+<tr class="row-even"><td><p>CONFIGRNACK</p></td>
+<td><p>0x00000010</p></td>
+<td><p>Configuration no-read-acknowledgment</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEVICETABACK</p></td>
+<td><p>0x00000020</p></td>
+<td><p>Device table start acknowledgment</p></td>
+</tr>
+<tr class="row-even"><td><p>DEVICEINST</p></td>
+<td><p>0x00000040</p></td>
+<td><p>Device descriptor instance</p></td>
+</tr>
+</tbody>
+</table>
+<p>Following a hardware reset, the signal channel is used to provide the
+<a class="reference internal" href="dev_table.html#dev-table"><span class="std std-ref">device table</span></a> to the host using the following packet
+sequence:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span> <span class="o">|</span> <span class="n">DEVICETABACK</span><span class="p">,</span> <span class="n">uint32</span> <span class="n">num_devices</span>
+    <span class="o">|</span> <span class="n">DEVICEINST</span><span class="p">,</span> <span class="n">uint32</span> <span class="n">dev_addr_0</span><span class="p">,</span> <span class="n">device_descriptor</span> <span class="n">dev_0</span>
+    <span class="o">|</span> <span class="n">DEVICEINST</span><span class="p">,</span> <span class="n">uint32</span> <span class="n">dev_addr_1</span><span class="p">,</span> <span class="n">device_descriptor</span> <span class="n">dev_1</span> <span class="o">|</span>
+    <span class="o">...</span>
+    <span class="o">|</span> <span class="n">DEVICEINST</span><span class="p">,</span> <span class="n">uint32</span> <span class="n">dev_addr_n</span><span class="p">,</span> <span class="n">device_descriptor</span> <span class="n">dev_n</span> <span class="o">|</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">dev_addr_n</span></code> is the full address of each device as described in the
+<a class="reference internal" href="dev_table.html#dev-table"><span class="std std-ref">device table</span></a> section and <code class="docutils literal notranslate"><span class="pre">dev_n</span></code> is a <a class="reference internal" href="devices.html#dev-desc"><span class="std std-ref">device
+descriptor</span></a>.</p>
+<p>In addition to providing the device table following reset, the signal channel
+is also used to asynchronously acknowledge register access via the
+<a class="reference internal" href="#conf-chan"><span class="std std-ref">configuration channel</span></a>. Following a device register read or
+write, an CONFIGWACK, CONFIGWNACK, CONFIGRACK, or CONFIGRNACK signal is pushed
+onto the signal stream by the controller to indicate the validity of the
+transaction. For instance, on a successful register read:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span> <span class="o">|</span> <span class="n">CONFIGRACK</span> <span class="o">|</span> <span class="o">...</span>
+</pre></div>
+</div>
+</section>
+<section id="configuration-channel">
+<span id="conf-chan"></span><h2>Configuration Channel<a class="headerlink" href="#configuration-channel" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Word size</strong> : 32 bits</p></li>
+<li><p><strong>Channel type</strong> : Register</p></li>
+<li><p><strong>Direction</strong> : Read-Write</p></li>
+</ul>
+<p>The <em>configuration</em> channel supports addressed access to a set of configuration
+registers. There are two classes of registers handled by the configuration
+channel: the first set of registers encapsulates a generic device register
+programming interface. The remaining registers are for global controller
+control and configuration and provide access to acquisition parameters and
+state control.</p>
+<p>The interface must use 32-bit values and, at least, 24-bit addressing. The
+required register map is as follows:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Address</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x00000000</p></td>
+<td><p>Device Address</p></td>
+<td><p>Register interface</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x00000001</p></td>
+<td><p>Register Address</p></td>
+<td><p>Register interface</p></td>
+</tr>
+<tr class="row-even"><td><p>0x00000002</p></td>
+<td><p>Register Value</p></td>
+<td><p>Register interface</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x00000003</p></td>
+<td><p>Read/Write</p></td>
+<td><p>Register interface</p></td>
+</tr>
+<tr class="row-even"><td><p>0x00000004</p></td>
+<td><p>Trigger</p></td>
+<td><p>Register interface</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x00000005</p></td>
+<td><p>Running</p></td>
+<td><p>Global</p></td>
+</tr>
+<tr class="row-even"><td><p>0x00000006</p></td>
+<td><p>Reset</p></td>
+<td><p>Global</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x00000007</p></td>
+<td><p>System Clock</p></td>
+<td><p>Global</p></td>
+</tr>
+<tr class="row-even"><td><p>0x00000008</p></td>
+<td><p>Acquisition Clock</p></td>
+<td><p>Global</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x00000009</p></td>
+<td><p>Reset Acquisition Counter</p></td>
+<td><p>Global</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0000000A</p></td>
+<td><p>Hardware Address</p></td>
+<td><p>Global</p></td>
+</tr>
+</tbody>
+</table>
+<section id="device-register-programming-interface">
+<h3>Device Register Programming Interface<a class="headerlink" href="#device-register-programming-interface" title="Link to this heading">#</a></h3>
+<p>The device programming interface allows transparent access to each device’s
+<a class="reference internal" href="devices.html#dev-reg-map"><span class="std std-ref">register map</span></a>. It defines a general purpose bus that hides
+the specifics of any particular implementation. It is composed of the following
+configuration channel registers:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Device</span> <span class="pre">Address</span></code>: The fully qualified address of a device as enumerated in
+the <a class="reference internal" href="dev_table.html#dev-table"><span class="std std-ref">device table</span></a> and to which communication will be
+directed as described below.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Register</span> <span class="pre">Address</span></code>: The address of the register within the <a class="reference internal" href="devices.html#dev-reg-map"><span class="std std-ref">register
+map</span></a> of the device located at <code class="docutils literal notranslate"><span class="pre">Device</span> <span class="pre">Address</span></code> that will be
+written to or read from.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Register</span> <span class="pre">Value</span></code>: Value to be written to or read from and that corresponds
+to the register <code class="docutils literal notranslate"><span class="pre">Register</span> <span class="pre">Address</span></code> of device located at
+<code class="docutils literal notranslate"><span class="pre">Device</span> <span class="pre">Address</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Read/Write</span></code>: A flag indicating if a read or write should be performed. 0
+indicates read operation. A value &gt; 0 indicates write operation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Trigger</span></code>: Set &gt; 0 to trigger either register read or write operation
+depending on the state of <code class="docutils literal notranslate"><span class="pre">Read/Write</span></code>. If <code class="docutils literal notranslate"><span class="pre">Read/Write</span></code> is 0, a read is
+performed. In this case, after a successful operation, <code class="docutils literal notranslate"><span class="pre">Register</span> <span class="pre">Value</span></code> is
+updated with value stored in the register at <code class="docutils literal notranslate"><span class="pre">Register</span> <span class="pre">Address</span></code> on the
+device at <code class="docutils literal notranslate"><span class="pre">Device</span> <span class="pre">Address</span></code>. If <code class="docutils literal notranslate"><span class="pre">Read/Write</span></code> is 1, <code class="docutils literal notranslate"><span class="pre">Register</span> <span class="pre">Value</span></code> is
+written to register at <code class="docutils literal notranslate"><span class="pre">Register</span> <span class="pre">Address</span></code> on the device at
+<code class="docutils literal notranslate"><span class="pre">Device</span> <span class="pre">Address</span></code>. The <code class="docutils literal notranslate"><span class="pre">Trigger</span></code> register is always set low by the
+controller following transmission even if it is not successful or does not
+make sense given the supplied register address and/or value.</p></li>
+</ul>
+<p>Appropriate values of <code class="docutils literal notranslate"><span class="pre">Register</span> <span class="pre">Address</span></code> and <code class="docutils literal notranslate"><span class="pre">Register</span> <span class="pre">Value</span></code> are
+determined by:</p>
+<ul class="simple">
+<li><p>Looking at a device’s data sheet if the device is an integrated circuit and
+using <a class="reference internal" href="devices.html#reg-type"><span class="std std-ref">raw registers</span></a>.</p></li>
+<li><p>Examining the <a class="reference internal" href="devices.html#dev-datasheet"><span class="std std-ref">ONI Device Datasheet</span></a> for <a class="reference internal" href="devices.html#reg-type"><span class="std std-ref">managed
+registers</span></a>.</p></li>
+</ul>
+<section id="register-read-sequence">
+<h4>Register Read Sequence<a class="headerlink" href="#register-read-sequence" title="Link to this heading">#</a></h4>
+<p>When a host requests a device register <em>read</em>, the following following sequence
+must be performed:</p>
+<ol class="arabic simple">
+<li><p>Check the value of <code class="docutils literal notranslate"><span class="pre">Trigger</span></code>.</p>
+<ul class="simple">
+<li><p>If it is 0, the procedure can proceed.</p></li>
+<li><p>Else, the hardware is busy with a previous transaction and a new one
+cannot be issued.</p></li>
+</ul>
+</li>
+<li><p>The target device is selected by writing its address, as featured on the
+device map, into <code class="docutils literal notranslate"><span class="pre">Device</span> <span class="pre">Address</span></code> on the controller.</p></li>
+<li><p>The desired register address within the device register map is written into
+<code class="docutils literal notranslate"><span class="pre">Register</span> <span class="pre">Address</span></code> on the controller.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Read/Write</span></code> register on the controller is set to 0x00.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Trigger</span></code> register on the controller is set to 0x01, triggering
+configuration transmission.</p>
+<ol class="arabic simple">
+<li><p>(Controller) A register read is routed by the controller to the
+appropriate device.</p></li>
+<li><p>(Controller) <code class="docutils literal notranslate"><span class="pre">Trigger</span></code> is set to 0x00 once the operation finishes.</p></li>
+<li><p>(Controller) <code class="docutils literal notranslate"><span class="pre">CONFIGRACK</span></code> is pushed into the signal stream if the
+operation was successful, <code class="docutils literal notranslate"><span class="pre">CONFIGRNACK</span></code> is pushed if it failed.</p></li>
+</ol>
+</li>
+<li><p>The signal stream must be pumped until either <code class="docutils literal notranslate"><span class="pre">CONFIGRACK</span></code> or
+<code class="docutils literal notranslate"><span class="pre">CONFIGRNACK</span></code> is received indicating that controller has either:</p>
+<ul class="simple">
+<li><p>Completed reading the specified device register and copied its value to
+the <code class="docutils literal notranslate"><span class="pre">Register</span> <span class="pre">Value</span></code> register.</p></li>
+<li><p>Failed to read the register in which case the value of <code class="docutils literal notranslate"><span class="pre">Register</span> <span class="pre">Value</span></code>
+contains invalid data.</p></li>
+</ul>
+</li>
+<li><p>If operation was successful, the <code class="docutils literal notranslate"><span class="pre">Register</span> <span class="pre">Value</span></code> can be read.</p></li>
+</ol>
+</section>
+<section id="register-write-sequence">
+<h4>Register Write Sequence<a class="headerlink" href="#register-write-sequence" title="Link to this heading">#</a></h4>
+<p>When a host requests a device register <em>write</em>, the following following
+sequence must be performed:</p>
+<ol class="arabic simple">
+<li><p>Check the value of <code class="docutils literal notranslate"><span class="pre">Trigger</span></code>.</p>
+<ul class="simple">
+<li><p>If it is 0, the procedure can proceed.</p></li>
+<li><p>Else, the hardware is busy with a previous transaction and a new one
+cannot be issued.</p></li>
+</ul>
+</li>
+<li><p>The target device is selected by writing its address, as featured on the
+device map, into <code class="docutils literal notranslate"><span class="pre">Device</span> <span class="pre">Address</span></code> on the controller</p></li>
+<li><p>The desired register address within the device register map is written into
+<code class="docutils literal notranslate"><span class="pre">Register</span> <span class="pre">Address</span></code> on the controller.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Read/Write</span></code> register on the controller is set to 0x01.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Trigger</span></code> register on the controller is set to 0x01, triggering
+configuration transmission.</p>
+<ol class="arabic simple">
+<li><p>(Controller) A register write is routed by the controller to the
+appropriate device.</p></li>
+<li><p>(Controller) <code class="docutils literal notranslate"><span class="pre">Trigger</span></code> is set to 0x00 once the operation finishes.</p></li>
+<li><p>(Controller) <code class="docutils literal notranslate"><span class="pre">CONFIGWACK</span></code> is pushed into the signal stream if the
+operation was successful, <code class="docutils literal notranslate"><span class="pre">CONFIGWNACK</span></code> is pushed if it failed.</p></li>
+</ol>
+</li>
+<li><p>The signal stream must be pumped until either <code class="docutils literal notranslate"><span class="pre">CONFIGWACK</span></code> or
+<code class="docutils literal notranslate"><span class="pre">CONFIGWNACK</span></code> is received indicating that the controller has either:</p>
+<ul class="simple">
+<li><p>Successfully completed writing the specified device register.</p></li>
+<li><p>Failed to write the register.</p></li>
+</ul>
+</li>
+</ol>
+<p>Following successful or unsuccessful device register read or write, the
+appropriate ACK or NACK packets <em>must</em> be passed to the <a class="reference internal" href="#sig-chan"><span class="std std-ref">signal channel</span></a> by the controller. If they are not, the register read and write
+calls will block indefinitely.</p>
+</section>
+</section>
+<section id="global-acquisition-registers">
+<h3>Global Acquisition Registers<a class="headerlink" href="#global-acquisition-registers" title="Link to this heading">#</a></h3>
+<p>The following global acquisition registers provide information about, and
+control over, the entire acquisition system:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Running</span></code>: Set to &gt; 0 to run the system clock and produce data. Set to 0 to
+stop the system clock and therefore stop data flow. Results in no other
+configuration changes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Reset</span></code>: Set to &gt; 0 to trigger a hardware reset and send a fresh device
+map to the host. Devices are reset but their managed registers might remain
+unchanged, depending on their configuration (See the <a class="reference internal" href="devices.html#dev-register"><span class="std std-ref">Device registers</span></a> section for more information). Set to 0 by the controller
+upon entering the reset state.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">System</span> <span class="pre">Clock</span></code>: A read-only register specifying the master hardware clock
+frequency in Hz. This is the clock used by the controller to perform data
+transmission.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Acquisition</span> <span class="pre">Clock</span></code>: A read-only register specifying the system common
+clock frequency in Hz. This clock is used to generate an acquisition counter
+that timestamps data from all the devices. The <code class="docutils literal notranslate"><span class="pre">Common_Timestamp</span></code> in the
+read <a class="reference internal" href="#frame"><span class="std std-ref">frame</span></a> header is incremented at this frequency.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Reset</span> <span class="pre">Acquisition</span> <span class="pre">Counter</span></code>: This register is used to reset the counter
+generating the <code class="docutils literal notranslate"><span class="pre">Common_Timestamp</span></code> used in the <a class="reference internal" href="#frame"><span class="std std-ref">device frames</span></a>.
+A value of 1 will reset the counter to 0 without affecting the <code class="docutils literal notranslate"><span class="pre">Running</span></code>
+state. A value of 2 will reset the counter and, at the same time, set
+<code class="docutils literal notranslate"><span class="pre">Running</span></code> to 1, starting data production.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Hardware</span> <span class="pre">Address</span></code>: This is used for systems that allow multiple
+controllers with a link between them to synchronize their
+<code class="docutils literal notranslate"><span class="pre">Common_Timestamps</span></code>. When resetting the acquisition counter through the
+<code class="docutils literal notranslate"><span class="pre">Reset</span> <span class="pre">acquisition</span> <span class="pre">counter</span></code> on a device with a <code class="docutils literal notranslate"><span class="pre">Hardware</span> <span class="pre">Address</span></code> of 0,
+this command will be sent through an external link to all non-zero devices,
+synchronizing the counters. Multiple controller support or hardware-based
+timestamp synchronization through dedicated links are optional features of an
+ONI system.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="hubs.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Hubs</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../api/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ONI API Documentation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-channel">Read Channel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-frames">Data Frames</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-channel">Write Channel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-channel">Signal channel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-channel">Configuration Channel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#device-register-programming-interface">Device Register Programming Interface</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#register-read-sequence">Register Read Sequence</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#register-write-sequence">Register Write Sequence</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#global-acquisition-registers">Global Acquisition Registers</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/open-ephys/ONI/edit/main/source/hw-spec/controller.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/hw-spec/controller.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2010-2025, Open Ephys &amp; Contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
