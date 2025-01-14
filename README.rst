@@ -67,3 +67,30 @@ After installing the requirements you can run:
    make latex    # for latex
    make latexpdf # for latex (will require latexpdf installed)
    make          # list all the available output format
+
+How to Create a New Sphinx-Version
+==================================
+
+Make sure that the Pipfile and the Pipfile.lock files are up to date with the conf.py extensions. This means
+that the conf.py section containing `extensions` only contains the extensions needed to build the docs, and
+the Pipfile has the same list of extensions. The Pipfile is manually edited, but once the two files are
+synchronized then you can run:
+
+.. code:: shell
+
+   pipenv lock
+
+This will regenerate the Pipfile.lock file. Once this call completes, then run the following line to generate
+a text file from the Pipfile.lock that can be used by `sphinx-versioning`:
+
+.. code:: shell
+
+   pipenv requirements > source/req.text
+
+After this, the new version can be created. Run the following line, and it will create a new version of the
+docs that can be chosen from the dropdown menu in the sidebar. Change the letters X/Y to be the major/minor
+version number for the current version of the docs:
+
+.. code:: shell
+
+   sphinx-version vX.Y --venv --requirements req.txt
