@@ -1,8 +1,48 @@
-{% if versions %}
-<h3>{{ _('Versions') }}</h3>
+<!-- {% if versions %}
+<h5 style="margin: 1px">{{ _('Versions') }}</h5>
 <ul>
   {%- for item in versions %}
   <li><a href="{{ item.url }}">{{ item.name }}</a></li>
   {%- endfor %}
 </ul>
-{% endif %}
+{% endif %} -->
+
+<!-- {% if versions %}
+<h4 style="margin: 1px">Docs Version</h4>
+<h5 style="margin: 1px">{{ _('Branches') }}</h5>
+<ul style="margin-bottom: 1px">
+  {%- for item in versions.branches %}
+  <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+  {%- endfor %}
+</ul>
+<h5 style="margin: 1px">{{ _('Tags') }}</h5>
+<ul style="margin-bottom: 1px">
+  {%- for item in versions.tags %}
+  <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+  {%- endfor %}
+</ul>
+{% endif %} -->
+
+<div id="version_container">
+    <span style="vertical-align: middle">{{ _('Version') }}</span>
+    <select
+      style="vertical-align: middle; margin-left: 5px"
+      onchange="window.location.href=this.value"
+      id="version_dropdown_menu"
+    >
+      {% if versions %}
+      {%- for item in versions %}
+      <option value="{{ item.url }}">{{ item.name }}</a></li>
+      {%- endfor %}
+      {% endif %}
+    </select>
+ </div>
+ <script>
+    var dropdown = document.getElementById('version_dropdown_menu');
+
+    for (var i = 0; i < dropdown.options.length; i++) {
+        if (window.location.pathname.includes(dropdown.options[i].label)) {
+            dropdown.options[i].selected = true;
+        }
+    }
+  </script>
