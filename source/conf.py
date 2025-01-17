@@ -45,6 +45,7 @@ extensions = [
     'sphinx.ext.githubpages',
     'breathe',
     'sphinx_csharp',
+    'sphinx_multiversion'
 ]
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -106,8 +107,8 @@ html_static_path = ["_static"]
 html_style = "_static/theme_overrides.css"
 
 html_sidebars = {
-    'index': ['search-field.html'],
-    "**": ["sidebar-nav-bs.html"]
+    'index': ['versioning.html','search-field.html'],
+    "**": ['versioning.html',"sidebar-nav-bs.html"]
 }
 
 # Custom sidebar templates, must be a dictionary that maps document names
@@ -240,3 +241,9 @@ html_context = {
 
 # Option for linkcheck
 linkcheck_anchors = False
+
+# Options for sphinx-multiversion
+smv_branch_whitelist = r'^main$'
+smv_tag_whitelist = r'^v\d+\.\d+$'
+smv_remote_whitelist = r'^(origin)$'
+smv_released_pattern = r'^tags/.*$'
