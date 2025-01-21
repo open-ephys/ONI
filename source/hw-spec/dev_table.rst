@@ -32,6 +32,12 @@ of :ref:`device descriptors <dev-desc>`.
      - 8
      - 0
 
+.. note:: The ``Read_Sample_Size`` reported on the device table might differ from the 
+  one specified on the :term:`Device Datasheet` and :ref:`dev-desc` due to adjustments
+  required to comply to specific :ref:`hardware word size requirements<read-word-alignment>`.
+  In this case, the host must ignore the extra bytes and decode the data as specified on the
+  datasheet.
+
 .. _dev-address:
 
 Device Address

@@ -179,7 +179,7 @@ bandwidths, and required response latencies. The buffer sizes default to the
 minimum size for a given device table (the maximum frame read and write sizes
 across devices in the table aligned to the bus width of hardware communication
 link). This provides the lowest latency, but is optimal only for very low
-bandwidth acquisition and deterministic and low-latency threads (e.g. those
+bandwidth acquisition and deterministic and low-latency threads (e.g., those
 found on real-time operating system). On a normal computer, these buffers can
 be set manually to optimize the bandwidth/latency trade off. For example, to
 set the buffer read and write sizes to 1024 and 8192 bytes respectively, use
@@ -255,23 +255,23 @@ Reading Data Frames
 ********************************************
 :struct:`oni_frame_t`'s are minimal packets containing metadata and raw binary
 data blocks from a single device within the device table. A
-:struct:`oni_size_t` is defined as
+:struct:`oni_frame_t` is defined as
 
 .. code-block:: c
 
-    struct oni_frame {
-        const uint64_t dev_idx;  // Device index that produced or accepts the frame
-        const uint32_t data_sz;  // Size in bytes of data buffer
-        const uint64_t time;     // Frame time (ACQCLKHZ)
-        uint8_t *data;           // Raw data block
+    struct oni_frame_t {
+        const oni_size_t dev_idx;           // Device index that produced or accepts the frame
+        const oni_size_t data_sz;           // Size in bytes of data buffer
+        const oni_counter_t acqclk_cnt;     // Acquisition clock (ACQCLKHZ) count at frame creation
+        uint8_t *data;                      // Raw data block
     };
 
 where ``dev_idx`` is the fully qualified device index within the device table
-(hub.index), ``data_sz`` is the size in bytes of the raw data block, ``time``
-is the system clock count that indicates the frame creation time, and, ``data``
-is a pointer to the raw data block. A single frame can be read from an
-acquisition context after it is started (see :ref:`start_ctx`) using repeated
-calls to ``oni_read_frame`` as follows:
+(hub.index), ``data_sz`` is the size in bytes of the raw data block,
+``acqclk_cnt`` is the acquisition clock count that indicates the frame creation
+time, and, ``data`` is a pointer to the raw data block. A single frame can be
+read from an acquisition context after it is started (see :ref:`start_ctx`)
+using repeated calls to ``oni_read_frame`` as follows:
 
 .. code-block:: c
 
@@ -310,9 +310,9 @@ steps to reading frames.
 
     // Required elements to create frame
     oni_frame_t *frame = NULL;
-    size_t dev_idx = 256;
-    size_t data_sz = 8; // or 16, 24, 32, etc
-    char data[] = {0, 1, 2, 3, 4, 5, 6, 7};
+    const size_t dev_idx = 256;
+    const size_t data_sz = 8; // Multiple of write size presented in device table
+    char data[] = {0, 1, 2, 3, 4, 5, 6, 7}; // Must be data_sz bytes long
 
     // Create a frame
     oni_create_frame(ctx, &frame, dev_idx, data, data_sz);
@@ -324,8 +324,8 @@ steps to reading frames.
     oni_destroy_frame(frame);
 
 First, a frame is created using a call to ``oni_create_frame`` (analogous to
-``oni_read_frame``, except that frame data is provided by the user instead of
-the hardware). In the preceding example, it is assumed that the user has
+``oni_read_frame``, except that frame data is provided by the caller instead of
+the hardware). In the preceding example, it is assumed that the caller has
 queried the device table to ensure that the device with qualified index 256 is
 writable and has a write size of 8 bytes. If the device at ``dev_idx`` does not
 accept writes or ``data``/``data_sz`` are not a multiple of the device write
