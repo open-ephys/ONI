@@ -25,7 +25,7 @@ and use that value for the ``acqclk_cnt`` field of the corresponding :ref:`frame
 
 .. _controller_params:
 
-Hardware-specific Parameters
+Hardware-Specific Parameters
 -----------------------------
 
 Different ONI-compliant controller implementations might specify hardware-specific parameters related to standard ONI elements.

@@ -14,7 +14,7 @@ The full address space is divided into three address blocks and a fourth current
 
 .. _address_global:
 
-Operation registers
+Operation Registers
 -------------------
 
 **Address range:** 0x0000-0x3FFF
@@ -95,7 +95,7 @@ procedures to device registers are detailed in :ref:`register_interface`.
 
 .. _address_spec:
 
-Specification parameters
+Specification Parameters
 -------------------------
 
 **Address range:** 0x4000-0x7FFF
@@ -147,7 +147,7 @@ Other addresses in this block are reserved and MUST NOT be used.
 
 .. _address_custom:
 
-Hardware-specific registers
+Hardware-Specific Registers
 ----------------------------
 **Address range:** 0x8000-0xBFFF
 
