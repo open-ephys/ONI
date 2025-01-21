@@ -15,7 +15,7 @@ elements:
 These hardware elements are managed within a single host computer where they are
 governed by a single :term:`Acquisition Context`. An ONI system is arranged in a
 `tiered-star network <https://en.wikipedia.org/wiki/Network_topology>`__ similar
-to that of, e.g., USB, which is shown here:
+to that of USB, which is shown here:
 
 ::
 

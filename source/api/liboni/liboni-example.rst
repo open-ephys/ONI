@@ -179,7 +179,7 @@ bandwidths, and required response latencies. The buffer sizes default to the
 minimum size for a given device table (the maximum frame read and write sizes
 across devices in the table aligned to the bus width of hardware communication
 link). This provides the lowest latency, but is optimal only for very low
-bandwidth acquisition and deterministic and low-latency threads (e.g. those
+bandwidth acquisition and deterministic and low-latency threads (e.g., those
 found on real-time operating system). On a normal computer, these buffers can
 be set manually to optimize the bandwidth/latency trade off. For example, to
 set the buffer read and write sizes to 1024 and 8192 bytes respectively, use

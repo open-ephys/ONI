@@ -16,7 +16,7 @@ four abstract communication channels:
 
 These channels are implemented by the combination of the controller hardware and the :term:`Driver Translator`.
 
-Concurrent access to a single channel by the host (e.g. by multiple threads of execution or applications) is 
+Concurrent access to a single channel by the host (e.g., by multiple threads of execution or applications) is 
 NOT permitted. However, individual channels MUST be able to be accessed independently.
 
 .. note:: Concurrent access requirements relate only to the hardware implementation. Functions in 

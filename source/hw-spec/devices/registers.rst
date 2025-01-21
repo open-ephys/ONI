@@ -59,7 +59,7 @@ following rules:
 - For devices that produce data through the :ref:`data-rd-chan`, ``ENABLE`` is a
   Read/Write register that takes effect after reset. When ``ENABLE`` is set to
   0x00000000, the device MUST NOT produce any data on the :ref:`data-rd-chan`.
-  When ``ENABLE`` is set to 0x00000001, the device it MUST produce data
+  When ``ENABLE`` is set to 0x00000001, the device MUST produce data on the
   :ref:`data-rd-chan` in accordance with behavior documented on its
   :ref:`dev-datasheet`.
 - For devices that do not produce data through the :ref:`data-rd-chan`,

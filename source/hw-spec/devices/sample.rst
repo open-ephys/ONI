@@ -6,7 +6,7 @@ Device Sample Format
 Data passed over the read or write streams are transmitted in unit packets,
 or "samples". 
 
-Read samples
+Read Samples
 -------------
 These are the samples produced by the devices and sent through the 
 :ref:`read stream <com-channels>` to the controller. 

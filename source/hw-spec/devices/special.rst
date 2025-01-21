@@ -16,7 +16,7 @@ Every hub in an ONI system MUST feature a special device, located at
 :ref:`Device_Index <dev-table>` 0xFE within the hub, which supplies information
 about the hub. Because this device is required to exist at a fixed address, it
 is not listed in the device table and, thus, has no :ref:`device descriptor
-<dev-desc>`.  It MUST expose is the register interface, and it MUST NOT include
+<dev-desc>`.  It MUST expose the register interface, and it MUST NOT include
 any streams. The register map is divided in two ranges:
 
 - :ref:`hub_addr_common`: 0x00000000 - 0x00007FFF
@@ -72,7 +72,11 @@ the complete width. The detailed meaning of each register is:
   0 in local hubs.
 
 - ``HUB_ONI_SPEC_VER``: ONI specification version. Specifies the version of the ONI specification the 
-  hub adheres to. Format is, bits 31-24: Major, 23-16: Minor, 15-8: patch, 7-0: reserved
+  hub adheres to. Format is:
+  
+  ::
+
+    Major(8-bit).Minor(8-bit).Patch(8-bit).Reserved(8-bit)
 
 Other addresses in this block are reserved and MUST NOT be used.
 
@@ -80,7 +84,7 @@ All 16-bit versions are in the format:
 
 ::
 
-       Major(8-bit).Minor(8-bit).
+  Major(8-bit).Minor(8-bit).
 
 For example, 0x0103 would imply version 1.3. 
 

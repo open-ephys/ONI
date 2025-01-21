@@ -12,10 +12,10 @@ Preamble
 The following information is required in the preamble:
 
 1. **Informal Device Name**: Name of the device. This field MUST contain only alphanumeric
-   characters and punctuation marks (i.e. ``?!*+-_~.()``). Other characters, including special
+   characters and punctuation marks (i.e., ``?!*+-_~.()``). Other characters, including special
    characters MUST NOT be used (e.g., ChipXYX, Chip XYX, and My~Chip-12ab!, are
    all valid).
-2. **Author(s)**: Device firmware or chip creator(s). Can be a person/people or
+2. **Author(s)**: Device firmware or chip creator(s). Can be a person/people, or
    a company, group, or organization.
 3. **Device Version**: The :ref:`device version <dev-desc>` that this datasheet
    corresponds to.
@@ -25,7 +25,7 @@ The following information is required in the preamble:
 Description
 ~~~~~~~~~~~
 A textual description of the functionality of the device. This can be simple or
-detailed and is meant to be useful for upstream hardware and software develops
+detailed and is meant to be useful for upstream hardware and software developers
 for understanding the nature of the device during their work.
 
 Register Map
@@ -49,7 +49,7 @@ table, but it MUST contain the following columns:
 -  **Name**: Human readable name for the register. Only capital ASCII letters
    and underscores are allowed, with no spaces or special characters (e.g.
    ``VALID`` and ``ALSO_VALID`` vs. ``NotValid`` and ``ALSO-NOT-VALID``).
--  **Access**: Read-only, write-only, or read/write.
+-  **Access**: Read-only, Write-only, or Read/Write.
 -  **Time of Effect**: When does a register write affect hardware state?
    Immediately or following reset?
 -  **POR Value**: Power-on reset default value.

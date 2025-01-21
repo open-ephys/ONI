@@ -2,7 +2,7 @@
 
 Glossary of Terms
 =================
-Here we provide glossary of terms used terms in this specification. A complete
+Here we provide glossary of terms used in this specification. A complete
 understanding of the term may require knowledge of interaction with other
 elements and/or its context within the specification.
 
@@ -12,19 +12,19 @@ elements and/or its context within the specification.
 
     .. note:: Can be abbreviated as "Context".
 
-    A top-level :term:`API` element that holds acquisition state, a
-    :term:`Device Table`, and :term:`Driver Translator` state in order to
+    A top-level :term:`API` element that holds the acquisition state, a
+    :term:`Device Table`, and the :term:`Driver Translator` state in order to
     communicate with a single :term:`Controller`. A context is manipulated and
     interacted with using :term:`API` function calls, and ultimately affects
-    hardware state over the :term:`Host Interconnect` via a :term:`Driver
+    the hardware state over the :term:`Host Interconnect` via a :term:`Driver
     Translator`. Multiple contexts can coexist on a single host system and
     these may each use a different :term:`Driver Translator` and/or physical
     interface.
 
   API
 
-    ONI application programming interface that can be used to develop software
-    to acquire from and control ONI-compliant hardware.
+    ONI application programming interface (API) that can be used to develop
+    software to acquire from and control ONI-compliant hardware.
 
     .. seealso:: :ref:`oni-api`
 
@@ -35,23 +35,22 @@ elements and/or its context within the specification.
     coexist in a single :term:`Host Computer` and need not use the same
     :term:`Driver Translator`. Controllers communicate via :term:`API` calls
     that manipulate an :term:`Acquisition Context` and a :term:`Device Table`,
-    which affect controller state using the driver translator. :term:`Hubs
+    which affects controller state using the driver translator. :term:`Hubs
     <Hub>` are connected to the controller where data to/from their devices is
     packed and transmitted to/from the host computer. The controller contains a
-    main clock which provides a common timestamp to all incoming data, and that
+    main clock which provides a common timestamp to all incoming data, and
     can be synchronized with other controllers.
 
     .. seealso:: :ref:`Controller Specification <controller>`
 
   Device
-    A configurable piece of hardware with its own register address space
-    (e.g., an integrated circuit) or a digital “core” that emulates this.
-    Devices may or may not produce and/or accept :term:`streaming data <Stream
-    Channel>` , but that must at least implement a minimal :term:`register
-    programming channel <Register Channel>`. They must be documented, using a
-    :term:`Device Datasheet`. Devices are the endpoints for most communication
-    operations and often are the hardware interfacing with the physical
-    environment.
+    A configurable piece of hardware with its own register address space (e.g.,
+    an integrated circuit) or a digital “core” that emulates this. Devices may
+    or may not produce and/or accept :term:`streaming data <Stream Channel>`,
+    but must implement a minimal :term:`register programming channel <Register
+    Channel>`. They must be documented, using a :term:`Device Datasheet`.
+    Devices are the endpoints for most communication operations and often are
+    the hardware interfacing with the physical environment.
 
     .. seealso:: :ref:`Device Specification <device>`
 
@@ -71,7 +70,7 @@ elements and/or its context within the specification.
   Device Table
     A collection of :term:`device addresses <Device Address>` and corresponding
     metadata for all :ref:`devices <device>` governed by a :term:`controller
-    <controller>`. The device table contains all meta-information required to
+    <controller>`. The device table contains all meta-information required
     for proper interaction with each device (e.g., packet read-size, packet
     write-size, burst read cycles, etc.).
 
@@ -97,14 +96,14 @@ elements and/or its context within the specification.
 
   Hub
     A collection of :term:`Devices <Device>` that communicate with a
-    :term:`Controller` over a :term:`Port` and share a common
-    clock. All data acquired by :term:`devices <Device>` in the same Hub are
-    timestamped by this clock. Different Hubs may be governed by asynchronous
-    clocks. A Hub either forms a portion of the :term:`Device Table` or the
-    entire :term:`Device Table` if it contains all the :term:`devices <Device>`
-    within the :term:`Acquisition Context`. Hubs can be exist in separate
-    hardware from the :term:`Controller` (remote hubs) or within the
-    :term:`Controller` (local hubs).
+    :term:`Controller` over a :term:`Port` and share a common clock. All data
+    acquired by :term:`devices <Device>` in the same Hub are timestamped by this
+    clock. Different Hubs may be governed by asynchronous clocks. A Hub either
+    forms a portion of the :term:`Device Table` or the entire :term:`Device
+    Table` if it contains all the :term:`devices <Device>` within the
+    :term:`Acquisition Context`. Hubs can exist in separate hardware from the
+    :term:`Controller` (remote hubs) or within the :term:`Controller` (local
+    hubs).
 
     .. seealso:: :ref:`Hub Specification <hub>`
 

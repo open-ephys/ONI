@@ -71,7 +71,7 @@ controller.
   state. A value of 0x00000002 will reset the counter and, at the same time, set
   ``Running`` to 0x00000001, starting data production.
 
-  .. _optional-num-sync-dev:
+.. _optional-num-sync-dev:
 
 - ``SYNC_HW_ADDR``: Hardware address. This register MAY be used for implementations that allow multiple
   controllers with a link between them to synchronize their :ref:`acquisition counters<acq_clk>`.
@@ -116,7 +116,11 @@ Address  Name
 ======== ===============================
 
 - ``ONI_SPEC_VER``: ONI specification version. Specifies the version of the ONI specification the 
-  controller adheres to. Format is, bits 31-24: Major, 23-16: Minor, 15-8: patch, 7-0: reserved
+  controller adheres to. Format is:
+  
+  ::
+
+    Major(8-bit).Minor(8-bit).Patch(8-bit).Reserved(8-bit)
 
 .. _read-word-alignment-reg:
   
@@ -137,13 +141,12 @@ Address  Name
 
 .. _optional-num-sync-dev-reg:
 
-- ``ONI_ATTR_NUM_SYNC_DEVS``: Number of supported synchronized devices: This register indicates if the optional capability
+- ``ONI_ATTR_NUM_SYNC_DEVS``: Number of supported synchronized devices. This register indicates if the optional capability
   for :ref:`hardware synchronization<optional-num-sync-dev>` is supported. If 0, this controller can
   not synchronize with others. if > 0, it indicates the maximum number of controllers that can be synchronized
   together. If the value is 0xFFFFFFFF, then there is no upper bound to this number.
 
 Other addresses in this block are reserved and MUST NOT be used.
-
 
 .. _address_custom:
 
@@ -158,7 +161,7 @@ but might be required for the correct operation of a specific hardware implement
   hardware-specific operations SHOULD, if possible, be implemented either in 
   :ref:`hardware specific registers<hub_addr_hw_specific>` in the controller hub-0
   :ref:`hub information device<hub_info_dev>` or in dedicated devices to access these hardware
-  characteristics (e.g. hub link controllers). When registers in this block are used, the 
+  characteristics (e.g., hub link controllers). When registers in this block are used, the 
   :term:`Driver Translator` should, to the possible extent, hide these from the :term:`API`.
 
 .. _address_reserved:

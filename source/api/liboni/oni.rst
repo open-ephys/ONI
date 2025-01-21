@@ -323,7 +323,7 @@ needed during the development of user-facing software.
 
     Change the value of a configuration register from specific devices within
     the current device table. This can be used to change the functionality of
-    devices, e.g. set filter bandwidth, select active channels, or change
+    devices, e.g., set filter bandwidth, select active channels, or change
     stimulation parameters.  Register specifications (addresses, read- and
     write-access, acceptable values, and descriptions) are provided on the
     :ref:`ONI-device datasheet <dev-datasheet>`.
