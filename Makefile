@@ -15,6 +15,8 @@ help:
 
 .PHONY: help Makefile
 
+# make html: Order of inputs for building with sphinx-multiversion is different
+# than using sphinx-build; explicitly define `make html` target here
 html: Makefile
 	@$(SPHINXBUILDMULTIVERSION) "$(SOURCEDIR)" "$(BUILDDIRHTML)" $(SPHINXOPTS) $(O)
 	cp source/_templates/redirect.html "$(BUILDDIRHTML)/index.html"
