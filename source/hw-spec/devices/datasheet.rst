@@ -49,7 +49,7 @@ table, but it MUST contain the following columns:
 -  **Name**: Human readable name for the register. Only capital ASCII letters
    and underscores are allowed, with no spaces or special characters (e.g.
    ``VALID`` and ``ALSO_VALID`` vs. ``NotValid`` and ``ALSO-NOT-VALID``).
--  **Access**: Read-only, write-only, or read-write.
+-  **Access**: Read-only, write-only, or read/write.
 -  **Time of Effect**: When does a register write affect hardware state?
    Immediately or following reset?
 -  **POR Value**: Power-on reset default value.

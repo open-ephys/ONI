@@ -5,7 +5,7 @@ Configuration Channel
 
 -  **Data alignment** : 32 bits
 -  **Channel type** : Register
--  **Direction** : Read-Write
+-  **Direction** : Read/Write
 
 The *configuration* channel supports addressed access to a set of registers.
 The interface must use 32-bit values and 16-bit addressing. Controllers must
