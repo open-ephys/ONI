@@ -45,6 +45,7 @@ extensions = [
     'sphinx.ext.githubpages',
     'breathe',
     'sphinx_csharp',
+    'linuxdoc.rstFlatTable'
 ]
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]

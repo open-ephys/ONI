@@ -360,7 +360,7 @@
 <parametername><ref refid="classoni_1_1_o_n_i_exception" kindref="compound">ONIException</ref></parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Thrown when there is an error during hardware initialization (e.g. an invalid device table).</para>
+<para>Thrown when there is an error during hardware initialization (e.g., an invalid device table).</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>

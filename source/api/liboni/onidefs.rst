@@ -10,9 +10,6 @@ Macro and constant definitions common to both :ref:`oni.h` and :ref:`onidriver.h
 Integer Types
 ---------------------------------------
 
-.. warning:: All of these types will be almost certainly be deprecated in
-    future API revisions to handle drivers with different channel bit widths.
-
 .. type:: uint32_t oni_size_t
 
     Data sizes are 32-bit uints.
@@ -33,13 +30,9 @@ Integer Types
 
     Registers have 32-bit values.
 
-.. type:: uint32_t oni_fifo_dat_t
+.. type:: uint64_t oni_counter_t
 
-    FIFOs use 32-bit words.
-
-.. type:: uint64_t oni_fifo_time_t
-
-    FIFO bound timers use 64-bit words.
+    Counters use 64-bit words.
 
 .. _onidef_context_options:
 
