@@ -11,10 +11,10 @@ Preamble
 ~~~~~~~~
 The following information is required in the preamble:
 
-1. **Informal Device Name**: Name of the device. This field MUST contain only alphanumeric
-   characters and punctuation marks (i.e., ``?!*+-_~.()``). Other characters, including special
-   characters MUST NOT be used (e.g., ChipXYX, Chip XYX, and My~Chip-12ab!, are
-   all valid).
+1. **Informal Device Name**: Name of the device. This field MUST contain only
+   alphanumeric characters and punctuation marks (i.e., ``?!*+-_~.()``). Other
+   characters, including special characters MUST NOT be used (e.g., ChipXYX,
+   Chip XYX, and My~Chip-12ab!, are all valid).
 2. **Author(s)**: Device firmware or chip creator(s). Can be a person/people, or
    a company, group, or organization.
 3. **Device Version**: The :ref:`device version <dev-desc>` that this datasheet
@@ -41,9 +41,9 @@ clarity or if the manufacturer's datasheet is missing required information.
 
 Managed Registers
 ^^^^^^^^^^^^^^^^^
-If the device uses :ref:`managed registers <reg-type>`, a table that describes the
-managed register map is required. There are no formatting requirements for this
-table, but it MUST contain the following columns:
+If the device uses :ref:`managed registers <reg-type>`, a table that describes
+the managed register map is required. There are no formatting requirements for
+this table, but it MUST contain the following columns:
 
 -  **Address**: Register address within the :ref:`register map <dev-reg-map>`.
 -  **Name**: Human readable name for the register. Only capital ASCII letters

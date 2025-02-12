@@ -7,17 +7,17 @@ Read Channel
 -  **Channel type** : Stream
 -  **Direction** : Read
 
-The *read* channel provides high bandwidth communication from the controller to
+The read channel provides high bandwidth communication from the controller to
 the host computer. Data from the read stream of all devices that support it is
 aggregated and multiplexed by the controller and sent to the host through this
 channel in the form of :ref:`frame`.
 
-Data should be pushed to this channel as quickly as possible. It is the
-responsibility of the host computer to read data from the stream quickly enough
-to keep up with data production by the controller. Therefore, it is highly
-recommended that an ONI system implements some kind of internal buffering to
-ameliorate the effects of uneven reading times caused by computer operating
-systems or other software limitations.
+Data should be pushed to this channel by the controller as quickly as possible.
+It is the responsibility of the host computer to read data from the stream
+quickly enough to keep up with data production by the controller. Therefore, it
+is highly recommended that an ONI system implements some kind of internal
+buffering to ameliorate the effects of uneven read times caused by computer
+operating systems or other software limitations.
 
 .. _read-word-alignment:
 

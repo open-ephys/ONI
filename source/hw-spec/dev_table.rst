@@ -3,15 +3,18 @@
 Device Table
 ============
 The collection of :ref:`devices <device>` governed by a :ref:`controller
-<controller>` is referred to as a device table. The :ref:`controller <controller>`
-is responsible for creating this aggregate and sending it to the computer
-following a reset. The table consists of an :ref:`addressed <dev-address>` list
-of :ref:`device descriptors <dev-desc>`.
+<controller>` is referred to as a device table. The :ref:`controller
+<controller>` is responsible for creating the device table and sending it to the
+host following a reset. The device table is an read-only associative array
+of (:ref:`device address <dev-address>`, :ref:`device descriptor <dev-desc>`)
+pairs.
 
-.. list-table:: Example Device Table
+.. flat-table:: Example Device Table
    :header-rows: 1
 
-   * - Address
+   * - :ref:`Device Address <dev-address>`
+     - :cspan:`4` :ref:`Device Descriptor <dev-desc>`
+   * -
      - ID
      - Version
      - Read Sample Size (bytes)
@@ -32,18 +35,19 @@ of :ref:`device descriptors <dev-desc>`.
      - 8
      - 0
 
-.. note:: The ``Read_Sample_Size`` reported on the device table might differ from the 
-  one specified on the :term:`Device Datasheet` and :ref:`dev-desc` due to adjustments
-  required to comply to specific :ref:`hardware word size requirements<read-word-alignment>`.
-  In this case, the host must ignore the extra bytes and decode the data as specified on the
-  datasheet.
+.. note:: The Read Sample Size (``rd_samp_size``) within a :ref:`dev-desc` in the device table might
+   be larger than indicated on corresponding device datasheet's :ref:`dev-datasheet-read-format` due to adjustments required to comply to specific
+   :ref:`hardware word size requirements<read-word-alignment>`. In this case,
+   the host should ignore these extra bytes and decode the data as specified on
+   the datasheet.
 
 .. _dev-address:
 
 Device Address
 --------------
-Each :ref:`device descriptor <dev-desc>` entry in the device table requires a
-device address. This is a unique, 32-bit number with the following format:
+Each :ref:`device descriptor <dev-desc>`  in the device table is associated with
+a unique device address. The device address is a 32-bit number with the
+following format:
 
 ::
 

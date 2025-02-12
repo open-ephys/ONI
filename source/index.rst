@@ -11,8 +11,8 @@
 ========================================
 Open Neuro Interface
 ========================================
-ONI is a hardware specification and API that facilitates the creation of
-tools for neural data acquisition. This standard allows the creation of neural
+ONI is a hardware specification and API that facilitates the creation of tools
+for neural data acquisition. This standard allows the creation of neural
 recording devices that support **arbitrary mixtures of sensors, probes, and
 actuators**. The hope is that ONI will streamline the development of new
 hardware for neural data acquisition and guarantee interoperability between

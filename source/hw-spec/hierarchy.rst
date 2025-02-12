@@ -2,7 +2,6 @@
 
 Hardware Topology
 =========================
-
 Any ONI-compliant system is comprised of at least three hierarchical hardware
 elements:
 

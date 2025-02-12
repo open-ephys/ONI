@@ -2,9 +2,9 @@
 
 Glossary of Terms
 =================
-Here we provide glossary of terms used in this specification. A complete
-understanding of the term may require knowledge of interaction with other
-elements and/or its context within the specification.
+Below is a glossary of terms used in this specification. A complete
+understanding of a term may require additional knowledge of interactions with
+other elements and/or its context within the complete specification.
 
 .. glossary::
 
@@ -48,9 +48,9 @@ elements and/or its context within the specification.
     an integrated circuit) or a digital “core” that emulates this. Devices may
     or may not produce and/or accept :term:`streaming data <Stream Channel>`,
     but must implement a minimal :term:`register programming channel <Register
-    Channel>`. They must be documented, using a :term:`Device Datasheet`.
+    Channel>`. They must be documented using a :term:`Device Datasheet`.
     Devices are the endpoints for most communication operations and often are
-    the hardware interfacing with the physical environment.
+    hardware interfacing with the physical environment.
 
     .. seealso:: :ref:`Device Specification <device>`
 

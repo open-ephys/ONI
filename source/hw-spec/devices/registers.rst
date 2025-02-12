@@ -38,9 +38,9 @@ All register writes, regardless of reset behavior, MUST be immediate (i.e., for
 a Read/Write register, reading a register after being written must reflect the
 new value). However, the *effects* of a register might not occur until the next
 reset. An example of this type of behavior is registers that operate on the
-:ref:`device descriptor <dev-desc>`. The descriptor must be static during runtime,
-but registers affecting it might take action after a reset, providing an updated
-descriptor to the controller.
+:ref:`device descriptor <dev-desc>`. The descriptor must be static during
+runtime, but registers affecting it might take action after a reset, providing
+an updated descriptor to the controller.
 
 Register access, bit-field definitions, reset behavior, and time of effect MUST
 be specified in the hardware datasheet for raw registers or the :ref:`ONI Device
@@ -72,5 +72,6 @@ to 0x00007FFF, corresponding to the same address map of the underlying hardware,
 and managed registers start from 0x00008000. If no raw registers are present,
 managed registers start from 0x00000000 instead.
 
-The ``ENABLE`` register MUST be the first of the managed registers, at 0x00000000 if
-no raw registers are present, 0x00008000 if raw registers are implemented.
+The ``ENABLE`` register MUST be the first of the managed registers, at
+0x00000000 if no raw registers are present, 0x00008000 if raw registers are
+implemented.

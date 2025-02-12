@@ -7,7 +7,7 @@ physical element interfacing with the environment (e.g., an external sensor with
 a digital communication interface), something programmed within the firmware to
 emulate this (e.g., a digital logic module on an FPGA) or a purely internal data
 source (e.g., a controller based digital logic module that generates system
-status reports). A device exposes a set of :ref:`communication channels
+status reports). Each device exposes a set of :ref:`communication channels
 <com-channels>`:
 
 - It MUST expose a register interface
@@ -21,7 +21,7 @@ developers MUST provide a :ref:`datasheet <dev-datasheet>` describing the
 register map, stream data format, along with general behavior of the device in
 order to reach ONI-compliance.
 
-.. toctree:: 
+.. toctree::
    :hidden:
 
    devid

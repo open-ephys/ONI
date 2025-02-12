@@ -2,9 +2,9 @@
 
 Device ID
 =========
-Device implementations MUST declare a unique identification integer called a Device ID.
-Devices sharing an ID are assumed to be the same and share the same :ref:`dev-datasheet`.
-Device IDs are 32-bit integers with the following format:
+Device implementations MUST declare a unique identification integer called a
+Device ID. Devices sharing an ID are assumed to be the same and share the same
+:ref:`dev-datasheet`. Device IDs are 32-bit integers with the following format:
 
 ::
 
