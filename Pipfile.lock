@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8413f3d18f1017eba77af7a7c3daf9270857531819cf327a0194fc4e1ecdefde"
+            "sha256": "d61c8596e98f03451b1594c45e5525429828b633b4361e9d4144df540f7292ea"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -388,6 +388,15 @@
         "sphinx-csharp": {
             "git": "https://github.com/rogerbarton/sphinx-csharp.git",
             "ref": "1e4cf5d2cca28424ec836ed1989fd0f24b3e7172"
+        },
+        "sphinx-multiversion": {
+            "hashes": [
+                "sha256:5c38d5ce785a335d8c8d768b46509bd66bfb9c6252b93b700ca8c05317f207d6",
+                "sha256:5cd1ca9ecb5eed63cb8d6ce5e9c438ca13af4fa98e7eb6f376be541dd4990bcb",
+                "sha256:dec29f2a5890ad68157a790112edc0eb63140e70f9df0a363743c6258fbeb478"
+            ],
+            "index": "pypi",
+            "version": "==0.2.4"
         },
         "sphinx-tabs": {
             "hashes": [
