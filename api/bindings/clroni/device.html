@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Device &#8212; ONI</title>
   
@@ -34,9 +34,9 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/documentation_options.js?v=5c79bd3c"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/bindings/clroni/device';</script>
     <link rel="icon" href="../../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -416,16 +416,16 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="device">
-<span id="device-cs"></span><h1>Device<a class="headerlink" href="#device" title="Permalink to this heading">#</a></h1>
+<span id="device-cs"></span><h1>Device<a class="headerlink" href="#device" title="Link to this heading">#</a></h1>
 <dl class="cs struct">
 <dt class="sig sig-object cs" id="struct-oni.Device">
-<span class="target" id="structoni_1_1_device"></span><em class="property"><span class="pre">struct</span> </em><span class="sig-name descname"><span class="pre">oni.Device</span></span><a class="headerlink" href="#struct-oni.Device" title="Permalink to this definition">#</a></dt>
+<span class="target" id="structoni_1_1_device"></span><em class="property"><span class="pre">struct</span> </em><span class="sig-name descname"><span class="pre">oni.Device</span></span><a class="headerlink" href="#struct-oni.Device" title="Link to this definition">#</a></dt>
 <dd><p>Managed wrapper for the native API’s oni_device_t. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cs var">
 <dt class="sig sig-object cs" id="var-oni.Device.Address">
-<span class="target" id="structoni_1_1_device_1a66ecf6d5fbbcd857605dde6a16e8c120"></span><em class="property"><span class="pre">readonly</span></em> <span class="pre">uint</span> <span class="sig-name descname"><span class="pre">Address</span></span><a class="headerlink" href="#var-oni.Device.Address" title="Permalink to this definition">#</a></dt>
+<span class="target" id="structoni_1_1_device_1a66ecf6d5fbbcd857605dde6a16e8c120"></span><em class="property"><span class="pre">readonly</span></em> <span class="pre">uint</span> <span class="sig-name descname"><span class="pre">Address</span></span><a class="headerlink" href="#var-oni.Device.Address" title="Link to this definition">#</a></dt>
 <dd><p>Fully-qualified <strong>RSV.RSV.HUB.IDX</strong> <a class="reference internal" href="context.html#classoni_1_1_context_1ad61ee2c0ecba30708117ef70844ed785"><span class="std std-ref">Context.DeviceTable</span></a> device table address. </p>
 <p><ul class="simple">
 <li><p><strong>RSV</strong>: 8-bit unsigned integer (reserved)</p></li>
@@ -437,25 +437,25 @@ document.write(`
 
 <dl class="cs var">
 <dt class="sig sig-object cs" id="var-oni.Device.ID">
-<span class="target" id="structoni_1_1_device_1a1bb38ab58eeb2110ba7f6c3a3896d690"></span><em class="property"><span class="pre">readonly</span></em> <span class="pre">int</span> <span class="sig-name descname"><span class="pre">ID</span></span><a class="headerlink" href="#var-oni.Device.ID" title="Permalink to this definition">#</a></dt>
+<span class="target" id="structoni_1_1_device_1a1bb38ab58eeb2110ba7f6c3a3896d690"></span><em class="property"><span class="pre">readonly</span></em> <span class="pre">int</span> <span class="sig-name descname"><span class="pre">ID</span></span><a class="headerlink" href="#var-oni.Device.ID" title="Link to this definition">#</a></dt>
 <dd><p><a class="reference internal" href="#structoni_1_1_device"><span class="std std-ref">Device</span></a> ID </p>
 </dd></dl>
 
 <dl class="cs var">
 <dt class="sig sig-object cs" id="var-oni.Device.Version">
-<span class="target" id="structoni_1_1_device_1a383a45d17c98b5dc774c5c4e1560227f"></span><em class="property"><span class="pre">readonly</span></em> <span class="pre">uint</span> <span class="sig-name descname"><span class="pre">Version</span></span><a class="headerlink" href="#var-oni.Device.Version" title="Permalink to this definition">#</a></dt>
+<span class="target" id="structoni_1_1_device_1a383a45d17c98b5dc774c5c4e1560227f"></span><em class="property"><span class="pre">readonly</span></em> <span class="pre">uint</span> <span class="sig-name descname"><span class="pre">Version</span></span><a class="headerlink" href="#var-oni.Device.Version" title="Link to this definition">#</a></dt>
 <dd><p><a class="reference internal" href="#structoni_1_1_device"><span class="std std-ref">Device</span></a> firmware version </p>
 </dd></dl>
 
 <dl class="cs var">
 <dt class="sig sig-object cs" id="var-oni.Device.ReadSize">
-<span class="target" id="structoni_1_1_device_1ad106399633977d21d05a2d9f91706826"></span><em class="property"><span class="pre">readonly</span></em> <span class="pre">uint</span> <span class="sig-name descname"><span class="pre">ReadSize</span></span><a class="headerlink" href="#var-oni.Device.ReadSize" title="Permalink to this definition">#</a></dt>
+<span class="target" id="structoni_1_1_device_1ad106399633977d21d05a2d9f91706826"></span><em class="property"><span class="pre">readonly</span></em> <span class="pre">uint</span> <span class="sig-name descname"><span class="pre">ReadSize</span></span><a class="headerlink" href="#var-oni.Device.ReadSize" title="Link to this definition">#</a></dt>
 <dd><p>Input <a class="reference internal" href="frame.html#classoni_1_1_frame"><span class="std std-ref">Frame</span></a> read size </p>
 </dd></dl>
 
 <dl class="cs var">
 <dt class="sig sig-object cs" id="var-oni.Device.WriteSize">
-<span class="target" id="structoni_1_1_device_1a94a09f74de8de3da1ee4c4c0e512fc81"></span><em class="property"><span class="pre">readonly</span></em> <span class="pre">uint</span> <span class="sig-name descname"><span class="pre">WriteSize</span></span><a class="headerlink" href="#var-oni.Device.WriteSize" title="Permalink to this definition">#</a></dt>
+<span class="target" id="structoni_1_1_device_1a94a09f74de8de3da1ee4c4c0e512fc81"></span><em class="property"><span class="pre">readonly</span></em> <span class="pre">uint</span> <span class="sig-name descname"><span class="pre">WriteSize</span></span><a class="headerlink" href="#var-oni.Device.WriteSize" title="Link to this definition">#</a></dt>
 <dd><p>Output <a class="reference internal" href="frame.html#classoni_1_1_frame"><span class="std std-ref">Frame</span></a> write size. </p>
 </dd></dl>
 
@@ -464,7 +464,7 @@ document.write(`
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-properties">Properties</p>
 <dl class="cs property">
 <dt class="sig sig-object cs" id="property-oni.Device.Description">
-<span class="target" id="structoni_1_1_device_1a3cdad05e0e2ed0be20578d049ad8458a"></span><span class="pre">string</span> <span class="sig-name descname"><span class="pre">Description</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-oni.Device.Description" title="Permalink to this definition">#</a></dt>
+<span class="target" id="structoni_1_1_device_1a3cdad05e0e2ed0be20578d049ad8458a"></span><span class="pre">string</span> <span class="sig-name descname"><span class="pre">Description</span></span> <span class="pre">{</span> <em class="property"><span class="pre">get;</span> <span class="pre">set;</span></em> <span class="pre">}</span><a class="headerlink" href="#property-oni.Device.Description" title="Link to this definition">#</a></dt>
 <dd><p>Retrieve a human readable description of the <a class="reference internal" href="#structoni_1_1_device_1a1bb38ab58eeb2110ba7f6c3a3896d690"><span class="std std-ref">Device.ID</span></a>. </p>
 </dd></dl>
 
@@ -561,7 +561,7 @@ document.write(`
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2010-2024, Open Ephys &amp; Contributors.
+      © Copyright 2010-2025, Open Ephys &amp; Contributors.
       <br/>
     
   </p>

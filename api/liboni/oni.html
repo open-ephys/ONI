@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>oni.h &#8212; ONI</title>
   
@@ -34,9 +34,9 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/documentation_options.js?v=5c79bd3c"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/liboni/oni';</script>
     <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -411,31 +411,31 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="oni-h">
-<span id="id1"></span><h1>oni.h<a class="headerlink" href="#oni-h" title="Permalink to this heading">#</a></h1>
+<span id="id1"></span><h1>oni.h<a class="headerlink" href="#oni-h" title="Link to this heading">#</a></h1>
 <section id="version-macros">
-<h2>Version Macros<a class="headerlink" href="#version-macros" title="Permalink to this heading">#</a></h2>
+<h2>Version Macros<a class="headerlink" href="#version-macros" title="Link to this heading">#</a></h2>
 <p>See <a class="reference external" href="https://semver.org/">https://semver.org/</a> for a complete explanation of these macro definitions.</p>
 <dl class="c macro">
 <dt class="sig sig-object c" id="c.ONI_VERSION_MAJOR">
-<span class="sig-name descname"><span class="n"><span class="pre">ONI_VERSION_MAJOR</span></span></span><a class="headerlink" href="#c.ONI_VERSION_MAJOR" title="Permalink to this definition">#</a><br /></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_VERSION_MAJOR</span></span></span><a class="headerlink" href="#c.ONI_VERSION_MAJOR" title="Link to this definition">#</a><br /></dt>
 <dd><p>MAJOR version for incompatible API changes</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt class="sig sig-object c" id="c.ONI_VERSION_MINOR">
-<span class="sig-name descname"><span class="n"><span class="pre">ONI_VERSION_MINOR</span></span></span><a class="headerlink" href="#c.ONI_VERSION_MINOR" title="Permalink to this definition">#</a><br /></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_VERSION_MINOR</span></span></span><a class="headerlink" href="#c.ONI_VERSION_MINOR" title="Link to this definition">#</a><br /></dt>
 <dd><p>MINOR version for added functionality that is backwards compatible</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt class="sig sig-object c" id="c.ONI_VERSION_PATCH">
-<span class="sig-name descname"><span class="n"><span class="pre">ONI_VERSION_PATCH</span></span></span><a class="headerlink" href="#c.ONI_VERSION_PATCH" title="Permalink to this definition">#</a><br /></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_VERSION_PATCH</span></span></span><a class="headerlink" href="#c.ONI_VERSION_PATCH" title="Link to this definition">#</a><br /></dt>
 <dd><p>PATCH version for backwards compatible bug fixes</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt class="sig sig-object c" id="c.ONI_MAKE_VERSION">
-<span class="sig-name descname"><span class="n"><span class="pre">ONI_MAKE_VERSION</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">major</span></span>, <span class="n"><span class="pre">minor</span></span>, <span class="n"><span class="pre">patch</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ONI_MAKE_VERSION" title="Permalink to this definition">#</a><br /></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_MAKE_VERSION</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">major</span></span>, <span class="n"><span class="pre">minor</span></span>, <span class="n"><span class="pre">patch</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ONI_MAKE_VERSION" title="Link to this definition">#</a><br /></dt>
 <dd><p>Defined as</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">MAJOR</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">MINOR</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">PATCH</span>
 </pre></div>
@@ -445,7 +445,7 @@ document.write(`
 
 <dl class="c macro">
 <dt class="sig sig-object c" id="c.ONI_VERSION">
-<span class="sig-name descname"><span class="n"><span class="pre">ONI_VERSION</span></span></span><a class="headerlink" href="#c.ONI_VERSION" title="Permalink to this definition">#</a><br /></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_VERSION</span></span></span><a class="headerlink" href="#c.ONI_VERSION" title="Link to this definition">#</a><br /></dt>
 <dd><p>Compile-time API version. Defined as</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ONI_MAKE_VERSION</span><span class="p">(</span><span class="n">ONI_VERSION_MAJOR</span><span class="w"> </span><span class="n">ONI_VERSION_MINOR</span><span class="p">,</span><span class="w"> </span><span class="n">ONI_VERSION_PATCH</span><span class="p">).</span>
 </pre></div>
@@ -454,10 +454,10 @@ document.write(`
 
 </section>
 <section id="acquisition-context">
-<span id="oni-h-acquisition-context"></span><h2>Acquisition Context<a class="headerlink" href="#acquisition-context" title="Permalink to this heading">#</a></h2>
+<span id="oni-h-acquisition-context"></span><h2>Acquisition Context<a class="headerlink" href="#acquisition-context" title="Link to this heading">#</a></h2>
 <dl class="c type">
 <dt class="sig sig-object c" id="c.oni_ctx">
-<span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">oni_ctx_impl</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">oni_ctx</span></span></span><a class="headerlink" href="#c.oni_ctx" title="Permalink to this definition">#</a><br /></dt>
+<span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">oni_ctx_impl</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">oni_ctx</span></span></span><a class="headerlink" href="#c.oni_ctx" title="Link to this definition">#</a><br /></dt>
 <dd><p>An ONI-compliant acquisition context implementation. <a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><code class="xref c c-type docutils literal notranslate"><span class="pre">oni_ctx</span></code></a> is an
 opaque handle to a structure which manages hardware state.</p>
 <div class="admonition attention">
@@ -489,13 +489,13 @@ uy transitioning the context run state to <code class="docutils literal notransl
 
 </section>
 <section id="device">
-<span id="oni-h-device"></span><h2>Device<a class="headerlink" href="#device" title="Permalink to this heading">#</a></h2>
+<span id="oni-h-device"></span><h2>Device<a class="headerlink" href="#device" title="Link to this heading">#</a></h2>
 <dl class="c struct">
 <dt class="sig sig-object c" id="c.oni_device_t">
-<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_device_t</span></span></span><a class="headerlink" href="#c.oni_device_t" title="Permalink to this definition">#</a><br /></dt>
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_device_t</span></span></span><a class="headerlink" href="#c.oni_device_t" title="Link to this definition">#</a><br /></dt>
 <dd><dl class="c member">
 <dt class="sig sig-object c" id="c.oni_device_t.idx">
-<a class="reference internal" href="onidefs.html#c.oni_size_t" title="oni_size_t"><span class="n"><span class="pre">oni_size_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">idx</span></span></span><a class="headerlink" href="#c.oni_device_t.idx" title="Permalink to this definition">#</a><br /></dt>
+<a class="reference internal" href="onidefs.html#c.oni_size_t" title="oni_size_t"><span class="n"><span class="pre">oni_size_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">idx</span></span></span><a class="headerlink" href="#c.oni_device_t.idx" title="Link to this definition">#</a><br /></dt>
 <dd><p>Fully qualified <strong>RSV.RSV.HUB.IDX</strong> device table index.</p>
 <dl class="field-list simple">
 <dt class="field-odd">RSV<span class="colon">:</span></dt>
@@ -512,19 +512,19 @@ uy transitioning the context run state to <code class="docutils literal notransl
 
 <dl class="c member">
 <dt class="sig sig-object c" id="c.oni_device_t.id">
-<a class="reference internal" href="onidefs.html#c.oni_dev_id_t" title="oni_dev_id_t"><span class="n"><span class="pre">oni_dev_id_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">id</span></span></span><a class="headerlink" href="#c.oni_device_t.id" title="Permalink to this definition">#</a><br /></dt>
+<a class="reference internal" href="onidefs.html#c.oni_dev_id_t" title="oni_dev_id_t"><span class="n"><span class="pre">oni_dev_id_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">id</span></span></span><a class="headerlink" href="#c.oni_device_t.id" title="Link to this definition">#</a><br /></dt>
 <dd><p>Device ID number (see <a class="reference internal" href="onix.html#onix-h"><span class="std std-ref">onix.h</span></a> for ONIX-specific definitions).</p>
 </dd></dl>
 
 <dl class="c member">
 <dt class="sig sig-object c" id="c.oni_device_t.read_size">
-<a class="reference internal" href="onidefs.html#c.oni_size_t" title="oni_size_t"><span class="n"><span class="pre">oni_size_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read_size</span></span></span><a class="headerlink" href="#c.oni_device_t.read_size" title="Permalink to this definition">#</a><br /></dt>
+<a class="reference internal" href="onidefs.html#c.oni_size_t" title="oni_size_t"><span class="n"><span class="pre">oni_size_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read_size</span></span></span><a class="headerlink" href="#c.oni_device_t.read_size" title="Link to this definition">#</a><br /></dt>
 <dd><p>Device data read size per frame in bytes.</p>
 </dd></dl>
 
 <dl class="c member">
 <dt class="sig sig-object c" id="c.oni_device_t.write_size">
-<a class="reference internal" href="onidefs.html#c.oni_size_t" title="oni_size_t"><span class="n"><span class="pre">oni_size_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write_size</span></span></span><a class="headerlink" href="#c.oni_device_t.write_size" title="Permalink to this definition">#</a><br /></dt>
+<a class="reference internal" href="onidefs.html#c.oni_size_t" title="oni_size_t"><span class="n"><span class="pre">oni_size_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write_size</span></span></span><a class="headerlink" href="#c.oni_device_t.write_size" title="Link to this definition">#</a><br /></dt>
 <dd><p>Device data write size per frame in bytes.</p>
 </dd></dl>
 
@@ -545,35 +545,33 @@ a call to <a class="reference internal" href="#c.oni_init_ctx" title="oni_init_c
 
 </section>
 <section id="frame">
-<span id="oni-h-frame"></span><h2>Frame<a class="headerlink" href="#frame" title="Permalink to this heading">#</a></h2>
+<span id="oni-h-frame"></span><h2>Frame<a class="headerlink" href="#frame" title="Link to this heading">#</a></h2>
 <dl class="c struct">
 <dt class="sig sig-object c" id="c.oni_frame_t">
-<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_frame_t</span></span></span><a class="headerlink" href="#c.oni_frame_t" title="Permalink to this definition">#</a><br /></dt>
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_frame_t</span></span></span><a class="headerlink" href="#c.oni_frame_t" title="Link to this definition">#</a><br /></dt>
 <dd><dl class="c member">
-<dt class="sig sig-object c" id="c.oni_frame_t.time">
-<span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="onidefs.html#c.oni_fifo_time_t" title="oni_fifo_time_t"><span class="n"><span class="pre">oni_fifo_time_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">time</span></span></span><a class="headerlink" href="#c.oni_frame_t.time" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Frame time (<a class="reference internal" href="onidefs.html#c.&#64;ctx_opts_enum.ONI_OPT_ACQCLKHZ" title="ONI_OPT_ACQCLKHZ"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_ACQCLKHZ</span></code></a> host clock counter).</p>
-</dd></dl>
-
-<dl class="c member">
 <dt class="sig sig-object c" id="c.oni_frame_t.dev_idx">
-<span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="onidefs.html#c.oni_fifo_dat_t" title="oni_fifo_dat_t"><span class="n"><span class="pre">oni_fifo_dat_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dev_idx</span></span></span><a class="headerlink" href="#c.oni_frame_t.dev_idx" title="Permalink to this definition">#</a><br /></dt>
+<span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="onidefs.html#c.oni_size_t" title="oni_size_t"><span class="n"><span class="pre">oni_size_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dev_idx</span></span></span><a class="headerlink" href="#c.oni_frame_t.dev_idx" title="Link to this definition">#</a><br /></dt>
 <dd><p>Device index that produced or accepts the frame.</p>
 </dd></dl>
 
 <dl class="c member">
+<dt class="sig sig-object c" id="c.oni_frame_t.acqclk_cnt">
+<span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="onidefs.html#c.oni_counter_t" title="oni_counter_t"><span class="n"><span class="pre">oni_counter_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">acqclk_cnt</span></span></span><a class="headerlink" href="#c.oni_frame_t.acqclk_cnt" title="Link to this definition">#</a><br /></dt>
+<dd><p>Acquisition clock (<a class="reference internal" href="onidefs.html#c.&#64;ctx_opts_enum.ONI_OPT_ACQCLKHZ" title="ONI_OPT_ACQCLKHZ"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_OPT_ACQCLKHZ</span></code></a>) count at the time
+of frame creation.</p>
+</dd></dl>
+
+<dl class="c member">
 <dt class="sig sig-object c" id="c.oni_frame_t.data_sz">
-<span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="onidefs.html#c.oni_fifo_dat_t" title="oni_fifo_dat_t"><span class="n"><span class="pre">oni_fifo_dat_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">data_sz</span></span></span><a class="headerlink" href="#c.oni_frame_t.data_sz" title="Permalink to this definition">#</a><br /></dt>
+<span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">oni_fifo_dat_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">data_sz</span></span></span><a class="headerlink" href="#c.oni_frame_t.data_sz" title="Link to this definition">#</a><br /></dt>
 <dd><p>Size of data in bytes.</p>
 </dd></dl>
 
 <dl class="c member">
 <dt class="sig sig-object c" id="c.oni_frame_t.data">
-<span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">data</span></span></span><a class="headerlink" href="#c.oni_frame_t.data" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Raw data block. This pointer is a zero-copy “view” into a private,
-referenced-counted buffer managed by the acquisition context.  The
-handle to this buffer is hidden by the API using some C <code class="docutils literal notranslate"><span class="pre">union</span></code>
-magic.</p>
+<span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">data</span></span></span><a class="headerlink" href="#c.oni_frame_t.data" title="Link to this definition">#</a><br /></dt>
+<dd><p>Pointer to a <code class="docutils literal notranslate"><span class="pre">data_sz</span></code>-byte continuous data block.</p>
 </dd></dl>
 
 <p>An ONI-compliant data frame implementation. <a class="reference internal" href="#c.oni_frame_t" title="oni_frame_t"><code class="xref c c-struct docutils literal notranslate"><span class="pre">oni_frame_t</span></code></a>’s are
@@ -597,7 +595,7 @@ produced by calls to <a class="reference internal" href="#c.oni_read_frame" titl
 
 </section>
 <section id="functions">
-<span id="oni-h-functions"></span><h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
+<span id="oni-h-functions"></span><h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
 <p>The functions in <a class="reference internal" href="#oni-h"><span class="std std-ref">oni.h</span></a> form the basis of the API and are all that is
 needed during the development of user-facing software.</p>
 <dl>
@@ -635,7 +633,7 @@ needed during the development of user-facing software.</p>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_create_ctx">
-<a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_create_ctx</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">drv_name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_create_ctx" title="Permalink to this definition">#</a><br /></dt>
+<a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_create_ctx</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">drv_name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_create_ctx" title="Link to this definition">#</a><br /></dt>
 <dd><p>Creates an acquisition context, <a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><code class="xref c c-type docutils literal notranslate"><span class="pre">oni_ctx</span></code></a>, which is an opaque handle
 to a structure that manages device drivers, the device table, data
 streaming, memory management, etc. On success the selected driver is loaded
@@ -674,7 +672,7 @@ successful. Otherwise it shall return <code class="docutils literal notranslate"
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_init_ctx">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_init_ctx</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">host_idx</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_init_ctx" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_init_ctx</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">host_idx</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_init_ctx" title="Link to this definition">#</a><br /></dt>
 <dd><p>Initialize an acquisition context. This function initializes the selected
 device driver, opens all communication channels, and acquires a device
 table that maps out the device control and streaming hierarchy.
@@ -710,7 +708,7 @@ single ONIX host managed by driver selected in <a class="reference internal" hre
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_destroy_ctx">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_destroy_ctx</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_destroy_ctx" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_destroy_ctx</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_destroy_ctx" title="Link to this definition">#</a><br /></dt>
 <dd><p>Terminate a context and free bound resources. During context destruction,
 all resources allocated by <a class="reference internal" href="#c.oni_create_ctx" title="oni_create_ctx"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_create_ctx()</span></code></a> and <a class="reference internal" href="#c.oni_init_ctx" title="oni_init_ctx"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_init_ctx()</span></code></a>
 are freed. This function can be called from any context run state. When
@@ -734,7 +732,7 @@ data buffers, etc.) are closed and their resources freed.</p>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_get_opt">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_get_opt</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">option</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_get_opt" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_get_opt</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">option</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_get_opt" title="Link to this definition">#</a><br /></dt>
 <dd><p>Retrieves the option specified by the <code class="docutils literal notranslate"><span class="pre">option</span></code> argument within the
 acquisition context <code class="docutils literal notranslate"><span class="pre">ctx</span></code> and stores it in the <code class="docutils literal notranslate"><span class="pre">value</span></code> buffer. The
 <code class="docutils literal notranslate"><span class="pre">size</span></code> provides a pointer to the size of the <code class="docutils literal notranslate"><span class="pre">value</span></code> buffer, in bytes.
@@ -776,7 +774,7 @@ null character, if applicable) in bytes.</p></li>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_set_opt">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_set_opt</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">option</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_set_opt" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_set_opt</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">option</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_set_opt" title="Link to this definition">#</a><br /></dt>
 <dd><p>Sets the option specified by the <code class="docutils literal notranslate"><span class="pre">option</span></code> argument within the acquisition
 context <code class="docutils literal notranslate"><span class="pre">ctx</span></code> to the contents of the  <code class="docutils literal notranslate"><span class="pre">value</span></code> buffer. The <code class="docutils literal notranslate"><span class="pre">size</span></code>
 indicates the size of the <code class="docutils literal notranslate"><span class="pre">value</span></code> buffer, in bytes.  Upon successful
@@ -815,7 +813,7 @@ character, if applicable) in bytes.</p></li>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_get_driver_opt">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_get_driver_opt</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">drv_opt</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_get_driver_opt" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_get_driver_opt</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">drv_opt</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_get_driver_opt" title="Link to this definition">#</a><br /></dt>
 <dd><div class="admonition-todo admonition" id="id2">
 <p class="admonition-title">Todo</p>
 <p>Document</p>
@@ -824,7 +822,7 @@ character, if applicable) in bytes.</p></li>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_set_driver_opt">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_set_driver_opt</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">drv_opt</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_set_driver_opt" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_set_driver_opt</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">drv_opt</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_set_driver_opt" title="Link to this definition">#</a><br /></dt>
 <dd><div class="admonition-todo admonition" id="id3">
 <p class="admonition-title">Todo</p>
 <p>Document</p>
@@ -833,12 +831,12 @@ character, if applicable) in bytes.</p></li>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_read_reg">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_read_reg</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span>, <a class="reference internal" href="onidefs.html#c.oni_dev_idx_t" title="oni_dev_idx_t"><span class="n"><span class="pre">oni_dev_idx_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">dev_idx</span></span>, <a class="reference internal" href="onidefs.html#c.oni_reg_addr_t" title="oni_reg_addr_t"><span class="n"><span class="pre">oni_reg_addr_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">addr</span></span>, <a class="reference internal" href="onidefs.html#c.oni_reg_val_t" title="oni_reg_val_t"><span class="n"><span class="pre">oni_reg_val_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_read_reg" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_read_reg</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span>, <a class="reference internal" href="onidefs.html#c.oni_dev_idx_t" title="oni_dev_idx_t"><span class="n"><span class="pre">oni_dev_idx_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">dev_idx</span></span>, <a class="reference internal" href="onidefs.html#c.oni_reg_addr_t" title="oni_reg_addr_t"><span class="n"><span class="pre">oni_reg_addr_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">addr</span></span>, <a class="reference internal" href="onidefs.html#c.oni_reg_val_t" title="oni_reg_val_t"><span class="n"><span class="pre">oni_reg_val_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_read_reg" title="Link to this definition">#</a><br /></dt>
 <dd><p>Read the value of a configuration register from a specific device within the
 current device table. This can be used to verify the success of calls to
 <a class="reference internal" href="#c.oni_write_reg" title="oni_write_reg"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_write_reg()</span></code></a> or to obtain state information about devices managed
 by the current acquisition context. Register specifications (addresses,
-read- and write-access, and descriptions) are provided on the <a class="reference internal" href="../../hw-spec/devices.html#dev-datasheet"><span class="std std-ref">ONI-device
+read- and write-access, and descriptions) are provided on the <a class="reference internal" href="../../hw-spec/devices/datasheet.html#dev-datasheet"><span class="std std-ref">ONI-device
 datasheet</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -861,13 +859,13 @@ of the register at <code class="docutils literal notranslate"><span class="pre">
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_write_reg">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_write_reg</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span>, <a class="reference internal" href="onidefs.html#c.oni_dev_idx_t" title="oni_dev_idx_t"><span class="n"><span class="pre">oni_dev_idx_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">dev_idx</span></span>, <a class="reference internal" href="onidefs.html#c.oni_reg_addr_t" title="oni_reg_addr_t"><span class="n"><span class="pre">oni_reg_addr_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">addr</span></span>, <a class="reference internal" href="onidefs.html#c.oni_reg_val_t" title="oni_reg_val_t"><span class="n"><span class="pre">oni_reg_val_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_write_reg" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_write_reg</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span>, <a class="reference internal" href="onidefs.html#c.oni_dev_idx_t" title="oni_dev_idx_t"><span class="n"><span class="pre">oni_dev_idx_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">dev_idx</span></span>, <a class="reference internal" href="onidefs.html#c.oni_reg_addr_t" title="oni_reg_addr_t"><span class="n"><span class="pre">oni_reg_addr_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">addr</span></span>, <a class="reference internal" href="onidefs.html#c.oni_reg_val_t" title="oni_reg_val_t"><span class="n"><span class="pre">oni_reg_val_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_write_reg" title="Link to this definition">#</a><br /></dt>
 <dd><p>Change the value of a configuration register from specific devices within
 the current device table. This can be used to change the functionality of
-devices, e.g. set filter bandwidth, select active channels, or change
+devices, e.g., set filter bandwidth, select active channels, or change
 stimulation parameters.  Register specifications (addresses, read- and
 write-access, acceptable values, and descriptions) are provided on the
-<a class="reference internal" href="../../hw-spec/devices.html#dev-datasheet"><span class="std std-ref">ONI-device datasheet</span></a>.</p>
+<a class="reference internal" href="../../hw-spec/devices/datasheet.html#dev-datasheet"><span class="std std-ref">ONI-device datasheet</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -888,7 +886,7 @@ write-access, acceptable values, and descriptions) are provided on the
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_read_frame">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_read_frame</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span>, <a class="reference internal" href="#c.oni_frame_t" title="oni_frame_t"><span class="n"><span class="pre">oni_frame_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">frame</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_read_frame" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_read_frame</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span>, <a class="reference internal" href="#c.oni_frame_t" title="oni_frame_t"><span class="n"><span class="pre">oni_frame_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">frame</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_read_frame" title="Link to this definition">#</a><br /></dt>
 <dd><p>Read high-bandwidth data from the data input channel.
 <a class="reference internal" href="#c.oni_read_frame" title="oni_read_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_read_frame()</span></code></a> allocates host memory and populates it with a single
 <a class="reference internal" href="#c.oni_frame_t" title="oni_frame_t"><code class="xref c c-struct docutils literal notranslate"><span class="pre">oni_frame_t</span></code></a> struct using the data input stream. This call will
@@ -898,7 +896,7 @@ underlying block buffer (see <a class="reference internal" href="onidefs.html#c.
 calls to <a class="reference internal" href="#c.oni_read_frame" title="oni_read_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_read_frame()</span></code></a> are zero-copy views into this buffer.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>It is the user’s responsibility to free the resources allocated by
+<p>It is the caller’s responsibility to free the resources allocated by
 this call by passing the resulting frame pointer to
 <a class="reference internal" href="#c.oni_destroy_frame" title="oni_destroy_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_destroy_frame()</span></code></a>.</p>
 </div>
@@ -921,11 +919,11 @@ channel that the frame will be read from.</p></li>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_create_frame">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_create_frame</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span>, <a class="reference internal" href="#c.oni_frame_t" title="oni_frame_t"><span class="n"><span class="pre">oni_frame_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">frame</span></span>, <a class="reference internal" href="onidefs.html#c.oni_dev_idx_t" title="oni_dev_idx_t"><span class="n"><span class="pre">oni_dev_idx_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">dev_idx</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">data</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">data_sz</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_create_frame" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_create_frame</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span>, <a class="reference internal" href="#c.oni_frame_t" title="oni_frame_t"><span class="n"><span class="pre">oni_frame_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">frame</span></span>, <a class="reference internal" href="onidefs.html#c.oni_dev_idx_t" title="oni_dev_idx_t"><span class="n"><span class="pre">oni_dev_idx_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">dev_idx</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">data</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">data_sz</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_create_frame" title="Link to this definition">#</a><br /></dt>
 <dd><p>Create an <a class="reference internal" href="#c.oni_frame_t" title="oni_frame_t"><code class="xref c c-struct docutils literal notranslate"><span class="pre">oni_frame_t</span></code></a> for consumption by <a class="reference internal" href="#c.oni_write_frame" title="oni_write_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_write_frame()</span></code></a>.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>It is the user’s responsibility to free the resources allocated by
+<p>It is the caller’s responsibility to free the resources allocated by
 this call by passing the resulting frame pointer to
 <a class="reference internal" href="#c.oni_destroy_frame" title="oni_destroy_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_destroy_frame()</span></code></a></p>
 </div>
@@ -962,7 +960,7 @@ indicated within the device table</p></li>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_write_frame">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_write_frame</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_frame_t" title="oni_frame_t"><span class="n"><span class="pre">oni_frame_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">frame</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_write_frame" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_write_frame</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_frame_t" title="oni_frame_t"><span class="n"><span class="pre">oni_frame_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">frame</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_write_frame" title="Link to this definition">#</a><br /></dt>
 <dd><p>Write an <a class="reference internal" href="#c.oni_frame_t" title="oni_frame_t"><code class="xref c c-struct docutils literal notranslate"><span class="pre">oni_frame_t</span></code></a> to a particular device within the device
 table using the high-bandwidth output channel.</p>
 <dl class="field-list simple">
@@ -992,7 +990,7 @@ applications.</p>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_destroy_frame">
-<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_destroy_frame</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_frame_t" title="oni_frame_t"><span class="n"><span class="pre">oni_frame_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">frame</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_destroy_frame" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_destroy_frame</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_frame_t" title="oni_frame_t"><span class="n"><span class="pre">oni_frame_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">frame</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_destroy_frame" title="Link to this definition">#</a><br /></dt>
 <dd><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Each call to <a class="reference internal" href="#c.oni_create_frame" title="oni_create_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_create_frame()</span></code></a> or <a class="reference internal" href="#c.oni_read_frame" title="oni_read_frame"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_read_frame()</span></code></a>
@@ -1003,7 +1001,7 @@ leaks.</p>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_version">
-<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_version</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">major</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">minor</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">patch</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_version" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_version</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">major</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">minor</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">patch</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_version" title="Link to this definition">#</a><br /></dt>
 <dd><p>Report the liboni library version. This library uses <a class="reference external" href="https://semver.org/">Semantic Versioning</a>. Briefly, the major revision is for incompatible API
 changes. Minor version is for backwards compatible changes. The patch
 number is for backwards compatible bug fixes. When this function returns,
@@ -1021,7 +1019,7 @@ input pointers will reference the library’s version.</p>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_get_driver_info">
-<a class="reference internal" href="onidefs.html#c.oni_driver_info_t" title="oni_driver_info_t"><span class="n"><span class="pre">oni_driver_info_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">oni_get_driver_info</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_get_driver_info" title="Permalink to this definition">#</a><br /></dt>
+<a class="reference internal" href="onidefs.html#c.oni_driver_info_t" title="oni_driver_info_t"><span class="n"><span class="pre">oni_driver_info_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">oni_get_driver_info</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.oni_ctx" title="oni_ctx"><span class="n"><span class="pre">oni_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">ctx</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_get_driver_info" title="Link to this definition">#</a><br /></dt>
 <dd><p>Reports a <a class="reference internal" href="onidefs.html#oni-driver-info-t"><span class="std std-ref">Driver Information</span></a> structure containing the name of the
 driver translator loaded for a given context as well as its semantic versioning
 version.</p>
@@ -1040,7 +1038,7 @@ will be reported.</p></li>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_error_str">
-<span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">oni_error_str</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">err</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_error_str" title="Permalink to this definition">#</a><br /></dt>
+<span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">oni_error_str</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">err</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_error_str" title="Link to this definition">#</a><br /></dt>
 <dd><p>Convert a return code (see <a class="reference internal" href="onidefs.html#onidef-error-codes"><span class="std std-ref">Error Codes</span></a>) into a human readable
 string.</p>
 <dl class="field-list simple">
@@ -1157,7 +1155,7 @@ string.</p>
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2010-2024, Open Ephys &amp; Contributors.
+      © Copyright 2010-2025, Open Ephys &amp; Contributors.
       <br/>
     
   </p>

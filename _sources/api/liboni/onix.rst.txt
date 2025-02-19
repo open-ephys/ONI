@@ -15,8 +15,8 @@ ONI specification and are not required to use the API.
 .. attention:: Many of the devices in this enumeration have no ready-made route
     to use in high-level software. This is true for a variety of reasons. For
     instance, they may be prototype hardware or test fixture that we wish to
-    maintain for backward compatibility (e.g. :macro:`ONIX_TESTREG0`). Or, they
-    may be a low level device (e.g. :macro:`ONIX_AD7617`) that is used in the
+    maintain for backward compatibility (e.g., :macro:`ONIX_TESTREG0`). Or, they
+    may be a low level device (e.g., :macro:`ONIX_AD7617`) that is used in the
     background by other, higher order devices in the list (e.g.
     :macro:`ONIX_FMCANALOG1R3`).
 

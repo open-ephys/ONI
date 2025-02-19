@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>onidriver.h &#8212; ONI</title>
   
@@ -34,9 +34,9 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/documentation_options.js?v=5c79bd3c"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/liboni/onidriver';</script>
     <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -411,24 +411,24 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="onidriver-h">
-<span id="id1"></span><h1>onidriver.h<a class="headerlink" href="#onidriver-h" title="Permalink to this heading">#</a></h1>
+<span id="id1"></span><h1>onidriver.h<a class="headerlink" href="#onidriver-h" title="Link to this heading">#</a></h1>
 <p>Definitions and function prototypes for implementing <a class="reference internal" href="driver-translators/index.html#drivers"><span class="std std-ref">Driver Translators</span></a>.</p>
 <section id="constants-and-types">
-<span id="onidriver-types"></span><h2>Constants and Types<a class="headerlink" href="#constants-and-types" title="Permalink to this heading">#</a></h2>
+<span id="onidriver-types"></span><h2>Constants and Types<a class="headerlink" href="#constants-and-types" title="Link to this heading">#</a></h2>
 <dl class="c enum">
 <dt class="sig sig-object c" id="c.oni_read_stream_t">
-<span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_read_stream_t</span></span></span><a class="headerlink" href="#c.oni_read_stream_t" title="Permalink to this definition">#</a><br /></dt>
+<span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_read_stream_t</span></span></span><a class="headerlink" href="#c.oni_read_stream_t" title="Link to this definition">#</a><br /></dt>
 <dd><p>Represent the available data streams from the device to the host.</p>
 <dl class="c macro">
 <dt class="sig sig-object c" id="c.oni_read_stream_t.ONI_READ_STREAM_DATA">
-<span class="sig-name descname"><span class="n"><span class="pre">ONI_READ_STREAM_DATA</span></span></span><a class="headerlink" href="#c.oni_read_stream_t.ONI_READ_STREAM_DATA" title="Permalink to this definition">#</a><br /></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_READ_STREAM_DATA</span></span></span><a class="headerlink" href="#c.oni_read_stream_t.ONI_READ_STREAM_DATA" title="Link to this definition">#</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">0</span></code>)
 High-speed data stream to host</p>
 </dd></dl>
 
 <dl class="c macro">
 <dt class="sig sig-object c" id="c.oni_read_stream_t.ONI_READ_STREAM_SIGNAL">
-<span class="sig-name descname"><span class="n"><span class="pre">ONI_READ_STREAM_SIGNAL</span></span></span><a class="headerlink" href="#c.oni_read_stream_t.ONI_READ_STREAM_SIGNAL" title="Permalink to this definition">#</a><br /></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_READ_STREAM_SIGNAL</span></span></span><a class="headerlink" href="#c.oni_read_stream_t.ONI_READ_STREAM_SIGNAL" title="Link to this definition">#</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">1</span></code>)
 Low-speed signaling stream</p>
 </dd></dl>
@@ -437,11 +437,11 @@ Low-speed signaling stream</p>
 
 <dl class="c enum">
 <dt class="sig sig-object c" id="c.oni_write_stream_t">
-<span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_write_stream_t</span></span></span><a class="headerlink" href="#c.oni_write_stream_t" title="Permalink to this definition">#</a><br /></dt>
+<span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_write_stream_t</span></span></span><a class="headerlink" href="#c.oni_write_stream_t" title="Link to this definition">#</a><br /></dt>
 <dd><p>Represent the available data streams from the host to the device.</p>
 <dl class="c macro">
 <dt class="sig sig-object c" id="c.oni_write_stream_t.ONI_WRITE_STREAM_DATA">
-<span class="sig-name descname"><span class="n"><span class="pre">ONI_WRITE_STREAM_DATA</span></span></span><a class="headerlink" href="#c.oni_write_stream_t.ONI_WRITE_STREAM_DATA" title="Permalink to this definition">#</a><br /></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">ONI_WRITE_STREAM_DATA</span></span></span><a class="headerlink" href="#c.oni_write_stream_t.ONI_WRITE_STREAM_DATA" title="Link to this definition">#</a><br /></dt>
 <dd><p>(<code class="docutils literal notranslate"><span class="pre">0</span></code>)
 High-speed data stream from host</p>
 </dd></dl>
@@ -450,7 +450,7 @@ High-speed data stream from host</p>
 
 <dl class="c type">
 <dt class="sig sig-object c" id="c.oni_driver_ctx">
-<span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_ctx</span></span></span><a class="headerlink" href="#c.oni_driver_ctx" title="Permalink to this definition">#</a><br /></dt>
+<span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_ctx</span></span></span><a class="headerlink" href="#c.oni_driver_ctx" title="Link to this definition">#</a><br /></dt>
 <dd><p>A handle to a driver translator context. Each driver creates its own
 context storing all state variables required for its functionality. This
 common type is used to interchange this context between the common API,
@@ -460,7 +460,7 @@ implementation.</p>
 
 </section>
 <section id="functions">
-<span id="onidriver-h-functions"></span><h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
+<span id="onidriver-h-functions"></span><h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
 <p>All driver translators must implement these functions. They are called
 internally by the public interface described in <a class="reference internal" href="oni.html#oni-h"><span class="std std-ref">oni.h</span></a> and perform direct
 hardware access as needed.</p>
@@ -491,7 +491,7 @@ hardware access as needed.</p>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_driver_create_ctx">
-<a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_create_ctx</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_create_ctx" title="Permalink to this definition">#</a><br /></dt>
+<a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_create_ctx</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_create_ctx" title="Link to this definition">#</a><br /></dt>
 <dd><p>Creates the driver translator context.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -502,7 +502,7 @@ hardware access as needed.</p>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_driver_destroy_ctx">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_destroy_ctx</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_destroy_ctx" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_destroy_ctx</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_destroy_ctx" title="Link to this definition">#</a><br /></dt>
 <dd><p>Destroys the driver translator context and frees its resources.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -518,7 +518,7 @@ hardware access as needed.</p>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_driver_init">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_init</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">host_idx</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_init" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_init</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">host_idx</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_init" title="Link to this definition">#</a><br /></dt>
 <dd><p>Initializes a driver translator context opening a specific hardware instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -536,7 +536,7 @@ on the specific hardware. <code class="docutils literal notranslate"><span class
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_driver_read_stream">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_read_stream</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <a class="reference internal" href="#c.oni_read_stream_t" title="oni_read_stream_t"><span class="n"><span class="pre">oni_read_stream_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">stream</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">data</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_read_stream" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_read_stream</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <a class="reference internal" href="#c.oni_read_stream_t" title="oni_read_stream_t"><span class="n"><span class="pre">oni_read_stream_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">stream</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">data</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_read_stream" title="Link to this definition">#</a><br /></dt>
 <dd><p>Performs a read operation over the specified input stream.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -556,7 +556,7 @@ of retrieved bytes were different from <code class="docutils literal notranslate
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_driver_write_stream">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_write_stream</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <a class="reference internal" href="#c.oni_write_stream_t" title="oni_write_stream_t"><span class="n"><span class="pre">oni_write_stream_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">stream</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">data</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_write_stream" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_write_stream</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <a class="reference internal" href="#c.oni_write_stream_t" title="oni_write_stream_t"><span class="n"><span class="pre">oni_write_stream_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">stream</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">data</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_write_stream" title="Link to this definition">#</a><br /></dt>
 <dd><p>Performs a write operation over the specified output stream.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -575,7 +575,7 @@ of retrieved bytes were different from <code class="docutils literal notranslate
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_driver_read_config">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_read_config</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <a class="reference internal" href="onidefs.html#c.oni_config_t" title="oni_config_t"><span class="n"><span class="pre">oni_config_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">config</span></span>, <a class="reference internal" href="onidefs.html#c.oni_reg_val_t" title="oni_reg_val_t"><span class="n"><span class="pre">oni_reg_val_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_read_config" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_read_config</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <a class="reference internal" href="onidefs.html#c.oni_config_t" title="oni_config_t"><span class="n"><span class="pre">oni_config_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">config</span></span>, <a class="reference internal" href="onidefs.html#c.oni_reg_val_t" title="oni_reg_val_t"><span class="n"><span class="pre">oni_reg_val_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_read_config" title="Link to this definition">#</a><br /></dt>
 <dd><p>Performs a read operation from one of the hardware configuration registers described in the ONI specification.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -593,7 +593,7 @@ of retrieved bytes were different from <code class="docutils literal notranslate
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_driver_write_config">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_write_config</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <a class="reference internal" href="onidefs.html#c.oni_config_t" title="oni_config_t"><span class="n"><span class="pre">oni_config_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">config</span></span>, <a class="reference internal" href="onidefs.html#c.oni_reg_val_t" title="oni_reg_val_t"><span class="n"><span class="pre">oni_reg_val_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_write_config" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_write_config</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <a class="reference internal" href="onidefs.html#c.oni_config_t" title="oni_config_t"><span class="n"><span class="pre">oni_config_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">config</span></span>, <a class="reference internal" href="onidefs.html#c.oni_reg_val_t" title="oni_reg_val_t"><span class="n"><span class="pre">oni_reg_val_t</span></span></a><span class="w"> </span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_write_config" title="Link to this definition">#</a><br /></dt>
 <dd><p>Performs a write operation to one of the hardware configuration registers described in the ONI specification.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -611,7 +611,7 @@ of retrieved bytes were different from <code class="docutils literal notranslate
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_driver_set_opt_callback">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_set_opt_callback</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">oni_option</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">option_len</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_set_opt_callback" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_set_opt_callback</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">oni_option</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">option_len</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_set_opt_callback" title="Link to this definition">#</a><br /></dt>
 <dd><p>This function gets called as the last step after a successful <a class="reference internal" href="oni.html#c.oni_set_opt" title="oni_set_opt"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_set_opt()</span></code></a>. The driver can optionally
 use this for any internal adjustment required. See <a class="reference internal" href="making-drivers.html#making-drivers"><span class="std std-ref">Writing Driver Translators</span></a> for examples. If this function is
 not used, it is safe to do nothing and return <a class="reference internal" href="onidefs.html#c.&#64;oni_error_enum.ONI_ESUCCESS" title="ONI_ESUCCESS"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_ESUCCESS</span></code></a>.</p>
@@ -632,7 +632,7 @@ not used, it is safe to do nothing and return <a class="reference internal" href
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_driver_set_opt">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_set_opt</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">driver_option</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">option_len</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_set_opt" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_set_opt</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">driver_option</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">option_len</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_set_opt" title="Link to this definition">#</a><br /></dt>
 <dd><p>Sets an internal option specific to the driver translator. Called directly by <a class="reference internal" href="oni.html#c.oni_set_driver_opt" title="oni_set_driver_opt"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_set_driver_opt()</span></code></a>.
 If no such options exist in a specific driver this can be an empty function returning <a class="reference internal" href="onidefs.html#c.&#64;oni_error_enum.ONI_EINVALOPT" title="ONI_EINVALOPT"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_EINVALOPT</span></code></a>.</p>
 <dl class="field-list simple">
@@ -653,7 +653,7 @@ character, if applicable) in bytes.</p></li>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_driver_get_opt">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_get_opt</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">driver_option</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">option_len</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_get_opt" title="Permalink to this definition">#</a><br /></dt>
+<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_get_opt</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.oni_driver_ctx" title="oni_driver_ctx"><span class="n"><span class="pre">oni_driver_ctx</span></span></a><span class="w"> </span><span class="n"><span class="pre">driver_ctx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">driver_option</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">option_len</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_get_opt" title="Link to this definition">#</a><br /></dt>
 <dd><p>Reads an internal option specific to the driver translator. Called directly by <a class="reference internal" href="oni.html#c.oni_get_driver_opt" title="oni_get_driver_opt"><code class="xref c c-func docutils literal notranslate"><span class="pre">oni_get_driver_opt()</span></code></a>.
 If no such options exist in a specific driver this can be an empty function returning <a class="reference internal" href="onidefs.html#c.&#64;oni_error_enum.ONI_EINVALOPT" title="ONI_EINVALOPT"><code class="xref c c-macro docutils literal notranslate"><span class="pre">ONI_EINVALOPT</span></code></a>.</p>
 <dl class="field-list simple">
@@ -674,7 +674,7 @@ null character, if applicable) in bytes.</p></li>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.oni_driver_info">
-<span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="onidefs.html#c.oni_driver_info_t" title="oni_driver_info_t"><span class="n"><span class="pre">oni_driver_info_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_info</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_info" title="Permalink to this definition">#</a><br /></dt>
+<span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="onidefs.html#c.oni_driver_info_t" title="oni_driver_info_t"><span class="n"><span class="pre">oni_driver_info_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">oni_driver_info</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.oni_driver_info" title="Link to this definition">#</a><br /></dt>
 <dd><p>Provides static information about the driver translator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -785,7 +785,7 @@ null character, if applicable) in bytes.</p></li>
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2010-2024, Open Ephys &amp; Contributors.
+      © Copyright 2010-2025, Open Ephys &amp; Contributors.
       <br/>
     
   </p>
