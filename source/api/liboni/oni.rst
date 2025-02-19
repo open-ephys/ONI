@@ -121,13 +121,15 @@ Frame
 ---------------------------------------
 .. struct:: oni_frame_t
 
-    .. member:: const oni_fifo_time_t time
 
-        Frame time (:macro:`ONI_OPT_ACQCLKHZ` host clock counter).
-
-    .. member:: const oni_fifo_dat_t dev_idx
+    .. member:: const oni_size_t dev_idx
 
         Device index that produced or accepts the frame.
+
+    .. member:: const oni_counter_t acqclk_cnt
+
+        Acquisition clock (:macro:`ONI_OPT_ACQCLKHZ`) count at the time
+        of frame creation.
 
     .. member:: const oni_fifo_dat_t data_sz
 
@@ -135,10 +137,7 @@ Frame
 
     .. member:: uint8_t *data
 
-        Raw data block. This pointer is a zero-copy "view" into a private,
-        referenced-counted buffer managed by the acquisition context.  The
-        handle to this buffer is hidden by the API using some C ``union``
-        magic.
+        Pointer to a ``data_sz``-byte continuous data block.
 
     An ONI-compliant data frame implementation. :struct:`oni_frame_t`'s are
     produced by calls to :func:`oni_read_frame` and consumed by calls to
@@ -324,7 +323,7 @@ needed during the development of user-facing software.
 
     Change the value of a configuration register from specific devices within
     the current device table. This can be used to change the functionality of
-    devices, e.g. set filter bandwidth, select active channels, or change
+    devices, e.g., set filter bandwidth, select active channels, or change
     stimulation parameters.  Register specifications (addresses, read- and
     write-access, acceptable values, and descriptions) are provided on the
     :ref:`ONI-device datasheet <dev-datasheet>`.
@@ -346,7 +345,7 @@ needed during the development of user-facing software.
     :ref:`liboni_example_set_buffers`). :struct:`oni_frame_t`'s created during
     calls to :func:`oni_read_frame` are zero-copy views into this buffer.
 
-    .. attention:: It is the user's responsibility to free the resources allocated by
+    .. attention:: It is the caller's responsibility to free the resources allocated by
         this call by passing the resulting frame pointer to
         :func:`oni_destroy_frame`.
 
@@ -360,7 +359,7 @@ needed during the development of user-facing software.
 
     Create an :struct:`oni_frame_t` for consumption by :func:`oni_write_frame`.
 
-    .. attention:: It is the user's responsibility to free the resources allocated by
+    .. attention:: It is the caller's responsibility to free the resources allocated by
         this call by passing the resulting frame pointer to
         :func:`oni_destroy_frame`
 
