@@ -25,7 +25,7 @@
         <argsstring></argsstring>
         <name>HardwareID</name>
         <briefdescription>
-<para>ONIX hub hardware ID (e.g. host or headstage type). </para>
+<para>ONIX hub hardware ID (e.g., host or headstage type). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>

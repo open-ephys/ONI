@@ -1,8 +1,7 @@
 .. _ONI-hierarchy:
 
-Hardware Hierarchy
-==================
-
+Hardware Topology
+=========================
 Any ONI-compliant system is comprised of at least three hierarchical hardware
 elements:
 
@@ -12,9 +11,10 @@ elements:
 
     - :ref:`Device <device>`
 
-These hardware elements are managed by a single host computer where they are
-governed by an :term:`Acquisition Context`. The complete connectivity of the
-hardware hierarchy is shown below.
+These hardware elements are managed within a single host computer where they are
+governed by a single :term:`Acquisition Context`. An ONI system is arranged in a
+`tiered-star network <https://en.wikipedia.org/wiki/Network_topology>`__ similar
+to that of USB, which is shown here:
 
 ::
 
@@ -50,9 +50,10 @@ hardware hierarchy is shown below.
        |
        +--- Controller P
 
-An ONI-compliant hardware system must have at least a one controller, hub, and
-device. Hubs can be independent hardware elements that communicate with the
-controller, or can share the same hardware. For instance, an FPGA can run the
-controller logic, contain a hub with local devices, and connect to external hubs
-through a digital link. Device groups operating in different clock domains, even
-if they lie in the same physical hardware, must form independent hubs.
+An ONI-compliant hardware system must have at least a single Host, a single
+Controller, a single Hub, and a single Device. Hubs can be physically separate
+hardware elements that communicate with the controller, or can share the same
+hardware. For instance, an FPGA can run the controller logic, contain a hub with
+local devices, and connect to external hubs through a digital link. Device
+groups operating in different clock domains, even if they lie in the same
+physical hardware, must form independent hubs.
