@@ -1,0 +1,26 @@
+<div id="version_container">
+    <select
+      style="vertical-align: middle; margin-left: 0px; margin-right: 20px;"
+      onchange="window.location.href=this.value"
+      id="version_dropdown_menu"
+    >
+      {% if versions %}
+      {%- for item in versions %}
+      {% if item.name == "main" %}
+      <option value="{{ item.url }}" title="{{item.name}}">{{ "dev" }}</a></li>
+      {% else %}
+      <option value="{{ item.url }}" title="{{item.name}}">{{ item.name }}</a></li>
+      {% endif %}
+      {%- endfor %}
+      {% endif %}
+    </select>
+ </div>
+ <script>
+    var dropdown = document.getElementById('version_dropdown_menu');
+
+    for (var i = 0; i < dropdown.options.length; i++) {
+        if (window.location.pathname.includes(dropdown.options[i].title)) {
+            dropdown.options[i].selected = true;
+        }
+    }
+  </script>

@@ -45,6 +45,7 @@ extensions = [
     'sphinx.ext.githubpages',
     'breathe',
     'sphinx_csharp',
+    'sphinx_multiversion',
     'linuxdoc.rstFlatTable'
 ]
 # Add any paths that contain templates here, relative to this directory.
@@ -201,6 +202,7 @@ epub_exclude_files = ["search.html"]
 html_theme_options = {
     'use_edit_page_button': True,
     "navigation_with_keys": True,
+    "navbar_start": ["navbar-logo", 'versioning.html'],
     "navbar_end": ["navbar-icon-links"],
     "navbar_align": "content",
     "footer_start": ["copyright"],
@@ -241,3 +243,9 @@ html_context = {
 
 # Option for linkcheck
 linkcheck_anchors = False
+
+# Options for sphinx-multiversion
+smv_branch_whitelist = r'^main$'
+smv_tag_whitelist = r'^v\d+\.\d+$'
+smv_remote_whitelist = r'^(origin)$'
+smv_released_pattern = r'^tags/.*$'
