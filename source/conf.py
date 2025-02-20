@@ -108,8 +108,8 @@ html_static_path = ["_static"]
 html_style = "_static/theme_overrides.css"
 
 html_sidebars = {
-    'index': ['versioning.html','search-field.html'],
-    "**": ['versioning.html',"sidebar-nav-bs.html"]
+    'index': ['search-field.html'],
+    "**": ["sidebar-nav-bs.html"]
 }
 
 # Custom sidebar templates, must be a dictionary that maps document names
@@ -202,6 +202,7 @@ epub_exclude_files = ["search.html"]
 html_theme_options = {
     'use_edit_page_button': True,
     "navigation_with_keys": True,
+    "navbar_start": ["navbar-logo", 'versioning.html'],
     "navbar_end": ["navbar-icon-links"],
     "navbar_align": "content",
     "footer_start": ["copyright"],
