@@ -6,7 +6,11 @@
     >
       {% if versions %}
       {%- for item in versions %}
-      <option value="{{ item.url }}">{{ item.name }}</a></li>
+      {% if item.name == "main" %}
+      <option value="{{ item.url }}" title="{{item.name}}">{{ "dev" }}</a></li>
+      {% else %}
+      <option value="{{ item.url }}" title="{{item.name}}">{{ item.name }}</a></li>
+      {% endif %}
       {%- endfor %}
       {% endif %}
     </select>
@@ -15,7 +19,7 @@
     var dropdown = document.getElementById('version_dropdown_menu');
 
     for (var i = 0; i < dropdown.options.length; i++) {
-        if (window.location.pathname.includes(dropdown.options[i].label)) {
+        if (window.location.pathname.includes(dropdown.options[i].title)) {
             dropdown.options[i].selected = true;
         }
     }
