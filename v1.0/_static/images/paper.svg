@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
+	 style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st1{fill:#519241;stroke:#000000;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+</style>
+<metadata>
+	<sfw  xmlns="&ns_sfw;">
+		<slices></slices>
+		<sliceSourceBounds  bottomLeftOrigin="true" height="78.4" width="62.2" x="139.3" y="10.9"></sliceSourceBounds>
+	</sfw>
+</metadata>
+<g id="Layer_1">
+	<path class="st0" d="M75.9,88.6H24.8c-2.8,0-5.1-2.3-5.1-5.1V16.3c0-2.8,2.3-5.1,5.1-5.1h51.1c2.8,0,5.1,2.3,5.1,5.1v67.3
+		C81,86.3,78.7,88.6,75.9,88.6z"/>
+	<line class="st0" x1="25.7" y1="39.5" x2="76.3" y2="39.5"/>
+	<rect x="49.5" y="44.3" class="st1" width="25.2" height="21.5"/>
+	<line class="st2" x1="25.7" y1="47.9" x2="46.1" y2="47.9"/>
+	<line class="st2" x1="25.7" y1="56.3" x2="46.1" y2="56.3"/>
+	<line class="st2" x1="25.7" y1="60.5" x2="46.1" y2="60.5"/>
+	<line class="st2" x1="25.7" y1="52.1" x2="46.1" y2="52.1"/>
+	<line class="st2" x1="25.7" y1="64.7" x2="46.1" y2="64.7"/>
+	<line class="st2" x1="25.7" y1="68.9" x2="46.1" y2="68.9"/>
+	<line class="st2" x1="25.7" y1="73.1" x2="76.3" y2="73.1"/>
+	<line class="st2" x1="25.7" y1="81.5" x2="76.3" y2="81.5"/>
+	<line class="st2" x1="25.7" y1="77.3" x2="76.3" y2="77.3"/>
+	<line class="st0" x1="25.7" y1="26.9" x2="76.3" y2="26.9"/>
+	<line class="st2" x1="25.7" y1="35.3" x2="76.3" y2="35.3"/>
+	<line class="st2" x1="25.7" y1="31.1" x2="76.3" y2="31.1"/>
+	<line class="st2" x1="25.7" y1="43.7" x2="46.1" y2="43.7"/>
+	<line class="st3" x1="25.7" y1="20.5" x2="76.3" y2="20.5"/>
+	<line class="st2" x1="25.7" y1="23.7" x2="46.1" y2="23.7"/>
+	<line class="st2" x1="51.8" y1="69" x2="72.3" y2="69"/>
+</g>
+<g id="Figs">
+</g>
+<g id="Text">
+</g>
+</svg>

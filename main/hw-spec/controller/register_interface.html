@@ -1,0 +1,700 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Device Register Interface &#8212; ONI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../../_static/documentation_options.js?v=5c79bd3c"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'hw-spec/controller/register_interface';</script>
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ONI API Documentation" href="../../api/index.html" />
+    <link rel="prev" title="Controller Address Space" href="addresses.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/oe_logo_name.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/oe_logo_name.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+      <div class="navbar-item"><div id="version_container">
+    <select
+      style="vertical-align: middle; margin-left: 0px; margin-right: 20px;"
+      onchange="window.location.href=this.value"
+      id="version_dropdown_menu"
+    >
+      
+      
+      <option value="../../../v1.0/index.html" title="v1.0">v1.0</a></li>
+      
+      
+      <option value="register_interface.html" title="main">dev</a></li>
+      
+      
+    </select>
+ </div>
+ <script>
+    var dropdown = document.getElementById('version_dropdown_menu');
+
+    for (var i = 0; i < dropdown.options.length; i++) {
+        if (window.location.pathname.includes(dropdown.options[i].title)) {
+            dropdown.options[i].selected = true;
+        }
+    }
+  </script></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../api/index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        ONI Hardware Specification
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../api/index.html">
+                        ONI API Documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/open-ephys/ONI" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/openephys" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.gg/WXAx2URNQU" title="Discord" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discord"></i></span>
+            <label class="sr-only">Discord</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary of Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hierarchy.html">Hardware Topology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comm_channels.html">Channel Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_table.html">Device Table</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../devices/index.html">Devices</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../devices/devid.html">Device ID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../devices/descriptor.html">Device Descriptor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../devices/sample.html">Device Sample Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../devices/registers.html">Device Registers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../devices/datasheet.html">Device Datasheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../devices/special.html">Special Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hubs.html">Hubs</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Controller</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="channels/index.html">Controller Communication Channels</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="channels/data_frames.html">Data Frames</a></li>
+<li class="toctree-l3"><a class="reference internal" href="channels/read_channel.html">Read Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="channels/write_channel.html">Write Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="channels/signal_channel.html">Signal Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="channels/configuration_channel.html">Configuration Channel</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="addresses.html">Controller Address Space</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Device Register Interface</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">ONI Hardware Specification</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Controller</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Device Register Interface</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="device-register-interface">
+<span id="register-interface"></span><h1>Device Register Interface<a class="headerlink" href="#device-register-interface" title="Link to this heading">#</a></h1>
+<p>The device interface allows transparent access to each device’s
+<a class="reference internal" href="../devices/registers.html#dev-reg-map"><span class="std std-ref">register map</span></a>. It defines a general purpose bus that hides
+the specifics of any particular implementation.</p>
+<p>Using this interface, the host adds device register access requests to an
+internal queue. The controller will execute the requests in order. The
+<a class="reference internal" href="../glossary.html#term-Driver-Translator"><span class="xref std std-term">Driver Translator</span></a> and <a class="reference internal" href="../glossary.html#term-API"><span class="xref std std-term">API</span></a> must ensure that the number of pending
+requests in the does not exceed the <a class="reference internal" href="addresses.html#max-devaccess-reg"><span class="std std-ref">maximum queue
+size</span></a>.</p>
+<p>The register interface is composed of the following <a class="reference internal" href="channels/configuration_channel.html#conf-chan"><span class="std std-ref">Configuration Channel</span></a> registers,
+which are used to insert requests into the queue:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">RI_DEV_ADDR</span></code>: Device Address. The fully qualified address of a device as
+enumerated in the <a class="reference internal" href="../dev_table.html#dev-table"><span class="std std-ref">device table</span></a> and to which communication
+will be directed as described below.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RI_REG_ADDR</span></code>: Register Address. The address of the register within the
+<a class="reference internal" href="../devices/registers.html#dev-reg-map"><span class="std std-ref">register map</span></a> of the device located at <code class="docutils literal notranslate"><span class="pre">RI_DEV_ADDR</span></code>
+that will be written to or read from.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RI_REG_VAL</span></code>: Register Value. Value to be written to the register
+<code class="docutils literal notranslate"><span class="pre">RI_REG_ADDR</span></code> of device located at <code class="docutils literal notranslate"><span class="pre">RI_DEV_ADDR</span></code>. For compatibility with
+older versions of the specification, reading this register will return the
+value of the last successful read operation. Using this register for reading
+the value this way is not recommended.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RI_RW</span></code>: Read/Write. A flag indicating if a read or write should be
+performed. 0 indicates a read operation. A value of 0x00000001 indicates a
+write operation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RI_TRIGGER</span></code>: Trigger. Set to 0x00000001 to add either a register read or
+write operation depending on the state of <code class="docutils literal notranslate"><span class="pre">RI_RW</span></code>. If <code class="docutils literal notranslate"><span class="pre">RI_RW</span></code> is
+0x00000000, a read operation is queued. If <code class="docutils literal notranslate"><span class="pre">RI_RW</span></code> is 1, an operation to
+write <code class="docutils literal notranslate"><span class="pre">RI_REG_VAL</span></code> to the register at <code class="docutils literal notranslate"><span class="pre">Ri_REG_ADDR</span></code> on the device at
+<code class="docutils literal notranslate"><span class="pre">RI_DEV_ADDR</span></code> is queued. Reading the <code class="docutils literal notranslate"><span class="pre">RI_TRIGGER</span></code> register returns
+0x00000000 if the queue is empty or 1 if there are pending operations.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order to conform with the register reading and writing sequences that
+are described in the following sections, the meaning of the <code class="docutils literal notranslate"><span class="pre">RI_TRIGGER</span></code>
+register differs depending on if it is being read or written to.
+Specifically,</p>
+<ul class="simple">
+<li><p>When reading the <code class="docutils literal notranslate"><span class="pre">RI_TRIGGER</span></code> register, the returned value indicates
+if the the device register read or write transaction queue is empty
+(value is 0x00000000) or has pending transactions that have not yet been
+executed (value is 0x00000001).</p></li>
+<li><p>When a value of 0x00000001 is written to the <code class="docutils literal notranslate"><span class="pre">RI_TRIGGER</span></code> register, a
+request is sent to the controller to insert a device register read or
+write transaction into its queue. If any other value is written, no
+operation is performed. Note that writing a value to this register does
+not directly affect a its read value, as that will always reflect the
+state indicated in the previous bullet point.</p></li>
+</ul>
+</div>
+</li>
+</ul>
+<p>Appropriate values of <code class="docutils literal notranslate"><span class="pre">RI_REG_ADDR</span></code> and <code class="docutils literal notranslate"><span class="pre">RI_REG_VAL</span></code> are
+determined by:</p>
+<ul class="simple">
+<li><p>Looking at a device’s manufacturer data sheet if the device is an integrated
+circuit and using <a class="reference internal" href="../devices/registers.html#reg-type"><span class="std std-ref">raw registers</span></a>.</p></li>
+<li><p>Examining the <a class="reference internal" href="../devices/datasheet.html#dev-datasheet"><span class="std std-ref">ONI Device Datasheet</span></a> for <a class="reference internal" href="../devices/registers.html#reg-type"><span class="std std-ref">managed
+registers</span></a>.</p></li>
+</ul>
+<section id="register-read-sequence">
+<h2>Register Read Sequence<a class="headerlink" href="#register-read-sequence" title="Link to this heading">#</a></h2>
+<p>When a host requests one of more device register <em>reads</em>, the following
+following sequence must be performed:</p>
+<ol class="arabic simple">
+<li><p>Check the value of <code class="docutils literal notranslate"><span class="pre">RI_TRIGGER</span></code>.</p>
+<ul class="simple">
+<li><p>If it is 0x00000000, the queue is empty and the procedure can safely
+proceed.</p></li>
+<li><p>Else, there are transactions pending on the queue. Since the exact number
+of pending elements is unknown, adding new transactions is not
+recommended.</p></li>
+</ul>
+</li>
+<li><p>For each register read transaction to be added to the queue:</p>
+<ol class="arabic simple">
+<li><p>The target device is selected by writing its address, as featured on the
+device map, into <code class="docutils literal notranslate"><span class="pre">RI_DEV_ADDR</span></code> on the controller.</p></li>
+<li><p>The desired register address within the device register map is written
+into <code class="docutils literal notranslate"><span class="pre">RI_REG_ADDR</span></code> on the controller.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">RI_RW</span></code> register on the controller is set to 0x00000000.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">RI_TRIGGER</span></code> register on the controller is set to 0x00000001,
+inserting the operation on the queue.</p></li>
+<li><p>The host repeats steps 1-4 as needed until all read transactions have been
+queued.</p></li>
+</ol>
+</li>
+<li><p>For each element on the queue, the controller will:</p>
+<ol class="arabic simple">
+<li><p>Route a register read operation to the appropriate device.</p></li>
+<li><p>Push <code class="docutils literal notranslate"><span class="pre">CONFIGRACK</span></code> followed by the read value into the signal stream if
+the operation was successful, or <code class="docutils literal notranslate"><span class="pre">CONFIGRNACK</span></code> if it failed.</p></li>
+</ol>
+</li>
+<li><p>The signal stream must be pumped until all <code class="docutils literal notranslate"><span class="pre">CONFIGRACK</span></code> or
+<code class="docutils literal notranslate"><span class="pre">CONFIGRNACK</span></code> corresponding to all the requested transactions
+are received indicating that the controller has finished execution.</p></li>
+</ol>
+</section>
+<section id="register-write-sequence">
+<h2>Register Write Sequence<a class="headerlink" href="#register-write-sequence" title="Link to this heading">#</a></h2>
+<p>When a host requests one or more device register <em>writes</em>, the following
+sequence must be performed:</p>
+<ol class="arabic simple">
+<li><p>Check the value of <code class="docutils literal notranslate"><span class="pre">RI_TRIGGER</span></code>.</p>
+<ul class="simple">
+<li><p>If it is 0x00000000, the queue is empty and the procedure can safely
+proceed.</p></li>
+<li><p>Else, there are transactions pending on the queue. Since the exact number
+of pending elements is unknown, adding new transactions is not
+recommended.</p></li>
+</ul>
+</li>
+<li><p>For each register write transaction to be added to the queue:</p>
+<ol class="arabic simple">
+<li><p>The target device is selected by writing its address, as featured on the
+device map, into <code class="docutils literal notranslate"><span class="pre">RI_DEV_ADDR</span></code> on the controller</p></li>
+<li><p>The desired register address within the device register map is written
+into <code class="docutils literal notranslate"><span class="pre">RI_REG_ADDR</span></code> on the controller.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">RI_RW</span></code> register on the controller is set to 0x00000001.</p></li>
+<li><p>The value to be written into the device register is written into
+the <code class="docutils literal notranslate"><span class="pre">RI_REG_VAL</span></code>  register in the controller.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">RI_TRIGGER</span></code> register on the controller is set to 0x00000001,
+inserting the operation on the queue.</p></li>
+<li><p>Repeat as needed until al read transactions have been queued.</p></li>
+</ol>
+</li>
+<li><p>For each element on the queue, the controller will:</p>
+<ol class="arabic simple">
+<li><p>Route a register write operation to the appropriate device.</p></li>
+<li><p>Push <code class="docutils literal notranslate"><span class="pre">CONFIGWACK</span></code> into the signal stream if the operation was
+successful, or <code class="docutils literal notranslate"><span class="pre">CONFIGRNACK</span></code> if it failed.</p></li>
+</ol>
+</li>
+<li><p>The signal stream must be pumped until all <code class="docutils literal notranslate"><span class="pre">CONFIGWACK</span></code> or <code class="docutils literal notranslate"><span class="pre">CONFIGWNACK</span></code>
+corresponding to all the requested transactions are received indicating that
+the controller has finished execution.</p></li>
+</ol>
+<p>Following successful or unsuccessful device register read or write, the
+appropriate ACK or NACK packets <em>must</em> be passed to the <a class="reference internal" href="channels/signal_channel.html#sig-chan"><span class="std std-ref">signal channel</span></a> by the controller. If they are not, the register read and write
+calls will block indefinitely.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="addresses.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Controller Address Space</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../api/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ONI API Documentation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#register-read-sequence">Register Read Sequence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#register-write-sequence">Register Write Sequence</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/open-ephys/ONI/edit/main/source/hw-spec/controller/register_interface.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/hw-spec/controller/register_interface.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2010-2025, Open Ephys &amp; Contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
