@@ -5,8 +5,8 @@
    :maxdepth: 2
    :titlesonly:
 
-   hw-spec/index
-   api/index
+   Hardware Specification <hw-spec/index>
+   API <api/index>
 
 ========================================
 Open Neuro Interface
@@ -27,8 +27,8 @@ proceed.
 Specification Goals
 ===================
 - Potential for low latency round trip times with a computer in the loop.
-- Potential for high-bandwidth, bidirectional communication (thousands of
-  neural data channels, multiple high-resolution cameras).
+- Potential for high-bandwidth, bidirectional communication (thousands of neural
+  data channels, very high-resolution cameras, etc.).
 - Acquisition and control of arbitrary hardware components using a common
   computer interface.
 
@@ -37,20 +37,20 @@ Specification Goals
   - Generic, system-wide hardware configuration.
   - Generic, system-wide, bidirectional data streaming.
 
-- Hardware synchronization of multiple systems on a single host computers or
+- Hardware synchronization of multiple systems on a single host computer or
   across multiple host computers.
 - Cross platform.
-- Aimed at the creation of interoperable physical devices, gateware, firmware,
-  and APIs.
+- Aimed at the creation of interoperable physical devices, gateware, and
+  firmware, accessible and controllable through a common high-performance API.
 
 Contents
 --------
 
-:ref:`oni-hw`
+:ref:`Hardware Specification<oni-hw>`
     Create ONI-compliant hardware.
 
-:ref:`oni-api`
-    Create software for controlling ONI-compliant hardware.
+:ref:`API Documentation<oni-api>`
+    Create software for ONI-compliant hardware.
 
 Contributing
 ------------
