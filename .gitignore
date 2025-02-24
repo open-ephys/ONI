@@ -21,3 +21,6 @@ docs/*
 
 # Batch file
 make.bat
+
+# Whitelist file for sphinx-multiversion
+whitelist.txt
