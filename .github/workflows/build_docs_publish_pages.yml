@@ -1,15 +1,15 @@
-name: Build and Test Documentation
+name: Build Documentation
 
 on:
+  push:
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
-  build_and_test:
-    name: Build and Test
+  build:
+    name: Build
     runs-on: ubuntu-22.04
-    environment: Testing
 
     steps:
       - name: Check out repository code
@@ -37,9 +37,22 @@ jobs:
         run: |
           pipenv run make linkcheck SPHINXOPTS="-W --keep-going"
 
-      - name: Upload docs
-        uses: actions/upload-artifact@v4
+      - name: Upload GitHub Pages Artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: html
-          if-no-files-found: error
-          path: docs/html/*
+          path: docs/html/
+
+  deploy:
+    name: Deploy docs
+    runs-on: ubuntu-22.04
+    needs: build
+    if: github.event_name == 'push' && always() && !failure() && !cancelled()
+    
+    permissions:
+      # Both required by actions/deploy-pages
+      pages: write
+      id-token: write
+      
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
