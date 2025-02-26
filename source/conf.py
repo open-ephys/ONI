@@ -1,4 +1,5 @@
 from datetime import datetime, timezone
+import os.path
 
 # -*- coding: utf-8 -*-
 #
@@ -245,7 +246,22 @@ html_context = {
 linkcheck_anchors = False
 
 # Options for sphinx-multiversion
-smv_branch_whitelist = r'^main$'
+
+base_dir = os.path.dirname(os.path.realpath(__file__))
+whitelist_file = "{}/../whitelist.txt".format(base_dir)
+whitelist_regexp = ''
+
+if os.path.isfile(whitelist_file):
+  branches = 'main'
+  with open(whitelist_file) as f:
+    for line in f.read().splitlines():
+      branches = branches + "|" + line
+  
+  whitelist_regexp = r'^(' + branches + ')$'
+else:
+  whitelist_regexp = r'^(main)$'
+
+smv_branch_whitelist = whitelist_regexp
 smv_tag_whitelist = r'^v\d+\.\d+$'
 smv_remote_whitelist = r'^(origin)$'
 smv_released_pattern = r'^tags/.*$'

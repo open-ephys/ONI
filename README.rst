@@ -11,6 +11,31 @@ For more detailed usage instructions, see the `Open Ephys Doc Template <https://
 How to build this documentation
 ===============================
 
+Previewing local changes
+------------------------
+
+Due to how sphinx-multiversion is configured (see below), in order to view the local changes that
+are made, it is necessary to create a file at the top-most level of the repo named "whitelist.txt".
+This file will be ignored via .gitignore, so it will only exist locally, but it should contain a
+list of local branches that should be included in the build process.
+
+The contents of the file should only include the names of the branches that should be included. For
+example, if work is being done on branch issue-85, the whitelist.txt file should contain **only**
+the following line:
+
+.. code:: shell
+
+    issue-85
+
+If work is being done on multiple branches, and all of them need to be built simultaneously to
+preview how the changes are being rendered, then split the list of branches into individual lines
+like the following example:
+
+.. code:: shell
+  
+  issue-85
+  issue-86
+
 With pipenv (recommended)
 -----------
 
@@ -91,15 +116,11 @@ building if you want to preview the pages**. Additionally, if your local
 branches (i.e., main) are not up to date, your local preview may not reflect
 the most recent changes to the repo.
 
-It is also important to note that if you
-are working in a feature branch, it is not automatically pulled into the build
-due to the branch whitelist found in the conf.py file. To test changes
-that have been committed locally, add the current branch to the
-``smv_branch_whitelist`` regular expression. For example, if the current working
-branch is ``issue-XX``, then the new regular expression can be modified to be
-"r'^(main|issue-XX)$'". Be sure to revert the changes to the conf.py file before
-merging to main, otherwise the feature branch will be built in the online
-version.
+To view more than just the tags and the main branch, be sure to add a whitelist.txt file at the top
+level of the repo according to the instructions above, providing the name of the currently checked
+out branch. Ensure that all changes are committed locally as well before building the documentation,
+as it does not use the raw files but rather the git information for local and remote branches to
+build the pages.
 
 For more information on the extension, and the different configuration options,
 check out their `documentation site
