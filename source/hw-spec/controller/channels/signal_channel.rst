@@ -10,7 +10,7 @@ Signal Channel
 The *signal* channel provides a way for the controller to inform the host of
 configuration results, which may be provided with a significant delay.
 Additionally, it is the channel over which the controller sends the device table
-to the host following a system reset. Signal data MUST be framed into packets
+to the host following a system soft reset. Signal data MUST be framed into packets
 using Consistent Overhead Byte Stuffing
 (`COBS <https://en.wikipedia.org/wiki/Consistent_Overhead_Byte_Stuffing>`__).
 Within this scheme, packets are delimited using 0's and always have the
@@ -39,7 +39,7 @@ DEVICETABACK 0x00000020 Device table start acknowledgment
 DEVICEINST   0x00000040 Device descriptor instance
 ============ ========== =====================================
 
-Following a hardware reset, the signal channel is used to provide the
+Following a hardware soft reset, the signal channel is used to provide the
 :ref:`device table <dev-table>` to the host using the following packet
 sequence:
 
@@ -55,7 +55,7 @@ Where ``dev_addr_n`` is the full address of each device as described in the
 :ref:`device table <dev-table>` section and ``dev_n`` is a :ref:`device
 descriptor <dev-desc>`.
 
-In addition to providing the device table following reset, the signal channel
+In addition to providing the device table following soft reset, the signal channel
 is also used to asynchronously acknowledge register access via the
 :ref:`configuration channel <conf-chan>`. Following a device register read or
 write, an CONFIGWACK, CONFIGWNACK, CONFIGRACK, or CONFIGRNACK signal is pushed
