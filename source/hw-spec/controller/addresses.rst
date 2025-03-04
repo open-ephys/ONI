@@ -29,7 +29,7 @@ The address map for this block is as follows:
 ========== ========================= ==================
 Address    Name                      Type
 ========== ========================= ==================
-0x0000     SOFT_RESET                     Global
+0x0000     SOFT_RESET                Global
 0x0001     ACQ_RUNNING               Global
 0x0002     SYS_CLK_HZ                Global
 0x0003     ACQ_CLK_HZ                Global
