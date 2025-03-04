@@ -84,11 +84,13 @@ frames are accepted, then a statement of such is required.
 Bandwidth information
 ~~~~~~~~~~~~~~~~~~~~~~
 A device datasheet MUST specify the expected periodicity and bandwidth for
-both its read and write channels, when available.  
+both its read and write channels, when available.
 
-- For streams with periodic data production, the datasheet must specify the frequency or
-  possible configurable frequencies at which frames are being transmitted.
-- For streams with event-based, non-periodic data, the datasheet must specify the
-  minimum and maximum rates at which data might be produced.
+- For streams with periodic data production or consumption, the datasheet must
+  specify the frequency or possible configurable frequencies at which frames are
+  being transmitted or consumed.
+- For streams with event-based, non-periodic data, the datasheet must specify
+  the minimum and maximum rates at which data might be produced or can be
+  consumed. Minimum rates of 0 are acceptable.
 
-In both cases, the datasheet SHOULD specify one of more typical cases.
+In both cases, the datasheet SHOULD specify one or more typical cases.
