@@ -15,12 +15,27 @@ set to 0. Multiple samples can be sent in a single write frame. In this case, th
 ``Sample_Size`` field will be equal to the ``Write_Sample_Size`` multiplied by the
 number of sent samples.
 
-It is the responsibility of the controller to accept frames at any rate the
-computer might be sending them. Currently, there is no defined mechanism to
-inform the host of any possible dropped frame on the write channel,
-although this can be included in an implementation so long as it does not
-invalidate any other ONI requirements.
+In regard of the data frames handled by this channel:
 
+- The controller MUST accept all frames sent by the host, at any rate that does not exceed 
+  the maximal channel bandwidth, which will be implementation-defined.
+
+- The controller MUST send all frames received to the destination devices in the same order 
+  it receives frames from the computer
+
+- The devices accepting data from the write channel MAY buffer it. The devices datasheet MUST 
+  specify if data is buffered and if there is any possibility of dropping frames 
+  (e.g: receiving a frame while one is being processed)
+
+- The devices accepting data from the write channel MAY inform the host about their internal state
+  so the end software can adjust the production rate of write frames accordingly. If used, this mechanism
+  MUST use existing channels (e.g. Register or Read channels), MUST NOT directly
+  affect the operation of the Write channel and MUST be described on the device datasheet.
+
+- In summary, the Write Channel sole responsibility is passing frames to devices. The Write channel 
+  is not required to provide any auxiliary signals about its internal state, specific frame delivery timestamps 
+  or any other operational details.
+  
 .. _write-word-alignment:
 
 Write Word Alignment
