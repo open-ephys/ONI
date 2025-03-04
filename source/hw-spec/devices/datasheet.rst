@@ -78,3 +78,19 @@ If the device accepts :ref:`samples <dev-sample>`, a `bitfield
 <https://en.wikipedia.org/wiki/Bit_field>`__ diagram describing the frame
 structure is required. Bits can be grouped into words as is convenient. If no
 frames are accepted, then a statement of such is required.
+
+.. _dev-datasheet-bandwidth:
+
+Bandwidth information
+~~~~~~~~~~~~~~~~~~~~~~
+A device datasheet MUST specify the expected periodicity and bandwidth for
+both its read and write channels, when available.
+
+- For streams with periodic data production or consumption, the datasheet must
+  specify the frequency or possible configurable frequencies at which frames are
+  being transmitted or consumed.
+- For streams with event-based, non-periodic data, the datasheet must specify
+  the minimum and maximum rates at which data might be produced or can be
+  consumed. Minimum rates of 0 are acceptable.
+
+In both cases, the datasheet SHOULD specify one or more typical cases.
