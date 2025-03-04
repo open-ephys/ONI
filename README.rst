@@ -11,8 +11,8 @@ For more detailed usage instructions, see the `Open Ephys Doc Template <https://
 How to build this documentation
 ===============================
 
-Previewing local changes
-------------------------
+Building local changes with multi-versioning
+--------------------------------------------
 
 Due to how sphinx-multiversion is configured (see below), in order to view the local changes that
 are made, it is necessary to create a file at the top-most level of the repo named "whitelist.txt".
@@ -35,6 +35,28 @@ like the following example:
   
   issue-85
   issue-86
+
+Then, follow the instructions below on how to set up the environment correctly, commit your changes
+to the current branch, and call `pipenv run make html`. This will automatically include all branch
+names found in the whitelist file in the multiversion build. If there are branches that need to be
+removed, since they are no longer being worked on, call `pipenv run make clean` to remove all files,
+and then run `make html` again to create a fresh build.
+
+Building local changes without committing
+----------------------------------------
+
+Since it can be a burden, and not a very useful workflow, to have to commit local changes to the
+branch before building them, this section provides a method to build local changes from the edited
+files before they are committed to the branch. One caveat, is that this method will break the
+multiversion dropdown and the associated functionality, so only the local changes will be rendered
+in the HTML pages.
+
+Before building locally, it is recommended to run `pipenv run make clean` to remove the folder
+hierarchy that might be created from the multi-versioning. This will prevent any conflicts with
+naming.
+
+Next, run `pipenv run make local` to build Sphinx only using the local files. In this format, there
+will be one folder (docs/html) where all of the locally built HTML files will be located.
 
 With pipenv (recommended)
 -----------
