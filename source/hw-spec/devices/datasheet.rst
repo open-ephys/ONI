@@ -52,8 +52,8 @@ this table, but it MUST contain the following columns:
 -  **Access**: Read-only, Write-only, or Read/Write.
 -  **Time of Effect**: When does a register write affect hardware state?
    Immediately or following reset?
--  **POR Value**: Power-on reset default value.
--  **Reset Action**: Upon a reset, what happens to the register? Does it
+-  **POR Value**: Power-on or hard reset default value.
+-  **Reset Action**: Upon a soft reset, what happens to the register? Does it
    maintain its previous state or get reset to some value? If the latter, then
    what value?
 -  **Description**: Word description of the register's function.
