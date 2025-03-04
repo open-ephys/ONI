@@ -5,7 +5,7 @@ Device Table
 The collection of :ref:`devices <device>` governed by a :ref:`controller
 <controller>` is referred to as a device table. The :ref:`controller
 <controller>` is responsible for creating the device table and sending it to the
-host following a reset. The device table is a read-only associative array
+host following a soft reset. The device table is a read-only associative array
 of (:ref:`device address <dev-address>`, :ref:`device descriptor <dev-desc>`)
 pairs.
 
