@@ -78,3 +78,14 @@ If the device accepts :ref:`samples <dev-sample>`, a `bitfield
 <https://en.wikipedia.org/wiki/Bit_field>`__ diagram describing the frame
 structure is required. Bits can be grouped into words as is convenient. If no
 frames are accepted, then a statement of such is required.
+
+In addition to a description of the frame format, this section MUST specify if
+write frames are consumed immediately or buffered. If write frames are buffered,
+this section MUST specify if there is any possibility of dropping frames (e.g:
+receiving a frame while one is being processed).
+
+A device MAY inform the host about its internal state so software on the host
+can adjust the production rate of write frames accordingly. If used, this
+mechanism MUST use existing channels (e.g. Register or Read channels), MUST NOT
+directly affect the operation of the Write channel and MUST be described in this
+section.
