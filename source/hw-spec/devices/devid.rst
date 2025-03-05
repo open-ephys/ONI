@@ -22,3 +22,11 @@ Device ID. Devices sharing an ID are assumed to be the same and share the same
   optionally be divided in two 8-bit values so long as the resulting 16-bit
   integer is unique within a particular “Company” (there is no need for unary
   or monotonic increments when new devices are introduced).
+
+
+.. _null-dev-id:
+
+Null Device ID
+----------------
+A special case is reserved for a device ID of 0.0.0. This identifies a
+null device, which represents a non-present or non-functional device.
