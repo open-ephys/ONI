@@ -24,6 +24,7 @@ order to reach ONI-compliance.
 .. toctree::
    :hidden:
 
+   detachable_devs
    devid
    descriptor
    sample
