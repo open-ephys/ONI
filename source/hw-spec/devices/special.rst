@@ -53,7 +53,7 @@ the complete width. The detailed meaning of each register is:
   hardware that do not affect the overall operation of the hub and, therefore,
   do not require a new ID. These are typically related to a PCB revision.
 
-- ``HUB_FW_VER``: Firmware version. A 16-bit value specifying firmware or
+- ``HUB_FW_VER``: Firmware version. A 32-bit value specifying firmware or
   gateware version of the main component driving the hub (e.g., an FPGA,
   microcontroller, or EEPROM for logic-free hubs).
 
@@ -71,22 +71,32 @@ the complete width. The detailed meaning of each register is:
   average latency, in nanoseconds, of the physical link between the hub and the
   controller. Usually 0 in local hubs.
 
-- ``HUB_ONI_SPEC_VER``: ONI specification version. Specifies the version of the
-  ONI specification the hub adheres to. Format is:
+- ``HUB_ONI_SPEC_VER``: ONI specification version. A 32 bit value specifying the
+  version of the ONI specification the hub adheres to. 
 
-  ::
+Other addresses in this block are reserved and MUST NOT be used. 
 
-    Major(8-bit).Minor(8-bit).Patch(8-bit).Reserved(8-bit)
+|
 
-Other addresses in this block are reserved and MUST NOT be used.
+All 32-bit versions are in the format:
 
-All 16-bit versions are in the format:
+::
+
+  Reserved(8-bit).Major(8-bit).Minor(8-bit).Patch(8-bit)
+
+Where Major, Minor and Patch follow the `Semantic Versioning <https://semver.org/>`_ 
+pattern.
+
+The 16-bit hardware revision field is in the format:
 
 ::
 
   Major(8-bit).Minor(8-bit).
 
-For example, 0x0103 indicates version 1.3.
+For example, 0x0103 indicates revision 1.3. The particular meaning of this versioning 
+is up to the manufacturer.
+
+|
 
 In the case of the information device located on hub 0, the versions MUST refer
 to the physical controller hardware and its firmware, where that hub is located,
