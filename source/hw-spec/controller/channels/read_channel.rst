@@ -7,7 +7,7 @@ Read Channel
 -  **Channel type** : Stream
 -  **Direction** : Read
 
-The read channel provides high bandwidth communication from the controller to
+The *read* channel provides high bandwidth communication from the controller to
 the host computer. Data from the read stream of all devices that support it is
 aggregated and multiplexed by the controller and sent to the host through this
 channel in the form of :ref:`frame`.
