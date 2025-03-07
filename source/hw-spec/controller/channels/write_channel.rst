@@ -48,7 +48,11 @@ Write Word Alignment
 ---------------------
 
 Hardware implementations of controllers might require a :ref:`word
-size<write-word-alignment-reg>` greater than 8 bits. In that case, the host will
-keep the specified sample sizes and just add padding bytes with the value 0xFF
-at the end of a frame to align with the required word size. The controller must
-ignore these padding bytes.
+size<write-word-alignment-reg>` greater than 8 bits. In this case
+the host MUST add after every frame transmission, single- or multi-sample,
+as many padding bytes with the value 0xFF as needed to comply with alignment 
+requirements. No other modifications to frame transmission must occur.
+
+.. note:: Contrary to the :ref:`Read Channel<read-word-alignment>`,
+    word alignment requirements on the Write Channel do not entail 
+    any modification of the ``Write_Sample_Size`` field of the :ref:`dev-desc`.
