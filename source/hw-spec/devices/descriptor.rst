@@ -4,7 +4,7 @@ Device Descriptor
 ==================
 
 A device MUST expose a descriptor that is read by the :ref:`controller
-<controller>` following a reset and that is incorporated into the :ref:`device
+<controller>` following a soft reset and that is incorporated into the :ref:`device
 table <dev-table>`. The descriptor must contain the following information:
 
 ::
