@@ -13,11 +13,11 @@ These devices are tied to specific :ref:`hubs<hub>`. The required devices are:
 Information Device
 --------------------
 Every hub in an ONI system MUST feature a special device, located at
-:ref:`Device_Index <dev-address>` 0xFE, which supplies information
-about the hub. Because this device is required to exist at a fixed address, it
-is not listed in the device table and, thus, has no :ref:`device descriptor
-<dev-desc>`.  It MUST expose the register interface, and it MUST NOT include
-any streams. The register map is divided in two ranges:
+:ref:`Device_Index <dev-address>` 0xFE, which supplies information about the
+hub. Because this device is required to exist at a fixed address, it is not
+listed in the device table and, thus, has no :ref:`device descriptor
+<dev-desc>`.  It MUST expose the register interface, and it MUST NOT include any
+streams. The register map is divided in two ranges:
 
 - :ref:`hub_addr_common`: 0x00000000 - 0x00007FFF
 - :ref:`hub_addr_hw_specific`: 0x00008000 - 0xFFFFFFFF
@@ -32,17 +32,18 @@ Common Registers
 The registers in this block provide general information about the hub.
 All Hub Information Devices MUST provide the following registers:
 
-========== ================================
-Address    Register
-========== ================================
-0x00000000 HUB_HW_ID
-0x00000001 HUB_HW_REV
-0x00000002 HUB_FW_VER
-0x00000003 HUB_SAFE_FW_VER
-0x00000004 HUB_CLK_HZ
-0x00000005 HUB_TX_LATENCY
-0x00000006 HUB_ONI_SPEC_VER
-========== ================================
+===================== ================================
+Address               Register
+===================== ================================
+0x00000000            HUB_HW_ID
+0x00000001            HUB_HW_REV
+0x00000002            HUB_FW_VER
+0x00000003            HUB_SAFE_FW_VER
+0x00000004            HUB_CLK_HZ
+0x00000005            HUB_TX_LATENCY
+0x00000006            HUB_ONI_SPEC_VER
+0x00000006-0xFFFFFFFF Reserved. MUST NOT be used.
+===================== ================================
 
 Although all register reads are 32-bits in nature, not all registers make use of
 the complete width. The detailed meaning of each register is:
@@ -51,9 +52,17 @@ the complete width. The detailed meaning of each register is:
 
 - ``HUB_HW_REV``: Hardware revision. A 16-bit value identifying changes in the
   hardware that do not affect the overall operation of the hub and, therefore,
-  do not require a new ID. These are typically related to a PCB revision.
+  do not require a new ID. These are typically related to a PCB revision. This
+  field has the following format:
 
-- ``HUB_FW_VER``: Firmware version. A 16-bit value specifying firmware or
+  ::
+
+    Major(8-bit).Minor(8-bit).
+
+  For example, 0x0103 indicates revision 1.3. The particular meaning of major
+  and minor versions is up to the manufacturer.
+
+- ``HUB_FW_VER``: Firmware version. A 32-bit value specifying firmware or
   gateware version of the main component driving the hub (e.g., an FPGA,
   microcontroller, or EEPROM for logic-free hubs).
 
@@ -71,27 +80,22 @@ the complete width. The detailed meaning of each register is:
   average latency, in nanoseconds, of the physical link between the hub and the
   controller. Usually 0 in local hubs.
 
-- ``HUB_ONI_SPEC_VER``: ONI specification version. Specifies the version of the
-  ONI specification the hub adheres to. Format is:
+- ``HUB_ONI_SPEC_VER``: ONI specification version. A 32-bit value specifying the
+  version of the ONI specification the hub adheres to.
 
-  ::
-
-    Major(8-bit).Minor(8-bit).Patch(8-bit).Reserved(8-bit)
-
-Other addresses in this block are reserved and MUST NOT be used.
-
-All 16-bit versions are in the format:
+All 32-bit version fields have the following format:
 
 ::
 
-  Major(8-bit).Minor(8-bit).
+  Reserved(8-bit).Major(8-bit).Minor(8-bit).Patch(8-bit)
 
-For example, 0x0103 indicates version 1.3.
+Where Major, Minor and Patch follow the `Semantic Versioning
+<https://semver.org/>`_ pattern.
 
-In the case of the information device located on hub 0, the versions MUST refer
-to the physical controller hardware and its firmware, where that hub is located,
-while ``HUB_CLK_HZ`` MUST be equivalent to the ``ACQ_CLK_HZ`` :ref:`controller
-register<address_global>`.
+In the special case of the information device located on Hub 0, the versions
+MUST refer to the physical controller hardware and its firmware, where that hub
+is located, while ``HUB_CLK_HZ`` MUST be equivalent to the ``ACQ_CLK_HZ``
+:ref:`controller register<address_global>`.
 
 .. _hub_addr_hw_specific:
 
@@ -102,10 +106,10 @@ Hardware Specific Registers
 
 This address range contains registers that are specific for the hardware
 implementation of the hub (e.g., firmware update registers, buffer memory
-status, etc...)
+status, etc.).
 
-A detailed list of the registers of each hub MUST be available on their
-:ref:`datasheet<hub-datasheet>`.
+A detailed table of the registers of each hub MUST be available on
+their :ref:`datasheet<hub-datasheet>`.
 
 .. _hub_heartbeat:
 
