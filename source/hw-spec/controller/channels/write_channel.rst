@@ -29,7 +29,9 @@ A compliant implementation of this channel requires the following:
   possibility of dropping frames (e.g: receiving a frame while one is being
   processed)
 
-- The devices accepting data from the write channel MAY inform the host about
+.. _write-chan-sync:
+
+- Devices that accept data from the write channel MAY inform the host about
   their internal state so a host application can adjust the production rate of
   write frames accordingly. If used, this mechanism MUST use existing channels
   (e.g. Register or Read channels), MUST NOT directly affect the operation of

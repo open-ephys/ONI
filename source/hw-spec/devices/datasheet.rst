@@ -84,8 +84,7 @@ write frames are consumed immediately or buffered. If write frames are buffered,
 this section MUST specify if there is any possibility of dropping frames (e.g:
 receiving a frame while one is being processed).
 
-A device MAY inform the host about its internal state so software on the host
-can adjust the production rate of write frames accordingly. If used, this
-mechanism MUST use existing channels (e.g. Register or Read channels), MUST NOT
-directly affect the operation of the Write channel and MUST be described in this
-section.
+A device MAY implement a :ref:`mechanism <write-chan-sync>` to inform the host
+about its internal state, for instance to synchronize the production of data on
+the host synchronize with the device's consumption of data. If implemented, this
+mechanism should be detailed in this section.
