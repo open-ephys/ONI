@@ -76,12 +76,4 @@ The ``ENABLE`` register MUST be the first of the managed registers, at
 0x00000000 if no raw registers are present, 0x00008000 if raw registers are
 implemented.
 
-.. _null-dev-reg:
-
-Null Devices
-~~~~~~~~~~~~~~~
-
-An exception to the previously stated register map are :ref:`null devices<null-dev-desc>`,
-those with a ``device_id`` of :ref:`all zeros <null-dev-id>`. A null device MUST NOT
-implement any register interface. Any attempt to access a null device MUST return 
-the same error as accessing a non-existing register.
+.. note:: A :ref:`null-device` is an explicit exception to these rules.
