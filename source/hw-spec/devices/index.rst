@@ -30,4 +30,5 @@ order to reach ONI-compliance.
    sample
    registers
    datasheet
-   special
+   required
+   null_device

@@ -33,11 +33,3 @@ table <dev-table>`. The descriptor must contain the following information:
   of bytes in the Device Sample indicated by the
   :ref:`dev-datasheet-write-format`.
 
-.. _null-dev-desc:
-
-Null Devices
-----------------
-
-In the special case of :ref:`null devices <null-dev-id>`, represented by a ``device_id`` 
-of 0, all other fields MUST be 0 as these devices MUST NOT produce or consume any kind 
-of data.
