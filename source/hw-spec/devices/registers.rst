@@ -75,3 +75,5 @@ managed registers start from 0x00000000 instead.
 The ``ENABLE`` register MUST be the first of the managed registers, at
 0x00000000 if no raw registers are present, 0x00008000 if raw registers are
 implemented.
+
+.. note:: A :ref:`null-device` is an explicit exception to these rules.
