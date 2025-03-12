@@ -10,8 +10,8 @@ linuxdoc = "*"
 sphinx-tabs = "*"
 make = "*"
 breathe = "*"
-jinja2 = "*"
 sphinx-csharp = {git = "https://github.com/rogerbarton/sphinx-csharp.git", ref = "master"}
 sphinx-multiversion = "*"
+jinja2 = "*"
 
 [dev-packages]
