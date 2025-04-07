@@ -88,3 +88,19 @@ A device MAY implement a :ref:`mechanism <write-chan-sync>` to inform the host
 about its internal state, for instance to synchronize the production of data on
 the host synchronize with the device's consumption of data. If implemented, this
 mechanism should be detailed in this section.
+
+.. _dev-datasheet-bandwidth:
+
+Bandwidth information
+~~~~~~~~~~~~~~~~~~~~~~
+A device datasheet MUST specify the expected periodicity and bandwidth for
+both its read and write channels, when available.
+
+- For streams with periodic data production or consumption, the datasheet must
+  specify the frequency or possible configurable frequencies at which frames are
+  being transmitted.
+- For streams with event-based, non-periodic data, the datasheet must specify
+  the minimum and maximum rates at which data might be produced or can be
+  consumed. Minimum rates of 0 are acceptable.
+
+In both cases, the datasheet SHOULD specify one or more typical cases.
