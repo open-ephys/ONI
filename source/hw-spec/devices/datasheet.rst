@@ -88,7 +88,7 @@ both its read and write channels, when available.
 
 - For streams with periodic data production or consumption, the datasheet must
   specify the frequency or possible configurable frequencies at which frames are
-  being transmitted or consumed.
+  being transmitted.
 - For streams with event-based, non-periodic data, the datasheet must specify
   the minimum and maximum rates at which data might be produced or can be
   consumed. Minimum rates of 0 are acceptable.
