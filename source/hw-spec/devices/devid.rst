@@ -29,4 +29,4 @@ Device ID. Devices sharing an ID are assumed to be the same and share the same
 Null Device ID
 ----------------
 A special case is reserved for a device ID of 0.0.0. This identifies a
-null device, which represents a non-present or non-functional device.
+:ref:`null-device`.

@@ -30,10 +30,10 @@ In this case:
 - If all are present, the interfacing component will present its :ref:`dev-desc`
   as normal.
 
-- If a required transducer element is not present, the Device Descriptor
+- If a required transducer component is not present, the Device Descriptor
   will indicate a :ref:`null-device`
 
-- A transducer element MAY be optional, as long as its absence does not modify
+- A transducer component MAY be optional, as long as its absence does not modify
   the behavior described in the :ref:`dev-datasheet`.
 
 - If specific transducer configurations are optional, the device SHOULD inform
