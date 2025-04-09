@@ -1,6 +1,6 @@
-.. _special-devs:
+.. _required-devs:
 
-Special Devices
+Required Devices
 ================
 There are two kinds of special devices that are required by this specification.
 These devices are tied to specific :ref:`hubs<hub>`. The required devices are:
@@ -125,3 +125,4 @@ case that no other devices in the system are producing data.
 
 Other, identical heartbeat devices but with configurable ``ENABLE`` and data
 rate MAY exist as part of any hub.
+

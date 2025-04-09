@@ -32,3 +32,4 @@ table <dev-table>`. The descriptor must contain the following information:
   stream <com-channels>`.This value must be *at least* as a large as the number
   of bytes in the Device Sample indicated by the
   :ref:`dev-datasheet-write-format`.
+
