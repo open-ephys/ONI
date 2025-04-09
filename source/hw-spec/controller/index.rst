@@ -26,6 +26,28 @@ field of the corresponding :ref:`frame<frame>`.
     measured transmission latency. Users can use this value to more precisely
     synchronize samples between hubs.
 
+.. _hard_reset:
+
+Hard Reset
+----------------
+A controller MUST implement a hard reset that restores both it and its dependent
+hardware elements (hubs and devices) to a power-on configuration
+state. This signal MUST be issued through an Out Of Band (OOB) mechanism,
+triggered by the :term:`Driver Translator`, and MUST NOT rely on the
+:ref:`controller_channels`.
+
+The :term:`Driver Translator` SHOULD issue a hard reset when communication
+between the host and controller is initially established and when it ends,
+either normally or exceptionally.
+
+.. note:: The hard reset signal is not to be confused with the
+    :ref:`system soft reset <soft-reset-reg>`. A hard reset returns all elements in
+    the :ref:`hardware hierarchy <ONI-hierarchy>` governed by a given controller to
+    their to their power on state but does not trigger a device map transmission. A
+    soft reset might may preserve the values of some registers and configurations
+    (as documented on in this specification or a :ref:`dev-datasheet`) and always
+    triggers a device map transmission to the host.
+
 .. _controller_params:
 
 Hardware-Specific Parameters

@@ -29,7 +29,7 @@ The address map for this block is as follows:
 ========== ========================= ==================
 Address    Name                      Type
 ========== ========================= ==================
-0x0000     RESET                     Global
+0x0000     SOFT_RESET                Global
 0x0001     ACQ_RUNNING               Global
 0x0002     SYS_CLK_HZ                Global
 0x0003     ACQ_CLK_HZ                Global
@@ -47,12 +47,15 @@ Global Acquisition Registers
 The following global acquisition registers govern acquisition over a single
 controller.
 
-- ``RESET``: System Reset. Set to 0x00000001 to trigger a hardware reset and
-  send a fresh device map to the host. Devices are reset but their managed
-  registers might remain unchanged, depending on their configuration (See the
-  :ref:`Device registers <dev-register>` section for more information). This
-  reggister is set to 0x00000000 by the controller upon entering the reset
-  state.
+.. _soft-reset-reg:
+
+- ``SOFT_RESET``: System Soft Reset. Set to 0x00000001 to trigger a hardware
+  soft reset, stopping acquisition and clearing the transmission buffers and
+  states. After this, a fresh device map is sent to the host. Devices are reset
+  but their managed registers might remain unchanged, depending on their
+  configuration (See the :ref:`Device registers <dev-register>` section for more
+  information). This register is set to 0x00000000 by the controller upon
+  entering the reset state.
 
 - ``ACQ_RUNNING``: Acquisition Running. Set to 0x00000001 to run the system
   clock and produce data. Set to 0x00000000 to stop the system clock and

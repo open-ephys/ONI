@@ -24,8 +24,8 @@ e.g.: an active probe that can be swapped.
 In this case:
 
 - The interfacing component MUST check for the presence of all required
-  transducer elements after a soft reset, before the :ref:`dev-table`
-  is transmitted to the host.
+  transducer elements after a :ref:`soft reset <soft-reset-reg>`, before the
+  :ref:`dev-table` is transmitted to the host.
 
 - If all are present, the interfacing component will present its :ref:`dev-desc`
   as normal.
