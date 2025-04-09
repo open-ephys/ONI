@@ -51,9 +51,9 @@ this table, but it MUST contain the following columns:
    ``VALID`` and ``ALSO_VALID`` vs. ``NotValid`` and ``ALSO-NOT-VALID``).
 -  **Access**: Read-only, Write-only, or Read/Write.
 -  **Time of Effect**: When does a register write affect hardware state?
-   Immediately or following reset?
--  **POR Value**: Power-on or hard reset default value.
--  **Reset Action**: Upon a soft reset, what happens to the register? Does it
+   Immediately or following soft reset?
+-  **POR Value**: Power-on or :ref:`hard reset <hard_reset>` default value.
+-  **Reset Action**: Upon a :ref:`soft reset <soft-reset-reg>`, what happens to the register? Does it
    maintain its previous state or get reset to some value? If the latter, then
    what value?
 -  **Description**: Word description of the register's function.

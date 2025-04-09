@@ -5,9 +5,9 @@ Device Table
 The collection of :ref:`devices <device>` governed by a :ref:`controller
 <controller>` is referred to as a device table. The :ref:`controller
 <controller>` is responsible for creating the device table and sending it to the
-host following a soft reset. The device table is a read-only associative array
-of (:ref:`device address <dev-address>`, :ref:`device descriptor <dev-desc>`)
-pairs.
+host following a :ref:`system soft reset <soft-reset-reg>`. The device table is
+a read-only associative array of (:ref:`device address <dev-address>`,
+:ref:`device descriptor <dev-desc>`) pairs.
 
 .. flat-table:: Example Device Table
    :header-rows: 1
@@ -35,11 +35,12 @@ pairs.
      - 8
      - 0
 
-.. note:: The Read Sample Size (``rd_samp_size``) within a :ref:`dev-desc` in the device table might
-   be larger than indicated on corresponding device datasheet's :ref:`dev-datasheet-read-format` due to adjustments required to comply to specific
-   :ref:`hardware word size requirements<read-word-alignment>`. In this case,
-   the host should ignore these extra bytes and decode the data as specified on
-   the datasheet.
+.. note:: The Read Sample Size (``rd_samp_size``) within a :ref:`dev-desc` in the device
+    table might be larger than indicated on corresponding device datasheet's
+    :ref:`dev-datasheet-read-format` due to adjustments required to comply to
+    specific :ref:`hardware word size requirements<read-word-alignment>`. In this
+    case, the host should ignore these extra bytes and decode the data as specified
+    on the datasheet.
 
 .. _dev-address:
 

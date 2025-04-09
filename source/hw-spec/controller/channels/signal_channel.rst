@@ -10,11 +10,11 @@ Signal Channel
 The *signal* channel provides a way for the controller to inform the host of
 configuration results, which may be provided with a significant delay.
 Additionally, it is the channel over which the controller sends the device table
-to the host following a system soft reset. Signal data MUST be framed into packets
-using Consistent Overhead Byte Stuffing
-(`COBS <https://en.wikipedia.org/wiki/Consistent_Overhead_Byte_Stuffing>`__).
-Within this scheme, packets are delimited using 0's and always have the
-following format:
+to the host following a :ref:`system soft reset <soft-reset-reg>`. Signal data
+MUST be framed into packets using Consistent Overhead Byte Stuffing (`COBS
+<https://en.wikipedia.org/wiki/Consistent_Overhead_Byte_Stuffing>`__). Within
+this scheme, packets are delimited using 0's and always have the following
+format:
 
 ::
 
@@ -39,9 +39,9 @@ DEVICETABACK 0x00000020 Device table start acknowledgment
 DEVICEINST   0x00000040 Device descriptor instance
 ============ ========== =====================================
 
-Following a hardware soft reset, the signal channel is used to provide the
-:ref:`device table <dev-table>` to the host using the following packet
-sequence:
+Following a :ref:`system soft reset <soft-reset-reg>`, the signal channel is
+used to provide the :ref:`device table <dev-table>` to the host using the
+following packet sequence:
 
 ::
 
@@ -55,14 +55,14 @@ Where ``dev_addr_n`` is the full address of each device as described in the
 :ref:`device table <dev-table>` section and ``dev_n`` is a :ref:`device
 descriptor <dev-desc>`.
 
-In addition to providing the device table following soft reset, the signal channel
-is also used to asynchronously acknowledge register access via the
+In addition to providing the device table following soft reset, the signal
+channel is also used to asynchronously acknowledge register access via the
 :ref:`configuration channel <conf-chan>`. Following a device register read or
 write, an CONFIGWACK, CONFIGWNACK, CONFIGRACK, or CONFIGRNACK signal is pushed
 onto the signal stream by the controller to indicate the validity of the
 transaction. In the case of a successful read, the CONFIGRACK flag will be
-followed by the result of the read operation. In all other cases, the flag
-will be sent with no additional data.
+followed by the result of the read operation. In all other cases, the flag will
+be sent with no additional data.
 
 For instance, on a successful register read:
 
