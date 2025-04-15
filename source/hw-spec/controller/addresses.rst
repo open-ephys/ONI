@@ -88,7 +88,8 @@ controller.
   configurations that support hardware synchronization, resetting the
   acquisition counter through ``ACQ_CNT_RESET`` on a device with a
   ``SYNC_HW_ADDR`` of 0x00000000 will broadcast a hardware signal to all
-  connected non-zero controllers, resetting all counters simultaneously.
+  connected non-zero addressed controllers, resetting all counters
+  simultaneously.
 
   .. note:: Hardware synchronization is guaranteed only among controllers with
     the same hardware implementation and that indicate support for this
