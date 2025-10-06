@@ -115,7 +115,7 @@ their :ref:`datasheet<hub-datasheet>`.
 
 Heartbeat Device
 ------------------
-All hubs MUST contain a “heartbeat device” at address 0. It MUST expose the register
+All hubs MUST contain a “heartbeat device”. It MUST expose the register
 interface and read stream, and it MUST NOT expose a write stream. This is a
 simple device that periodically produces :ref:`samples <dev-sample>` containing
 only the ``hubclk_cnt`` and an empty payload, at a fixed rate of 100 Hz. Its
