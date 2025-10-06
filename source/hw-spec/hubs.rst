@@ -11,7 +11,8 @@ They can be independent hardware aggregates connected to the controller
 Every hub MUST have access to a high-resolution monotonic counter (typically
 driven by a high-resolution crystal oscillator, resonator, PLL, etc.). All
 devices within a hub MUST use the values of this counter for the ``hubclk_cnt``
-field of their :ref:`data samples <dev-sample>`.
+field of their :ref:`data samples <dev-sample>` and the
+:ref:`register access time <dev-reg-time>`.
 
 Hubs that exist on hardware that is physically separated from the
 :ref:`controller <controller>` are referred to as remote hubs, while hubs
