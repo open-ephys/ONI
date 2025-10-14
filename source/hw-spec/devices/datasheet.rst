@@ -52,6 +52,8 @@ this table, but it MUST contain the following columns:
 -  **Access**: Read-only, Write-only, or Read/Write.
 -  **Time of Effect**: When does a register write affect hardware state?
    Immediately or following soft reset?
+- **Access time report**: If device will report the :ref:`access time <dev-reg-time>`
+  for this register.
 -  **POR Value**: Power-on or :ref:`hard reset <hard_reset>` default value.
 -  **Reset Action**: Upon a :ref:`soft reset <soft-reset-reg>`, what happens to the register? Does it
    maintain its previous state or get reset to some value? If the latter, then
