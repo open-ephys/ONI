@@ -47,20 +47,20 @@ providing an updated descriptor to the controller.
 .. _dev-reg-time:
 
 Devices SHOULD inform the :ref:`controller` of the time when a register access
-has been acknowledged. For read accesses, this is the time at which the value
-is retrieved. For write accesses, its meaning depends on the register effect
-timing:
+has been acknowledged. For read accesses, this is the time at which the value is
+retrieved by the device. For write accesses, its meaning depends on the register
+effect timing:
 
 - For registers with an immediate effect, the acknowledge time SHOULD be
   as close as possible to the time the effect occurs (e.g.: when the
   communication with the underlying hardware is finished)
 - For other register types, when the value is written to the device
 
-The time reported by the devices MUST use the same timer and format
-used for the ``hubclk_cnt`` field of their :ref:`data samples <dev-sample>`.
-If a device does not offer time for a register, the time MUST
-be of value 0xFFFFFFFFFFFFFFFF. Access time reporting MAY be implemented
-in all or some of the registers of any device.
+The time reported by the devices MUST use the same counter source and format as
+the ``hubclk_cnt`` field of their :ref:`data samples <dev-sample>`. If a device
+does not provide the time of a register access, the time MUST be of value
+0xFFFFFFFFFFFFFFFF. Access time reporting MAY be implemented in all or some of
+the registers of any device.
 
 Register access, bit-field definitions, reset behavior time of effect
 and access time reporting description MUST all be specified in the

@@ -60,16 +60,23 @@ channel is also used to asynchronously acknowledge register access via the
 :ref:`configuration channel <conf-chan>`. Following a device register read or
 write, an CONFIGWACK, CONFIGWNACK, CONFIGRACK, or CONFIGRNACK signal is pushed
 onto the signal stream by the controller to indicate the validity of the
-transaction. Successful transactions will include the following timing 
+transaction. Successful transactions will include the following timing
 fields:
 
-- uint64 ``reg_time``: Time when this register access acknowledge was
+::
+
+    uint64  reg_time
+    uint64  reg_hub_time
+
+where
+
+- ``reg_time``: Time when this register access acknowledge was
   received by the controller. Based on the :ref:`acq_clk`.
-- uint64 ``reg_hub_time``: Register access time as reported by
+- ``reg_hub_time``: Register access time as reported by
   the :ref:`device <dev-reg-time>`.
 
 In the case of a successful read, the CONFIGRACK flag will also be
-followed by the result of the read operation after the time fields. 
+followed by the result of the read operation after the time fields.
 In all other cases, the flag will be sent with no additional data.
 
 For instance, on a successful register read:
@@ -78,13 +85,13 @@ For instance, on a successful register read:
 
     ... | CONFIGRACK, uint64 reg_time, uint64 reg_hub_time, uint32 read_value | ...
 
-While on a succesful register write:
+While on a successful register write:
 
 ::
 
     ... | CONFIGWACK, uint64 reg_time, uint64 reg_hub_time | ...
 
-And on a failed register read or write 
+And on a failed register read or write
 
 ::
 
