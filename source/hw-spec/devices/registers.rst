@@ -44,8 +44,27 @@ soft reset. An example of this type of behavior is registers that operate on the
 runtime, but registers affecting it might take action after a soft reset,
 providing an updated descriptor to the controller.
 
-Register access, bit-field definitions, reset behavior, and time of effect MUST
-be specified in the hardware datasheet for raw registers or the :ref:`ONI Device
+.. _dev-reg-time:
+
+Devices SHOULD inform the :ref:`controller` of the time when a register access
+has been acknowledged. For read accesses, this is the time at which the value is
+retrieved by the device. For write accesses, its meaning depends on the register
+effect timing:
+
+- For registers with an immediate effect, the acknowledge time SHOULD be
+  as close as possible to the time the effect occurs (e.g.: when the
+  communication with the underlying hardware is finished)
+- For other register types, when the value is written to the device
+
+The time reported by the devices MUST use the same counter source and format as
+the ``hubclk_cnt`` field of their :ref:`data samples <dev-sample>`. If a device
+does not provide the time of a register access, the time MUST be of value
+0xFFFFFFFFFFFFFFFF. Access time reporting MAY be implemented in all or some of
+the registers of any device.
+
+Register access, bit-field definitions, reset behavior time of effect
+and access time reporting description MUST all be specified in the
+hardware datasheet for raw registers or the :ref:`ONI Device
 Datasheet <dev-datasheet>` for managed registers.
 
 .. _dev-reg-map:
@@ -53,7 +72,7 @@ Datasheet <dev-datasheet>` for managed registers.
 Register Map
 -------------
 
-A device can optionally implement raw registers and MUST implement at least one
+A device MAY implement raw registers and MUST implement at least one
 managed register, ``ENABLE``. This register's behavior MUST conform the
 following rules:
 
