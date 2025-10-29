@@ -115,13 +115,14 @@ their :ref:`datasheet<hub-datasheet>`.
 
 Heartbeat Device
 ------------------
-Local hub 0 MUST contain a “heartbeat device”.  It MUST expose the register
+All hubs MUST contain a “heartbeat device”. It MUST expose the register
 interface and read stream, and it MUST NOT expose a write stream. This is a
 simple device that periodically produces :ref:`samples <dev-sample>` containing
 only the ``hubclk_cnt`` and an empty payload, at a fixed rate of 100 Hz. Its
 ``ENABLE`` register must be read-only and always active. This device ensures
 that API calls accessing the read stream are guaranteed to be unblocked in the
-case that no other devices in the system are producing data.
+case that no other devices in the system are producing data as well as providing
+a constant reference for hub clock synchronization if required.
 
 Other, identical heartbeat devices but with configurable ``ENABLE`` and data
 rate MAY exist as part of any hub.
