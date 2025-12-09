@@ -17,7 +17,7 @@ The frame format is:
     uint32  sample_sz
     var     sample
 
-Where
+where
 
 - ``dev_addr``: Device Address. The address of the device producing the data, as
   featured on the :ref:`device table <dev-table>`.

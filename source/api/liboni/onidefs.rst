@@ -3,7 +3,8 @@
 
 onidefs.h
 #######################################
-Macro and constant definitions common to both :ref:`oni.h` and :ref:`onidriver.h`.
+Macro and constant definitions common to both :ref:`oni.h` and
+:ref:`onidriver.h`.
 
 .. _onidef_integer_types:
 
@@ -51,7 +52,8 @@ corresponding context option type used during calls to these functions.
 
         =================== ==================================================
         Option value type   :type:`oni_device_t` *
-        Option description  Pointer to a pre-allocated array of :type:`oni_device_t` structs
+        Option description  Pointer to a pre-allocated array of
+                            :type:`oni_device_t` structs
         Default value       N/A
         Access              Read
         Required run state  IDLE or RUNNING
@@ -74,11 +76,12 @@ corresponding context option type used during calls to these functions.
 
         (``2``)
         Set/clear data input gate. Any value greater than 0 will turn data
-        acquisition on.  Writing 0 to this option will stop acquisition, but will
-        not reset context options or the sample counter. All data not shifted out
-        of hardware will be cleared. To obtain the very first samples produced by
-        high-bandwidth devices, see :macro:`ONI_OPT_RESETACQCOUNTER` to see how to
-        start acquisition synchronously with a clock reset.
+        acquisition on.  Writing 0 to this option will stop acquisition, but
+        will not reset context options or the sample counter. All data not
+        shifted out of hardware will be cleared. To obtain the very first
+        samples produced by high-bandwidth devices, see
+        :macro:`ONI_OPT_RESETACQCOUNTER` to see how to start acquisition
+        synchronously with a clock reset.
 
         =================== ==================================================
         Option value type   :type:`oni_reg_val_t`
@@ -92,8 +95,8 @@ corresponding context option type used during calls to these functions.
 
         (``3``)
         Trigger global hardware reset. Any value greater than 0 will trigger a
-        hardware reset. In this case, acquisition is stopped and resets are issued
-        to all devices in the device table.
+        hardware reset. In this case, acquisition is stopped and resets are
+        issued to all devices in the device table.
 
         =================== ==================================================
         Option value type   :type:`oni_reg_val_t`
@@ -121,8 +124,9 @@ corresponding context option type used during calls to these functions.
 
         (``5``)
         Host system acquisition clock frequency in Hz, derived from
-        :macro:`ONI_OPT_SYSCLKHZ`. This describes the frequency of the clock used
-        to drive the acquisition counter which is used to timestamp data frames.
+        :macro:`ONI_OPT_SYSCLKHZ`. This describes the frequency of the clock
+        used to drive the acquisition counter which is used to timestamp data
+        frames.
 
         =================== ==================================================
         Option value type   :type:`oni_reg_val_t`
@@ -135,14 +139,15 @@ corresponding context option type used during calls to these functions.
     .. macro:: ONI_OPT_RESETACQCOUNTER
 
         (``6``)
-        Trigger a reset of the acquisition clock counter. A value of 1 will trigger
-        an acquisition clock counter reset. A value of 2 or greater will trigger
-        synchronous acquisition clock counter reset and set :macro:`ONI_OPT_RUNNING`
-        to 1.
+        Trigger a reset of the acquisition clock counter. A value of 1 will
+        trigger an acquisition clock counter reset. A value of 2 or greater will
+        trigger synchronous acquisition clock counter reset and set
+        :macro:`ONI_OPT_RUNNING` to 1.
 
         =================== ==================================================
         Option value type   :type:`oni_reg_val_t`
-        Option description  1: reset clock counter, 2: reset clock counter and set :macro:`ONI_OPT_RUNNING` to 1
+        Option description  1: reset clock counter, 2: reset clock counter and
+                            set :macro:`ONI_OPT_RUNNING` to 1
         Default value       0 (Untriggered)
         Access              Write
         Required run state  IDLE or RUNNING
@@ -157,7 +162,7 @@ corresponding context option type used during calls to these functions.
 
         =================== ==================================================
         Option value type   :type:`oni_reg_val_t`
-        Option description  TODO
+        Option description  A user-defined address of the host hardware.
         Default value       0
         Access              Read and Write
         Required run state  IDLE or RUNNING
@@ -167,8 +172,15 @@ corresponding context option type used during calls to these functions.
 
         (``8``)
         The maximal size of a frame produced by a call to ``oni_read_frame`` in
-        bytes.  This number is the maximum sized frame that can be produced across
-        every device within the device table that generates read data.
+        bytes.  This number is the maximum sized frame that can be produced
+        across every device within the device table that generates read data.
+
+        .. note::
+
+            Although this value can be used to as a starting point when
+            calculating the minimum value of :macro:`ONI_OPT_BLOCKREADSIZE`, it
+            does not include hardware-dependent overhead and alignment bytes
+            and, therefore, cannot be used directly for this purpose.
 
         =================== ==================================================
         Option value type   :type:`oni_reg_val_t`
@@ -188,7 +200,8 @@ corresponding context option type used during calls to these functions.
 
         =================== ==================================================
         Option value type   :type:`oni_reg_val_t`
-        Option description  Maximal (single packet) write :type:`oni_frame_t` size in bytes
+        Option description  Maximal (single packet) write :type:`oni_frame_t`
+                            size in bytes
         Default value       N/A
         Access              Read
         Required run state  IDLE or RUNNING
@@ -197,17 +210,20 @@ corresponding context option type used during calls to these functions.
     .. macro:: ONI_OPT_BLOCKREADSIZE
 
         (``10``)
-        Number of bytes read during each driver access to the high-bandwidth read
-        channel using :func:`oni_read_frame`. This option allows control over a
-        fundamental trade-off between closed-loop response time and overall
-        bandwidth. The minimum (default) value will provide the lowest response
-        latency. Larger values will reduce syscall frequency and may improve
-        processing performance for high-bandwidth data sources. This minimum size
-        of this option is determined by :macro:`ONI_OPT_MAXREADFRAMESIZE`.
+        Number of bytes read during each driver access to the high-bandwidth
+        read channel using :func:`oni_read_frame`. This option allows control
+        over a fundamental trade-off between closed-loop response time and
+        overall bandwidth. The minimum (default) value will provide the lowest
+        response latency. Larger values will reduce syscall frequency and may
+        improve processing performance for high-bandwidth data sources. This
+        minimum size of this option is determined by
+        :macro:`ONI_OPT_MAXREADFRAMESIZE`.
 
         =================== ==================================================
         Option value type   ``size_t``
-        Option description  Size, in bytes, of high-bandwidth hardware read that may be triggered during a call to :func:`oni_read_frame`
+        Option description  Size, in bytes, of high-bandwidth hardware read that
+                            may be triggered during a call to
+                            :func:`oni_read_frame`
         Default value       Value of :macro:`ONI_OPT_MAXREADFRAMESIZE`
         Access              Read and Write
         Required run state  Read: IDLE or RUNNING; Write: IDLE
@@ -217,14 +233,15 @@ corresponding context option type used during calls to these functions.
 
         (``11``)
         Number of bytes pre-allocated to create frames using
-        :func:`oni_create_frame`. A larger size will reduce the amount of dynamic
-        memory allocation system calls but increase the cost of each of those
-        calls. The minimum size of this option is determined by
+        :func:`oni_create_frame`. A larger size will reduce the amount of
+        dynamic memory allocation system calls but increase the cost of each of
+        those calls. The minimum size of this option is determined by
         :macro:`ONI_OPT_MAXWRITEFRAMESIZE`.
 
         =================== ==================================================
         Option value type   ``size_t``
-        Option description  Pre-allocation size of buffer used to make frames used by :func:`oni_write_frame`
+        Option description  Pre-allocation size of buffer used to make frames
+                            used by :func:`oni_write_frame`
         Default value       Value of :macro:`ONI_OPT_MAXWRITEFRAMESIZE`
         Access              Read and Write
         Required run state  Read: IDLE or RUNNING; Write: IDLE
