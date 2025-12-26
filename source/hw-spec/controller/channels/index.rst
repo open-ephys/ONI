@@ -8,7 +8,7 @@ abstract communication channels:
 #. :ref:`data-rd-chan`: Read-only, high-bandwidth stream of device output
    :ref:`frames<frame>` from controller to host.
 #. :ref:`data-wr-chan`: Write-only, high-bandwidth stream of device input
-   :ref:`frames<frame>` from mhost to controller.
+   :ref:`frames<frame>` from host to controller.
 #. :ref:`sig-chan`: Read-only stream of short-messages and asynchronous hardware
    events from controller to host.
 #. :ref:`conf-chan`: Bidirectional, addressed access to device registers.
